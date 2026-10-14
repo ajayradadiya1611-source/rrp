@@ -17,11 +17,14 @@
     "url": ""
   },
   "scripts": {
-    "build": "vite build --config vites/vite.theme.config.js && vite build --config vites/vite.cart-page.config.js"
+    "build": "vite build --config vites/vite.theme.config.js && vite build --config vites/vite.cart-page.config.js && vite build --config vites/vite.inventory-listing.config.js"
   },
   "dependencies": {
+    "nouislider": "^15.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",

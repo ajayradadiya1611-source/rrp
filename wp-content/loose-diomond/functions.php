@@ -354,6 +354,7 @@ include('inc-admin/order-tracking.php');
 
 include('inc/diamond-details-function.php');
 include('inc/blog-shortcode.php');
+require_once get_template_directory() . '/components/inventory-listing/index.php';
 require_once get_template_directory() . '/components/cart-page/index.php';
 
 
