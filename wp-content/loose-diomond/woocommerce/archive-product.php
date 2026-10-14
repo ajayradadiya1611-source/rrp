@@ -494,19 +494,6 @@ if ( ! is_search() || have_posts() ) {
     <?php
     }
     ?>
-    <?php 
-    if($is_ring_page==true){
-    ?>
-     <div class="container-fluid">
-        <?php 
-            // Ring Builder Breadcrumb - Always show this
-            ls_ring_builder_breadcrumb('setting');
-            ?>
-            <div id="ring-builder-breadcrumb-root"></div>
-    </div>
-    <?php
-    }
-    ?>
     
     <?php 
     if($category_slug=='fine-jewelry'){

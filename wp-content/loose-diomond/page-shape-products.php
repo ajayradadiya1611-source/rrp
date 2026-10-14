@@ -3,7 +3,7 @@
  * Template Name: Shape Products Page
  *
  * Same layout as woocommerce/archive-product.php (engagement-ring
- * version): breadcrumb, top banner, ring-builder breadcrumb, product
+ * version): breadcrumb, top banner, product
  * grid, start engagement rings, testimonials, "Choose How You Shine",
  * "Explore Other Categories", bottom description, bottom category
  * links, related blogs and FAQ.
@@ -212,13 +212,6 @@ echo '<script type="application/ld+json">' . wp_json_encode(
         </div>
 
          
-    </div>
-     <div class="container-fluid">
-        <?php 
-            // Ring Builder Breadcrumb - Always show this
-            ls_ring_builder_breadcrumb('setting');
-            ?>
-            <div id="ring-builder-breadcrumb-root"></div>
     </div>
 
     <?php lgd_render_inventory_listing(); ?>

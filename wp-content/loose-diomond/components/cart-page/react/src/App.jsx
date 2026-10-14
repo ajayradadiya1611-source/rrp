@@ -52,7 +52,7 @@ export default function App({ initial }) {
     }
   }, [applyCart, setLoading])
 
-  /* ---------- events from other widgets (ring-extra-features "Edit upgrades" / "Add extra feature") ---------- */
+  /* ---------- events from other widgets  ---------- */
   useEffect(() => {
     window.lsCartApp = { refresh: reload }
     let pending = 0
@@ -95,12 +95,6 @@ export default function App({ initial }) {
     }
   }, [setLoading])
 
-  /* ---------- mount "Edit upgrades" React widgets (ring-extra-features) ---------- */
-  useEffect(() => {
-    if (typeof window.lsRefMountAll === 'function') window.lsRefMountAll()
-    document.dispatchEvent(new CustomEvent('ls:ref-mount'))
-  }, [cart])
-
   /* ---------- tell other plugins the cart DOM is ready (Extend protection-plan offers etc.) ---------- */
   useEffect(() => {
     const jq = window.jQuery
@@ -117,7 +111,7 @@ export default function App({ initial }) {
     rootRef.current.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((el) => bs.Tooltip.getOrCreateInstance(el))
   }, [cart])
 
-  /* ---------- "Rebuild ring" link rendered by PHP hooks ---------- */
+  /* ---------- remove link rendered by PHP hooks ---------- */
   const onRootClick = useCallback((e) => {
     // Remove link from woocommerce_cart_item_remove_link (href has ?remove_item=)
     const rm = e.target.closest('.ls_remove_wrap a[href*="remove_item="]')
@@ -127,13 +121,6 @@ export default function App({ initial }) {
       if (key) actionsRef.current.removeItem(key)
       return
     }
-    const link = e.target.closest('.ls_rebuildlink .ls_rebuild')
-    if (!link) return
-    e.preventDefault()
-    withLoader(async () => {
-      const r = await ajax('ls_change_rb', { itemkey: link.getAttribute('itemkey') })
-      if (r && r.status) window.location.href = r.redirect_url
-    })
   }, [withLoader])
 
   /* ---------- actions ---------- */
@@ -152,18 +139,6 @@ export default function App({ initial }) {
         applyCart(r.data)
       }),
 
-    updateRingSize: async (key, size) => {
-      const r = await ajax('ls_update_ringsize', { cart_item_key: key, ring_size: size, security: nonce('ringsize') })
-      if (!r.success) throw new Error(r.data?.message || 'Could not update ring size.')
-      setCart((c) => ({ ...c, items: c.items.map((i) => (i.key === key ? { ...i, ringSize: size } : i)) }))
-    },
-
-    updateSettingSize: async (key, size) => {
-      const r = await ajax('ls_update_settingsize', { cart_item_key: key, setting_size: size, security: nonce('settingsize') })
-      if (!r.success) throw new Error(r.data?.message || 'Could not update setting size.')
-      setCart((c) => ({ ...c, items: c.items.map((i) => (i.key === key ? { ...i, settingSize: size } : i)) }))
-    },
-
     saveEngraving: (key, text, font) =>
       withLoader(async () => {
         const r = await ajax('ls_save_engraving', {
@@ -181,17 +156,6 @@ export default function App({ initial }) {
       }),
 
     removeEngraving: (key) => actions.saveEngraving(key, '', ''),
-
-    removeUpgrade: (key, optionKey) =>
-      withLoader(async () => {
-        const r = await ajax('ls_ref_remove_upgrade', {
-          nonce: nonce('refRemove'),
-          cart_item_key: key,
-          option_key: optionKey,
-        })
-        if (!r || !r.success) throw new Error(r?.data?.message || 'Could not remove that upgrade. Please try again.')
-        await reload()
-      }),
 
     applyCoupon: async (code) => {
       setLoading(true)
@@ -233,7 +197,7 @@ export default function App({ initial }) {
             <h3 className="fw-600 mb-4">Bag</h3>
             <div className="cart_inner">
               {(cart.items || []).map((item) => (
-                <CartItem key={item.key} refreshSeq={refreshSeq} item={item} ringSizes={cart.ringSizes || []} fonts={cart.engravingFonts || []} actions={actions} />
+                <CartItem key={item.key} refreshSeq={refreshSeq} item={item} fonts={cart.engravingFonts || []} actions={actions} />
               ))}
             </div>
           </div>

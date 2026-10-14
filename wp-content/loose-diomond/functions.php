@@ -334,7 +334,6 @@ include('inc/json-var-retail.php');
 include('inc/retail-json.php');
 include('inc/comman-function.php');
 include('inc/ls-custom-myaccount.php');
-include('inc/ls-custom-cart-checkout.php');
 include('inc/ls_pcat_custom_form.php');
 include('inc/custom_order_status.php');
 include('inc/static-html.php');
@@ -349,13 +348,11 @@ include('inc/admin-contact-form.php');
 include('inc-admin/admin-page.php');
 include('inc-admin/order-tracking.php');
 
-include('inc/diamond-details-function.php');
 include('inc/blog-shortcode.php');
 require_once get_template_directory() . '/components/inventory-listing/index.php';
 require_once get_template_directory() . '/components/cart-page/index.php';
 
 
-include('plain-components/design_difficulty.php');
 include('plain-components/comman_option.php');
 include('plain-components/custom_order.php');
 include('plain-components/hide_order_meta.php');
@@ -454,7 +451,6 @@ function custom_ajax_add_to_cart_handler() {
     $product_id = isset($form_data['product_id']) ? absint($form_data['product_id']) : 0;
     $quantity = isset($form_data['quantity']) ? absint($form_data['quantity']) : 1;
     $variation_id = isset($form_data['variation_id']) ? absint($form_data['variation_id']) : 0;
-    $ring_size = isset($form_data['ringsize']) ? sanitize_text_field($form_data['ringsize']) : '';
 
     // Validate product ID
     if (!$product_id) {
@@ -473,8 +469,6 @@ function custom_ajax_add_to_cart_handler() {
         ]);
         wp_die();
     }
-
-    $cart_item_data['custom_data']['ringsize'] = $ring_size;
 
     // Handle variable products
     $variation_attributes = [];
@@ -1152,21 +1146,12 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
 
     $product = wc_get_product($product_id);
 
-    // Product meta
-    $c_type = get_post_meta($product_id, 'c_type', true);
-
-    if (!empty($c_type)) {
-        $cart_item_data['c_type'] = $c_type;
-    }
-
     // Category आधारित flags
     $cart_item_data['is_readyToShipProduct'] = has_term('ready-to-ship', 'product_cat', $product_id);
 
-    // Ring builder type (if exists)
-    $ls_rb_type = $cart_item_data['ls_ring_builder']['ls_rb_type'] ?? '';
     $is_ring_product = false;
     // Ring product
-     if ($ls_rb_type === 'setting_prdct' || has_term('wedding-ring', 'product_cat', $product_id)) {
+     if (has_term('wedding-ring', 'product_cat', $product_id)) {
         $is_ring_product = true;
     }
     $cart_item_data['is_ring_product'] = $is_ring_product;
@@ -1188,10 +1173,6 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
 
     // Quantity box logic
     if (
-        $c_type == 1 ||
-        $c_type == 3 ||
-        $ls_rb_type === 'diamond_prdct' ||
-        $ls_rb_type === 'setting_prdct' ||
         $cart_item_data['is_readyToShipProduct'] == true ||
         has_term('custom', 'product_cat', $product_id)
     ) {
@@ -1203,140 +1184,11 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
     return $cart_item_data;
 }
 
-/* ============================================================
-   SHARED RING SIZE OPTIONS (used on single product + cart)
-   ============================================================ */
-function ls_get_ringsize_options() {
-    return array(
-        '3.00'=>"3.00",'3.25'=>"3.25",'3.50'=>"3.50",'3.75'=>"3.75",
-        '4.00'=>"4.00",'4.25'=>"4.25",'4.50'=>"4.50",'4.75'=>"4.75",
-        '5.00'=>"5.00",'5.25'=>"5.25",'5.50'=>"5.50",'5.75'=>"5.75",
-        '6.00'=>"6.00",'6.25'=>"6.25",'6.50'=>"6.50",'6.75'=>"6.75",
-        '7.00'=>"7.00",'7.25'=>"7.25",'7.50'=>"7.50",'7.75'=>"7.75",
-        '8.00'=>"8.00",'8.25'=>"8.25",'8.50'=>"8.50",'8.75'=>"8.75",
-        '9.00'=>"9.00",'9.25'=>"9.25",'9.50'=>"9.50",'9.75'=>"9.75",
-        '10.00'=>"10.00",'10.25'=>"10.25",'10.50'=>"10.50",'10.75'=>"10.75",
-        '11.00'=>"11.00",'11.25'=>"11.25",'11.50'=>"11.50",'11.75'=>"11.75",
-        '12.00'=>"12.00",
-    );
-}
-
-/* ============================================================
-   AJAX: UPDATE RING SIZE ON CART PAGE (no reload)
-   ============================================================ */
-add_action('wp_ajax_ls_update_ringsize',        'ls_update_ringsize_handler');
-add_action('wp_ajax_nopriv_ls_update_ringsize', 'ls_update_ringsize_handler');
-
-function ls_update_ringsize_handler() {
-
-    if ( ! check_ajax_referer( 'ls_ringsize_nonce', 'security', false ) ) {
-        wp_send_json_error( ['message' => 'Security check failed.'] );
-    }
-
-    $cart_item_key = sanitize_text_field( $_POST['cart_item_key'] ?? '' );
-    $ring_size     = sanitize_text_field( $_POST['ring_size'] ?? '' );
-
-    if ( ! $cart_item_key || $ring_size === '' ) {
-        wp_send_json_error( ['message' => 'Invalid request.'] );
-    }
-
-    // Only allow known sizes
-    $valid_sizes = ls_get_ringsize_options();
-    if ( ! isset( $valid_sizes[ $ring_size ] ) ) {
-        wp_send_json_error( ['message' => 'Invalid ring size.'] );
-    }
-
-    $cart = WC()->cart->get_cart();
-    if ( ! isset( $cart[ $cart_item_key ] ) ) {
-        wp_send_json_error( ['message' => 'Cart item not found.'] );
-    }
-
-    // Update the live cart contents + persist to session
-    WC()->cart->cart_contents[ $cart_item_key ]['custom_data']['ringsize'] = $ring_size;
-    WC()->cart->set_session();
-
-    wp_send_json_success( [
-        'message'   => 'Ring size updated.',
-        'ring_size' => $ring_size,
-    ] );
-}
-
-/* ============================================================
-   AJAX: UPDATE SETTING SIZE ON CART PAGE (no reload)
-   (mirrors ls_update_ringsize_handler above, but writes to the
-   ring-builder setting's own size — cart_item['ls_ring_builder']['sp_size'] —
-   instead of the free-form ring size stored in custom_data)
-   ============================================================ */
-add_action('wp_ajax_ls_update_settingsize',        'ls_update_settingsize_handler');
-add_action('wp_ajax_nopriv_ls_update_settingsize', 'ls_update_settingsize_handler');
-
-function ls_update_settingsize_handler() {
-
-    if ( ! check_ajax_referer( 'ls_settingsize_nonce', 'security', false ) ) {
-        wp_send_json_error( ['message' => 'Security check failed.'] );
-    }
-
-    $cart_item_key = sanitize_text_field( $_POST['cart_item_key'] ?? '' );
-    $setting_size  = sanitize_text_field( $_POST['setting_size'] ?? '' );
-
-    if ( ! $cart_item_key || $setting_size === '' ) {
-        wp_send_json_error( ['message' => 'Invalid request.'] );
-    }
-
-    // Only allow known sizes
-    $valid_sizes = ls_get_ringsize_options();
-    if ( ! isset( $valid_sizes[ $setting_size ] ) ) {
-        wp_send_json_error( ['message' => 'Invalid setting size.'] );
-    }
-
-    $cart = WC()->cart->get_cart();
-    if ( ! isset( $cart[ $cart_item_key ] ) ) {
-        wp_send_json_error( ['message' => 'Cart item not found.'] );
-    }
-
-    // Only ring-builder setting products carry a setting size.
-    $ls_rb_type = $cart[ $cart_item_key ]['ls_ring_builder']['ls_rb_type'] ?? '';
-    if ( 'setting_prdct' !== $ls_rb_type ) {
-        wp_send_json_error( ['message' => 'This item has no setting size.'] );
-    }
-
-    // Update the live cart contents + persist to session
-    WC()->cart->cart_contents[ $cart_item_key ]['ls_ring_builder']['sp_size'] = $setting_size;
-    WC()->cart->set_session();
-
-    // Keep the ring-builder's own pairing session in sync too, same as the
-    // manual ring-size-change path around line ~826 does for cart edits.
-    if ( isset( $_SESSION['ls_ring_builder_cartadded'][ $cart_item_key ]['setting']['sp_size'] ) ) {
-        $_SESSION['ls_ring_builder_cartadded'][ $cart_item_key ]['setting']['sp_size'] = $setting_size;
-    }
-
-    wp_send_json_success( [
-        'message'      => 'Setting size updated.',
-        'setting_size' => $setting_size,
-    ] );
-}
-
 add_filter( 'woocommerce_get_item_data', 'ls_fn_display_ringsize', 10, 2 );
 function ls_fn_display_ringsize( $item_data, $cart_item ) {
 
     $product = $cart_item['data'];
-    $ls_rb_type = $cart_item['ls_ring_builder']['ls_rb_type'];
 
-    if ( isset($cart_item['custom_data']['ringsize']) && ! empty($cart_item['custom_data']['ringsize'])  ) {
-        $item_data[] = array(
-            'key'     => __( 'Ring Size', 'test' ),
-            'value'   => wc_clean( $cart_item['custom_data']['ringsize'] ),
-            'display' => '',
-        );
-    }
-    if($ls_rb_type=='setting_prdct'){
-        $cart_data_setting_size = $cart_item['ls_ring_builder']['sp_size'];
-         $item_data[] = array(
-            'key'     => 'Setting Size',
-            'value'   => $cart_data_setting_size,
-            'display' => '',
-        );
-    }
      if ( isset(  $cart_item['diamond_data']) ) {
         $record= $cart_item['diamond_data'];
         //print_r($record);
@@ -1398,33 +1250,7 @@ function custom_cart_item_name($product_name, $cart_item, $cart_item_key) {
     $sku        = $product->get_sku();
     $title      = $product->get_name();
 
-    // Custom meta
-    $c_type = get_post_meta($product_id, 'c_type', true);
-
-    // Custom cart data (safe access)
-    $ls_rb_type = isset($cart_item['ls_ring_builder']['ls_rb_type']) 
-        ? $cart_item['ls_ring_builder']['ls_rb_type'] 
-        : '';
-
-    // Condition
-    if (
-        $c_type == 1 || 
-        $c_type == 3 || 
-        $ls_rb_type === 'diamond_prdct' || 
-        $ls_rb_type === 'setting_prdct'
-    ) {
-
-        // Append SKU dynamically if exists
-        if (!empty($sku)) {
-            $custom_title = $product_name . ' - '. esc_html($sku);
-        } else {
-            $custom_title = $product_name;
-        }
-
-    } else {
-        // fallback to normal product name (keep link intact)
-        $custom_title = $product_name;
-    }
+    $custom_title = $product_name;
     $shipping = isset($cart_item['diamond_data']->shipping)
                         ? intval($cart_item['diamond_data']->shipping)
                         : null;
@@ -1504,54 +1330,6 @@ function ls_save_all_custom_data_to_order_item( $item, $cart_item_key, $values, 
     exit;*/
     global $wpdb;
      $product_id = $item->get_product_id();
-    foreach( $item as $cart_item_key=>$item_values ) {
-        if ( isset( $item_values['ls_ring_builder'] ) ) {
-
-            $ls_rb_type = isset($item_values['ls_ring_builder']['ls_rb_type']) ? $item_values['ls_ring_builder']['ls_rb_type'] : '';
-
-            if(isset($ls_rb_type) && $ls_rb_type!=''){
-                if($ls_rb_type=='setting_prdct'){
-                    $d_product_id = $item_values['ls_ring_builder']['d_pid'];
-                    $setting_size = $item_values['ls_ring_builder']['sp_size'];
-                    $item->add_meta_data( __( 'diamond', 'savoy' ), $d_product_id, true );
-                    $item->add_meta_data( __( 'Setting Size', 'savoy' ), $setting_size, true );
-                }
-                else if($ls_rb_type=='diamond_prdct'){
-                    $p_main_id = $item_values['ls_ring_builder']['p_sid'];
-                    $p_variation_id = $item_values['ls_ring_builder']['p_vid'];
-                    $item->add_meta_data( __( 'setting', 'savoy' ), $p_main_id, true );
-                    $item->add_meta_data( __( 'setting_variation', 'savoy' ), $p_variation_id, true );  
-                }
-            }
-        }
-    }
-
-    if (isset($values['c_type'])) {
-        $item->add_meta_data('c_type', $values['c_type'], true);
-
-    }
-
-    // Ring Size
-    if ( isset( $values['custom_data']['ringsize'] ) && ! empty( $values['custom_data']['ringsize'] ) ) {
-        $item->add_meta_data(
-            __( 'Ring Size', 'woocommerce' ),
-            sanitize_text_field( $values['custom_data']['ringsize'] ),
-            true
-        );
-    }
-
-    // Setting Size
-    if ( isset( $values['ls_ring_builder']['ls_rb_type'] ) && $values['ls_ring_builder']['ls_rb_type'] === 'setting_prdct' ) {
-        if ( ! empty( $values['ls_ring_builder']['sp_size'] ) ) {
-            $item->add_meta_data(
-                'Setting Size',
-                sanitize_text_field( $values['ls_ring_builder']['sp_size'] ),
-                true
-            );
-        }
-        $item->add_meta_data('_is_ring_building','yes',true);
-    }
-
      if ( isset( $values['diamond_data'] ) ) {
 
         $item->add_meta_data('_diamond_data', $values['diamond_data'], true);
@@ -1559,28 +1337,6 @@ function ls_save_all_custom_data_to_order_item( $item, $cart_item_key, $values, 
         
 
         $record = $values['diamond_data'];
-        if($values['c_type']==1){
-            $wpdb->update(
-                'ls_inventory',
-                array(
-                    'status' => 1
-                ),
-                array(
-                    'id' => $record->id
-                )
-            );
-        }
-        if($values['c_type']==3){
-            $wpdb->update(
-                'ls_inventory_c',
-                array(
-                    'status' => 1
-                ),
-                array(
-                    'id' => $record->id
-                )
-            );
-        }
        // exit;
         //print_r($record);
         $cert_info = ls_parse_certificate($record->certificate_type ?? '', $record->certificate ?? '');
@@ -1635,25 +1391,6 @@ function ls_save_all_custom_data_to_order_item( $item, $cart_item_key, $values, 
 }
 
 function ls_change_product_price_display( $price, $product  ) {
-    //if not is setting product of ring builder
-    /*$c_type = get_post_meta($product->id, 'c_type', true);
-
-    $custom_oprod = array(95925,376454,787730,1016364,1948945,1948890,1955723,1955724,1955725,1955726,1974119,1974120,1974121,1974122,1979710,1986291,1986292,1986293,1986294,1986296,1986297,1986298,1986299,1986300,1986301,1986302,1986303,1986304,2063156,2085888,2085890,2085891,2085892,2085893,2085894,2085896,2085897,2085899,2085895,2085900,2085901,2085904,2085902,2085903,2085907,2085908,2085910,2085911,2085912,2085915,2085916,2085917,2085918,2085919,2094686,2109416,2109417,2229930);
-
-    if(!in_array($product->id,$custom_oprod) && $c_type!=1 && $c_type!=3){ 
-        $c_type = get_post_meta($product->id, 'c_type', true);
-
-        if($c_type!=1 && $c_type!=2 && $c_type!=4 ){ 
-            //only for regular product
-            if($product->id == 26848 || $product->id == 29471 || $product->id == 29561)
-                $price .= ' / Per Carat';
-            else 
-                $price .= ' / Per Diamond';    
-        }
-        else if($c_type!=2 && $c_type!=4){ //if not setting product
-            $price .= ' / Per Carat';
-        }
-    }*/
     if ( has_term( 'melee-diamond', 'product_tag', $product->id ) ) {
 
         $price .= ' / Per Diamond';
@@ -1721,54 +1458,7 @@ function wishlist_move_to_cart() {
     }
 }
 
-add_filter( 'woocommerce_coupon_is_valid', 'custom_coupon_validation', 10, 2 );
 
-function custom_coupon_validation( $valid, $coupon ) {
-
-    // Only for this coupon
-    if ( strtolower( $coupon->get_code() ) === 'hallo30' ) {
-
-        $eligible = false;
-
-        // Check cart items
-        foreach ( WC()->cart->get_cart() as $cart_item ) {
-
-            $product_id = $cart_item['product_id'];
-
-            $c_type = get_post_meta( $product_id, 'c_type', true );
-
-            // Your condition
-            if ( $c_type == 1 || $c_type == 3 ) {
-
-                $eligible = true;
-                break;
-            }
-        }
-
-        // If no eligible products found
-        if ( ! $eligible ) {
-
-            throw new Exception(
-                'Sorry! Your cart has no eligible items. "hallo30" applies to diamonds only.'
-            );
-        }
-    }
-
-    return $valid;
-}
-
-add_filter('woocommerce_coupon_get_discount_amount', 'apply_coupon_amount_only_to_eligible_products', 10, 5);
-
-function apply_coupon_amount_only_to_eligible_products($discount, $discounting_amount, $cart_item, $single, $coupon) {
-    global $discount_coupon_code;
-    if ($coupon->get_code() === $discount_coupon_code) {
-        $product = $cart_item['data'];
-        $c_type = get_post_meta($product->get_id(), 'c_type', true);
-
-        if ($c_type != 1 && $c_type != 3) { return 0; }
-    }
-    return $discount;
-}
 
 add_action('wp_ajax_custom_apply_coupon', 'custom_apply_coupon_handler');
 add_action('wp_ajax_nopriv_custom_apply_coupon', 'custom_apply_coupon_handler');
@@ -1859,82 +1549,6 @@ function custom_apply_coupon_handler() {
 /*add_filter('woocommerce_coupon_message', '__return_empty_string');
 add_filter('woocommerce_coupon_error', '__return_empty_string');*/
 
-function getDiamondTitle($row, $table)
-{
-    $cutLabels = ["Good", "Very Good", "Excellent", "Ideal"];
-
-    $clarityLabels = ["I2","I1","SI3","SI2","SI1","VS2","VS1","VVS2","VVS1","IF","FL"];
-
-    $intensityLabels = [
-        "Fancy Light",
-        "Fancy",
-        "Fancy Intense",
-        "Fancy Vivid",
-        "Fancy Deep",
-        "Fancy Dark"
-    ];
-
-    // Color mappings
-    $colorLabelsInventory = ["M","L","K","J","I","H","G","F","E","D"];
-
-    $colorLabelsFancy = [
-        1 => "yellow",
-        2 => "pink",
-        3 => "purple",
-        4 => "red",
-        5 => "blue",
-        6 => "green",
-        7 => "orange",
-        8 => "brown",
-        9 => "black",
-        10 => "gray"
-    ];
-
-    // Base values
-    $shape = ucfirst(strtolower($row->shape ?? ''));
-    $carat = $row->carat ?? '';
-    $sku   = $row->sku ?? '';
-
-    $clarity = isset($row->clarity) ? ($clarityLabels[$row->clarity - 1] ?? '') : '';
-    $cut     = isset($row->cut) ? ($cutLabels[$row->cut - 1] ?? '') : '';
-
-    // Color logic based on table
-    if ($table == 'ls_inventory') {
-        $color = isset($row->color) ? ($colorLabelsInventory[$row->color - 1] ?? '') : '';
-    } else {
-        $color = isset($row->color) ? ($colorLabelsFancy[$row->color] ?? '') : '';
-    }
-    // Intensity (only for fancy colors)
-    $intensity = '';
-    if ($table != 'ls_inventory' && isset($row->intensity)) {
-        $intensity = $intensityLabels[$row->intensity - 1] ?? '';
-    }
-
-    // Express shipping
-  /*  $shipping_label = (!empty($row->shipping) && $row->shipping == 1)
-        ? 'Express Shipping'
-        : '';
-     $shipping_label = (!empty($row->shipping) && $row->shipping == 1)
-        ? '<img src="'.get_template_directory_uri().'/aj_custom/inventory/delivery.svg"/>'
-        : '';*/
-    $express_shipping = '';
-         
-
-    // Build title
-    if ($table == 'ls_inventory') {
-        $title = "$shape Cut {$carat} Carat $color Color $clarity Clarity Lab Grown Diamond";
-    } else {
-        $title = "$shape Cut {$carat} Carat $intensity $color $clarity Clarity Lab Grown Diamond";
-    }
-
-    // Append SKU & shipping
-    $title .= " - $sku";
-    if ($express_shipping) {
-        $title .= " $express_shipping";
-    }
-
-    return $title;
-}
 
 
 /* ============================================================
@@ -2313,37 +1927,6 @@ function get_cart_item_data_array( $cart_item,$is_cart=false ) {
     return $item_data;
 }
 
-add_filter('woocommerce_cart_item_permalink', 'custom_cart_item_permalink', 10, 3);
-
-function custom_cart_item_permalink($permalink, $cart_item, $cart_item_key) {
-    $c_type = $cart_item['c_type'] ?? '';
-    $ls_rb_type = $cart_item['ls_ring_builder']['ls_rb_type'] ?? '';
-
-    // Get product object
-    $product = $cart_item['data'];
-
-    // Get SKU
-    $sku = $product ? $product->get_sku() : '';
-
-    if (
-        $c_type == 1 || 
-        $c_type == 3 || 
-        $ls_rb_type === 'diamond_prdct' || 
-        $ls_rb_type === 'setting_prdct'
-    ) {
-        if ($c_type == 1) {
-            return get_site_url() . '/lab-diamonds/?sku=' . urlencode($sku);
-        } elseif($c_type == 3) {
-            return get_site_url() . '/lab-created-colored-diamonds/?sku=' . urlencode($sku);
-        }else{
-            return $permalink;
-        }
-    }
-
-    return $permalink;
-}
-
-
 
 add_action( 'wp_ajax_oc_remove_coupon',        'custom_remove_coupon_handler' );
 add_action( 'wp_ajax_nopriv_oc_remove_coupon', 'custom_remove_coupon_handler' );
@@ -2650,16 +2233,6 @@ add_action('wp_enqueue_scripts', function() {
     wp_deregister_style('wc-blocks-style');
 
     wp_dequeue_style('wp-block-library');
-    // Allow only on single product page
-    if ( ! is_product() ) {
-        wp_dequeue_script( 'magictoolbox_magic360_script' );
-        wp_deregister_script( 'magictoolbox_magic360_script' );
-        wp_dequeue_style('magictoolbox_magic360_style');
-        wp_dequeue_style('magictoolbox_magic360_module_style');
-
-        wp_deregister_style('magictoolbox_magic360_style');
-        wp_deregister_style('magictoolbox_magic360_module_style');
-    }
     if ( ! is_checkout() && ! is_order_received_page() ) {
         //wp_dequeue_style( 'custom_splitit_checkout_page_css' );
         //wp_deregister_style( 'custom_splitit_checkout_page_css' );
@@ -2795,40 +2368,9 @@ add_filter( 'woocommerce_add_message', function( $message ) {
 });
 
 
-/*add_filter( 'post_thumbnail_url', function( $url, $post, $size ) {
-
-    $c_type = get_post_meta( $post->ID, 'c_type', true );
-
-    if ( $c_type==1 || $c_type==3) {
-        return $custom_thumb;
-    }
-
-    return $url;
-
-}, 10, 3 );*/
 
 
-/*add_filter( 'woocommerce_cart_item_thumbnail', 'custom_cart_item_thumbnail', 10, 3 );
-function custom_cart_item_thumbnail( $thumbnail, $cart_item, $cart_item_key ) {
-    $product_id = $cart_item['product_id'];
 
-    // Get custom diamond data from post meta
-    $_aj_diamond = get_post_meta( $product_id, '_aj_diamond', true );
-
-    if ( is_object( $_aj_diamond ) && ! empty( $_aj_diamond->shape ) ) {
-        $shape_slug = sanitize_title( $_aj_diamond->shape );
-        $image_path = get_template_directory() . '/assets/image/ls-inventory/shape-diamond/png/' . $shape_slug . '.png';
-        $image_url  = get_template_directory_uri() . '/assets/image/ls-inventory/shape-diamond/png/' . $shape_slug . '.png';
-
-        // Only override if the image actually exists, otherwise fall back to default thumbnail
-        if ( file_exists( $image_path ) ) {
-            $thumbnail = '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( get_the_title( $product_id ) ) . '"  class="size-woocommerce_thumbnail" />';
-        }
-    }
-
-    return $thumbnail;
-}
-*/
 
 add_filter( 'woocommerce_add_to_cart_validation', 'validate_product_price', 10, 5 );
 

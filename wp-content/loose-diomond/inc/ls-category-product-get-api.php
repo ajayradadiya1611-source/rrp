@@ -351,20 +351,6 @@ function get_products_by_category_and_taxonomy($request) {
             }
         }
 
-        // ── Diamond 30% off (RETAIL) ─────────────────────────────────────────
-        // A product with _aj_diamond meta is an inventory diamond. Its WC price
-        // is stored as the full price (inventory price / 0.7, see
-        // ls-addtocart-api.php), so return the 30% off price with the full
-        // price as org_price (struck through) — same as diamond-detail-render.php.
-        $aj_diamond = get_post_meta($product_id, '_aj_diamond', true);
-        if (!empty($aj_diamond)) {
-            $full_price = (float) ($org_price ?: $product->get_regular_price() ?: $product->get_price());
-            if ($full_price > 0) {
-                $org_price = (int) round($full_price);
-                $price     = (int) round($full_price * (100 - 30) / 100);
-            }
-        }
-
         // Format prices here
         $price     = oc_format_price($price);
         $org_price = oc_format_price($org_price);
@@ -386,20 +372,10 @@ function get_products_by_category_and_taxonomy($request) {
 
         $product_badge = get_field('oc_product_badge', $product_id) ?? '';
 
-        // Get custom post meta
-        $c_type = get_post_meta($product_id, 'c_type', true);
         $sku = $product->get_sku();
         $is_sale = has_term('sale', 'product_tag', $product_id);
 
-        if ($is_sale) {
-            $productlink = get_permalink($product_id);
-        } elseif ($c_type == "1") {
-            $productlink = $oc_common['white_inventory_url'] . '?sku=' . $sku;
-        } elseif ($c_type == "3") {
-            $productlink = $oc_common['color_inventory_url'] . '?sku=' . $sku;
-        } else {
-            $productlink = get_permalink($product_id);
-        }
+        $productlink = get_permalink($product_id);
 
         $is_ready_to_ship = has_term('ready-to-ship', 'product_cat', $product_id);
         $ready_to_ship_categories = [
@@ -462,7 +438,6 @@ function get_products_by_category_and_taxonomy($request) {
             'id'             => $product_id,
             'title'          => $product->get_name(),
             'sku'            => $sku,
-            'c_type'         => $c_type,
             'link'           => $productlink,
             'price'          => $price,
             'org_price'      => $org_price == 0 ? null : $org_price,
@@ -471,7 +446,6 @@ function get_products_by_category_and_taxonomy($request) {
             'shipping'       => $is_ready_to_ship ? 1 : 0,
             'is_sale_diamond'=> $is_sale ? 1 : 0,
             'delivery' => $delivery,
-            'aj_diamond'     => $aj_diamond,
             'metal_swatches' => $metal_swatches,
         ];
     }

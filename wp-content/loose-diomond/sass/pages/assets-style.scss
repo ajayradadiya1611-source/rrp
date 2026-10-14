@@ -3041,14 +3041,7 @@ footer .address_sec li:first-child:hover, footer .address-link a:hover {
     border: 1px solid #e0e0e0;
     margin-bottom: 16px;
   }
-}
-.cart_item.ls-ring-builder-product {
-  border-bottom: none !important;
-  @media only screen and (max-width: 991px) {
-    margin-bottom: 0;
-  }
-}
-.cart_collaterals {
+}.cart_collaterals {
   padding: 25px;
   border: 1px solid #000;
   .pb_10 {
@@ -3746,218 +3739,9 @@ footer .address_sec li:first-child:hover, footer .address-link a:hover {
     font-size: 13px;
     color: var(--light-black);
   }
-}
-.ringbuilder_brdcrmb {
-  a.active {
-    background: #f7f9fb;
-    color: var(--black-primary-new);
-    &:after {
-      background: #f7f9fb;
-      color: var(--black-primary-new);
-    }
-  }
-  .breadcrumb__inner {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 2;
-    padding: 0px 10px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    position: relative;
-    height: 100%;
-    .gap_14 {
-      gap: 14px;
-      @media only screen and (max-width: 575px) {
-        gap: 6px;
-      }
-    }
-    i {
-      position: absolute;
-      right: 2px;
-      bottom: 4px;
-      color: #4b8c17;
-    }
-    @media only screen and (max-width: 767px) {
-      padding: 0 10px;
-    }
-    @media only screen and (max-width: 575px) {
-      padding: 0 10px;
-    }
-  }
-  .breadcrumb__title {
-    display: block;
-    text-align: left;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--black-primary-new);
-    @media only screen and (max-width: 1199px) {
-      font-size: 14px;
-    }
-    @media only screen and (max-width: 575px) {
-      font-size: 12px;
-    }
-    @media only screen and (max-width: 425px) {
-      font-size: 11px;
-    }
-  }
-  .breadcrumb__title.price-active {
-    font-size: 11px;
-    margin-bottom: 10px;
-  }
-  .breadcrumb__title_first {
-    color: #444444;
-    white-space: nowrap;
-    font-size: 12px;
-    font-weight: 400;
-    font-family: "Literata", serif;
-    color: #444;
-    white-space: nowrap;
-    font-size: 12px;
-    font-weight: 400;
-    font-family: Literata, serif;
-    @media only screen and (max-width: 1199px) {
-      white-space: pre-wrap;
-    }
-  }
-  .breadcrumb__number {
-    color: #444444;
-    font-size: 32px;
-    color: #444;
-    font-size: 32px;
-    font-weight: 300;
-    font-family: Literata, serif;
-    line-height: 1.1;
-    margin: 0 14px 0 6px;
-    @media (min-width: 992px) and (max-width: 1199px) {
-      font-size: 24px;
-    }
-    @media only screen and (max-width: 575px) {
-      margin: 0 6px;
-      font-size: 16px;
-    }
-    @media (max-width: 425px) {
-      font-size: 20px;
-    }
-    @media only screen and (max-width: 1199px) {
-      font-size: 24px;
-    }
-    @media only screen and (max-width: 425px) {
-      font-size: 20px;
-    }
-  }
-  a {
-    text-decoration: none;
-    flex: auto;
-    &:first-child {
-      flex: 1;
-      width: -moz-fit-content;
-      width: fit-content;
-    }
-    &::after {
-      @media only screen and (max-width: 991px) {
-        right: -18px;
-      }
-    }
-    &:after {
-      @media only screen and (max-width: 575px) {
-        right: -22px;
-      }
-      @media only screen and (max-width: 425px) {
-        right: 0px;
-      }
-    }
-    @media only screen and (max-width: 425px) {
-      padding-left: 0px;
-    }
-  }
-  .breadcrumb__title.breadcrumb__title_first {
-    color: #444;
-    white-space: nowrap;
-    font-size: 12px;
-    font-weight: 400;
-    font-family: Literata, serif;
-  }
-  > span {
-    flex: 1;
-    width: 100%;
-  }
-  .ring_box {
-    height: 48px;
-    min-width: 48px;
-    border-radius: 50px;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .br_checked {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      @media (max-width: 425px) {
-        width: 10px;
-        height: 10px;
-      }
-    }
-    @media (max-width: 425px) {
-      min-width: 25px;
-      height: 25px;
-    }
-  }
-}
-.setting_prdct, .dmnd_prdct {
-  text-align: start;
-  margin-right: 8px;
-  @media only screen and (max-width: 575px) {
-    margin-right: 2px;
-  }
-}
-.breadcrumb__title {
+}.breadcrumb__title {
   font-size: 11px;
-}
-.setting_prdct .prdct, .dmnd_prdct .pname {
-  font-size: 11px;
-  display: block;
-  line-height: 12px;
-  margin-bottom: 10px;
-}
-.setting_prdct {
-  .complete_prdct {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    flex-wrap: wrap;
-  }
-}
-.setting_prdct .prdct_price, .dmnd_prdct .prdct_price, .complete_prdct .prdct_price {
-  font-size: 12px;
-  font-weight: 700;
-  margin-right: 2px;
-}
-.complete_prdct {
-  display: flex;
-  align-items:center;
-  gap: 6px;
-  flex-wrap: wrap;
-  .d-flex {
-    align-items: center;
-    gap: 4px;
-  }
-}
-.setting_prdct .clear_rb, .dmnd_prdct .clear_rb, .complete_prdct .clear_rb {
-  font-size: 11px;
-  border: 0px;
-  padding-right: 4px;
-  background-color: transparent;
-  border-right: 1px solid #0b131a33;
-}
-.setting_prdct .change_link, .dmnd_prdct .change_link, .complete_prdct .change_link {
-  font-size: 11px;
-}
-.ls_rbfilter {
+}.ls_rbfilter {
   overflow-x: visible;
   position: relative;
   .filters {
@@ -4347,12 +4131,6 @@ footer .address_sec li:first-child:hover, footer .address-link a:hover {
   p {
     margin-bottom: 0px;
   }
-  .section1-readmore {
-    font-weight: 600;
-    font-size: 13px;
-    text-decoration: none;
-    color: #000;
-  }
 }
 .product_information_box p, .product_information_box ul li {
   font-size: 12px;
@@ -4424,14 +4202,7 @@ footer .address_sec li:first-child:hover, footer .address-link a:hover {
       }
     }
   }
-}
-.ringbuilder_brdcrmb .active, .ringbuilder_brdcrmb .active .breadcrumb__inner:after, .ringbuilder_brdcrmb .active .breadcrumb__inner:before {
-  background: #f7f9fb;
-  color: var(--black-primary-new);
-  background: #f7f9fb;
-  color: black;
-}
-.breadcrumb__inner {
+}.breadcrumb__inner {
   &:before {
     bottom: 0;
     rotate: 15deg;
@@ -4459,28 +4230,7 @@ footer .address_sec li:first-child:hover, footer .address-link a:hover {
   @media only screen and (max-width: 767px) {
     max-width: 100%;
   }
-}
-.setting_prdct .complete_prdct, .complete_prdct {
-  @media only screen and (max-width: 575px) {
-    gap: 0px;
-  }
-}
-.ringbuilder_brdcrmb .ring_box img, .ringbuilder_brdcrmb .ring_box svg {
-  @media only screen and (max-width: 575px) {
-  }
-}
-.setting_prdct .clear_rb, .dmnd_prdct .clear_rb, .complete_prdct .clear_rb, .setting_prdct .change_link, .dmnd_prdct .change_link, .complete_prdct .change_link {
-  @media (max-width: 425px) {
-    font-size: 10px;
-  }
-}
-.breadcrumb__inner .ring_box svg, .breadcrumb__inner .ring_box img, .ringbuilder_brdcrmb .ring_box {
-  @media (max-width: 425px) {
-    width: 25px;
-    height: 25px;
-  }
-}
-.custom_ring_bg_img {
+}.custom_ring_bg_img {
   background-image: url("../../../assets/image/custom_engagement_ring.png");
   width: 100%;
   padding: 145px 0px;
@@ -7744,18 +7494,7 @@ textarea.form-control {
       }
     }
   }
-}
-.ringbuilder_brdcrmb a:first-child, .setting_prdct .prdct, .dmnd_prdct .pname {
-  @media only screen and (max-width: 991px) {
-    display: none;
-  }
-}
-.cart_item.ls-ring-builder-diamond-product {
-  @media only screen and (max-width: 991px) {
-    border-top:none;
-  }
-}
-.cart_item .product_name .setting_metal, .cart_item .product_name .setting_size {
+}.cart_item .product_name .setting_metal, .cart_item .product_name .setting_size {
   @media only screen and (max-width: 575px) {
     width: 100%;
   }

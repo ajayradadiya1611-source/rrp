@@ -13,27 +13,10 @@ function ls_process_order_item_meta($formatted_meta, $item) {
     foreach ($formatted_meta as $key => $meta) {
         // Remove unwanted meta keys
         if (isset($meta->key) && in_array($meta->key, [
-            'diamond',
-            'setting',
-            'setting_variation',
-            'c_type',
-            '_design_difficulty',
             '_certificate_url',
-            '_is_ring_building',
-            '_sku_snapshot',
-            '_lgd_rb_type',
-            '_lgd_rb_pair_id'
+            '_sku_snapshot'
         ])) {
             unset($formatted_meta[$key]);
-            continue;
-        }
-
-        if ($meta->key === '_report_style') {
-            $meta->display_key = 'Report Style';
-            continue;
-        }
-        if ($meta->key === '_report_sub_style') {
-            $meta->display_key = 'Report Sub Style';
             continue;
         }
     }

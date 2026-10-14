@@ -9,7 +9,6 @@
 // ─────────────────────────────────────────────────────────────
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import RingBuilderMatchNotice from '../RingBuilderMatchNotice';
 
 export default function ProductGridLoop({
   products,
@@ -37,7 +36,6 @@ export default function ProductGridLoop({
 
   return (
     <>
-    <RingBuilderMatchNotice page="settings" />
     <div className="row collection-row">
       {products.map((product, index) => (
         <React.Fragment key={product.id}>
@@ -88,18 +86,6 @@ export default function ProductGridLoop({
                       </>
                   )}
               </div>
-                <div className="oc-product_image_delivery">
-                {product.aj_diamond.shipping == 1 && (
-                   <img src={`${templateUrl}/aj_custom/inventory/delivery.svg`} data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Ship Within 3 Days"/>
-                )} 
-                {product.aj_diamond.shipping == 2 && (
-                   <img src={`${templateUrl}/aj_custom/inventory/space-rocket.svg`}  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Overnight Delivery Available — Order Before 11:00 AM EDT"  />
-                )} 
-                {product.aj_diamond.sale == 1 && (
-                   <img src={`${templateUrl}/aj_custom/category/store-icon.svg`} data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Available In Store" />
-                )} 
-                
-                </div>
               </a>
               <div className="product_details mt-0">
                 {product.metal_swatches?.length > 0 && (
@@ -155,12 +141,6 @@ export default function ProductGridLoop({
                 {categorySlug === 'engagement-rings' && (
                   <div className="ls_stng_txt">(Setting Price)</div>
                 )}
-                {window.LS_RING_BUILDER?.setting?.is_selected &&
-                  window.LS_RING_BUILDER.setting.product_id === product.id && (
-                    <div className="ls_ring_builder_selected mt-1 text-success fw-semibold">
-                      Currently Selected
-                    </div>
-                  )}
               </div>
             </div>
           </div>

@@ -19,102 +19,13 @@ if (! defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
-// Products tagged "sale" render with the same page structure as the
-// dedicated diamond detail page (/diamond/{sku}/) — same markup, same
-// shared function (ls_render_diamond_detail_page(), in
-// inc/diamond-detail-render.php) — instead of the normal WooCommerce
-// single-product template below. header/footer are loaded from here
-// (single-product.php), not from inside the shared function — see the
-// $render_header_footer=false argument below.
-//
-// NOTE: global $product isn't reliably a WC_Product object yet this
-// early — WooCommerce normally sets it up inside the Loop below
-// (wc_setup_product_data()). Fetch the product from the queried post
-// id directly instead of trusting the global at this point.
-$ls_sale_pid     = get_queried_object_id();
-$ls_sale_product = $ls_sale_pid ? wc_get_product( $ls_sale_pid ) : null;
-$ls_sale_diamond = null;
-
-if ( $ls_sale_product && has_term( 'sale', 'product_tag', $ls_sale_pid ) ) {
-	$ls_sale_diamond = function_exists( '_diamond_lookup_by_sku' )
-		? _diamond_lookup_by_sku( $ls_sale_product->get_sku() )
-		: null;
-}
-
-if ( $ls_sale_diamond ) {
-	$ls_sale_is_colored = ! empty( $ls_sale_diamond->is_colored );
-
-	// Sets nocache headers + $GLOBALS['diamond_detail'] (read by the
-	// wp_head SEO hook) — must run before get_header(), since wp_head()
-	// fires during get_header().
-	ls_prepare_diamond_detail_head( $ls_sale_diamond, $ls_sale_is_colored );
-
-	get_header('shop');
-	ls_render_diamond_detail_page( $ls_sale_diamond, $ls_sale_is_colored, false, true );
-	get_footer('shop');
-	return; // fully rendered above — skip the rest of this template
-}
-// No "sale" tag, or no matching inventory row for this SKU (e.g. a
-// non-diamond product tagged "sale" by mistake) — normal template below.
-
 get_header('shop');
 global $product,$oc_common;
 $pid = $product->get_id();
 
-// Does any variation have a YouTube link?
-$has_video = false;
-$parent_video_link = trim( (string) get_post_meta( $pid, 'oc_video_link', true ) );
-
-if ( $product->is_type('variable') ) {
-    foreach ( $product->get_children() as $child_id ) {
-        if ( trim( (string) get_post_meta( $child_id, 'oc_video_link', true ) ) !== '' ) {
-            $has_video = true;
-            break;
-        }
-    }
-    // fallback: if no variation has a link, check parent
-    if ( ! $has_video && $parent_video_link !== '' ) {
-        $has_video = true;
-    }
-} else {
-    // simple product
-    if ( $parent_video_link !== '' ) {
-        $has_video = true;
-    }
-}
-
 $is_melee_diamond = has_term( 'melee-diamond', 'product_tag', $pid );
-$c_ctype = get_post_meta($product->id, 'c_type', true);
-$image_white_black = get_field('image_white_black',$pid);
-$image_diamond_carat_size_guide = get_field('image_diamond_carat_size_guide',$pid);
 $ct_badge = get_field('ct_badge',$pid);
 
-$ls_ringsize_arr = ls_get_ringsize_options();
-
-$magic360_meta = json_decode((get_post_meta( $pid, '_magic360_data', true )), true);
-
-$has_magic360images = array();
-
-if(!empty($magic360_meta)){
-	$has_magic360images = $magic360_meta['images_ids'];	
-}
-
-/*// Find midpoint
-$half = ceil(count($has_magic360images) / 2);
-
-// Reorder array
-$has_magic360images = array_merge(
-    array_slice($has_magic360images, $half),
-    array_slice($has_magic360images, 0, $half)
-);
-*/
-$spin_imageurls = array();
-
-foreach($has_magic360images as $spinimg){
-	$spin_imageurls[] = wp_get_attachment_url($spinimg);
-}
-//$spin_imageurls = array_reverse($spin_imageurls);
-$spin_images = implode(" ", $spin_imageurls);
 
 
 ?>
@@ -126,36 +37,6 @@ $spin_images = implode(" ", $spin_imageurls);
 		<div class="container-fluid">
 			<nav aria-label="breadcrumb">
 				<?php 
-					if ( has_term( 'ready-to-ship', 'product_cat', $pid ) && wp_is_mobile() ) {
-
-					    $categories = get_the_terms( $pid, 'product_cat' );
-
-					    if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
-
-					        foreach ( $categories as $category ) {
-
-					            // Get parent category
-					            if ( $category->parent ) {
-					                $parent = get_term( $category->parent, 'product_cat' );
-
-					                if ( ! is_wp_error( $parent ) && $parent->slug === 'ready-to-ship' ) {
-					                    ?>
-					                    <ol class="breadcrumb mb-0">
-					                        <li class="breadcrumb-item">
-					                            <a href="<?php echo esc_url( get_term_link( $category ) ); ?>">
-					                                < <?php echo esc_html( $category->name ); ?>
-					                            </a>
-					                        </li>
-					                    </ol>
-					                    <?php
-					                    break;
-					                }
-					            }
-					        }
-					    }
-
-					} else { 
-
 					    woocommerce_breadcrumb( array( 
 					        'delimiter'   => '', 
 					        'wrap_before' => '<ol class="breadcrumb mb-0">', 
@@ -164,8 +45,6 @@ $spin_images = implode(" ", $spin_imageurls);
 					        'after'       => '</li>', 
 					        'home'        => 'Home', 
 					    ) ); 
-
-					}
 					?>
 			</nav>
 		</div>
@@ -192,13 +71,6 @@ $spin_images = implode(" ", $spin_imageurls);
 						if ($gimg) $sp_images_array[] = $gimg;
 					}
 
-					// Magic360 spin icon
-					$ls_magic360_settings = get_option('WooCommerceMagic360CoreSettings');
-					$spin_icon = !empty($ls_magic360_settings['product']['selector-path']['value']) ? $ls_magic360_settings['product']['selector-path']['value'] : '';
-
-					// Does this product have a 360 spin?
-					$has_spin = !empty($has_magic360images) && !empty($spin_imageurls) && $spin_icon;
-
 					?>
 
 					<?php if (!empty($sp_images_array)): ?>
@@ -212,39 +84,12 @@ $spin_images = implode(" ", $spin_imageurls);
 									<div class="img active">
 										<img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($product->get_name()); ?>">
 									</div>
-									<?php // Inject spin thumb right after first image
-									if ($has_spin): ?>
-										<div class="img ls_spinthumb">
-											<img src="<?php echo esc_url($spin_icon); ?>" alt="360 spin">
-										</div>
-									<?php endif; ?>
-									<?php if ( $has_video ) : ?>
-									<div class="img oc_video_link_thumb" >
-										<img class="ls_yt_thumb_img" src="<?php echo get_template_directory_uri(); ?>/aj_custom/diamond/video-play.svg" alt="Video thumbnail">
-									</div>
-								<?php endif; ?>
 								<?php else: ?>
 									<div class="img">
 										<img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($product->get_name()); ?>">
 									</div>
 								<?php endif; ?>
 							<?php endforeach; ?>
-							<?php
-							if ( !empty($image_white_black) && !empty($image_white_black['url']) ) {
-								?>
-								<div class="img image_white_black_thumb">
-									<img src="<?php echo esc_url($spin_icon); ?>" alt="360 spin">
-								</div>
-								<?php
-							}
-							if ( !empty($image_diamond_carat_size_guide) && !empty($image_diamond_carat_size_guide['url']) ) {
-								?>
-								<div class="img image_diamond_carat_size_guide_thumb">
-									<img src="<?php echo esc_url($spin_icon); ?>" alt="360 spin">
-								</div>
-								<?php
-							}
-							?>
 							
 						</div>
 
@@ -256,113 +101,13 @@ $spin_images = implode(" ", $spin_imageurls);
 									<div class="img"<?php echo ! empty( $ct_badge ) ? ' data-ct-badge="' . esc_attr( $ct_badge ) . '"' : ''; ?>>
 										<img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($product->get_name()); ?>">
 									</div>
-									<?php // Inject spin slide right after first image slide
-									if ($has_spin): ?>
-										<div class="img ls_spinimg" >
-											<div class="images">
-												<div class="spinContainer">
-													<a class="Magic360" href="#" data-magic360-options="selector-path:/wp-content/plugins/mod_woocommerce_magic360/magic360-woocommerce/core/360icon.png;columns:<?php echo count($spin_imageurls);?>;autospin:once;hint:false;rows:1;images:<?php echo esc_attr($spin_images); ?>">
-														<img class="no-sirv-lazy-load" itemprop="image" src="<?php echo esc_url($spin_imageurls[0]); ?>" />
-													</a>
-												</div>
-											</div>
-										</div>
-									<?php endif; ?>
-									<?php if ( $has_video ) : ?>
-									<div class="img oc_video_link_slide" style="display:none;">
-									    <div class="oc_video_link_wrap" style="position:relative;width:100%;height:100%;">
-									        <span class="ls_video_loader spinner-border spinner-border-sm" style="position:absolute;top:50%;left:50%;margin:-.5rem 0 0 -.5rem;display:none;"></span>
-									        <video class="ls_product_video" src="" controls playsinline preload="none"
-									               style="width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .3s ease;"></video>
-									    </div>
-									</div>
-									<?php endif; ?>
 								<?php else: ?>
 									<div class="img">
 										<img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($product->get_name()); ?>">
 									</div>
 								<?php endif; ?>
-							<?php endforeach;
-
-
-
-							if ( !empty($image_white_black) && !empty($image_white_black['url']) ) {
-								?>
-								<div class="img image_white_black_slide">
-						
-									<div class="rtos-stage">
-									  <div class="rtos-canvas-wrap">
-									    <img class="rtos-img-dark" src="<?php echo get_template_directory_uri().'/aj_custom/single-product/'; ?>body_ring_dark.jpg">
-									    <img class="rtos-img-white" src="<?php echo get_template_directory_uri().'/aj_custom/single-product/'; ?>body_ring_light.jpg">
-									    <img class="rtos-img-ring" src="<?php echo $image_white_black['url'];?>">
-									  </div>
-
-									  <div class="rtos-slider-wrap">
-									    <span class="rtos-tone-label">Light</span>
-
-									    <div class="rtos-v-track" id="rtos-track">
-									      <div class="rtos-v-track-bg"></div>
-									      <div class="rtos-v-thumb" id="rtos-thumb"></div>
-									    </div>
-
-									    <span class="rtos-tone-label">Dark</span>
-									  </div>
-									</div>
-
-								</div>
-								<?php
-							}
-							if ( !empty($image_diamond_carat_size_guide) && !empty($image_diamond_carat_size_guide['url']) ) {
-								?>
-								<div class="img image_diamond_carat_size_guide_slide">
-									
-
-									<div class="dcsg-container"
-                                 crt="<?php echo $diamond->carat; ?>"
-                                 data-bg="<?php echo esc_url( get_template_directory_uri().'/aj_custom/single-product/hand-with-setting.png' ); ?>"
-                                 data-ring="<?php echo esc_url( $image_diamond_carat_size_guide['url'] ); ?>"></div>
-
-									
-
-								</div>
-								<?php
-							}
-							?>
+							<?php endforeach; ?>
 							
-<div class="top-single-icon-left">
-	<?php
-
-	$ready_to_ship_categories = [
-            'ready-to-ship-wedding-band',
-            'ready-to-ship-diamond-earrings',
-            'ready-to-ship-pendants',
-            'ready-to-ship-bracelets',
-            'necklaces',
-        ];
-
-        $ajdelivery = has_term( $ready_to_ship_categories, 'product_cat', $product_id ) ? 1 : 0;
-        if($ajdelivery==true){
-
-       
-?>
-	<div class="ready-to-ship-icon-badge" data-bs-toggle="tooltip"
-	        data-bs-placement="top"
-	        data-bs-original-title="Shipped in 2 business days">
-	    <img
-	        class="ready-to-ship-icon"
-	        src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/category/ready-to-ship-blue.svg' ); ?>"
-	        
-	        alt="Ready to Ship"
-	    />
-	    <span class=""
-	        >
-	        Ready to Ship
-	    </span>
-	</div>
-	<?php
-}
-	?>
-</div>
 							<div class="top-single-icon">
 								<button class="wish-btn btn p-0" data-product-id="<?php echo esc_attr($product->get_id()); ?>" aria-pressed="false">
 									<i class="fa-heart fa-regular fa-lg"></i>
@@ -455,10 +200,6 @@ if ( ! empty( $short_description ) ) {
 							$available_variations = $product->get_available_variations();
 							foreach ($available_variations as $key => $variation) {
 							    $vid = $variation['variation_id'];
-							    $available_variations[$key]['section1label'] = get_post_meta($vid, 'section1label', true);
-							    $available_variations[$key]['section1data']  = get_post_meta($vid, 'section1data', true);
-							    $available_variations[$key]['oc_video_link']        = get_post_meta($vid, 'oc_video_link', true);
-								$available_variations[$key]['parent_oc_video_link'] = $parent_video_link; // ADD THIS
 							    
 							    // woo_variation_gallery_images stores a serialized array: a:4:{i:0;i:147388;i:1;i:147386;...}
 							    $wvg_raw  = get_post_meta($vid, 'woo_variation_gallery_images', true);
@@ -535,50 +276,10 @@ if ( ! empty( $short_description ) ) {
 									<?php endforeach; ?>
 								
 
-								<div class="row">
-									<div class="col">
-										<?php 
-											// Ready-to-ship products (category 'ready-to-ship' or any of its
-											// sub-categories) are already made in a fixed size, so no ring size dropdown.
-											$ls_is_ready_to_ship = has_term( 'ready-to-ship', 'product_cat', $product_id );
-											if ( ! $ls_is_ready_to_ship ) {
-												$ls_rts_parent = get_term_by( 'slug', 'ready-to-ship', 'product_cat' );
-												if ( $ls_rts_parent ) {
-													$ls_rts_children = get_term_children( $ls_rts_parent->term_id, 'product_cat' );
-													if ( ! is_wp_error( $ls_rts_children ) && ! empty( $ls_rts_children ) ) {
-														$ls_is_ready_to_ship = has_term( $ls_rts_children, 'product_cat', $product_id );
-													}
-												}
-											}
-											if ( ! $ls_is_ready_to_ship && has_term( array('diamond-rings','anniversary-rings','eternity-rings', 'stackable-rings'), 'product_cat', $product_id ) ){   
-												$setting_size = '';
-												?>
-													<div class="rb_settingsize common_select_dropdown mb_15">
-														<label for="ring-size">Ring Size (US) <a href="<?php echo get_site_url(); ?>/wp-content/uploads/2021/08/LGD-RING-SIZER.pdf" target="_blank" class="ring-size-guide"><i class="fa-solid fa-question"></i></a></label>
-														<select name="ringsize" class="ringsize form-select">
-															<option value="">- Ring Size (US)* -</option>
-															<?php foreach($ls_ringsize_arr as $key => $value){
-																echo '<option value="'.$key.'" '.selected($setting_size, $value).' >'.$value.'</option>';
-															} ?>
-														</select>
-													</div>
-												<?php
-											}
-										?>
-									</div>
-								</div>
-
 								<input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>">
 								<input type="hidden" name="product_id" value="<?php echo esc_attr($product->get_id()); ?>">
 								<input type="hidden" name="variation_id" class="variation_id" value="0">
-								<?php
-								if ( class_exists( 'LGD_Ring_Extra_Features' ) ) {
-									LGD_Ring_Extra_Features::render_button_and_modal( $product->get_id() );
-								}
-								?>
 								<div class="price-display" style="margin-bottom: 15px; font-size: 16px; font-weight: 500;"></div>
-
-								<?php if ( function_exists( 'lgd_extend_pdp_offer_markup' ) ) { lgd_extend_pdp_offer_markup( $product ); } ?>
 
 										<div class="add_cart d-flex align-items-center gap_13">
 												<?php
@@ -601,13 +302,6 @@ if ( ! empty( $short_description ) ) {
 								
 							</form>
 
-							<?php
-								$is_ring_product = has_term(
-									array('diamond-rings','anniversary-rings','eternity-rings','stackable-rings'),
-									'product_cat',
-									$product_id
-								);
-							?>
 
 							
 
@@ -630,9 +324,7 @@ if ( ! empty( $short_description ) ) {
 											}?>
 										</div>
 
-										<?php if ( function_exists( 'lgd_extend_pdp_offer_markup' ) ) { lgd_extend_pdp_offer_markup( $product ); } ?>
-
-										<?php
+												<?php
 										// LGD EXTRA FEATURES: same reasoning as the variable-product
 										// form above — rendered directly here since this template
 										// never calls woocommerce_before_add_to_cart_button.
@@ -700,71 +392,6 @@ if ( ! empty( $short_description ) ) {
 	</div>
 
 </div>
-<?php
-// For a variable product, the correct "active product" for Extend is the
-// default/pre-selected variation — not the parent. The attribute-select
-// change handler further down already resolves this correctly on load
-// (it fires a 'change' trigger immediately in document.ready), but this
-// block runs 1000ms later via setTimeout, so without this it would
-// clobber that correct value with the wrong parent id/price. Resolve the
-// same default variation here (mirrors the JS findMatchingVariation()
-// logic) so this call is correct too, regardless of timing.
-$ls_active_product_id    = $product->get_id();
-$ls_active_product_price = (float) $product->get_price();
-
-if ( $product->is_type( 'variable' ) && ! empty( $available_variations ) && ! empty( $selected_attributes ) ) {
-	foreach ( $available_variations as $ls_variation_row ) {
-		$ls_is_match = true;
-		foreach ( $selected_attributes as $ls_attr_name => $ls_attr_value ) {
-			$ls_variation_attr = $ls_variation_row['attributes'][ 'attribute_' . $ls_attr_name ] ?? '';
-			// Empty variation attribute value = "Any" for that attribute, same
-			// as the JS matching logic — only mismatch on a non-empty value.
-			if ( $ls_variation_attr !== '' && strtolower( (string) $ls_variation_attr ) !== strtolower( (string) $ls_attr_value ) ) {
-				$ls_is_match = false;
-				break;
-			}
-		}
-		if ( $ls_is_match ) {
-			$ls_active_product_id    = $ls_variation_row['variation_id'];
-			$ls_active_product_price = (float) $ls_variation_row['display_price'];
-			break;
-		}
-	}
-}
-?>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var productId = <?php echo (int) $ls_active_product_id; ?>;
-    var priceCents = <?php echo (int) round( $ls_active_product_price * 100 ); ?>;
-    var tries = 0;
-
-    (function waitForExtend() {
-        if (window.LGDExtend && typeof window.LGDExtend.setActiveProduct === 'function') {
-            window.LGDExtend.setActiveProduct(productId, priceCents);
-        } else if (tries++ < 50) {
-            setTimeout(waitForExtend, 100);
-        }
-    })();
-});
-function appendParam(params, key, value) {
-    if (value === null || value === undefined) {
-      params.append(key, '');
-    } else if (Array.isArray(value)) {
-      value.forEach(function (v, i) {
-        var subKey = (typeof v === 'object' && v !== null) ? key + '[' + i + ']' : key + '[]';
-        appendParam(params, subKey, v);
-      });
-    } else if (typeof value === 'object') {
-      Object.keys(value).forEach(function (k) {
-        appendParam(params, key + '[' + k + ']', value[k]);
-      });
-    } else if (typeof value === 'boolean') {
-      params.append(key, value ? '1' : '');
-    } else {
-      params.append(key, value);
-    }
-  }
-</script>
 <script>
 var lsProductSlug = <?php echo wp_json_encode( $product->get_slug() ); ?>;
 </script>
@@ -898,55 +525,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-	/* ─── Video slide: load/stop based on visibility ────────── */
-
-	(function () {
-		var slide = document.querySelector('.ls_sp_glr .oc_video_link_slide');
-		if (!slide || slide.__lsYtObserved) return;
-		slide.__lsYtObserved = true;
-
-		var video  = slide.querySelector('video.ls_product_video');
-		var loader = slide.querySelector('.ls_video_loader');
-		if (!video) return;
-
-		function hideVideo() {
-			video.style.opacity = '0';
-			if (loader) loader.style.display = video.getAttribute('src') ? '' : 'none';
-		}
-		function showVideo() {
-			video.style.opacity = '1';
-			if (loader) loader.style.display = 'none';
-		}
-
-		video.addEventListener('canplaythrough', function () {
-			if (video.getAttribute('src')) showVideo();
-		});
-		video.addEventListener('emptied',   hideVideo);
-		video.addEventListener('loadstart', hideVideo);
-		video.addEventListener('error', function () {
-			if (loader) loader.style.display = 'none';
-		});
-
-		new MutationObserver(function () {
-			var visible = slide.classList.contains('ls-slide-visible');
-			var link    = slide.getAttribute('data-video-link');
-			if (visible && link) {
-				if (video.getAttribute('src') !== link) {
-					video.style.opacity = '0';
-					video.setAttribute('preload', 'auto');
-					video.setAttribute('src', link);
-					if (loader) loader.style.display = '';
-					video.load();
-					video.play().catch(function () {});
-				}
-			} else {
-				video.pause();
-				video.removeAttribute('src');
-				video.load();
-			}
-		}).observe(slide, { attributes: true, attributeFilter: ['class'] });
-	})();
-
 	/* ─── Variation matching ────────────────────────────────── */
 
 	function clearVariation() {
@@ -985,57 +563,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		return null;
 	}
 
-	/* ─── Section 1 (features list + read more) ─────────────── */
-
-	function renderSection1(variation) {
-		var section = document.getElementById('variation-section1');
-		if (!section) return;
-		section.innerHTML = '';
-		if (!variation.section1label) return;
-
-		var html = '<h3 class="att-subtitle">' + escHtml(variation.section1label.toLowerCase()) + '</h3>';
-
-		if (Array.isArray(variation.section1data)) {
-			var visibleCount = 4;
-			var items = variation.section1data.filter(function (v) { return v !== ''; });
-
-			items.slice(0, visibleCount).forEach(function (item) {
-				html += '<p class="ftd">- ' + escHtml(item) + '</p>';
-			});
-
-			if (items.length > visibleCount) {
-				html += '<div class="section1-more" style="display:none;">';
-				items.slice(visibleCount).forEach(function (item) {
-					html += '<p class="ftd">- ' + escHtml(item) + '</p>';
-				});
-				html += '</div>';
-				html += '<button type="button" class="btn btn-link p-0 section1-readmore">Read more</button>';
-			}
-		}
-
-		section.innerHTML = html;
-
-		var btn  = section.querySelector('.section1-readmore');
-		var more = section.querySelector('.section1-more');
-		if (btn && more) {
-			btn.addEventListener('click', function () {
-				var open = more.style.display !== 'none';
-				more.style.display = open ? 'none' : '';
-				btn.textContent = open ? 'Read more' : 'Read less';
-			});
-		}
-	}
-
 	/* ─── Gallery rebuild ───────────────────────────────────── */
 
 	var glr        = document.querySelector('.ls_sp_glr');
 	var thumbsWrap = glr ? glr.querySelector('.thumbs') : null;
 	var slideWrap  = glr ? glr.querySelector('.img_slide') : null;
 
-	function removeImgsExcept(wrap, keepSelector) {
-		wrap.querySelectorAll('.img').forEach(function (el) {
-			if (!el.matches(keepSelector)) el.remove();
-		});
+	function removeImgsExcept(wrap) {
+		wrap.querySelectorAll('.img').forEach(function (el) { el.remove(); });
 	}
 
 	// One delegated thumb click handler (replaces the per-rebuild .off/.on)
@@ -1058,7 +593,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	function rebuildGallery(variation) {
 		if (!glr || !thumbsWrap || !slideWrap) return;
 
-		var hasSpin = <?php echo $has_spin ? 'true' : 'false'; ?>;
 		var images  = [];
 
 		if (variation.image && variation.image.src) {
@@ -1084,12 +618,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (!images.length) return;
 
 		/* Thumbs */
-		removeImgsExcept(thumbsWrap, '.ls_spinthumb, .image_white_black_thumb, .image_diamond_carat_size_guide_thumb, .oc_video_link_thumb');
-		if (!hasSpin) removeImgsExcept(thumbsWrap, '.image_white_black_thumb, .image_diamond_carat_size_guide, .oc_video_link_thumb');
-
-		var thumbAnchor = hasSpin
-			? thumbsWrap.querySelector('.ls_spinthumb')
-			: thumbsWrap.querySelector('.oc_video_link_thumb');
+		removeImgsExcept(thumbsWrap);
 
 		images.forEach(function (img, idx) {
 			var thumb = document.createElement('div');
@@ -1100,20 +629,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			thumb.appendChild(tImg);
 
 			if (idx === 0) {
-				if (thumbAnchor) thumbAnchor.before(thumb);
-				else thumbsWrap.prepend(thumb);
+				thumbsWrap.prepend(thumb);
 			} else {
 				thumbsWrap.appendChild(thumb);
 			}
 		});
 
 		/* Slides */
-		removeImgsExcept(slideWrap, '.ls_spinimg, .image_white_black_slide, .image_diamond_carat_size_guide_slide, .oc_video_link_slide');
-		if (!hasSpin) removeImgsExcept(slideWrap, '.image_white_black_slide, .image_diamond_carat_size_guide_slide, .oc_video_link_slide');
+		removeImgsExcept(slideWrap);
 
-		var slideAnchor = hasSpin
-			? slideWrap.querySelector('.ls_spinimg')
-			: slideWrap.querySelector('.oc_video_link_slide');
 		// Insert new slides before the icons (left express icon comes first in
 		// the markup), so the icons always stay at the bottom of the slide list.
 		var topIcon = slideWrap.querySelector('.top-single-icon-left') || slideWrap.querySelector('.top-single-icon');
@@ -1137,7 +661,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			sImg.alt = img.alt;
 			slide.appendChild(sImg);
 
-			var anchor = (idx === 0 && slideAnchor) ? slideAnchor : topIcon;
+			var anchor = topIcon;
 			if (anchor) anchor.before(slide);
 			else slideWrap.appendChild(slide);
 		});
@@ -1147,26 +671,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		var newSlides = slideWrap.querySelectorAll('.img');
 		newThumbs.forEach(function (t, i) { t.classList.toggle('active', i === 0); });
 		newSlides.forEach(function (s, i) { s.style.display = i === 0 ? '' : 'none'; });
-
-		/* Video: data only (loading handled by the observer above) */
-		var ytThumb = thumbsWrap.querySelector('.oc_video_link_thumb');
-		var ytSlide = slideWrap.querySelector('.oc_video_link_slide');
-		var ytVideo = ytSlide ? ytSlide.querySelector('video.ls_product_video') : null;
-
-		var videoLink = (variation.oc_video_link || '').toString().trim() ||
-		                (variation.parent_oc_video_link || '').toString().trim();
-
-		if (ytVideo) {
-			ytVideo.pause();
-			ytVideo.removeAttribute('src');
-			ytVideo.load();
-		}
-
-		if (ytSlide) {
-			if (videoLink) ytSlide.setAttribute('data-video-link', videoLink);
-			else ytSlide.removeAttribute('data-video-link');
-		}
-		if (ytThumb) ytThumb.style.display = videoLink ? '' : 'none';
 
 		/* Re-init arrows via ls-gallery.js (expects a jQuery object) */
 		function initNav() {
@@ -1196,20 +700,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (variationIdInput) variationIdInput.value = variation.variation_id;
 		setCartDisabled(false);
 
-		renderSection1(variation);
-
 		lsLastVariation = variation;
 		lsRenderVariationPrice(variation);
 
 		rebuildGallery(variation);
 		if (messageDiv) messageDiv.style.display = 'none';
 
-		// Extra Features component listens for WooCommerce's found_variation (jQuery event)
 		jqTrigger(form, 'found_variation', [variation]);
-
-		if (window.LGDExtend && variation.variation_id) {
-			window.LGDExtend.setActiveProduct(variation.variation_id, Math.round(variation.display_price * 100));
-		}
 
 			}
 
@@ -1220,27 +717,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Resolve pre-selected attributes on load
 	if (attrSelects.length) onAttributeChange();
 
-	/* ─── Ring size ─────────────────────────────────────────── */
-
-	var ringsize = document.querySelector('.ringsize');
-	if (ringsize) {
-		ringsize.addEventListener('change', function () {
-			if (ringsize.value !== '') ringsize.classList.remove('border-danger');
-		});
-	}
-
 	/* ─── Add to cart ───────────────────────────────────────── */
 
 	if (addToCartBtn) {
 		addToCartBtn.addEventListener('click', function (e) {
 			e.preventDefault();
-
-			var isRingProduct = <?php echo wp_json_encode( (bool) $is_ring_product ); ?>;
-			if (isRingProduct && ringsize && ringsize.value === '') {
-				ringsize.classList.add('border-danger');
-				ringsize.scrollIntoView({ behavior: 'smooth', block: 'center' });
-				return;
-			}
 
 			var variationId = variationIdInput ? variationIdInput.value : '';
 			if (!variationId || variationId === '0') {
@@ -1301,11 +782,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				});
 			}
 
-			if (window.LGDExtend) {
-				window.LGDExtend.addPlanIfSelected(lgdQuantity, lgdProceedAddToCart);
-			} else {
-				lgdProceedAddToCart();
-			}
+			lgdProceedAddToCart();
 		});
 	}
 });
@@ -1313,37 +790,21 @@ document.addEventListener('DOMContentLoaded', function () {
 <?php } ?>
 
 <?php
-if($c_ctype==4){
-	single_product_product_info();
-	echo '<div class="light_gray_background ">';
-	single_product_what_customer_say();
-	echo '</div>';
-	if (! has_term( array('custom'), 'product_cat', $product_id ) ){   
-	?>
-	<div class="oc-related-product  pt-5">
-	   <h2 class="text-center fw-600  pt-2 single_rt_product">Related Product</h2>
-	   <div id="inventory-listing-root"></div>
-	</div>
-	<?php
-	}
-	single_product_faq();
-}else{
-   single_product_buy_direct_us();
-   single_product_experience_history();
-   echo '<div class="light_gray_background ">';
-   single_product_what_customer_say();
-   echo '</div>';
-   single_product_shop_by_shape();
-   if (! has_term( array('custom'), 'product_cat', $product_id ) ){
-   ?>
+single_product_buy_direct_us();
+single_product_experience_history();
+echo '<div class="light_gray_background ">';
+single_product_what_customer_say();
+echo '</div>';
+single_product_shop_by_shape();
+if (! has_term( array('custom'), 'product_cat', $product_id ) ){
+?>
 	<div class="oc-related-product   pt-5">
 	   <h2 class="text-center fw-600  pt-2 single_rt_product">Related Product</h2>
 	   <div id="inventory-listing-root"></div>
 	</div>
 	<?php
 	}
-   single_product_faq();
-}
+single_product_faq();
 
 
 ?>
@@ -1386,24 +847,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <script type="text/javascript">
 	jQuery(function ($) {
-		// Simple-product Add to Bag: offer the Extend plan (if selected) before
-		// submitting the normal WooCommerce add-to-cart form. Falls back to a
-		// plain form submit automatically if the protection plugin is inactive.
 		$('#lgd-simple-add-to-cart').on('click', function (e) {
 			e.preventDefault();
-			var $btn = $(this);
-			var $form = $btn.closest('form.cart');
-			var quantity = parseInt($form.find('[name="quantity"]').val() || 1, 10);
-
-			function submitForm() {
-				$form.trigger('submit');
-			}
-
-			if (window.LGDExtend) {
-				window.LGDExtend.addPlanIfSelected(quantity, submitForm);
-			} else {
-				submitForm();
-			}
+			$(this).closest('form.cart').trigger('submit');
 		});
 	});
 </script>

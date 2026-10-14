@@ -52,8 +52,6 @@ function lgd_cart_page_get_data() {
     $fonts          = lgd_cart_engraving_fonts();
     $all_engravings = WC()->session ? WC()->session->get( 'ls_engraving', array() ) : array();
     $can_checkout   = true;
-    $ref_img_dir    = get_template_directory() . '/components/ring-extra-features/front/images/';
-    $ref_img_uri    = get_template_directory_uri() . '/components/ring-extra-features/front/images/';
     $items          = array();
 
     foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
@@ -63,10 +61,6 @@ function lgd_cart_page_get_data() {
         }
         $oc_product = wc_get_product( $cart_item['product_id'] );
 
-        $ls_rb_type        = $cart_item['ls_ring_builder']['ls_rb_type'] ?? '';
-        $setting_size      = $cart_item['ls_ring_builder']['sp_size'] ?? '';
-        $current_ringsize  = $cart_item['custom_data']['ringsize'] ?? '';
-        $c_type            = $cart_item['c_type'] ?? '';
         $product_permalink = apply_filters(
             'woocommerce_cart_item_permalink',
             $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '',
@@ -92,15 +86,7 @@ function lgd_cart_page_get_data() {
         $meta = array();
         if ( function_exists( 'get_cart_item_data_array' ) ) {
             foreach ( get_cart_item_data_array( $cart_item, true ) as $data ) {
-                if ( $data['key'] === 'Upgrade' ) {
-                    continue;
-                }
                 $type = 'text';
-                if ( $data['key'] === 'Ring Size' && $current_ringsize !== '' ) {
-                    $type = 'ringsize';
-                } elseif ( $data['key'] === 'Setting Size' && $setting_size !== '' ) {
-                    $type = 'settingsize';
-                }
                 $meta[] = array(
                     'key'   => wp_strip_all_tags( $data['key'] ),
                     'html'  => wp_kses_post( ! empty( $data['display'] ) ? $data['display'] : $data['value'] ),
@@ -121,37 +107,8 @@ function lgd_cart_page_get_data() {
             $max_qty = 1;
         }
 
-        // Upgrade cards
-        $upgrades = array();
-        foreach ( ( $cart_item['ls_ring_builder']['extra_features_items'] ?? array() ) as $ref ) {
-            $opt = $ref['option_key'] ?? '';
-            $upgrades[] = array(
-                'optionKey' => $opt,
-                'name'      => $ref['name'] ?? '',
-                'img'       => ( $opt && file_exists( $ref_img_dir . $opt . '.svg' ) ) ? $ref_img_uri . $opt . '.svg' : '',
-                'priceHtml' => wp_kses_post( wc_price( (float) ( $ref['price'] ?? 0 ) ) ),
-            );
-        }
-
-        // "Edit upgrades" mount (render_cart_edit_button() checks is_cart(),
-        // which is false inside admin-ajax — so call the renderer directly).
-        $upgrade_edit_html = '';
-        if ( $ls_rb_type === 'setting_prdct' && class_exists( 'LGD_Ring_Extra_Features' ) ) {
-            $upgrade_edit_html = lgd_cart_capture( function () use ( $cart_item, $cart_item_key ) {
-                $existing = $cart_item['ls_ring_builder']['extra_features_items'] ?? array();
-                LGD_Ring_Extra_Features::render_button_and_modal(
-                    $cart_item['product_id'],
-                    LGD_Ring_Extra_Features::items_to_raw_json( $existing ),
-                    $cart_item_key
-                );
-            } );
-        }
-
         // Remove link — built exactly like the old cart.php, then passed
-        // through woocommerce_cart_item_remove_link so
-        // customized_cart_item_remove_link() (comman-function.php) still:
-        //   - hides Remove on the ring-builder diamond line
-        //   - appends "Rebuild Ring" on the ring-builder setting line
+        // through woocommerce_cart_item_remove_link.
         $default_remove = sprintf(
             '<a role="button" class="text-decoration-none" href="%s" aria-label="%s" data-product_id="%s" data-product_sku="%s" data-cart-key="%s"><span class="d-block mt-3 fw-700">%s</span></a>',
             esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
@@ -172,12 +129,8 @@ function lgd_cart_page_get_data() {
             'nameText'         => wp_strip_all_tags( $product_name ),
             'permalink'        => $product_permalink ? esc_url_raw( $product_permalink ) : '',
             'thumbnailHtml'    => $thumbnail,
-            'sampleImage'      => ( $c_type == 1 || $c_type == 3 || $ls_rb_type === 'diamond_prdct' ),
             'afterNameHtml'    => lgd_cart_capture( 'do_action', 'oc_woocommerce_after_cart_item_name', $cart_item, $cart_item_key ),
-            'rbType'           => $ls_rb_type,
             'meta'             => $meta,
-            'ringSize'         => (string) $current_ringsize,
-            'settingSize'      => (string) $setting_size,
             'outOfStock'       => $out_of_stock,
             'noCertificate'    => ( $certificate_type === 0 || $certificate_type === 4 ),
             'isEngraving'      => ! empty( $cart_item['is_engraving_product'] ),
@@ -188,8 +141,6 @@ function lgd_cart_page_get_data() {
             // Same as old cart.php: cartregularprice( ..., true ) + cartwasrprice()
             'priceHtml'        => lgd_cart_capture( 'cartregularprice', $cart_item, $_product, $cart_item_key, true ),
             'wasPriceHtml'     => function_exists( 'cartwasrprice' ) ? lgd_cart_capture( 'cartwasrprice', $cart_item, $_product, $cart_item_key ) : '',
-            'upgrades'         => $upgrades,
-            'upgradeEditHtml'  => $upgrade_edit_html,
         );
     }
 
@@ -217,13 +168,6 @@ function lgd_cart_page_get_data() {
     foreach ( $fonts as $value => $font ) {
         $font_list[] = array( 'value' => $value, 'label' => $font['label'], 'style' => $font['style'] );
     }
-    $ring_opts = array();
-    if ( function_exists( 'ls_get_ringsize_options' ) ) {
-        foreach ( ls_get_ringsize_options() as $k => $v ) {
-            $ring_opts[] = array( 'value' => (string) $k, 'label' => (string) $v );
-        }
-    }
-
     return array(
         'empty'          => $cart->is_empty(),
         'items'          => $items,
@@ -241,7 +185,6 @@ function lgd_cart_page_get_data() {
         'themeUri'       => get_template_directory_uri(),
         'unboxingVideo'  => 'https://media.loosegrowndiamond.com/wait-till-you-see-inside-this-box.mp4',
         'engravingFonts' => $font_list,
-        'ringSizes'      => $ring_opts,
         'noticesHtml'    => $notices,
         'pageTitle'      => lgd_cart_page_title(),
     );
@@ -276,10 +219,6 @@ function lgd_cart_remove_item_ajax() {
     if ( ! $key || ! WC()->cart->get_cart_item( $key ) ) {
         wp_send_json_error( array( 'message' => 'Item not found.' ) );
     }
-    // Same as WooCommerce's ?remove_item= handler: remove_cart_item() fires
-    // woocommerce_cart_item_removed → after_remove_product_from_cart()
-    // (comman-function.php), which also removes the paired diamond and
-    // cleans the ring-builder sessions when a setting is removed.
     WC()->cart->remove_cart_item( $key );
 
     // Drop engraving for the removed line

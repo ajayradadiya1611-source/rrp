@@ -60,16 +60,6 @@ export default function InventoryApp3() {
   let isshow_shape = !shapeSlugs.includes(categorySlug);
   console.log("isshow_style",isshow_style,"isshow_shape",isshow_shape);
 
-  /*const defaultFilters = (() => {
-    const f = window?.LD_THEME?.filters || {};
-    const out = {};
-    if (f.style) out.style = Array.isArray(f.style) ? f.style : [f.style];
-    const builder = window?.LS_RING_BUILDER;
-    const builderHasShape = builder?.diamond?.is_selected && builder?.diamond?.shape;
-    if (!builderHasShape && f.shape) out.shape = Array.isArray(f.shape) ? f.shape : [f.shape];
-    if (f.price) out.price = Array.isArray(f.price) ? f.price : [f.price];
-    return out;
-  })();*/
   // Extra filter keys (from a preset page's ACF "Filter query", e.g.
   // metal=..., or any future filter) — every array-valued key in
   // LD_THEME.filters other than the built-in ones.
@@ -162,31 +152,6 @@ console.log("Wishlist IDs loaded:", wishlistIds);
         if (!mounted) return;
         setTerms(json.terms || {});
 
-        // ✅ AUTO SELECT SHAPE IF AVAILABLE
-        const builder = window?.LS_RING_BUILDER;
-        const fetchedTerms = json.terms || {};
-
-        if (
-          builder?.diamond?.is_selected &&
-          builder?.diamond?.shape &&
-          fetchedTerms?.shape?.length
-        ) {
-          const diamondShapeName = builder.diamond.shape.toLowerCase();
-
-          const matchedShape = fetchedTerms.shape.find(
-            term => term.name.toLowerCase() === diamondShapeName
-          );
-
-          if (matchedShape?.slug) {
-            setDisabledFilter(true); // disable shape filter if auto-selected
-            // Always override any other shape selection and set the
-            // chosen shape as the single, locked selection.
-            setSelectedFilters(prev => ({
-              ...prev,
-              shape: [matchedShape.slug]
-            }));
-          }
-        }
       } catch (err) {
         console.error('Error fetching attribute terms:', err);
       }

@@ -2,47 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import Html from './Html.jsx'
 import styleString from './styleString.js'
 
-/* ---------------- Ring / Setting size select ---------------- */
-function SizeSelect({ label, value, options, onSave, className }) {
-  const [current, setCurrent] = useState(value)
-  const [busy, setBusy] = useState(false)
-  const [saved, setSaved] = useState(false)
-  const timer = useRef(null)
-
-  useEffect(() => setCurrent(value), [value])
-  useEffect(() => () => clearTimeout(timer.current), [])
-
-  const change = async (e) => {
-    const next = e.target.value
-    const prev = current
-    setCurrent(next)
-    setBusy(true)
-    try {
-      await onSave(next)
-      setSaved(true)
-      clearTimeout(timer.current)
-      timer.current = setTimeout(() => setSaved(false), 1500)
-    } catch (err) {
-      setCurrent(prev)
-      alert(err.message || `Could not update ${label.toLowerCase()}. Please try again.`)
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  return (
-    <div className={`oc_variation_sub ${className} d-flex align-items-center gap_8`}>
-      <strong>{label}:</strong>
-      <select className={`${className}_select`} value={current} disabled={busy} onChange={change}>
-        {options.map((o) => (
-          <option key={o.value} value={o.value}>{o.label}</option>
-        ))}
-      </select>
-      {saved && <span className="text-success" style={{ fontSize: 12 }}>Saved</span>}
-    </div>
-  )
-}
-
 /* ---------------- Quantity ---------------- */
 function Qty({ item, onChange }) {
   const [val, setVal] = useState(item.qty)
@@ -104,15 +63,11 @@ function Qty({ item, onChange }) {
 }
 
 /* ---------------- Cart item ---------------- */
-export default function CartItem({ item, ringSizes, fonts, actions, refreshSeq = 0 }) {
+export default function CartItem({ item, fonts, actions, refreshSeq = 0 }) {
   const fontStyle = styleString(fonts.find((f) => f.value === item.engraving.font)?.style || '')
   const hasEngraving = !!item.engraving.text
 
-  const rowClass = [
-    'cart_item d-flex flex-wrap w-100',
-    item.rbType === 'setting_prdct' ? 'ls-ring-builder-product' : '',
-    item.rbType === 'diamond_prdct' ? 'ls-ring-builder-diamond-product' : '',
-  ].join(' ')
+  const rowClass = 'cart_item d-flex flex-wrap w-100'
 
   const Thumb = item.permalink
     ? <a href={item.permalink} dangerouslySetInnerHTML={{ __html: item.thumbnailHtml }} />
@@ -124,7 +79,6 @@ export default function CartItem({ item, ringSizes, fonts, actions, refreshSeq =
       <div className="product_name">
         <div>
           {Thumb}
-          {item.sampleImage && <p className="ls_img_instruction mb-0">Sample Image Only</p>}
         </div>
 
         <div>
@@ -139,18 +93,6 @@ export default function CartItem({ item, ringSizes, fonts, actions, refreshSeq =
             <div className="cart-item-meta">
               <div className="oc_variation">
                 {item.meta.map((m, i) => {
-                  if (m.type === 'ringsize') {
-                    return (
-                      <SizeSelect key={i} label="Ring Size" className="ls_ringsize" value={item.ringSize}
-                        options={ringSizes} onSave={(v) => actions.updateRingSize(item.key, v)} />
-                    )
-                  }
-                  if (m.type === 'settingsize') {
-                    return (
-                      <SizeSelect key={i} label="Setting Size" className="ls_settingsize" value={item.settingSize}
-                        options={ringSizes} onSave={(v) => actions.updateSettingSize(item.key, v)} />
-                    )
-                  }
                   return (
                     <div className="oc_variation_sub" key={i}>
                       <strong>{m.key}:</strong> <span dangerouslySetInnerHTML={{ __html: m.html }} />
@@ -213,36 +155,6 @@ export default function CartItem({ item, ringSizes, fonts, actions, refreshSeq =
               line, Remove + "Rebuild Ring" on setting line. Clicks handled in App. */}
           <Html className="ls_remove_wrap" html={item.removeHtml} />
         </div>
-      </div>
-
-      {/* Full width: upgrades + actions */}
-      <div className="ls_item_fullrow">
-        {item.upgrades.length > 0 && (
-          <div className="ls_upgrade_list">
-            {item.upgrades.map((u) => (
-              <div className="ls_upgrade_card" key={u.optionKey || u.name}>
-                <div className="ls_upgrade_thumb">{u.img && <img src={u.img} alt={u.name} />}</div>
-                <div className="ls_upgrade_info">
-                  <span className="ls_upgrade_label">Setting upgrade</span>
-                  <span className="ls_upgrade_name">{u.name}</span>
-                </div>
-                <div className="ls_upgrade_side">
-                  <Html className="ls_upgrade_price" html={u.priceHtml} />
-                  <a
-                    href="#"
-                    className="ls_upgrade_remove"
-                    aria-label={`Remove ${u.name}`}
-                    onClick={(e) => { e.preventDefault(); actions.removeUpgrade(item.key, u.optionKey) }}
-                  >
-                    Remove
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {item.upgradeEditHtml && <Html className="ls_item_actions" html={item.upgradeEditHtml} />}
       </div>
     </div>
   )

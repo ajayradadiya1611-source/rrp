@@ -125,7 +125,6 @@ if ( $show_downloads ) {
 
                         $sku =$item->get_meta('_sku_snapshot');
                         //print_r($_diamond_data);
-                        $c_type = wc_get_order_item_meta( $item_id, 'c_type', true );
                         if(!empty($_diamond_data)){
                             $thumbnail = get_template_directory_uri() . '/assets/image/ls-inventory/shape-diamond/png/'.strtolower($_diamond_data->shape).'.png';
                         }else{
@@ -151,17 +150,12 @@ if ( $show_downloads ) {
 
                                     $product_name = apply_filters( 'woocommerce_order_item_name', $item->get_name(), $item, false );
 
-                                    if ( $c_type == 1 || $c_type == 3 ) {
-                                        echo wp_kses_post( $product_name );
-                                        
+                                    $product = $item->get_product();
+                                    if ( $product ) {
+                                        $product_link = get_permalink( $product->get_id() );
+                                        echo '<a href="' . esc_url( $product_link ) . '" class="text-decoration-none" >' . wp_kses_post( $product_name ) . '</a>';
                                     } else {
-                                        $product = $item->get_product();
-                                        if ( $product ) {
-                                            $product_link = get_permalink( $product->get_id() );
-                                            echo '<a href="' . esc_url( $product_link ) . '" class="text-decoration-none" >' . wp_kses_post( $product_name ) . '</a>';
-                                        } else {
-                                            echo wp_kses_post( $product_name );
-                                        }
+                                        echo wp_kses_post( $product_name );
                                     }
                                  
                                     ?>

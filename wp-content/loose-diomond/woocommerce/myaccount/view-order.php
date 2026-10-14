@@ -77,13 +77,6 @@ if ($order_id > '1921867') {
     $order_status              = $order->get_status();
     $order_has_item_need_tomade = false;
 
-    foreach ($order->get_items() as $item_id => $item) {
-        $c_type = $item->get_meta('c_type');
-        if (!empty($c_type) && ($c_type == 4 || $c_type == 2)) {
-            $order_has_item_need_tomade = true;
-        }
-    }
-
     $valid_statuses = [
         'order-received', 'order-confirmed', 'cad-3d-design', 'crafting',
         'quality-check', 'dispatched', 'shipped', 'shipped-shiv', 'delivered'
