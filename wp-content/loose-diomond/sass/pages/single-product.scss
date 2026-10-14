@@ -1,0 +1,30 @@
+
+
+  /*single - product*/
+
+.ls_rimg_glr {
+   
+    .thumbs{
+      .img{
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .ls_yt_thumb_img{
+        max-width:46px;
+      }
+    }
+}
+
+.dcsg-controls--single{
+  display:none !important;
+}
+.ajax-cart-message{
+  font-size: 12px;
+}
+.oc-related-product{
+  .ls-rb-match-notice{
+    display:none;
+  }
+}

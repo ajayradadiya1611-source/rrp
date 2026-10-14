@@ -1,0 +1,31 @@
+
+  .header_wrap {
+    @media only screen and (max-width: 767px) {
+       top: 28px;
+    }
+  }
+
+.banner_section {
+   padding-top: 62px;
+    @media only screen and (max-width: 767px) {
+       padding-top: 50px;
+    }
+    
+}
+.inventory_title_parent{
+   margin-top:40px;
+   @media only screen and (max-width: 767px) {
+       margin-top:26px;
+   }
+}
+
+.mega_content {
+    .menutruckicon,
+    img[alt="ready-to-ship-earrings"],
+    img[alt="ready-to-ship-wedding-bands"],
+    img[alt="ready-to-ship-pendants"],
+    img[alt="ready-to-ship-bracelets"],
+    img[alt="ready-to-ship-necklaces"] {
+        max-width: 25px !important;
+    }
+}

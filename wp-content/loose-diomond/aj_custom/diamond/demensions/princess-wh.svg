@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="princess-wh">
+    <rect class="cls-1" x="101.25" y="101.25" width="297.5" height="297.5"/>
+    <polygon class="cls-1" points="398.75 101.25 371.94 143.86 332.9 167.1 356.14 129.3 398.75 101.25"/>
+    <polygon class="cls-1" points="101.25 101.25 143.86 128.06 167.1 167.1 129.3 143.86 101.25 101.25"/>
+    <polygon class="cls-1" points="398.75 398.75 371.94 356.14 332.9 332.9 356.14 370.7 398.75 398.75"/>
+    <polygon class="cls-1" points="101.25 398.75 143.86 371.94 167.1 332.9 129.3 356.14 101.25 398.75"/>
+    <polygon class="cls-1" points="129.3 143.86 129.3 356.14 158.43 250 129.3 143.86"/>
+    <line class="cls-1" x1="398.75" y1="250" x2="101.25" y2="250"/>
+    <polyline class="cls-1" points="356.14 129.3 146.03 129.3 251.08 157.38 332.9 167.1 342.31 250 371.94 356.14 371.94 143.86 342.31 250 332.9 332.9 250 342.12 143.86 371.94 356.14 370.7 250 342.12 167.1 332.9 158.43 250 167.1 167.1 251.08 157.38 353.66 129.3"/>
+    <line class="cls-1" x1="251.39" y1="101.25" x2="250" y2="397.86"/>
+  </g>
+  <g id="Side_Arrow" data-name="Side Arrow">
+    <line class="cls-1" x1="20.01" y1="99.78" x2="39.97" y2="99.78"/>
+    <line class="cls-1" x1="20.05" y1="400.22" x2="40" y2="400.22"/>
+    <line class="cls-1" x1="29.94" y1="99.78" x2="29.94" y2="400.22"/>
+  </g>
+  <g id="Bottom_Arrow" data-name="Bottom Arrow">
+    <line class="cls-1" x1="399.22" y1="459.88" x2="399.23" y2="479.84"/>
+    <line class="cls-1" x1="100.78" y1="460.18" x2="100.79" y2="480.12"/>
+    <line class="cls-1" x1="399.23" y1="469.81" x2="100.78" y2="470.07"/>
+  </g>
+</svg>

@@ -1,0 +1,588 @@
+// ==========================================================
+// How It Works — numbered steps joined by a line
+// ==========================================================
+.how-it-works {
+  padding: 3rem 0;
+  @media (min-width: 768px) { padding: 4.5rem 0; }
+
+  .container { max-width: 1140px; }
+
+  &__title {
+    font-family: "Noto Serif", Georgia, serif;
+    font-weight: 400;
+    color: #0b141c;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+    @media (min-width: 768px) { font-size: 2.75rem; margin-bottom: 3.5rem; }
+  }
+
+  // ---- Steps ----
+  &__steps {
+    list-style: none;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    counter-reset: none;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__step {
+    position: relative;
+    text-align: center;
+    padding: 0 0.5rem;
+
+    // Connector line to the next number (desktop)
+    @media (min-width: 768px) {
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 22px;                               // half of number circle
+        left: calc(50% + 22px + 0.75rem);
+        width: calc(100% + 2.5rem - 44px - 1.5rem); // spans gap to next circle
+        height: 1px;
+        background: #cfcfcf;
+      }
+    }
+  }
+
+  &__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #0b141c;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__step-title {
+    font-family: "Noto Serif", Georgia, serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: #0b141c;
+    margin-bottom: 0.625rem;
+    @media (min-width: 768px) { font-size: 1.375rem; }
+  }
+
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #3a3f45;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  // ---- CTA ----
+  &__btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0b141c;
+    border: 1px solid #0b141c;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    transition: background-color .2s ease, color .2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: #0b141c;
+      background-color: transparent;
+      border-color: #0b141c;
+    }
+  }
+}
+
+// ==========================================================
+// Start Designing CTA section
+// Plain SCSS — no Bootstrap mixins or variables required
+// ==========================================================
+
+.start-designing {
+  padding: 3rem 0;
+
+  @media (min-width: 768px) {
+    padding: 6rem 0;
+    
+  }
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+
+  .container {
+    max-width: 940px;
+  }
+
+  // ---- Heading ----
+  &__title {
+    font-family: "Noto Serif", Georgia, serif;
+    font-weight: 400;
+    color: #0b141c;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+      line-height: 1.15;
+    }
+  }
+
+  // ---- Description ----
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #3a3f45;
+    max-width: 560px;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  // ---- Badge ----
+  &__badge {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #0b141c;
+    border: 1px dashed #b5b5b5;
+    border-radius: 6px;
+    padding: 0.5rem 0.875rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  // ---- CTA button ----
+  &__btn {
+    display: block;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0b141c;
+    border: 1px solid #0b141c;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    @media (min-width: 768px) {
+      display: inline-block;
+      width: auto;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: #0b141c;
+      background-color: transparent;
+      border-color: #0b141c;
+    }
+  }
+}
+
+
+// ==========================================================
+// Real Custom Rings — grid (no slider) with videos
+// Plain SCSS — no Bootstrap mixins or variables required
+// ==========================================================
+
+.custom-rings {
+  padding: 3rem 0;
+
+  @media (min-width: 768px) {
+    padding: 4.5rem 0 4rem;
+  }
+
+  .container {
+    max-width: 1140px;
+  }
+
+  // ---- Heading ----
+  &__head {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__title {
+    font-family: "Noto Serif", Georgia, serif;
+    font-weight: 400;
+    color: #0b141c;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 3px;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+    }
+  }
+
+  &__intro {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #3a3f45;
+    margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  // ---- Grid ----
+  &__grid {
+    margin-bottom: 2.5rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  // ---- Card ----
+  &__card {
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding:0;
+  }
+
+  // ---- Media (video) ----
+  &__media {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0;
+    aspect-ratio: 16/25;          // reserves space before video loads (no layout jump)
+    background-color: #f1f1f1;      // placeholder until first frame shows
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      aspect-ratio: 16 / 23;
+    }
+
+    video,
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #f1f1f1;
+    }
+  }
+
+  &__video {
+    pointer-events: none;           // no native controls/taps interfering with scroll
+  }
+
+
+
+  &__body {
+    padding: 6px 6px 12px;
+  }
+
+  &__card-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #0b141c;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &__designed {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    color: #0b141c;
+    margin-bottom: 0.125rem;
+
+    @media (min-width: 768px) {
+      font-size: 0.8125rem;
+    }
+  }
+
+  &__specs {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.6875rem;
+    color: #3a3f45;
+    margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      font-size: 0.75rem;
+    }
+  }
+
+  // ---- CTA button ----
+  &__btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0b141c;
+    border: 1px solid #0b141c;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: #0b141c;
+      background-color: transparent;
+      border-color: #0b141c;
+    }
+  }
+}
+
+
+// ==========================================================
+// How Custom Rings Are Made — video section
+// Plain SCSS — no Bootstrap mixins or variables required
+// ==========================================================
+
+.rings-video {
+  padding: 3rem 0px;
+
+  @media (min-width: 768px) {
+    padding: 4rem 15px;
+  }
+
+  // ---- Heading ----
+  &__head {
+    margin: 0 auto 2rem;
+  }
+
+  &__title {
+    font-family: "Noto Serif", Georgia, serif;
+    font-weight: 400;
+    color: #0b141c;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+      line-height: 1.1;
+    }
+  }
+
+  &__intro {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #3a3f45;
+    margin-bottom: 0;
+  }
+
+  // ---- Video frame ----
+  &__frame {
+    max-width: 1410px;
+    margin: 0 auto 2rem;
+    border: 3px solid #e6e6e6;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #e6e6e6;
+
+    @media (min-width: 768px) {
+      border-width: 3px;
+      border-radius: 40px;
+    }
+  }
+
+  &__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    object-fit: cover;
+
+    @media (min-width: 768px) {
+      border-radius: 30px;
+    }
+  }
+
+  // ---- CTA button ----
+  &__btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0b141c;
+    border: 1px solid #0b141c;
+    border-radius: 4px;
+    padding: 1rem 2.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: #0b141c;
+      background-color: transparent;
+      border-color: #0b141c;
+    }
+  }
+}
+
+// ==========================================================
+// Truly Custom Stories slider (Slick)
+// Plain SCSS — no Bootstrap mixins or variables required
+// ==========================================================
+
+.custom-stories {
+  padding: 3rem 0;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
+
+  // ---- Heading ----
+  &__title {
+    font-family: "Noto Serif", Georgia, serif;
+    font-weight: 400;
+    color: #0b141c;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0 15px 2rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  // ---- Slider ----
+  &__slider {
+    margin-bottom: 1.5rem;
+
+    .slick-track {
+      display: flex;
+    }
+
+    .slick-slide {
+      height: auto;
+
+      > div {
+        height: 100%;
+      }
+    }
+  }
+
+  &__slide {
+    width: 250px;
+    padding: 0 10px;
+
+    @media (min-width: 768px) {
+      width: 300px;
+      padding: 0 15px;
+    }
+  }
+
+  // ---- Card ----
+  &__media {
+    margin-bottom: 1.25rem;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #0b141c;
+    margin-bottom: 0.25rem;
+  }
+
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+    color: #3a3f45;
+    margin-bottom: 0.25rem;
+
+    // clamp to 3 lines with ellipsis
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__more {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8125rem;
+    color: #3a3f45;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #314185;
+    }
+  }
+
+  // ---- Arrows ----
+  &__nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background-color: #fff;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    img {
+      display: block;
+      width: 36px;
+      height: 36px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: #fff;
+      border-color: #0b141c;
+    }
+  }
+}

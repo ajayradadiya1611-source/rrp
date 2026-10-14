@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_612a5942-3a3e-4d70-a279-f41cf02fc052" data-name="612a5942-3a3e-4d70-a279-f41cf02fc052" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="19.87 20.31 19.87 49.72 23.8 53.66 36.25 53.66 40.13 49.78 40.13 20.27 36.21 16.34 23.79 16.34 19.87 20.31"/>
+  <polyline class="cls-1" points="19.9 49.7 24.81 46.13 27 48.32 23.81 53.61"/>
+  <polyline class="cls-1" points="40.11 49.73 35.3 46.14 33.13 48.3"/>
+  <polyline class="cls-1" points="19.91 20.33 24.78 23.95 27.07 21.74 23.82 16.44"/>
+  <polyline class="cls-1" points="36.17 16.41 33.17 21.72 35.3 23.92 40.07 20.3"/>
+  <polyline class="cls-1" points="27 48.32 33.13 48.32 36.23 53.57"/>
+  <line class="cls-1" x1="35.3" y1="23.92" x2="35.3" y2="46.14"/>
+  <line class="cls-1" x1="24.81" y1="46.13" x2="24.81" y2="23.95"/>
+  <line class="cls-1" x1="27.07" y1="21.74" x2="33.17" y2="21.74"/>
+  <path class="cls-1" d="M25.01,51.69h10.11l3.24-3.24v-26.79l-3.27-3.27h-10.14l-3.24,3.24v26.63s3.33,3.4,3.29,3.43h.01Z"/>
+  <polygon class="cls-1" points="25.97 49.99 34.11 49.99 36.8 47.3 36.8 22.83 34.11 20.14 26.17 20.14 23.35 22.96 23.35 47.08 25.97 49.99"/>
+</svg>

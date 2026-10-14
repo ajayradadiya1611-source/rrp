@@ -1,0 +1,326 @@
+
+// Inventory styles (SCSS)
+// Add component-specific styles for the inventory React app here.
+// Inventory styles (SCSS)
+// Add component-specific styles for the inventory React app here.
+
+
+
+// =============================================
+//   Education Slider — Bootstrap + Slick
+//   All classes prefixed with "education-"
+// =============================================
+
+
+.education-slider {
+  position: relative;
+ 
+  .slick-dots {
+    bottom: -28px;
+ 
+    li {
+      button {
+        &::before {
+          color: #8b6f47;
+          font-size: 8px;
+        }
+      }
+ 
+      &.slick-active button::before {
+        color: #5c4830;
+      }
+    }
+  }
+ 
+  .education-slide {
+    padding: 0 10px;
+  }
+ 
+  .education-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 0px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+ 		text-decoration: none;
+    &:hover {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+      transform: translateY(-3px);
+ 
+      .education-card__img {
+        transform: scale(1.04);
+      }
+    }
+ 
+    &__img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    &__img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+ 
+    &__body {
+      padding: 10px 0;
+    }
+ 
+    &__title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0 0 8px;
+      line-height: 1.4;
+    }
+ 
+    &__desc {
+      font-size: 0.82rem;
+      color: #6b6560;
+      margin: 0 0 12px;
+      line-height: 1.6;
+    }
+ 
+  }
+ 
+  
+}
+
+.dr-slider-wrap{
+  .dr-controls {
+    margin-top: 1.5rem;
+  }
+ 
+  .slick-dots{
+    display: none !Important;
+  }
+  
+  .dr-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #314185;
+    background: #ffffff;
+    color: #314185;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    line-height: 1;
+
+    &:hover {
+      background:#314185;
+      border-color: #314185;
+      color: #fff;
+    }
+
+    &:disabled,
+    &.slick-disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+}
+
+
+.education-controls {
+    margin-top: 1.5rem;
+}
+.education-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc3b8;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  line-height: 1;
+
+  &:hover {
+    background: #f0ece6;
+    border-color: #8b6f47;
+  }
+
+  &:disabled,
+  &.slick-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}
+
+/*fixed value*/
+.oc_whatsapp_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: var(--white-primary);
+    background-color: #37b456;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-size: 29px;
+    text-decoration: none;
+}
+
+
+.ls_slide_arrows {
+    opacity: 0;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 998;
+    @media (max-width: 767px) {
+            display: flex;
+            opacity: 1;
+             bottom: -11px;
+    }
+}
+
+
+.guarantee-icon{
+    img{
+          max-width: 80px;
+    }
+}
+
+
+.top_bar {
+  background-color: var(--black-primary);
+  @media (max-width: 767px) {
+        padding: 2px 0;
+    }
+  ul {
+     list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    @media (max-width: 767px) {
+        padding: 0px 0;
+    }
+    li {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--white-primary);
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
+      a {
+        color: var(--white-primary);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+#inventory-listing-root{
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
+}
+
+#customer_login{
+  .woocommerce-button{
+    width:100%;
+  }
+}
+
+#place_order{
+  width: 100%;
+}
+
+#shipping_email_field{
+  width: 51% !important;
+  float: left !important;
+  clear: left !important;
+  padding: 0;
+  margin: 0 0 15px;
+  @media (max-width: 767px) {
+    width: 100% !important;
+  }
+}
+#shipping_phone_field{
+  
+      width: 47% !important;
+    float: right !important;
+    clear: none !important;
+    padding: 0;
+    margin: 0 0 15px;
+    @media (max-width: 767px) {
+      width: 100% !important;
+    }
+}
+.modal{
+  z-index: 9999;
+}
+
+.dcsg-container{
+  position: relative;
+  width: 100%;
+  .dcsg-background {
+  width: 100%;
+  display: block;
+  }
+  .dcsg-ring {
+  position: absolute;
+  top: 47%;
+  left: 61.70%;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  width: 80px !important;
+  pointer-events: none;
+   @media (max-width: 767px) {
+    width: 60px !important;
+   }
+  }
+  .dcsg-controls {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  .dcsg-btn {
+  background: #eee;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border: none;
+  transition: 0.2s;
+  }
+  .dcsg-btn.dcsg-active {
+  background: #333;
+  color: white;
+  }
+
+  }
+}
+
+

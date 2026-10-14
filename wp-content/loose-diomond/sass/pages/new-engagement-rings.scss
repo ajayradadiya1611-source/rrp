@@ -1,0 +1,172 @@
+
+/*new-engagement-rings*/
+
+
+ 
+// Each Slick slide. variableWidth + fixed width = the "peek" of the next card.
+.dr-card {
+	/*width: 222px;*/
+	border-radius: 10px;
+	border: 1px solid #0B131A1A;
+	 margin: 0 8px;
+	 overflow: hidden;
+  &:hover {
+      border: 1px solid #000;
+  }
+ 
+  &__media {
+    position: relative;
+    border-radius: 0;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow .2s ease;
+ 
+    img { width: 100%; height: auto; }
+  }
+ 
+  // Lifestyle / featured card (dark photo with the button)
+  &--photo {
+    .dr-card__media {
+ 
+      img { width: 100%; height: 100%; object-fit: cover; }
+    }
+  }
+  &__title {
+    text-align: center;
+    margin: 0 8px 6px;
+	 a{
+		font-size: 14px;
+		text-align: center;
+		text-decoration: none;
+	  }
+  }
+  
+ 
+  &__price {
+    text-align: center;
+    font-size: 13.5px;
+ 
+    .dr-was { color: #b6b6b6; text-decoration: line-through; }
+    .dr-now { color: #1d1d1f; font-weight: 600; margin-right: 6px; }
+  }
+  &__setting_price_label{
+    font-size: 10px;
+    text-align: center;
+
+  }
+}
+ 
+.dr-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, .92);
+  color: #1d1d1f;
+  font-size: 10px;
+  letter-spacing: .12em;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+ 
+.dr-add-to-bag {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #1d1d1f;
+  border: none;
+  font-size: 11px;
+  letter-spacing: .1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+  cursor: pointer;
+  display:none;
+  text-decoration: none;	
+  &:hover { background: #f2f2f2; display:block; }
+}
+ 
+.dr-swatches {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  margin: 14px 0 8px;
+}
+ 
+.dr-swatch {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .12);
+  cursor: pointer;
+ 
+  &--w  { background: #d9d9d9; }
+  &--pl  { background: #d9d9d9; }
+  &--rg { background: #e8c5b0; }
+  &--yg { background: #e7cf9b; }
+  &.is-active { box-shadow: 0 0 0 2px #fff, 0 0 0 3px #555; }
+}
+ 
+.oc-engagement-hero {
+    position: relative;
+
+    
+
+    // Mobile
+    @media (max-width: 991.98px) {
+        /*background: url("../../aj_custom/new-engagement-rings/hero.png")
+            center center / cover no-repeat;*/
+       /* min-height: 650px;*/
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        &::before {
+           /* content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;*/
+        }
+
+        .container,
+        .row {
+            position: relative;
+            z-index: 2;
+        }
+
+        .oc-hero-content {
+            color: #fff;
+            text-align: center;
+            padding: 60px 15px;
+
+            h1,
+            p {
+                color: #000;
+            }
+
+            .oc-line-trust {
+                display: flex;
+                justify-content: center;
+            }
+
+            
+        }
+        .ls-trasnparentbtn{
+              background: #0B131A;
+              color: #fff;
+        }
+        .btn{
+          width:100%;
+        }
+
+    }
+}

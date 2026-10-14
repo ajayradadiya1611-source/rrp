@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_612a5942-3a3e-4d70-a279-f41cf02fc052" data-name="612a5942-3a3e-4d70-a279-f41cf02fc052" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <polygon class="cls-1" points="12.32 23.05 12.32 47.15 18.71 53.54 41.37 53.54 47.68 47.23 47.68 23 41.15 16.47 19.06 16.47 12.32 23.05"/>
+      <polyline class="cls-1" points="12.38 47.12 26.62 38.14 18.81 53.48"/>
+      <polyline class="cls-1" points="12.32 23.05 26.62 31.02 19.06 16.47"/>
+      <polyline class="cls-1" points="41.37 53.54 33.48 38.1 47.61 47.21"/>
+      <polyline class="cls-1" points="41.15 16.47 33.4 30.88 47.6 23.01"/>
+      <polygon class="cls-1" points="26.63 38.1 26.58 30.92 33.5 30.82 33.48 38.1 26.63 38.1"/>
+      <line class="cls-1" x1="26.63" y1="30.99" x2="33.38" y2="38.05"/>
+      <line class="cls-1" x1="26.66" y1="38.05" x2="33.5" y2="30.82"/>
+      <polyline class="cls-1" points="12.48 46.93 20.56 38.61 17.67 43.8"/>
+      <polygon class="cls-1" points="22.59 40.52 24.42 42.16 35.56 42.16 37.2 40.52 37.2 28.83 35.49 27.11 24.75 27.11 22.91 28.95 22.59 40.52"/>
+      <polyline class="cls-1" points="17.62 26.04 20.62 30.99 12.38 23.2"/>
+      <line class="cls-1" x1="20.61" y1="31.01" x2="20.61" y2="38.58"/>
+      <line class="cls-1" x1="14.79" y1="25.5" x2="14.87" y2="44.47"/>
+      <polyline class="cls-1" points="17.52 28.03 17.42 41.67 17.46 43.79"/>
+      <line class="cls-1" x1="20.2" y1="18.55" x2="14.47" y2="24.21"/>
+      <polyline class="cls-1" points="17.5 28.05 17.51 25.96 21.71 21.57 38.35 21.54"/>
+      <line class="cls-1" x1="15.1" y1="45.36" x2="19.87" y2="51.01"/>
+      <line class="cls-1" x1="17.44" y1="43.87" x2="21.38" y2="48.24"/>
+      <polyline class="cls-1" points="18.93 53.41 26.65 45.1 33.7 45.1 41.23 53.45"/>
+      <line class="cls-1" x1="21.52" y1="48.22" x2="26.65" y2="45.1"/>
+      <line class="cls-1" x1="33.72" y1="45.04" x2="38.65" y2="48.24"/>
+      <line class="cls-1" x1="21.57" y1="48.31" x2="38.6" y2="48.31"/>
+      <line class="cls-1" x1="21.21" y1="51.06" x2="39.06" y2="51.06"/>
+      <line class="cls-1" x1="42.76" y1="44.04" x2="38.69" y2="48.28"/>
+      <line class="cls-1" x1="45.59" y1="45.97" x2="40.05" y2="50.83"/>
+      <polyline class="cls-1" points="19.23 16.48 26.44 24.83 33.85 24.83 41.05 16.46"/>
+      <line class="cls-1" x1="21.54" y1="18.99" x2="38.77" y2="18.99"/>
+      <line class="cls-1" x1="40.02" y1="18.62" x2="45.45" y2="24.05"/>
+      <polyline class="cls-1" points="38.38 21.61 42.59 25.82 42.68 44.06"/>
+      <polyline class="cls-1" points="47.54 23.04 39.57 30.89 39.57 38.6 42.58 43.98"/>
+      <line class="cls-1" x1="39.61" y1="38.52" x2="47.52" y2="47.02"/>
+      <line class="cls-1" x1="45.66" y1="24.96" x2="45.42" y2="44.67"/>
+    </g>
+    <line class="cls-1" x1="33.85" y1="24.83" x2="38.36" y2="21.68"/>
+    <line class="cls-1" x1="26.35" y1="24.81" x2="21.78" y2="21.68"/>
+  </g>
+  <line class="cls-1" x1="39.57" y1="30.89" x2="42.52" y2="25.89"/>
+</svg>

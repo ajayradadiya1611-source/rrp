@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="euro_shank" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249.11 247.49">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="90.59 14.69 101.09 1 147.77 1.31 160.26 15.08 123.84 48.23 90.59 14.69"/>
+    <polyline class="cls-1" points="101.26 1.75 123.84 48.23 147.77 1.31"/>
+    <polyline class="cls-1" points="90.59 14.69 102.86 14.91 160.01 15.19"/>
+    <line class="cls-1" x1="123.84" y1="1.28" x2="107.89" y2="14.79"/>
+    <line class="cls-1" x1="140.96" y1="15.01" x2="124.34" y2="1.19"/>
+  </g>
+  <circle class="cls-1" cx="124.77" cy="143.04" r="86.26"/>
+  <path class="cls-1" d="M114.16,38.13s-3.82.9-3.82.91c-49.31,8.08-90.47,52.44-89.4,104.02,1.17,56.04-2.59,100.29,92.5,103.25,110.15,3.43,107.51-42.43,113.64-85.63,8.47-59.77-33.24-113.84-89.04-121.91l-2.11-.94"/>
+</svg>

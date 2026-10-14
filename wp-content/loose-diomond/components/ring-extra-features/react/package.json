@@ -1,0 +1,10 @@
+{
+  "name": "ring-extra-features",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config ../../vites/vite.ring-extra-features.config.js",
+    "build": "vite build --config ../../vites/vite.ring-extra-features.config.js"
+  }
+}

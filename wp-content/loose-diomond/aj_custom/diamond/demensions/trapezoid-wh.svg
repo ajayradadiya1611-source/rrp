@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="trapezoid-wh">
+    <polygon class="cls-1" points="175.92 102.26 175.92 397.74 324.08 324.24 324.08 177.11 175.92 102.26"/>
+    <polygon class="cls-1" points="185.69 122.2 186.26 375.79 312.71 312.81 313.23 187.03 185.69 122.2"/>
+    <polygon class="cls-1" points="195.3 141.78 195.71 355.38 302.79 302.49 303.11 196.13 195.3 141.78"/>
+    <polygon class="cls-1" points="205.05 161.72 205.05 335.81 292.77 292.46 292.77 205.83 205.05 161.72"/>
+    <line class="cls-1" x1="175.92" y1="102.21" x2="205.05" y2="161.72"/>
+    <line class="cls-1" x1="324.08" y1="177.11" x2="292.77" y2="205.78"/>
+    <line class="cls-1" x1="324.08" y1="324.24" x2="292.77" y2="292.46"/>
+    <line class="cls-1" x1="205.05" y1="335.81" x2="175.92" y2="397.8"/>
+  </g>
+  <g id="Side_Arrow" data-name="Side Arrow">
+    <line class="cls-2" x1="20.01" y1="99.78" x2="39.97" y2="99.78"/>
+    <line class="cls-2" x1="20.05" y1="400.22" x2="40" y2="400.22"/>
+    <line class="cls-2" x1="29.94" y1="99.78" x2="29.94" y2="400.22"/>
+  </g>
+  <g id="Bottom_Arrow" data-name="Bottom Arrow">
+    <line class="cls-2" x1="399.22" y1="459.88" x2="399.23" y2="479.84"/>
+    <line class="cls-2" x1="100.78" y1="460.18" x2="100.79" y2="480.12"/>
+    <line class="cls-2" x1="399.23" y1="469.81" x2="100.78" y2="470.07"/>
+  </g>
+</svg>

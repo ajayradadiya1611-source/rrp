@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="baguette-wh">
+    <polygon class="cls-1" points="179.93 101.13 179.93 399.84 320.07 399.84 320.07 100.17 179.93 101.13"/>
+    <polyline class="cls-1" points="179.93 399.84 248.87 329.92 319.43 399.03"/>
+    <polyline class="cls-1" points="319.47 100.33 250.32 170.32 180.57 102.02"/>
+    <line class="cls-1" x1="248.71" y1="330.21" x2="250.2" y2="169.37"/>
+    <line class="cls-1" x1="208.83" y1="370.08" x2="289.85" y2="370.08"/>
+    <line class="cls-1" x1="211.33" y1="131.79" x2="287.38" y2="131.79"/>
+    <line class="cls-1" x1="235.02" y1="344.84" x2="264.07" y2="344.84"/>
+    <line class="cls-1" x1="287.55" y1="132.83" x2="289.27" y2="370.52"/>
+    <line class="cls-1" x1="210.39" y1="132.77" x2="209.28" y2="370.62"/>
+    <polyline class="cls-1" points="262.52 344.04 262.52 157.7 237.13 157.7 235.85 345.06"/>
+  </g>
+  <g id="Side_Arrow" data-name="Side Arrow">
+    <line class="cls-2" x1="20.01" y1="99.78" x2="39.97" y2="99.78"/>
+    <line class="cls-2" x1="20.05" y1="400.22" x2="40" y2="400.22"/>
+    <line class="cls-2" x1="29.94" y1="99.78" x2="29.94" y2="400.22"/>
+  </g>
+  <g id="Bottom_Arrow" data-name="Bottom Arrow">
+    <line class="cls-2" x1="399.22" y1="459.88" x2="399.23" y2="479.84"/>
+    <line class="cls-2" x1="100.78" y1="460.18" x2="100.79" y2="480.12"/>
+    <line class="cls-2" x1="399.23" y1="469.81" x2="100.78" y2="470.07"/>
+  </g>
+</svg>

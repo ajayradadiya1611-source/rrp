@@ -1,0 +1,208 @@
+.woocommerce-form-register{
+	.form-row {
+			label{
+				gap:2px;
+			}
+	}
+}
+
+.ls_settingsize_select , .ls_ringsize_select{
+	display: inline-block;
+    padding: 2px 10px;
+    font-size: 11px !important;
+    line-height: 14px;
+    /* color: #000; */
+    /* font-weight: 700; */
+    border-radius: 3px;
+    margin-top: 4px;
+    border: 1px solid #000;
+    margin-left: 5px;
+}
+.woocommerce-cart {
+	.woocommerce-Price-amount {
+		font-size: 14px !important;
+    	color: #000 ;
+	}
+	.text-success{
+		.woocommerce-Price-amount {
+	    	color: #198754 ;
+		}
+	}
+}
+
+.woocommerce-cart {
+  #primary{
+    @media (min-width: 768px) {
+      min-height: calc(100vh - 267px);
+    }
+  }
+}
+// ==========================================================================
+// Order Includes / Why Trust Us - Trust Block
+// ==========================================================================
+
+.trust-block {
+  /*max-width: 420px;
+  border: 2px solid #000;
+  padding: 25px;*/
+  .trust-item-head {
+       font-size: 12px;
+    margin-bottom: 6px;
+    margin-top: 20px;
+    color: #333;
+  }
+
+  // "Your order includes" checklist rows
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    span {
+      font-size: 12px;
+      color: #000;
+      border-bottom: 1px dashed #d7d7d7;
+    }
+
+    .check-badge {
+        font-size: 10px;
+    }
+  }
+
+ 
+  .why-item-head{
+    border-top: 1px dashed #d7d7d7;
+    padding-top: 14px;
+    margin-top: 23px ;
+    color: #333;
+    font-size: 16px;
+  }
+  
+
+  // "Why us" benefit rows
+  .why-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    align-content: center;
+
+
+    .why-icon {
+      min-width: 28px;
+      text-align: center;
+      img {
+          max-width: 20px;
+      }
+    }
+
+    span {
+      font-size: 12px;
+      color: #000;
+      a {
+        color: #000;
+        text-decoration: none;
+
+        
+      }
+      .play-icon {
+        color: #000;
+        margin-right: 4px;
+        span{
+          padding-bottom: 1px;
+          border-bottom: 1px dashed;
+        }
+      }
+    }
+
+    
+  }
+}
+
+.coupon_lb{
+  background: #e9f4eb;
+    text-transform: uppercase;
+    color: #198754;
+    padding: 3px 5px;
+    border-radius: 5px;
+    a{
+      color: #198754;
+    }
+}
+
+.footer_cart{
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    .aj-footer-links-cart{
+      gap: 70px;
+      @media (max-width: 767px) {
+          display: grid !important;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+          text-align: center;
+      }
+      a{
+        font-size: 15px;
+        border-bottom: 1px dotted #ccc;
+        font-weight: 400;
+        @media (max-width: 767px) {
+                
+        }
+      }
+    } 
+    .aj-footer-logo{
+      gap: 40px;
+      @media (max-width: 767px) {
+        gap: 15px;
+      }
+    }
+    .oc_nhelp_copy{
+      margin: 0;
+      font-size: 13px;
+    }
+
+}
+
+
+.ls-ref-cart-remove {
+    color: #000;
+    text-decoration: none;
+    margin-left: 4px;
+    font-weight: 600;
+
+    &:hover {
+        color: #000;
+    }
+
+    &.is-removing {
+        opacity: 0.4;
+        pointer-events: none;
+    }
+}
+.woocommerce-cart{
+  .tooltip.show{
+    z-index: 9999;
+  }
+}
+
+.ls_needhelp {
+  font-size: 13px;
+  a {
+    color: var(--black-primary);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      color: var(--light-yellow);
+    }
+  }
+}

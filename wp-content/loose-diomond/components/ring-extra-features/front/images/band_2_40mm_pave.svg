@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="band_2_40mm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.8 245.95">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #231f20;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <circle class="cls-2" cx="123.89" cy="122.97" r="42.84"/>
+      <polyline class="cls-2" points="123.47 165.7 111.84 151.03 107.44 162.54"/>
+      <polyline class="cls-2" points="93.76 153.42 111.84 151.03 100.32 122.58 95.53 110.75 93.07 93.22 111.84 94.58 107 83.59"/>
+      <polyline class="cls-2" points="123.18 80.13 111.84 94.58 123.67 99.63 135.32 94.67 123.36 80.36"/>
+      <polyline class="cls-2" points="139.76 83.16 135.32 94.67 153.75 92.25 151.91 110.93 152.06 110.86 163.19 106.05"/>
+      <polyline class="cls-2" points="84.26 106.68 95.53 110.75 81.05 122.62 95.53 134.49 100.43 122.86 107.25 106.31 123.67 99.63 140.08 106.31 146.91 122.86"/>
+      <polyline class="cls-2" points="84.29 139.35 95.53 134.49 93.38 153"/>
+      <polyline class="cls-2" points="95.53 134.49 107.02 139.14 123.67 146.14 111.57 151.06"/>
+      <polyline class="cls-2" points="95.53 110.75 107.25 106.31 111.84 94.58"/>
+      <polyline class="cls-2" points="123.89 165.81 135.32 151.03 140.43 162.5"/>
+      <polyline class="cls-2" points="166.74 123.28 151.91 134.74 140.08 139.14 123.67 146.14 135.32 151.03 153.97 153.42 151.91 134.74 163.46 139.14"/>
+      <line class="cls-2" x1="140.03" y1="139.16" x2="135.32" y2="151.03"/>
+      <polyline class="cls-2" points="135.32 94.67 140.08 106.31 151.91 110.93 166.52 122.04"/>
+      <polyline class="cls-2" points="151.91 134.74 146.91 122.86 151.91 110.93"/>
+      <line class="cls-2" x1="140.08" y1="139.14" x2="146.91" y2="122.86"/>
+    </g>
+    <g>
+      <path class="cls-1" d="M165.85,112.19h74.69c3.4,0,6.16,4.52,6.16,10.1h0c0,5.58-2.76,10.1-6.16,10.1h-74.69"/>
+      <path class="cls-1" d="M81.94,112.19H7.25c-3.4,0-6.16,4.52-6.16,10.1h0c0,5.58,2.76,10.1,6.16,10.1h74.69"/>
+    </g>
+  </g>
+  <circle class="cls-1" cx="11.59" cy="122.29" r="9.83"/>
+  <circle class="cls-1" cx="31.68" cy="122.55" r="9.83"/>
+  <circle class="cls-1" cx="50.95" cy="122.04" r="9.83"/>
+  <circle class="cls-1" cx="70.64" cy="122.03" r="9.83"/>
+  <circle class="cls-1" cx="236.64" cy="122.29" r="9.83"/>
+  <circle class="cls-1" cx="216.55" cy="122.55" r="9.83"/>
+  <circle class="cls-1" cx="197.28" cy="122.04" r="9.83"/>
+  <circle class="cls-1" cx="177.6" cy="122.03" r="9.83"/>
+</svg>

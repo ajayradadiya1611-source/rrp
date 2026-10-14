@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="triangular-wh">
+    <path class="cls-1" d="M249.75,99.6s-59.08,84.47-60.53,89.72-47.09,86-49.09,91.33-40.18,100-40.18,103.33c3.87,2.33,102.78,16.18,102.78,16.18l98.52-.11,98.71-15.4-39.98-103.67-49.3-92-60.92-89.39Z"/>
+    <polygon class="cls-1" points="249.97 181.64 165.75 342.61 334.41 342.61 249.97 181.64"/>
+    <polygon class="cls-1" points="249.36 103.61 184.75 247.28 250.25 180.95 249.36 103.61"/>
+    <polygon class="cls-1" points="250.97 103.61 315.58 247.28 250.08 180.95 250.97 103.61"/>
+    <polygon class="cls-1" points="103.95 382.88 249.43 372.3 164.91 343.57 103.95 382.88"/>
+    <polygon class="cls-1" points="103.21 381.48 185.75 244.87 164.99 343.71 103.21 381.48"/>
+    <polygon class="cls-1" points="396.36 382.88 250.88 372.3 335.4 343.57 396.36 382.88"/>
+    <polygon class="cls-1" points="397.1 381.48 314.56 244.87 335.32 343.71 397.1 381.48"/>
+    <polygon class="cls-1" points="190.86 187.95 184.44 248.36 141.39 280.09 190.86 187.95"/>
+    <polygon class="cls-1" points="309.72 187.95 316.14 248.36 359.19 280.09 309.72 187.95"/>
+    <polygon class="cls-1" points="301.02 399.2 249.69 372.45 200.44 399.52 301.02 399.2"/>
+  </g>
+  <g id="Side_Arrow" data-name="Side Arrow">
+    <line class="cls-2" x1="20.01" y1="99.78" x2="39.97" y2="99.78"/>
+    <line class="cls-2" x1="20.05" y1="400.22" x2="40" y2="400.22"/>
+    <line class="cls-2" x1="29.94" y1="99.78" x2="29.94" y2="400.22"/>
+  </g>
+  <g id="Bottom_Arrow" data-name="Bottom Arrow">
+    <line class="cls-2" x1="399.22" y1="459.88" x2="399.23" y2="479.84"/>
+    <line class="cls-2" x1="100.78" y1="460.18" x2="100.79" y2="480.12"/>
+    <line class="cls-2" x1="399.23" y1="469.81" x2="100.78" y2="470.07"/>
+  </g>
+</svg>

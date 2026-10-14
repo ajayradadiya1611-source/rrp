@@ -1,0 +1,480 @@
+// ==========================================================================
+// LS Inventory Admin — design tokens
+// Palette: warm ivory surface, ink text, champagne-gold accent (jewelry-
+// appropriate without tipping into "gold gradient" cliché). Serif display
+// face for headings/section titles as the one signature flourish; the data
+// table itself stays a clean, high-density sans so the numbers stay legible.
+// ==========================================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+$font-display: 'Cormorant Garamond', Georgia, serif;
+$font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+$ink: #21252b;
+$ink-soft: #565f6b;
+$ink-faint: #93989f;
+
+$ivory: #faf8f4;
+$surface: #ffffff;
+$border: #e7e2d6;
+$border-soft: #f0ece2;
+
+$gold: #a9803f;
+$gold-deep: #8a6a34;
+$gold-tint: #f5ecd9;
+
+$sapphire: #24344d;
+
+$green: #3f7a5b;
+$green-tint: #e7f2ec;
+$red: #b23a48;
+$red-tint: #fbe9eb;
+
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+
+$shadow-card: 0 1px 2px rgba(33, 37, 43, 0.04), 0 8px 24px -12px rgba(33, 37, 43, 0.12);
+$shadow-pop: 0 4px 16px -4px rgba(33, 37, 43, 0.18);
+
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba($gold, 0.25);
+  border-color: $gold;
+}
+
+// ==========================================================================
+// Base
+// ==========================================================================
+
+.ls-admin {
+  font-family: $font-body;
+  color: $ink;
+  -webkit-font-smoothing: antialiased;
+
+  * { box-sizing: border-box; }
+
+  a { color: $sapphire; text-decoration: none; }
+}
+
+.ls-admin-page {
+  padding: 28px 4px 60px;
+}
+
+// ==========================================================================
+// Page header
+// ==========================================================================
+
+.ls-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+
+  h1 {
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: 0.2px;
+    color: $ink;
+    margin: 0 0 4px;
+  }
+}
+
+.ls-page-subtitle {
+  margin: 0;
+  font-size: 13.5px;
+  color: $ink-soft;
+  letter-spacing: 0.15px;
+}
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.ls-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: $font-body;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  padding: 9px 18px;
+  border-radius: $radius-sm;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.06s ease;
+  white-space: nowrap;
+
+  &:active { transform: translateY(1px); }
+  &:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  &:focus-visible { @include focus-ring; }
+}
+
+.ls-btn-icon { font-size: 12px; line-height: 1; }
+
+.ls-btn-primary {
+  background: $ink;
+  border-color: $ink;
+  color: $ivory;
+
+  &:hover:not(:disabled) { background: #33383f; }
+}
+
+.ls-btn-ghost {
+  background: $surface;
+  border-color: $border;
+  color: $ink;
+
+  &:hover:not(:disabled) { border-color: $ink-faint; background: $ivory; }
+}
+
+// ==========================================================================
+// Card shell
+// ==========================================================================
+
+.ls-card {
+  background: $surface;
+  border: 1px solid $border-soft;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: 22px 24px 8px;
+}
+
+.ls-card-loading {
+  padding: 60px 24px;
+  text-align: center;
+  color: $ink-soft;
+  font-size: 14px;
+}
+
+// ==========================================================================
+// Notices
+// ==========================================================================
+
+.ls-notice {
+  padding: 12px 16px;
+  border-radius: $radius-sm;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+.ls-notice-error {
+  background: $red-tint;
+  border: 1px solid rgba($red, 0.25);
+  color: $red;
+}
+
+// ==========================================================================
+// Toolbar
+// ==========================================================================
+
+.ls-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid $border-soft;
+}
+
+.ls-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: $ink-faint;
+  }
+}
+
+.ls-search {
+  display: flex;
+  gap: 8px;
+
+  input { min-width: 260px; }
+}
+
+// ==========================================================================
+// Form controls (shared: toolbar + form fields)
+// ==========================================================================
+
+.ls-admin input[type="text"],
+.ls-admin textarea,
+.ls-admin select {
+  font-family: $font-body;
+  font-size: 13.5px;
+  color: $ink;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
+  padding: 9px 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+
+  &:hover { border-color: $ink-faint; }
+  &:focus-visible, &:focus { @include focus-ring; }
+}
+
+.ls-admin textarea {
+  resize: vertical;
+  min-height: 64px;
+  font-family: $font-body;
+}
+
+.ls-input-error {
+  border-color: $red !important;
+  box-shadow: 0 0 0 3px rgba($red, 0.12);
+}
+
+.ls-field-error {
+  color: $red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.ls-field-hint {
+  font-size: 11.5px;
+  color: $ink-faint;
+  line-height: 1.4;
+}
+
+// ==========================================================================
+// Table
+// ==========================================================================
+
+.ls-table-scroll {
+  overflow-x: auto;
+  margin: 0 -24px;
+  padding: 0 24px;
+}
+
+.ls-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  min-width: 1180px;
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: $ivory;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: $ink-soft;
+    padding: 11px 14px;
+    border-bottom: 1px solid $border;
+    white-space: nowrap;
+    z-index: 1;
+
+    &.is-sortable {
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.12s ease;
+      &:hover { color: $ink; }
+    }
+  }
+
+  .ls-sort-arrow { color: $gold-deep; }
+
+  tbody tr {
+    transition: background-color 0.1s ease;
+    &:hover { background: $ivory; }
+    &:not(:last-child) td { border-bottom: 1px solid $border-soft; }
+  }
+
+  td {
+    padding: 12px 14px;
+    color: $ink;
+    vertical-align: middle;
+  }
+
+  .ls-row-empty td {
+    text-align: center;
+    color: $ink-faint;
+    padding: 36px 14px;
+    font-style: italic;
+  }
+}
+
+.ls-cell-muted { color: $ink-faint; }
+.ls-cell-strong { font-weight: 600; }
+
+.ls-cell-note {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ls-link {
+  border-bottom: 1px solid rgba($sapphire, 0.25);
+  &:hover { border-color: $sapphire; }
+}
+
+.ls-price {
+  font-weight: 600;
+  color: $ink;
+}
+
+.ls-price-original {
+  display: inline-block;
+  margin-left: 6px;
+  color: $ink-faint;
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+.ls-tag {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+.ls-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.ls-pill-sale {
+  background: $gold-tint;
+  color: $gold-deep;
+}
+
+.ls-status-select {
+  min-width: 128px;
+  font-weight: 500;
+  padding: 6px 10px !important;
+
+  &.is-in {
+    color: $green;
+    border-color: rgba($green, 0.3) !important;
+    background: $green-tint !important;
+  }
+
+  &.is-out {
+    color: $red;
+    border-color: rgba($red, 0.3) !important;
+    background: $red-tint !important;
+  }
+}
+
+.ls-col-actions {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.ls-action {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: $ink-soft;
+  margin-left: 12px;
+
+  &:first-child { margin-left: 0; }
+  &:hover { color: $ink; }
+}
+
+.ls-action-danger:hover { color: $red; }
+
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
+.ls-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 0;
+  margin-top: 6px;
+  border-top: 1px solid $border-soft;
+}
+
+.ls-pagination-info {
+  font-size: 12.5px;
+  color: $ink-soft;
+  letter-spacing: 0.2px;
+}
+
+// ==========================================================================
+// Form (add / edit)
+// ==========================================================================
+
+.ls-form {
+  padding-bottom: 24px;
+}
+
+.ls-form-section {
+  padding: 20px 0;
+  border-bottom: 1px solid $border-soft;
+
+  &:last-of-type { border-bottom: none; }
+}
+
+.ls-form-section-title {
+  font-family: $font-display;
+  font-weight: 700;
+  font-size: 20px;
+  color: $ink;
+  margin: 0 0 16px;
+  letter-spacing: 0.2px;
+}
+
+.ls-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px 20px;
+}
+
+.ls-field-wide {
+  grid-column: 1 / -1;
+}
+
+.ls-required {
+  color: $red;
+  font-weight: 600;
+}
+
+.ls-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+// ==========================================================================
+// Responsive
+// ==========================================================================
+
+@media (max-width: 782px) {
+  .ls-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ls-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ls-search input { min-width: 0; flex: 1; }
+}

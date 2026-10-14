@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_612a5942-3a3e-4d70-a279-f41cf02fc052" data-name="612a5942-3a3e-4d70-a279-f41cf02fc052" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <g id="trapez_step">
+    <polygon class="cls-1" points="11.27 45.83 17.31 24.25 42.98 24.12 48.73 45.88 11.27 45.83"/>
+    <polyline class="cls-1" points="17.33 24.32 25.31 34.7 11.33 45.76"/>
+    <polyline class="cls-1" points="25.34 34.69 34.77 34.69 42.98 24.12"/>
+    <line class="cls-1" x1="34.8" y1="34.72" x2="48.68" y2="45.83"/>
+    <polygon class="cls-1" points="18.61 25.98 41.5 25.98 45.58 43.31 15.19 42.69 18.61 25.98"/>
+    <polygon class="cls-1" points="20.28 28.12 39.92 28.03 42.8 41.17 17.89 40.67 20.28 28.12"/>
+  </g>
+</svg>

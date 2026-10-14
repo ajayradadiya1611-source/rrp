@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import "font/montserrat";
+@import "font/literata";
+@import "font/roboto_slab";
+@import "font/open_sans";
+
+body {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--black-primary);
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+i {
+  cursor: pointer;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+@import "utilities/mixin";
+
+@import "utilities/variables";
+@import "utilities/typography";
+
+@import "layout/header";
+@import "layout/footer";
+
+@import "page/home";
+@import "page/inventory";
+@import "page/color_diamond";
+@import "page/melee_diamond";
+@import "page/ring";
+// @import "page/ring_detail";
+@import "page/fancy_diamond";
+@import "page/diamond_ring";
+@import "page/custom_engagement_ring";
+@import "page/cut_diamond";
+@import "page/diamond_chart";
+@import "page/about_us";
+@import "page/comparison";
+@import "page/why_choose_us";
+@import "page/faq";
+@import "page/contact_us";
+@import "page/crypto_payment";
+@import "page/shipping";
+@import "page/return_refund";
+@import "page/diamond_price_match";
+@import "page/promo_code";
+@import "page/feedback";
+@import "page/privacy_policy";
+@import "page/tearm_of_use";
+@import "page/blog";
+@import "page/blog-details";
+@import "page/wholesale-login";
+@import "page/collection";
+@import "page/diamond-calculator";
+
+@import "components/buttons";
+@import "components/form";
+@import "components/inventory_banner";
+@import "components/checkbox";
+
+@import "utilities/color_and_image";
+@import "utilities/width_hight_and_padding_margin";
+@import "utilities/media";
+
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('./fonts/Geomanist-Regular.woff2') format('woff2'),
+       url('./fonts/Geomanist-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Geomanist';
+  src: url('./fonts/Geomanist-Bold.woff2') format('woff2'),
+       url('./fonts/Geomanist-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
