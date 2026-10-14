@@ -258,13 +258,13 @@ echo ucwords(strtolower($sp_id_product->get_name()))
 ?>
                             </h4>
                             <?php
-                        if(WEBSITE_TYPE=='RETAIL'){
+                        
                         ?>
                         <div class="reviwewidgetp">
                              <div class="ruk_rating_snippet" data-sku="<?php echo $sp_id_product->get_sku();?>"></div> 
                         </div>
                         <?php
-                        }
+                        
                         ?>
                           <span class="diamond_description"><?php echo $prdct_attrdtl; ?></span>
 
@@ -338,7 +338,7 @@ echo ucwords(strtolower($sp_id_product->get_name()))
                             </form>
 
                             <?php
-                            if(WEBSITE_TYPE=='RETAIL'){
+                            
 
                             
                             // Combined delivery estimate for the finished ring:
@@ -361,7 +361,7 @@ echo ucwords(strtolower($sp_id_product->get_name()))
                                 </p>
                             </div>
                             <?php
-                            }
+                            
                             ?>
 
                             <div class="ls-iconcnt">
@@ -551,13 +551,13 @@ if (empty($all_faqs)) {
     </div>
 </div>
 <?php
-if(WEBSITE_TYPE=='RETAIL'){
+
 ?>
 <div class="container-fluid my-5">
     <?php  echo do_shortcode( '[product_reviews_widget sku="' . $sp_id_product->get_sku() . '"]' );?>
 </div>
 <?php
-}
+
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {

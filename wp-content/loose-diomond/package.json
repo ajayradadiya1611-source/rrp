@@ -17,37 +17,15 @@
     "url": ""
   },
   "scripts": {
-    "build": "vite build --config vites/vite.inventory-app.config.js && vite build --config vites/vite.inventory-admin.config.js && vite build --config vites/vite.theme.config.js && vite build --config vites/vite.thankyou-question.config.js && vite build --config vites/vite.delete-out-of-stock-inventory.config.js && vite build --config vites/vite.create-sale-product.config.js && vite build --config vites/vite.ring-preview-size.config.js && vite build --config vites/vite.inventory-listing.config.js && vite build --config vites/vite.ring-builder-breadcrumb.config.js && vite build --config vites/vite.ring-extra-features.config.js && vite build --config vites/vite.zero-price-products.config.js && vite build --config vites/vite.category-product-position.config.js && vite build --config vites/vite.cart-page.config.js"
+    "build": "vite build --config vites/vite.theme.config.js && vite build --config vites/vite.cart-page.config.js"
   },
   "dependencies": {
-    "axios": "^1.7.9",
-    "intl-tel-input": "^26.8.1",
-    "nouislider": "^15.8.1",
-    "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-slick": "^0.31.0",
-    "slick-carousel": "^1.8.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.7.0",
-    "@wordpress/scripts": "^19.2.2",
-    "dir-archiver": "^1.1.1",
-    "rtlcss": "^3.5.0",
     "sass": "^1.105.1",
     "vite": "^5.4.21"
-  },
-  "rtlcssConfig": {
-    "options": {
-      "autoRename": false,
-      "autoRenameStrict": false,
-      "blacklist": {},
-      "clean": true,
-      "greedy": false,
-      "processUrls": false,
-      "stringMap": []
-    },
-    "plugins": [],
-    "map": false
   }
 }

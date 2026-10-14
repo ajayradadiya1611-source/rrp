@@ -14,13 +14,10 @@ function add_product_to_wc_c($iid, $categories = array())
     $color = $r->color;
     $clarity = $r->clarity;
     $sku = $r->sku;
-    if(WEBSITE_TYPE=='WHOLESALE'){
-        $price = (int)$r->price;
-        $org_price = (int)$r->org_price;
-    }else{
+    
         $price = (int) round(($r->price / (100 - 30)) * 100);
         $org_price = (int) round(($r->price / (100 - 30)) * 100);
-    }
+    
     if ($price <= 0) {
         return false;
     }
@@ -214,19 +211,11 @@ function ls_rest_add_to_cart_c(WP_REST_Request $request)
         if ($price_in_inv != $price_in_wc) {
             $org_price = $record->org_price;
 
-            if (WEBSITE_TYPE == 'WHOLESALE') {
-                if (!empty($org_price) && (float) $org_price > (float) $price_in_inv) {
-                    $product_l->set_regular_price($org_price);
-                    $product_l->set_sale_price($price_in_inv);
-                } else {
-                    $product_l->set_regular_price($price_in_inv);
-                    $product_l->set_sale_price('');
-                }
-            } else {
+            
                 $rprice = round(($record->price / (100 - 30)) * 100);
                 $product_l->set_regular_price($rprice);
                 $product_l->set_sale_price('');
-            }
+            
 
             $product_l->save(); // syncs _price and clears transients
         }

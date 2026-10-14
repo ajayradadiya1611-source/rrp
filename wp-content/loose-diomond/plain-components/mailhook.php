@@ -254,7 +254,7 @@ function my_custom_email_content( $order, $sent_to_admin, $plain_text, $email ) 
         return;
     }
     $payment_method = $order->get_payment_method();
-    if(WEBSITE_TYPE=='RETAIL'){
+    
         // Processing order email
         if ( $email->id === 'customer_processing_order' ) {
 
@@ -318,7 +318,7 @@ function my_custom_email_content( $order, $sent_to_admin, $plain_text, $email ) 
             echo '<p>Best regards,<br/>
                 Loose Grown Diamond</p>';
         }
-    }
+    
 }
 add_filter('woocommerce_email_heading_customer_invoice', 'custom_invoice_email_headinga', 10, 2);
 

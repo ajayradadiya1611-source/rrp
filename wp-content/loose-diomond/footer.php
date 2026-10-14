@@ -29,7 +29,7 @@ if($is_checkout == true){
 
       <div class="is_checkout_footer d-flex  flex-column gap-5">
         <div class="d-flex justify-content-center align-items-center flex-wrap aj-footer-logo">
-                   <?php if (WEBSITE_TYPE == 'RETAIL') { ?>
+                   <?php  ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/affirm.svg" alt="Affirm" class="img-fluid" loading="lazy" />
@@ -43,15 +43,7 @@ if($is_checkout == true){
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/cashapp.svg" alt="Cash App" class="img-fluid" loading="lazy" />
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/katapult.svg" alt="Katapult" class="img-fluid" loading="lazy" />
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/amazon-pay.svg" alt="amazon-pay" class="img-fluid" loading="lazy" />
-                  <?php } else { ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/master-card.svg" alt="Master Card" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/apple-pay.svg" alt="Apple Pay" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bitcoin.svg" alt="Bitcoin" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/zelle-footer.svg" alt="Zelle" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bank-transfer-footer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
-                  <?php } ?>
+                  <?php  ?>
                 </div>
                 <div class="d-flex justify-content-center align-items-center flex-wrap aj-footer-links-cart">
 
@@ -205,11 +197,9 @@ if($is_checkout == true){
                 aria-controls="collapseThree"
               >
                  <?php
-              if(WEBSITE_TYPE=='WHOLESALE'){
-                echo 'POLICIES';
-              }else{
+              
                 echo 'FINANCING & POLICIES';
-              }
+              
               ?>
                 <div>
                   <img
@@ -417,11 +407,9 @@ if($is_checkout == true){
           <div class="col-sm-6 col-md-4 col-lg-3">
             <p class="text_white_primary text-uppercase footer_title">
               <?php
-              if(WEBSITE_TYPE=='WHOLESALE'){
-                echo 'POLICIES';
-              }else{
+              
                 echo 'FINANCING & POLICIES';
-              }
+              
               ?>
             </p>
             <ul class="widget_links">
@@ -524,7 +512,7 @@ if($is_checkout == true){
             </div>
           </div>
           <?php
-            if(WEBSITE_TYPE=='RETAIL'){
+            
                 ?>
           <div class="col-sm-6 col-md-4 col-lg-3">
             <p class="text_white_primary text-uppercase footer_title">
@@ -547,10 +535,10 @@ if($is_checkout == true){
             </a>
           </div>
           <?php 
-        }
+        
           ?>
           <?php
-            if(WEBSITE_TYPE=='RETAIL'){
+            
                 ?>
           <div class="col-sm-6 col-md-4 col-lg-3">
             <p class="text_white_primary text-uppercase footer_title">
@@ -576,11 +564,11 @@ if($is_checkout == true){
             </div>
           </div>
           <?php 
-        }
+        
           ?>
           <div class="col-sm-6 col-md-4 col-lg-3">
             <div class="d-flex align-items-center row-gap-0 flex-wrap gap-3 aj-footer-logo">
-               <?php if (WEBSITE_TYPE == 'RETAIL') { ?>
+               <?php  ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/affirm.svg" alt="Affirm" class="img-fluid" loading="lazy" />
@@ -593,15 +581,7 @@ if($is_checkout == true){
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/banktransfer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/cashapp.svg" alt="Cash App" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/katapult.svg" alt="Katapult" class="img-fluid" loading="lazy" />
-              <?php } else { ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/master-card.svg" alt="Master Card" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/apple-pay.svg" alt="Apple Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bitcoin.svg" alt="Bitcoin" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/zelle-footer.svg" alt="Zelle" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bank-transfer-footer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
-              <?php } ?>
+              <?php  ?>
             </div>
           </div>
         </div>
@@ -610,7 +590,7 @@ if($is_checkout == true){
         <div class="row mobile-desktop d-sm-none mx-0">
 
             <?php
-            if(WEBSITE_TYPE=='RETAIL'){
+            
                 ?>
           <div class="col-12 px-0">
             <p class="text_white_primary text-uppercase footer_title">
@@ -633,10 +613,10 @@ if($is_checkout == true){
             </a>
           </div>
           <?php 
-          }
+          
           ?>
             <?php
-            if(WEBSITE_TYPE=='RETAIL'){
+            
                 ?>
           <div class="col-12 px-0">
             <p class="text_white_primary text-uppercase footer_title">
@@ -662,11 +642,11 @@ if($is_checkout == true){
             </div>
           </div>
           <?php
-          }
+          
           ?>
 
            <div class="d-flex align-items-center row-gap-0 flex-wrap gap-3 px-0 aj-footer-logo">
-              <?php if (WEBSITE_TYPE == 'RETAIL') { ?>
+              <?php  ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/affirm.svg" alt="Affirm" class="img-fluid" loading="lazy" />
@@ -681,15 +661,7 @@ if($is_checkout == true){
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/banktransfer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/cashapp.svg" alt="Cash App" class="img-fluid" loading="lazy" />
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/katapult.svg" alt="Katapult" class="img-fluid" loading="lazy" />
-              <?php } else { ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/master-card.svg" alt="Master Card" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/apple-pay.svg" alt="Apple Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bitcoin.svg" alt="Bitcoin" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/zelle-footer.svg" alt="Zelle" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bank-transfer-footer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
-              <?php } ?>
+              <?php  ?>
             </div>
         </div>
       </div>
@@ -837,29 +809,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </div><!-- #page -->
 <?php
-            if(WEBSITE_TYPE=='WHOLESALE'){
-                ?>
-                <?php if ( is_product() ) : ?>
-    <a href="https://wa.me/?text=<?php echo rawurlencode( get_the_title() . ' - ' . get_permalink() ); ?>" 
-       class="oc_whatsapp_box"
-       target="_blank"
-       rel="noopener noreferrer">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-<?php endif; ?>
-                <?php
-              }else{
+            
                 ?>
                 <script async type="text/javascript" src="https://zvrnp.loosegrowndiamond.com/loosegrowndiamond/load" onError="var fallbackScript = document.createElement('script'); fallbackScript.src='https://cdn.attn.tv/loosegrowndiamond/dtag.js'; document.head.appendChild(fallbackScript);"></script>
                 <?php
-              }
+              
               ?>
 <?php
-if(WEBSITE_TYPE=='WHOLESALE'){
-?>
-<script src="https://t.contentsquare.net/uxa/<?php echo CONTENTSQUARE;?>.js"></script>
-<?php
-}else{
+
 ?>
 <!-- Hotjar Tracking Code for https://www.loosegrowndiamond.com/ -->
 <script>
@@ -873,7 +830,7 @@ if(WEBSITE_TYPE=='WHOLESALE'){
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 <?php
-}
+
 ?>
 
 

@@ -357,7 +357,7 @@ function get_products_by_category_and_taxonomy($request) {
         // ls-addtocart-api.php), so return the 30% off price with the full
         // price as org_price (struck through) — same as diamond-detail-render.php.
         $aj_diamond = get_post_meta($product_id, '_aj_diamond', true);
-        if (!empty($aj_diamond) && defined('WEBSITE_TYPE') && WEBSITE_TYPE === 'RETAIL') {
+        if (!empty($aj_diamond)) {
             $full_price = (float) ($org_price ?: $product->get_regular_price() ?: $product->get_price());
             if ($full_price > 0) {
                 $org_price = (int) round($full_price);

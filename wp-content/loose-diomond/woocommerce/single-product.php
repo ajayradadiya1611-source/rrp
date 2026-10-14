@@ -413,13 +413,13 @@ $spin_images = implode(" ", $spin_imageurls);
 						<h1 class="fw-500 text_black_secondary"><?php echo esc_html($product->get_name()); ?></h1>
 
 						<?php
-						if(WEBSITE_TYPE=='RETAIL'){
+						
 						?>
 						<div class="reviwewidgetp">
 							<?php  echo do_shortcode( '[rating_snippet sku="' . $product->get_sku() . '"]' );?>
 						</div>
 						<?php
-						}
+						
 						?>
 
 						<?php
@@ -685,7 +685,7 @@ if ( ! empty( $short_description ) ) {
 							</form>
 						<?php endif; ?>
 						<?php
-						if(WEBSITE_TYPE=='RETAIL'){
+						
 						if ( has_term( 'engagement-rings', 'product_cat' ) ) {
 
 							// Delivery lead time depends on this product's Style
@@ -861,7 +861,7 @@ if ( ! empty( $short_description ) ) {
 							
 						</div>
 						<?php 
-						}
+						
 						?>
 						<div class="ls-iconcnt">
 					       <!--  <div><img src="<?php echo get_template_directory_uri().'/aj_custom/single-product/'; ?>Frame-1.svg" title=""><span class="ls-cnt">Insured Shipping Worldwide</span></div>
@@ -1062,17 +1062,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 
 		<?php if ( $is_melee_diamond == true ) { ?>
-		var isRoundCalibrated = [
-			'round-shape-melee-calibrated-diamonds',
-			'old-mine-cut-lab-grown-hpht-diamonds',
-			'old-european-cut-melee-lab-grown-diamonds'
-		].indexOf(typeof lsProductSlug !== 'undefined' ? lsProductSlug : '') !== -1;
-
-		var isWholesale = window.themeData && window.themeData.WEBSITE_TYPE === 'WHOLESALE';
-		var unitLabel = isWholesale
-			? (isRoundCalibrated ? ' / Per Carat' : ' / Per Diamond')
-			: ' / Per Diamond';
-		priceHtml += '<span class="oc-single-per-diamond">' + unitLabel + '</span>';
+		priceHtml += '<span class="oc-single-per-diamond"> / Per Diamond</span>';
 		<?php } ?>
 
 		setPriceHtml(priceHtml);
@@ -1547,13 +1537,13 @@ if($is_setting_product['is_setting'] || $c_ctype==4){
 
 ?>
 <?php
-if(WEBSITE_TYPE=='RETAIL'){
+
 ?>
 <div class="container-fluid my-5">
 	<?php  echo do_shortcode( '[product_reviews_widget sku="' . $product->get_sku() . '"]' );?>
 </div>
 <?php
-}
+
 ?>
 
 <script type="text/javascript">
@@ -1607,62 +1597,3 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 </script>
 <?php get_footer('shop'); ?>
-
-<script type="module">
-	import { readWishlist, toggleWishlistIdWithType, isInWishlist } from "<?php echo esc_url( get_template_directory_uri() ); ?>/components/inventory-app/react/src/wishlist.js";
-
-	document.addEventListener('DOMContentLoaded', () => {
-		const btn = document.querySelector('.wish-btn[data-product-id="<?php echo esc_attr($product->get_id()); ?>"]');
-		if (!btn) return;
-		const icon = btn.querySelector('i');
-		const productId = btn.getAttribute('data-product-id');
-
-		const getVariationId = () => {
-			const el = document.querySelector('.variation_id');
-			if (!el) return undefined;
-			const v = el.value;
-			if (!v || v === '0') return undefined;
-			return v;
-		};
-
-		const updateUI = () => {
-			const variationId = getVariationId();
-			const inW = isInWishlist(productId, variationId);
-			console.log("productId",productId,variationId);
-			btn.classList.toggle('active', inW);
-			if (icon) {
-				icon.classList.remove('fa-regular', 'fa-solid', 'text-danger');
-				if (inW) icon.classList.add('fa-solid', 'text-danger'); else icon.classList.add('fa-regular');
-			}
-			btn.setAttribute('aria-pressed', inW ? 'true' : 'false');
-		};
-		setTimeout(updateUI, 500);
-		//updateUI();
-
-		// update UI when selected variation changes
-		document.addEventListener('change', (e) => {
-			if (e.target && (e.target.classList.contains('variation_id') || e.target.name && e.target.name.indexOf('attribute_') === 0)) {
-				setTimeout(updateUI, 50);
-			}
-		});
-
-		btn.addEventListener('click', (e) => {
-			e.preventDefault();
-			const variationId = getVariationId();
-			console.log("variationId",variationId);
-			// Build small meta object: price text + selected attributes
-			const priceText = document.querySelector('.price-display') ? document.querySelector('.price-display').innerText.trim() : '';
-			const selected = {};
-			document.querySelectorAll('.attribute-select').forEach(function(el) {
-				const name = el.name || el.getAttribute('data-attribute_name') || el.id || '';
-				if (name) selected[name] = el.value || '';
-			});
-			const meta = { price: priceText, selected };
-			toggleWishlistIdWithType(productId, 'productdiomon', variationId, meta);
-			updateUI();
-		});
-	});
-
-
-	
-</script>

@@ -412,12 +412,10 @@ $size_mm = ($diamond->length ?? '') . ' x ' . ($diamond->width ?? '') . ' x ' . 
 print_r($diamond);
 echo "</pre>";
 exit;*/
-$multiplier = (WEBSITE_TYPE === 'RETAIL') ? 0.7 : 1;
+$multiplier = 0.7;
 
 $price = (int) round($diamond->price );
-$org_price = (WEBSITE_TYPE === 'RETAIL')
-    ? (int) round($price / $multiplier)
-    : (int) round($diamond->org_price);
+$org_price = (int) round($price / $multiplier);
 
 $is_in_cart = false;
 $is_in_cart_ring = false;
@@ -522,7 +520,6 @@ $custom_setting_msg = sprintf(
                 <?php 
                     // Ring Builder Breadcrumb - Always show this
                     ls_ring_builder_breadcrumb('diamond');
-                    lgd_render_ring_builder_breadcrumb();
                     ?>
             </div>
             <?php
@@ -931,7 +928,7 @@ $custom_setting_msg = sprintf(
                                         <div class="guarantee-item-title">Price Match & Beat Guarantee</div>
                                     </div>
                                      <?php
-                                  if(WEBSITE_TYPE=='RETAIL'){
+                                  
                                   
                                   ?>
                                     <div class="col-md-4 col-6 mb-4 text-center">
@@ -939,11 +936,11 @@ $custom_setting_msg = sprintf(
                                         <div class="guarantee-item-title">5,000+ Verified Raving Reviews</div>
                                     </div>
                                     <?php
-                                  }
+                                  
                                   ?>
                                 </div>
                                 <?php
-                                  if(WEBSITE_TYPE=='RETAIL'){
+                                  
                                   
                                   ?>
                                   <div class="mt-4">
@@ -951,7 +948,7 @@ $custom_setting_msg = sprintf(
                                     <p class="mt-3 guarantee-proof">Proof? <a href="/reviews/">Read our reviews</a></p>
                                 </div>
                                   <?php
-                                  }
+                                  
                                   ?>
                                 
                             </div>
@@ -1113,7 +1110,7 @@ if ( $diamond->certificate != '' ) {
                           </form>
 
                          <?php
-                            if(WEBSITE_TYPE!='WHOLESALE'){
+                            
                             ?>
                             <div class="est_delivery_date mt-2">
                                 <p class="mb-0">
@@ -1125,7 +1122,7 @@ if ( $diamond->certificate != '' ) {
                                 </p>
                             </div>
                             <?php
-                            }
+                            
                             ?>
                       
                         <div class="ls-iconcnt">
@@ -1656,11 +1653,9 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 class="bay-heading-new text-capitalize">Built around you, not the retailer</h2>
     <p class="bay-subline-new">
       <?php
-      if(WEBSITE_TYPE=='WHOLESALE'){
-        echo "We'll let our customers speak for us.";  
-      }else{
+      
         echo 'We ll let <a href="/reviews/">our customers</a> speak for us.';  
-      }
+      
       ?>
       
     </p>
@@ -1686,7 +1681,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="feature-icon-new">
           <img src="<?php echo get_template_directory_uri(); ?>/aj_custom/bay-section-new/risk-free-return.svg" alt="30-day risk-free returns" />
         </div>
-        <div class="feature-title-new"><?php if(WEBSITE_TYPE=='WHOLESALE'){echo '7';}else{echo '30';} ?>-day risk-free returns</div>
+        <div class="feature-title-new"><?php echo '30'; ?>-day risk-free returns</div>
         <p class="feature-desc-new">Shop with confidence &mdash; easy returns, no hassle.</p>
       </div>
 
@@ -1846,58 +1841,6 @@ single_diomond_faq();
 </script>
 
 
-
 <?php if ( $render_header_footer ) { get_footer('shop'); } ?>
-<script type="module">
-  import { readWishlist, toggleWishlistIdWithType, isInWishlist } from "<?php echo esc_url( get_template_directory_uri() ); ?>/components/inventory-app/react/src/wishlist.js";
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('.wish-btn[data-product-id="<?php echo esc_attr($diamond->id); ?>"]');
-    if (!btn) return;
-    const icon = btn.querySelector('i');
-    const productId = btn.getAttribute('data-product-id');
-
-    const getVariationId = () => {
-      const el = document.querySelector('.variation_id');
-      if (!el) return undefined;
-      const v = el.value;
-      if (!v || v === '0') return undefined;
-      return v;
-    };
-
-    const updateUI = () => {
-      const variationId = getVariationId();
-      const inW = isInWishlist(productId, variationId);
-      btn.classList.toggle('active', inW);
-      if (icon) {
-        icon.classList.remove('fa-regular', 'fa-solid', 'text-danger');
-        if (inW) icon.classList.add('fa-solid', 'text-danger'); else icon.classList.add('fa-regular');
-      }
-      btn.setAttribute('aria-pressed', inW ? 'true' : 'false');
-    };
-
-    setTimeout(updateUI, 300);
-
-    document.addEventListener('change', (e) => {
-      if (e.target && (e.target.classList.contains('variation_id') || (e.target.name && e.target.name.indexOf('attribute_') === 0))) {
-        setTimeout(updateUI, 50);
-      }
-    });
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const variationId = getVariationId();
-      const priceText = document.querySelector('.price-display') ? document.querySelector('.price-display').innerText.trim() : '';
-      const selected = {};
-      document.querySelectorAll('.attribute-select').forEach(function(el) {
-        const name = el.name || el.getAttribute('data-attribute_name') || el.id || '';
-        if (name) selected[name] = el.value || '';
-      });
-      const meta = { price: priceText, selected };
-      toggleWishlistIdWithType(productId, 'rawdiomon', variationId, meta);
-      updateUI();
-    });
-  });
-</script>
 <?php
 }

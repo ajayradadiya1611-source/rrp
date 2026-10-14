@@ -429,16 +429,7 @@ get_header();
       const match = findVariation(selected);
 
       if (match) {
-          const isRoundCalibrated = [
-              'round-shape-melee-calibrated-diamonds',
-              'old-mine-cut-lab-grown-hpht-diamonds',
-              'old-european-cut-melee-lab-grown-diamonds',
-          ].includes(prod.dataset.slug);
-          const isWholesale = window.themeData.WEBSITE_TYPE === 'WHOLESALE';
-
-          const priceLabel = (isWholesale && isRoundCalibrated)
-              ? ' <span> / Per Carat </span>'
-              : ' <span> / Per Diamond </span>';
+          const priceLabel = ' <span> / Per Diamond </span>';
 
           if (match.plain_price) {
               priceEl.innerHTML = match.plain_price + priceLabel;

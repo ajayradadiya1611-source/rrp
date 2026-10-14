@@ -87,24 +87,7 @@ get_header();
                 <?php
                 /* ── Popular rings slider: pulled from ACF product pickers, with the
                    original hardcoded slugs kept as a fallback if no products are selected ── */
-                if ( WEBSITE_TYPE == 'WHOLESALE' ) {
-                    $dr_products       = get_field('oc_popular_rings_products_wholesale');
-                    $dr_featured_post  = get_field('oc_popular_rings_featured_wholesale');
-
-                    $dr_fallback_slugs = array(
-                        'adaya-oval-solitaire-lab-diamond-engagement-ring-lgdov-85',
-                        'adaya-round-solitaire-lab-diamond-engagement-ring-lgdbr-108',
-                        'adaya-emerald-solitaire-lab-diamond-engagement-ring-lgdem-84',
-                        'tulip-oval-lab-diamond-band-engagement-ring-lgdov-94',
-                        'adaya-radiant-solitaire-lab-diamand-engagement-ring-lgdrad-81',
-                        'arya-oval-solitaire-lab-diamond-engagement-ring-lgdov-86',
-                        'nimi-oval-solitaire-lab-diamond-engagement-ring-lgdov-117',
-                        'nimi-round-solitaire-lab-diamond-engagement-ring-lgdbr-118',
-                        'adaya-cushion-solitaire-lab-diamond-engagement-ring-lgdcu-82',
-                        'adaya-marquise-solitaire-lab-diamond-engagement-ring-lgdmq-81'
-                    );
-                    $dr_fallback_featured_slug = 'adaya-oval-solitaire-lab-diamond-engagement-ring-lgdov-85';
-                } else {
+                
                     $dr_products       = get_field('oc_popular_rings_products_retail');
                     $dr_featured_post  = get_field('oc_popular_rings_featured_retail');
 
@@ -121,7 +104,7 @@ get_header();
                         'adaya-marquise-cut-lab-grown-diamond-solitaire-ring-lgdmq-81'
                     );
                     $dr_fallback_featured_slug = 'adaya-oval-cut-lab-grown-diamond-solitaire-ring-lgdov-85';
-                }
+                
 
                 if ( ! empty($dr_products) ) {
                     $dr_slugs = wp_list_pluck($dr_products, 'post_name');

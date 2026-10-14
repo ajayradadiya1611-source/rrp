@@ -82,7 +82,7 @@ $common_page = $text_change['common_page'];
   <?php wp_head(); ?>
 
 <?php
-if(WEBSITE_TYPE=='RETAIL'){
+
 ?>
   <!-- Google Tag Manager -->
 <!-- <script>!function(){"use strict";function l(e){for(var t=e,r=0,n=document.cookie.split(";");r<n.length;r++){var o=n[r].split("=");if(o[0].trim()===t)return o[1]}}function s(e){return localStorage.getItem(e)}function u(e){return window[e]}function A(e,t){e=document.querySelector(e);return t?null==e?void 0:e.getAttribute(t):null==e?void 0:e.textContent}var e=window,t=document,r="script",n="dataLayer",o="https://tracking.loosegrowndiamond.com",a="",i="erpdmsijm",c="8=BA5UNDkpXSIgLDkwWlFWBFBYR0JLAB5PAQUGAAgDAh0aBA0aDAkfHAlEChwA",g="cookie",v="server_side_tagging",E="",d=!1;try{var d=!!g&&(m=navigator.userAgent,!!(m=new RegExp("Version/([0-9._]+)(.Mobile)?.*Safari.").exec(m)))&&16.4<=parseFloat(m[1]),f="stapeUserId"===g,I=d&&!f?function(e,t,r){void 0===t&&(t="");var n={cookie:l,localStorage:s,jsVariable:u,cssSelector:A},t=Array.isArray(t)?t:[t];if(e&&n[e])for(var o=n[e],a=0,i=t;a<i.length;a++){var c=i[a],c=r?o(c,r):o(c);if(c)return c}else console.warn("invalid uid source",e)}(g,v,E):void 0;d=d&&(!!I||f)}catch(e){console.error(e)}var m=e,g=(m[n]=m[n]||[],m[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"}),t.getElementsByTagName(r)[0]),v=I?"&bi="+encodeURIComponent(I):"",E=t.createElement(r),f=(d&&(i=8<i.length?i.replace(/([a-z]{8}$)/,"kp$1"):"kp"+i),!d&&a?a:o);E.async=!0,E.src=f+"/"+i+".js?"+c+v,null!=(e=g.parentNode)&&e.insertBefore(E,g)}();</script> -->
@@ -92,16 +92,7 @@ if(WEBSITE_TYPE=='RETAIL'){
 
 
 <?php
-}else{
-?>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WLZLSKP8');</script>
-    <!-- End Google Tag Manager -->
-<?php
-}
+
 ?>
  
 
@@ -121,19 +112,13 @@ if(WEBSITE_TYPE=='RETAIL'){
 <body <?php body_class(); ?>>
   <!-- Google Tag Manager (noscript) -->
   <?php
-if(WEBSITE_TYPE=='RETAIL'){
+
   ?>
   <!-- Google Tag Manager (noscript) -->
 <!-- <noscript><iframe src="https://tracking.loosegrowndiamond.com/ns.html?id=GTM-PMFPC75" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 <!-- End Google Tag Manager (noscript) -->
   <?php
-}else{
-?>
-<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLZLSKP8"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-<!-- End Google Tag Manager (noscript) -->
-<?php
-}
+
 ?>
   <?php wp_body_open(); ?>
   <!-- top bar section -->
@@ -177,6 +162,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- start header section -->
   <header class="header_wrap">
+<?php
+// Main menu (desktop + mobile share this). Only these items are shown.
+$oc_main_menu = array(
+    array(
+        'label' => 'Natural Diamonds',
+        'url'   => '/natural-diamonds/',
+        'children' => array(
+            array('name' => 'Melee Diamonds',    'url' => '/melee-diamond'),
+            array('name' => 'Mix Lot Diamonds',  'url' => '/mix-lot-diamonds/'),
+            array('name' => 'Fancy Diamonds',    'url' => '/fancy-diamonds/'),
+        ),
+    ),
+    array('label' => 'Black Diamonds', 'url' => '/black-diamonds/'),
+    array(
+        'label' => 'Antique Diamonds',
+        'url'   => '/antique-diamonds/',
+        'children' => array(
+            array('name' => 'Salt and Pepper Diamonds',    'url' => '/salt-and-pepper-diamonds/'),
+            array('name' => 'ICY Diamonds',                'url' => '/icy-diamonds/'),
+            array('name' => 'Rose cut Chakri Round Diamonds','url' => '/rose-cut-chakri-round-diamonds/'),
+            array('name' => 'Polki Slice cut Diamonds',    'url' => '/polki-slice-cut-diamonds/'),
+            array('name' => 'Diamond Beads',               'url' => '/diamond-beads/'),
+            array('name' => 'Cubes Rough Diamonds',        'url' => '/cubes-rough-diamonds/'),
+            array('name' => 'Fancy Color Melee Diamonds',  'url' => '/fancy-color-melee-diamonds/'),
+            array('name' => 'Single Cut Diamonds',         'url' => '/single-cut-diamonds/'),
+        ),
+    ),
+    array('label' => 'Education', 'url' => '/education/'),
+);
+?>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <button
@@ -222,428 +237,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </form>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown dropdown-mega position-static">
-              <a
-                class="nav-link dropdown-toggle"
-                href="<?php echo $text_change['inventory_url'] ; ?>"
-                >
-                Lab Diamonds
-                <i class="fa-solid fa-angle-down ms-1"></i>
-              </a>
-              <div class="dropdown-menu lab-diamonds-mega-menu">
-                <div class="mega_content">
-                  <div class="container-fluid">
-                    <div class="d-flex gap-4 justify-content-between">
-
-                      <div class="lab-shape-section">
-                        <p>SHOP BY SHAPE</p>
-                        <div class="row">
-                          <div class="col-6 pe-0">
-                            <ul class="text_widget mb-0 ds-left_shapes">
-                              <?php foreach ($common_page['left_shapes'] as $item): ?>
-                                  <li>
-                                    <a href="<?= $item['url']; ?>">
-                                      <div>
-                                        <img src="<?= $item['image']; ?>" 
-                                             alt="<?= strtolower($item['name']); ?>" 
-                                             class="img-fluid" loading="lazy" />
-                                      </div>
-                                      <?= $item['name']; ?>
-                                    </a>
-                                  </li>
-                                <?php endforeach; ?>
-                            </ul>
-                          </div>
-                          <div class="col-6 ps-0">
-                            <ul class="text_widget mb-0  ds-right_shapes">
-                              <?php foreach ($common_page['right_shapes'] as $item): ?>
-                                <li>
-                                  <a href="<?= $item['url']; ?>">
-                                    <div>
-                                      <img src="<?= $item['image']; ?>" 
-                                           alt="<?= strtolower($item['name']); ?>" 
-                                           class="img-fluid" loading="lazy" />
-                                    </div>
-                                    <?= $item['name']; ?>
-                                  </a>
-                                </li>
-                              <?php endforeach; ?>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="border-right"></div>
-                      <div class="">
-                        <p>SHOP BY CARAT</p>
-                        <ul class="text_widget mb-0 lab-simple-list">
-                          <?php foreach ($common_page['carat_diamonds'] as $item): ?>
-                            <li>
-                              <a href="<?= $item['url']; ?>">
-                                <?= $item['name']; ?>
-                              </a>
-                            </li>
-                          <?php endforeach; ?>
-                        </ul>
-                      </div>
-                      <div class="border-right"></div>
-                      <div class="">
-                        <p>SHOP BY PRICE</p>
-                        <ul class="text_widget mb-0 lab-simple-list">
-                          <?php foreach ($common_page['shop_by_price'] as $item): ?>
-                              <li>
-                                <a href="<?= $item['url']; ?>">
-                                  <?= $item['name']; ?>
-                                </a>
-                              </li>
-                          <?php endforeach; ?>
-                        </ul>
-                      </div>
-                      <div class="border-right"></div>
-                      <div class="">
-                        <p>FANCY COLOR DIAMONDS</p>
-                        <div class="row">
-                          <div class="col-6 pe-0">
-                            <ul class="text_widget mb-0 ds-left_shapes">
-                              <?php foreach ($common_page['left_color_diamonds'] as $item): ?>
-                                  <li>
-                                    <a href="<?= $item['url']; ?>">
-                                      <img src="<?= $item['image']; ?>" 
-                                           alt="<?= strtolower($item['name']); ?> diamond"
-                                           class="img-fluid" loading="lazy" />
-                                      <?= $item['name']; ?>
-                                    </a>
-                                  </li>
-                                <?php endforeach; ?>
-                            </ul>
-                          </div>
-                          <div class="col-6 ps-0">
-                            <ul class="text_widget mb-0 ds-right_shapes">
-                              <?php foreach ($common_page['right_color_diamonds'] as $item): ?>
-                                <li>
-                                  <a href="<?= $item['url']; ?>">
-                                    <img src="<?= $item['image']; ?>" 
-                                         alt="<?= strtolower($item['name']); ?> diamond"
-                                         class="img-fluid" loading="lazy" />
-                                    <?= $item['name']; ?>
-                                  </a>
-                                </li>
-                              <?php endforeach; ?>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="border-right"></div>
-                      <!-- <div class="d-flex gap-3 pe-3"> -->
-                        <div>
-                          <p>POPULAR COLLECTIONS</p>
-                          <ul class="text_widget mb-0 lab-simple-list">
-                            <li><a href="/melee-diamond">Melee Diamonds</a></li>
-                            <li><a href="/contact-us">Custom Cut Diamonds</a></li>
-                            <li>
-                              <a href="/lab-diamonds/?is_sale=1" class="tomato-color pt-0">
-                                Diamonds On Sale <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header/fire.gif" alt="" loading="lazy">
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      <div class="border-right"></div>
-
-                        <div class="lab-promo-card pe-3">
-                          <a href="<?php echo $text_change['inventory_url']; ?>" class="text-decoration-none" >
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header/lab-diamond-promo.png" alt="Lab Diamonds Promo"
-                              class="lab-promo-img" loading="lazy" />
-                              <?php
-                              if(WEBSITE_TYPE=='RETAIL'){
-                                echo '<p class="px-0 my-2 lh-sm "  class="">Save 30% on Lab Diamonds with code <span
-                                class="tomato-color cursor">hallo30</span></p>';
-                              }
-                              ?>
-                            
-                          </a>
-                          <a href="<?php echo $text_change['inventory_url']; ?>" class="promo-shop-link">Shop Now</a>
-                        </div>
-                      <!-- </div> -->
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-            </li>
-            <?php
-             if(WEBSITE_TYPE=='WHOLESALE'){
-            ?>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="<?php echo $text_change['inventory_url'] ; ?>"
-                >
-                INVENTORY
-              </a>
-            </li>
-            <?php
-          }
-            ?>
-            <li class="nav-item dropdown dropdown-mega position-static">
-              <a
-                class="nav-link dropdown-toggle"
-                href="<?php echo get_site_url(); ?>/lab-grown-diamond-engagement-rings/"
-                >
-                Engagement rings
-                <i class="fa-solid fa-angle-down ms-1"></i>
-              </a>
-              <div class="dropdown-menu">
-                <div class="mega_content">
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-3 border-right">
-                        <p class="text-uppercase">Create Your Diamond Ring</p>
-                        <ul class="text_widget mb-3 mb-lg-0">
-                          <li>
-                            <a href="<?php echo get_site_url(); ?>/build-a-ring/">Start with a Setting</a>
-                          </li>
-                          <li>
-                            <a href="<?php echo get_site_url(); ?>/lab-diamonds/">Start with a Diamond</a>
-                          </li>
-                          <li>
-                            <a href="<?php echo get_site_url(); ?>/custom-engagement-rings/">Custom Engagement Ring</a>
-                          </li>
-                          <li>
-                            <a href="/ready-to-ship/engagement-rings">Ready To Ship Engagement Ring<div>
-                                        <img
-                                             src="<?php echo get_template_directory_uri() . '/assets/image/header/ready-to-ship.svg';?>"
-                                             class="img-fluid menutruckicon" loading="lazy" />
-                                      </div></a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-4 border-right">
-                        <p class="text-uppercase">Shop By Style</p>
-                        <div class="row">
-                          <div class="col-6 pe-0">
-                            <ul class="text_widget mb-3 mb-lg-0">
-                              <?php foreach($common_page['left_ring_styles'] as $style){ ?>
-
-                              <li>
-                              <a href="<?= $style['url'] ?>">
-                              <div>
-                              <img src="<?= $style['image'] ?>" alt="<?= strtolower($style['name']) ?>" class="img-fluid" loading="lazy">
-                              </div>
-                              <?= $style['name'] ?>
-                              </a>
-                              </li>
-
-                              <?php } ?>
-                            </ul>
-                          </div>
-                          <div class="col-md-6 ps-0">
-                            <ul class="text_widget mb-3 mb-lg-0">
-                                                            
-                              <?php foreach($common_page['right_ring_styles'] as $style){ ?>
-
-                              <li>
-                              <a href="<?= $style['url'] ?>">
-                              <div>
-                              <img src="<?= $style['image'] ?>" alt="<?= strtolower($style['name']) ?>" class="img-fluid" loading="lazy">
-                              </div>
-                              <?= $style['name'] ?>
-                              </a>
-                              </li>
-
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-4 border-right">
-                        <p class="text-uppercase">Shop By Shape</p>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <ul class="text_widget mb-3 mb-lg-0 ds-left_shapes">
-                              <?php foreach ($common_page['left_ring_shapes'] as $item): ?>
-                                  <li>
-                                    <a href="<?= $item['url']; ?>">
-                                      <div>
-                                        <img src="<?= $item['image']; ?>" 
-                                             alt="<?= strtolower($item['name']); ?>" 
-                                             class="img-fluid" loading="lazy" />
-                                      </div>
-                                      <?= $item['name']; ?>
-                                    </a>
-                                  </li>
-                                <?php endforeach; ?>
-                            </ul>
-                          </div>
-                          <div class="col-md-6">
-                            <ul class="text_widget mb-3 mb-lg-0 ds-right_shapes">
-                              <?php foreach ($common_page['right_ring_shapes'] as $item): ?>
-                                  <li>
-                                    <a href="<?= $item['url']; ?>">
-                                      <div>
-                                        <img src="<?= $item['image']; ?>" 
-                                             alt="<?= strtolower($item['name']); ?>" 
-                                             class="img-fluid" loading="lazy" />
-                                      </div>
-                                      <?= $item['name']; ?>
-                                    </a>
-                                  </li>
-                                <?php endforeach; ?>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown dropdown-mega position-static">
-              <a
-                class="nav-link dropdown-toggle"
-                href="<?php echo get_site_url(); ?>/fine-jewelry/"
-               >
-                Fine Jewelry
-                <i class="fa-solid fa-angle-down ms-1"></i>
-              </a>
-              <div class="dropdown-menu">
-                <div class="mega_content">
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-sm-6 col-lg-3 border-right">
-                        <p>
-                          <a href="<?php echo get_site_url(); ?>/lab-diamond-earrings/" class="text-decoration-none">
-                            EARRINGS
-                          </a>
-                        </p>
-                        <ul class="text_widget mb-3 mb-lg-0 oc-fine-sub-menu">
-                          <?php if (!empty($common_page['fine_earrings']) && is_array($common_page['fine_earrings'])): ?>
-                            <?php foreach ($common_page['fine_earrings'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  <div>
-                                    <img
-                                      src="<?= esc_url($item['image']); ?>"
-                                      alt="<?= esc_attr(strtolower(str_replace(' ', '-', $item['name']))); ?>"
-                                      class="img-fluid" loading="lazy" />
-                                  </div>
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                        </ul>
-                      </div>
-                      <div class="col-sm-6 col-lg-3 border-right">
-                        <p>
-                          <a href="<?php echo get_site_url(); ?>/lab-diamond-wedding-bands/" class="text-decoration-none">
-                            WEDDING BANDS 
-                          </a>
-                        </p>
-                        <ul class="text_widget mb-3 mb-lg-0 oc-fine-sub-menu">
-                          <?php if (!empty($common_page['wedding_rings']) && is_array($common_page['wedding_rings'])): ?>
-                            <?php foreach ($common_page['wedding_rings'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  <div>
-                                    <img
-                                      src="<?= esc_url($item['image']); ?>"
-                                      alt="<?= esc_attr(strtolower(str_replace(' ', '-', $item['name']))); ?>"
-                                      class="img-fluid" loading="lazy" />
-                                  </div>
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                        </ul>
-                      </div>
-                      <div class="col-sm-6 col-lg-3 border-right">
-                        <p>
-                          <a href="<?php echo get_site_url(); ?>/lab-diamond-pendants/" class="text-decoration-none">
-                            PENDANTS
-                          </a>
-                        </p>
-                        <ul class="text_widget mb-3 mb-lg-0 oc-fine-sub-menu">
-                          <?php if (!empty($common_page['pendants']) && is_array($common_page['pendants'])): ?>
-                            <?php foreach ($common_page['pendants'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  <div>
-                                    <img src="<?= esc_url($item['image']); ?>" alt="<?= esc_attr(strtolower(str_replace(' ', '-', $item['name']))); ?>" class="img-fluid" loading="lazy" />
-                                  </div>
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                        </ul>
-                      </div>
-                      <div class="col-sm-6 col-lg-3 border-right">
-                        <p>
-                          <a href="<?php echo get_site_url(); ?>/lab-diamond-bracelets/" class="text-decoration-none">
-                            BRACELETS
-                          </a>
-                        </p>
-                        <ul class="text_widget mb-3 mb-lg-0 oc-fine-sub-menu">
-                          <?php if (!empty($common_page['bracelets']) && is_array($common_page['bracelets'])): ?>
-                            <?php foreach ($common_page['bracelets'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  <div>
-                                    <img src="<?= esc_url($item['image']); ?>" alt="<?= esc_attr(strtolower(str_replace(' ', '-', $item['name']))); ?>" class="img-fluid" loading="lazy" />
-                                  </div>
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                        </ul>
-                        <p class="my-3">
-                          <a href="<?php echo get_site_url(); ?>/lab-diamond-necklaces/" class="text-decoration-none">
-                            NECKLACES
-                          </a>
-                        </p>
-                        <ul class="text_widget mb-3 mb-lg-0 oc-fine-sub-menu">
-                          <?php if (!empty($common_page['necklaces']) && is_array($common_page['necklaces'])): ?>
-                            <?php foreach ($common_page['necklaces'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  <div>
-                                    <img src="<?= esc_url($item['image']); ?>" alt="<?= esc_attr(strtolower(str_replace(' ', '-', $item['name']))); ?>" class="img-fluid" loading="lazy" />
-                                  </div>
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="<?php echo get_site_url(); ?>/product-category/ready-to-ship/" 
-                   class="nav-link dropdown-toggle" 
-                >
-                    Ready To Ship
-                    <i class="fa-solid fa-angle-down ms-1"></i>
+            <?php foreach ($oc_main_menu as $m): ?>
+              <?php if (!empty($m['children'])): ?>
+              <li class="nav-item dropdown">
+                <a href="<?php echo esc_url(get_site_url() . $m['url']); ?>" class="nav-link dropdown-toggle">
+                  <?php echo esc_html($m['label']); ?>
                 </a>
-
                 <ul class="dropdown-menu">
-                    <?php foreach ($common_page['ready_to_ship'] as $item): ?>
-                        <li>
-                            <a class="dropdown-item" href="<?php echo get_site_url() . $item['url']; ?>">
-                                <?php echo $item['name']; ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
+                  <?php foreach ($m['children'] as $c): ?>
+                  <li><a class="dropdown-item" href="<?php echo esc_url(get_site_url() . $c['url']); ?>"><?php echo esc_html($c['name']); ?></a></li>
+                  <?php endforeach; ?>
                 </ul>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#customSettingModal" class="nav-link">CUSTOM</a>
-            </li>
+              </li>
+              <?php else: ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo esc_url(get_site_url() . $m['url']); ?>"><?php echo esc_html($m['label']); ?></a>
+              </li>
+              <?php endif; ?>
+            <?php endforeach; ?>
 
           </ul>
           <div
@@ -739,579 +350,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="offcanvas-nav">
       <div class="accordion" id="headeraccordionExample">
+        <?php foreach ($oc_main_menu as $mi => $m): ?>
         <div class="accordion-item">
           <div class="h2 accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              LAB DIAMONDS
+            <?php if (!empty($m['children'])): ?>
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mobileMenu<?php echo $mi; ?>" aria-expanded="false" aria-controls="mobileMenu<?php echo $mi; ?>">
+              <?php echo esc_html(strtoupper($m['label'])); ?>
               <i class="fa-solid fa-angle-down"></i>
             </button>
-          </div>
-          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#headeraccordionExample">
-            <div class="accordion-body main-accordion">
-              <div class="accordion" id="labDiamondAccordion">
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#labDiamondOne" aria-expanded="true" aria-controls="labDiamondOne">
-                      SHOP BY SHAPE
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div id="labDiamondOne" class="accordion-collapse collapse" data-bs-parent="#accordionEnagagement">
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php foreach ($common_page['left_shapes'] as $item): ?>
-                          <li>
-                            <a href="<?= $item['url']; ?>">
-                              <?= $item['name']; ?>
-                            </a>
-                          </li>
-                        <?php endforeach; ?>
-                        <?php foreach ($common_page['right_shapes'] as $item): ?>
-                          <li>
-                            <a href="<?= $item['url']; ?>">
-                              <?= $item['name']; ?>
-                            </a>
-                          </li>
-                        <?php endforeach; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#labDiamondTwo" aria-expanded="true" aria-controls="labDiamondTwo">
-                      SHOP By CARAT
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div id="labDiamondTwo" class="accordion-collapse collapse" data-bs-parent="#accordionEnagagement">
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php foreach ($common_page['carat_diamonds'] as $item): ?>
-                          <li>
-                            <a href="<?= $item['url']; ?>">
-                              <?= $item['name']; ?>
-                            </a>
-                          </li>
-                        <?php endforeach; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#labDiamondThree" aria-expanded="true" aria-controls="labDiamondThree">
-                      SHOP BY PRICE
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div id="labDiamondThree" class="accordion-collapse collapse" data-bs-parent="#accordionEnagagement">
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php foreach ($common_page['shop_by_price'] as $item): ?>
-                              <li>
-                                <a href="<?= $item['url']; ?>">
-                                  <?= $item['name']; ?>
-                                </a>
-                              </li>
-                          <?php endforeach; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#labDiamondFour" aria-expanded="true" aria-controls="labDiamondFour">
-                      FANCY COLOR DIAMONDS
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div id="labDiamondFour" class="accordion-collapse collapse" data-bs-parent="#accordionEnagagement">
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php foreach ($common_page['left_color_diamonds'] as $item): ?>
-                          <li>
-                            <a href="<?= $item['url']; ?>">
-                              <?= $item['name']; ?>
-                            </a>
-                          </li>
-                        <?php endforeach; ?>
-                        <?php foreach ($common_page['right_color_diamonds'] as $item): ?>
-                          <li>
-                            <a href="<?= $item['url']; ?>">
-                              <?= $item['name']; ?>
-                            </a>
-                          </li>
-                        <?php endforeach; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#labDiamondFive" aria-expanded="true" aria-controls="labDiamondFive">
-                      POPULAR COLLECTIONS
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div id="labDiamondFive" class="accordion-collapse collapse" data-bs-parent="#accordionEnagagement">
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <li><a href="/melee-diamond">Melee Diamonds</a></li>
-                        <li><a href="/contact-us">Custom Cut Diamonds</a></li>
-                        <li>
-                          <a href="/lab-diamonds/?is_sale=1" class="tomato-color">
-                                Diamonds On Sale <img src="<?php echo get_template_directory_uri(); ?>/assets/image/header/fire.gif" alt="" loading="lazy">
-                              </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <?php
-                              if(WEBSITE_TYPE=='RETAIL'){
-                                echo '<p class="text-white px-0 my-2 lh-1">Save 30% on Lab Diamonds with code <span
-                class="tomato-color cursor">hallo30</span></p>';
-                              }
-                              ?>
-            
-            <a href="<?php echo $text_change['inventory_url']; ?>" class="promo-shop-link mb-2 d-block">Shop Now</a>
-          </div>
-        </div>
-
-<?php
-             if(WEBSITE_TYPE=='WHOLESALE'){
-            ?>
-            <div class="accordion-item">
-          <div class="h2 accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              <a href="<?php echo $text_change['inventory_url'] ; ?>"  class="nav-link">INVENTORY</a>
+            <?php else: ?>
+            <button class="accordion-button collapsed" type="button" aria-expanded="true">
+              <a href="<?php echo esc_url(get_site_url() . $m['url']); ?>" class="nav-link"><?php echo esc_html(strtoupper($m['label'])); ?></a>
             </button>
+            <?php endif; ?>
           </div>
-        </div>
-            <?php
-          }
-            ?>
-           
-
-        <div class="accordion-item">
-          <div class="h2 accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="true"
-              aria-controls="collapseThree"
-            >
-              ENGAGEMENT RINGS
-              <i class="fa-solid fa-angle-down"></i>
-            </button>
-          </div>
-          <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#headeraccordionExample"
-          >
-            <div class="accordion-body main-accordion">
-              <div class="accordion" id="accordionEnagagement">
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed text-uppercase "
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#enagagementOne"
-                      aria-expanded="true"
-                      aria-controls="enagagementOne"
-
-                    >
-                      Create Your Diamond Ring
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="enagagementOne"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionEnagagement"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <li><a class="" href="<?php echo get_site_url(); ?>/build-a-ring/">Start With A Setting</a></li>
-                        <li>
-                            <a href="<?php echo get_site_url(); ?>/lab-diamonds/">Start with a Diamond</a>
-                          </li>
-                        <li><a href="<?php echo get_site_url(); ?>/custom-engagement-rings/">Custom Engagement Ring</a></li>
-                        <li>
-                            <a href="/ready-to-ship/engagement-rings" style="color:red;">Ready To Ship Engagement Ring</a>
-                          </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed text-uppercase"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#enagagementTwo"
-                      aria-expanded="true"
-                      aria-controls="enagagementTwo"
-                    >
-                      Shop By Style
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="enagagementTwo"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionEnagagement"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php foreach($common_page['left_ring_styles'] as $style){ ?>
-
-                              <li>
-                              <a href="<?= $style['url'] ?>">
-                              <?= $style['name'] ?>
-                              </a>
-                              </li>
-
-                              <?php } ?>
-                               <?php foreach($common_page['right_ring_styles'] as $style){ ?>
-
-                              <li>
-                              <a href="<?= $style['url'] ?>">
-                              <?= $style['name'] ?>
-                              </a>
-                              </li>
-
-                              <?php } ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed text-uppercase"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#enagagementThree"
-                      aria-expanded="true"
-                      aria-controls="enagagementThree"
-                    >
-                      Shop By Shape
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="enagagementThree"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionEnagagement"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                         <?php foreach ($common_page['left_shapes'] as $item): ?>
-                                  <li>
-                                    <a href="<?= $item['url']; ?>">
-                                      <?= $item['name']; ?>
-                                    </a>
-                                  </li>
-                                <?php endforeach; ?>
-                                <?php foreach ($common_page['right_shapes'] as $item): ?>
-                                  <li>
-                                    <a href="<?= $item['url']; ?>">
-                                      <?= $item['name']; ?>
-                                    </a>
-                                  </li>
-                                <?php endforeach; ?>
-                       
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <?php if (!empty($m['children'])): ?>
+          <div id="mobileMenu<?php echo $mi; ?>" class="accordion-collapse collapse" data-bs-parent="#headeraccordionExample">
+            <div class="accordion-body">
+              <ul class="mb-0 ps-0">
+                <?php foreach ($m['children'] as $c): ?>
+                <li><a href="<?php echo esc_url(get_site_url() . $c['url']); ?>"><?php echo esc_html($c['name']); ?></a></li>
+                <?php endforeach; ?>
+              </ul>
             </div>
           </div>
+          <?php endif; ?>
         </div>
-        <div class="accordion-item">
-          <div class="h2 accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
-              aria-expanded="true"
-              aria-controls="collapseFour"
-            >
-              FINE JEWELRY
-              <i class="fa-solid fa-angle-down"></i>
-            </button>
-          </div>
-          <div
-            id="collapseFour"
-            class="accordion-collapse collapse"
-            data-bs-parent="#headeraccordionExample"
-          >
-            <div class="accordion-body main-accordion">
-              <div class="accordion" id="accordionFineJewelery">
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#FineOne"
-                      aria-expanded="true"
-                      aria-controls="FineOne"
-                    >
-                      EARRINGS
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="FineOne"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFineJewelery"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php if (!empty($common_page['fine_earrings']) && is_array($common_page['fine_earrings'])): ?>
-                            <?php foreach ($common_page['fine_earrings'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#FineTwo"
-                      aria-expanded="true"
-                      aria-controls="FineTwo"
-                    >
-                      WEDDING BAND
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="FineTwo"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFineJewelery"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php if (!empty($common_page['wedding_rings']) && is_array($common_page['wedding_rings'])): ?>
-                            <?php foreach ($common_page['wedding_rings'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#FineThree"
-                      aria-expanded="true"
-                      aria-controls="FineThree"
-                    >
-                      PENDANTS
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="FineThree"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFineJewelery"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php if (!empty($common_page['pendants']) && is_array($common_page['pendants'])): ?>
-                          <?php foreach (array_slice($common_page['pendants'], 0, -1) as $item): ?>
-                            <li>
-                              <a href="<?= esc_url($item['url']); ?>">
-                                <?= esc_html($item['name']); ?>
-                              </a>
-                            </li>
-                          <?php endforeach; ?>
-                      <?php endif; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      <a href="/chains"  class="nav-link">CHAINS</a>
-                    </button>
-                  </div>
-                </div>
-                
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#FineFour"
-                      aria-expanded="true"
-                      aria-controls="FineFour"
-                    >
-                      BRACELETS
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="FineFour"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFineJewelery"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php if (!empty($common_page['bracelets']) && is_array($common_page['bracelets'])): ?>
-                            <?php foreach ($common_page['bracelets'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="h2 accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#FineFive"
-                      aria-expanded="true"
-                      aria-controls="FineFive"
-                    >
-                      NECKLACES
-                      <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                  </div>
-                  <div
-                    id="FineFive"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFineJewelery"
-                  >
-                    <div class="accordion-body">
-                      <ul class="mb-0 ps-0">
-                        <?php if (!empty($common_page['necklaces']) && is_array($common_page['necklaces'])): ?>
-                            <?php foreach ($common_page['necklaces'] as $item): ?>
-                              <li>
-                                <a href="<?= esc_url($item['url']); ?>">
-                                  
-                                  <?= esc_html($item['name']); ?>
-                                </a>
-                              </li>
-                            <?php endforeach; ?>
-                          <?php endif; ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <div class="h2 accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#m-ready-to-ship"
-              aria-expanded="true"
-              aria-controls="FineFive"
-            >
-              READY TO SHIP <i class="fa-solid fa-angle-down"></i>
-            </button>
-          </div>
-          <div
-              id="m-ready-to-ship"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionFineJewelery"
-            >
-              <div class="accordion-body">
-                <ul class="mb-0 ps-0">
-                  <?php if (!empty($common_page['ready_to_ship']) && is_array($common_page['ready_to_ship'])): ?>
-                      <?php foreach ($common_page['ready_to_ship'] as $item): ?>
-                        <li>
-                          <a href="<?= esc_url($item['url']); ?>">
-                            
-                            <?= esc_html($item['name']); ?>
-                          </a>
-                        </li>
-                      <?php endforeach; ?>
-                    <?php endif; ?>
-                </ul>
-              </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-          <div class="h2 accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              <a href="javascript:void(0);"  data-bs-toggle="modal" data-bs-target="#customSettingModal" class="nav-link">CUSTOM</a>
-            </button>
-          </div>
-        </div>
+        <?php endforeach; ?>
 
         <div class="accordion-item">
           <div class="h2 accordion-header">

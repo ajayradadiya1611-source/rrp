@@ -209,7 +209,7 @@ get_header();
         </div>
 
         <?php
-            if(WEBSITE_TYPE=='RETAIL'){
+            
                 ?>
         <div class="col-12">
             <div class="text-center">
@@ -232,7 +232,7 @@ get_header();
                 </div>
             </div>
             <?php 
-            }
+            
             ?>
         </div>
 

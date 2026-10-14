@@ -13,10 +13,10 @@ $common_page = $text_change['common_page'];
 
 <!-- start banner section -->
 <div class="banner_section home_banner_hero">
-    <div class="bg_img" style="<?php if(WEBSITE_TYPE=='WHOLESALE'){?>background-image: url(<?php echo $home_page['hero_banner_image_desktop']; ?>);<?php } ?>">
-        <div class="<?php if(WEBSITE_TYPE=='WHOLESALE'){?>container-fluid<?php } ?>">
+    <div class="bg_img" style="<?php  ?>">
+        <div class="<?php  ?>">
             <?php
-            if(WEBSITE_TYPE=='RETAIL'){
+            
                 $hero_d = $home_page['hero_banner_image_desktop'];
                 $hero_m = $home_page['hero_banner_image_mobile'];
                 $size_d = lgd_img_size( $hero_d );
@@ -38,16 +38,11 @@ $common_page = $text_change['common_page'];
                     </picture>
                 </div>
                 <?php
-            }
+            
             ?>
             <div class="banner_text text-center ">
                 <?php
-                     if(WEBSITE_TYPE=='WHOLESALE'){
-                    ?>
-                <h1 class="mb-0 oc-banner-text"><?php echo $home_page['hero_banner_heading']; ?></h1>
-                <h4 class="fw-400 mb-0  oc-banner-text"><?php echo $home_page['hero_banner_description']; ?></h4>
-                <?php 
-            }
+                     
                 ?>
                 <div class="d-flex align-items-center justify-content-center flex-wrap gap-3">
                     <a href="<?php echo $home_page['hero_banner_button_link2']; ?>" class="common_btn"><?php echo $home_page['hero_banner_button_text2']; ?></a>
@@ -56,16 +51,7 @@ $common_page = $text_change['common_page'];
                 </div>
             </div>
             <?php
-            if(WEBSITE_TYPE=='WHOLESALE'){
-                $size_wm = lgd_img_size( $home_page['hero_banner_image_mobile'] );
-            ?>
-            <img src="<?php echo esc_url( $home_page['hero_banner_image_mobile'] ); ?>"
-                 <?php if ( $size_wm ) : ?>width="<?php echo $size_wm[0]; ?>" height="<?php echo $size_wm[1]; ?>"<?php endif; ?>
-                 alt="Lab grown diamonds wholesale"
-                 class="d-block d-lg-none mx-auto mt-4 img-fluid"
-                 loading="lazy">
-            <?php
-            }
+            
             ?>
         </div>
     </div>
@@ -245,7 +231,7 @@ start_engagement_rings();
 <!-- start diamond resources -->
 <div class="bg_light_gray">
    <?php
-    if(WEBSITE_TYPE!='WHOLESALE'){
+    
 
 
     ?>
@@ -326,7 +312,7 @@ start_engagement_rings();
             </div>
         </div>
         <?php 
-     }
+     
         ?>
 
     <!-- start lab diamond section -->

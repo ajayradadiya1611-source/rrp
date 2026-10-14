@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<label for="payment_method_<?php echo esc_attr( $gateway->id ); ?>">
 		<?php echo $gateway->get_title(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?> <?php echo $gateway->get_icon(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?>
 		<?php
-		if(($gateway->id=='lgdcrypto' || $gateway->id=='bacs') && WEBSITE_TYPE=='RETAIL'){
+		if(($gateway->id=='lgdcrypto' || $gateway->id=='bacs')){
 			echo '<span class="aj-small-make">Save 2% on Card Payment Fees</span>';
 		}
 		?>

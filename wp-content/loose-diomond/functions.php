@@ -17,27 +17,15 @@ define('LD_RECAPTCHA_SITE_KEY', '6Lc2a54tAAAAAExcxKygkVz5fByttLWN1gjyEAc6');
 define('LD_RECAPTCHA_SECRET_KEY', '6Lc2a54tAAAAAOvWIl2KuDjK_qkTNmpozQMKITUD');
 define('LD_RECAPTCHA_MIN_SCORE', 0.5); // optional, defaults to 0.5
 
-if(WEBSITE_TYPE=='WHOLESALE'){
-    define('RETURN_DAYS', '7');
-    define('SITE_OC_NAME', 'Wholesale Loose Grown Diamond');
-    define('SUPPORT_EMAIL', 'wholesale@loosegrowndiamond.com');
+define('RETURN_DAYS', '30');
+define('SITE_OC_NAME', 'Loose Grown Diamond');
+define('SUPPORT_EMAIL', 'support@loosegrowndiamond.com');
 
-    define('SUPPORT_MOBILE', '1 929-919-5214');
-    define('WA_SUPPORT_MOBILE', '+19299195214');
-    define('CONTENTSQUARE', '0dc91a6fd8121');
-    define('ZOHOCHATBOT', 'siqd93db7845f1fac69954bb514dd0f40a0840b5d936584fb230b5c76f012953b2f');
-    define('ZOHOAPIENDPOINT', 'https://api.rrpdiamonds.com/lgd/webhook/wholesale/');
-}else{
-    define('RETURN_DAYS', '30');
-    define('SITE_OC_NAME', 'Loose Grown Diamond');
-    define('SUPPORT_EMAIL', 'support@loosegrowndiamond.com');
-
-    define('SUPPORT_MOBILE', '1 646-288-0810');
-    define('WA_SUPPORT_MOBILE', '+16462880810');
-    define('CONTENTSQUARE', '6fe1a3c7dd8f0');
-    define('ZOHOCHATBOT', 'siq335d327ea7c08a4066f85c9ff99ba220040132820e4c43ecccf727119b416690');
-    define('ZOHOAPIENDPOINT', 'https://api.rrpdiamonds.com/lgd/webhook/');
-}
+define('SUPPORT_MOBILE', '1 646-288-0810');
+define('WA_SUPPORT_MOBILE', '+16462880810');
+define('CONTENTSQUARE', '6fe1a3c7dd8f0');
+define('ZOHOCHATBOT', 'siq335d327ea7c08a4066f85c9ff99ba220040132820e4c43ecccf727119b416690');
+define('ZOHOAPIENDPOINT', 'https://api.rrpdiamonds.com/lgd/webhook/');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -288,7 +276,6 @@ function loose_diomond_print_theme_data()
     $data = array(
         'templateUrl' => get_template_directory_uri(),
         'ajaxUrl'     => admin_url('admin-ajax.php'),
-        'WEBSITE_TYPE'=> WEBSITE_TYPE,
         'RETURN_DAYS'=> RETURN_DAYS
     );
 ?>
@@ -343,25 +330,14 @@ function yourtheme_setup() {
 }
 
 include('inc/global-var.php');
-if(WEBSITE_TYPE=='WHOLESALE'){
-    include('inc/json-var-wholesale.php');
-
-    include('inc/wholesale-json.php');
-}else{
-    include('inc/json-var-retail.php');
-
-    include('inc/retail-json.php');
-}
-// inc/script-load.php moved into components/inventory-app/index.php
-// (loose_diomond_scripts_react()) and components/inventory-listing/index.php
-// (loose_get_category_price_range())
+include('inc/json-var-retail.php');
+include('inc/retail-json.php');
 include('inc/comman-function.php');
 include('inc/ls-custom-myaccount.php');
 include('inc/ls-custom-cart-checkout.php');
 include('inc/ls_pcat_custom_form.php');
 include('inc/custom_order_status.php');
 include('inc/static-html.php');
-// inc/ls-inventory-api.php moved into components/inventory-app/api/routes.php
 include('inc/ls-addtocart-api.php');
 include('inc/ls-category-product-get-api.php');
 include('inc/ls-addtocart-c-api.php');
@@ -369,31 +345,15 @@ include('inc/contact-us-form-api.php');
 //include('inc/feedback-form-api.php');
 include('inc/checkout-login-popup.php');
 include('inc/newsletter.php');
-if(WEBSITE_TYPE=='WHOLESALE'){
-    include('inc/wholesale.php');
-}else{
-    include('inc/retail.php');
-}
+include('inc/retail.php');
 
 include('inc/custom-payment-gateway.php');
 include('inc/admin-contact-form.php');
-// inc/ls-thankyou-question-api.php moved into components/thankyou-question/api/routes.php
 include('inc-admin/admin-page.php');
 include('inc-admin/order-tracking.php');
 
 include('inc/diamond-details-function.php');
 include('inc/blog-shortcode.php');
-require_once get_template_directory() . '/components/delete-out-of-stock-inventory/index.php';
-require_once get_template_directory() . '/components/create-sale-product/index.php';
-require_once get_template_directory() . '/components/zero-price-products/index.php';
-require_once get_template_directory() . '/components/category-product-position/index.php';
-require_once get_template_directory() . '/components/ring-preview-size/index.php';
-require_once get_template_directory() . '/components/inventory-app/index.php';
-require_once get_template_directory() . '/components/inventory-admin/index.php';
-require_once get_template_directory() . '/components/inventory-listing/index.php';
-require_once get_template_directory() . '/components/ring-builder-breadcrumb/index.php';
-require_once get_template_directory() . '/components/thankyou-question/index.php';
-require_once get_template_directory() . '/components/ring-extra-features/index.php';
 require_once get_template_directory() . '/components/cart-page/index.php';
 
 
@@ -2121,19 +2081,7 @@ function ls_change_product_price_display( $price, $product  ) {
     }*/
     if ( has_term( 'melee-diamond', 'product_tag', $product->id ) ) {
 
-        if ( $WEBSITE_TYPE == 'WHOLESALE' ) {
-            $per_carat_slugs = array(
-                'round-shape-melee-calibrated-diamonds',
-                'old-mine-cut-lab-grown-hpht-diamonds',
-                'old-european-cut-melee-lab-grown-diamonds',
-            );
-
-            $price .= in_array( $product->get_slug(), $per_carat_slugs, true )
-                ? ' / Per Carat'
-                : ' / Per Diamond';
-        } else {
-            $price .= ' / Per Diamond';
-        }
+        $price .= ' / Per Diamond';
     }    
     return $price;
 }
@@ -3200,11 +3148,7 @@ function my_custom_body_class( $classes ) {
 
 
     // Example with condition
-    if(WEBSITE_TYPE=='WHOLESALE'){
-        $classes[] = 'oc-wholesale';
-    }else{
-        $classes[] = 'oc-retail';
-    }
+    $classes[] = 'oc-retail';
 
     return $classes;
 }

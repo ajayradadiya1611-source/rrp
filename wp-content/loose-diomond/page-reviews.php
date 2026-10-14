@@ -165,12 +165,12 @@ global $common_page;
               </div>
             </div>
             <?php
-                              if(WEBSITE_TYPE=='RETAIL'){
+                              
                                 echo '<p class="text-white px-0 my-2 lh-1">
               Save 30% on Lab Diamonds with code
               <span class="tomato-color cursor">hallo30</span>
             </p>';
-                              }
+                              
                               ?>
             
             <a href="javascript:void(0)" class="promo-shop-link mb-2 d-block">Shop Now</a>

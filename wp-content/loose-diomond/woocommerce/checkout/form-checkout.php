@@ -233,7 +233,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
     }
                 ?>
                 <div>
-                       <?php if ( $max_delivery_days > 0  &&  WEBSITE_TYPE == 'RETAIL' ) : ?>
+                       <?php if ( $max_delivery_days > 0 ) : ?>
                             <div class="font_size_12 fw-500 text-left ls_est_delivery_msg mt-1">
                                 Insured shipping by <?php echo esc_html( ls_est_delivery_date( $max_delivery_days ) ); ?> with FedEx overnight delivery. <a href="javascript:void(0)" onclick="openZohoChat('Hi, I need this sooner than the estimated delivery date. Product page: ' + window.location.href)">Need it sooner?</a>
                             </div>

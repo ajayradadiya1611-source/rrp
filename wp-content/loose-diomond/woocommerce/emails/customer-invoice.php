@@ -80,7 +80,7 @@ if ( ! empty( $order->get_billing_first_name() ) ) {
 <?php } else { ?>
 
 	<?php
-	if(WEBSITE_TYPE=='RETAIL'){
+	
 		
 		?>
 			<p>Congratulations! Your order has been confirmed and is now being processed.
@@ -88,22 +88,7 @@ if ( ! empty( $order->get_billing_first_name() ) ) {
 				<p>Questions or concerns? Contact us at support@loosegrowndiamond.com; our customer service team is here to help.</p>
 			<?php
 		
-	}else{
-		?>
-		<p>
-			<?php
-			/* translators: %s Order date */
-				printf(
-		    esc_html__(
-		        "We've received Order #%1\$s, which is on hold until payment is confirmed.\nPlease share the payment receipt at ".SUPPORT_EMAIL.". We'll start working on your order once payment is received.",
-		        'woocommerce'
-		    ),
-		    esc_html( $order->get_order_number() )
-		);
-			?>
-			</p>
-		<?php
-	}
+	
 	?>
 	
 	<?php

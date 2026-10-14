@@ -53,7 +53,7 @@ if ( $sent_to_admin !== true
 		        Your order is currently on hold while we wait for your payment to be confirmed.
 		    </p>';
 
-		if ( WEBSITE_TYPE == 'RETAIL' ) {
+		
 		    echo '
 		    <p>
 		        We\'ll work to secure your diamond from our overseas suppliers within 24–48 business hours. 
@@ -61,7 +61,7 @@ if ( $sent_to_admin !== true
 		        we\'ll email you with comparable alternatives. If none of the options meet your expectations, 
 		        you may cancel your order at no charge.
 		    </p>';
-		}
+		
 
 		echo '
 		    <p>
@@ -88,7 +88,7 @@ if ( $sent_to_admin !== true
 <?php if ( $email_improvements_enabled ) : ?>
 	
 		<?php
-		if(WEBSITE_TYPE=='RETAIL' ){
+		
 			if ( $order->get_payment_method() === 'bacs' ) {
 
 			    echo '<p>We\'ve received your order. It\'s currently on hold while we confirm that your payment has been processed.
@@ -106,10 +106,7 @@ if ( $sent_to_admin !== true
 				echo '<p>We\'ll secure your diamond from our overseas suppliers within 24–48 business hours. If the diamond is available, we\'ll arrange shipment. If it\'s unavailable, we\'ll email you comparable alternatives. If you\'re not satisfied with the alternatives, you can cancel your order at no charge.</p>';
 			}
 			
-		}else{
-			echo '<p>We’ve received your order and it’s currently on hold until we can confirm your payment has been processed.
-		</p>';
-		}
+		
 		?>
 	<p><?php esc_html_e( 'Here’s a reminder of what you’ve ordered:', 'woocommerce' ); ?></p>
 <?php else : ?>

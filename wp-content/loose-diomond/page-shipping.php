@@ -18,38 +18,14 @@ get_header();
               <div class="mb_50">
                  <p>All shipments are fully insured, require a signature(21+) upon delivery , and are shipped through one of our trusted delivery partners, including FedEx, UPS, Aramex, and USPS.</p>
                     <?php
-                    if(WEBSITE_TYPE=='WHOLESALE'){
-                    ?>
-                    <li class="fw-400 ls_subtxt">If your order contains multiple diamonds with express, overnight, and regular shipping, and you want to ship the express or overnight diamonds separately, we can do that. There will be an additional charge of $50 for each shipment.</li>
-                    <?php 
-                     }
+                    
                     ?>
                  </ul>
               </div>
               <div class="mb_50">
                  <h2 class="  fw-600 mb_20 h4">Shipping Rates &amp; Delivery Estimates</h2>
                  <?php
-                 if(WEBSITE_TYPE=='WHOLESALE'){
-                 ?>
-                 <p class="ls_subtxt mb_20">Please note that all of our shipments are<strong class="ms-1">insured and will be delivered by one of our delivery partners, FedEx, UPS, Aramex, or USPS.</strong></p>
-                 <table class="table-bordered table shipping-table">
-                    <thead>
-                       <tr>
-                          <th class="ls_subtxt fw-700">Shipment method</th>
-                          <th class="ls_subtxt fw-700">Estimated dispatch time</th>
-                          <th class="ls_subtxt fw-700">Shipment cost</th>
-                       </tr>
-                    </thead>
-                    <tbody>
-                       <tr>
-                          <td>Shipping</td>
-                          <td>2-5 business days</td>
-                          <td>$50</td>
-                       </tr>
-                    </tbody>
-                 </table>
-                 <?php
-                 }else{
+                 
                  ?>
                  <ul class="ls_mrgb">
                     <li class="ls_subtxt firstItem">Loose Diamonds:
@@ -77,7 +53,7 @@ get_header();
                     </li>
                  </ul>
                  <?php
-                 }
+                 
                  ?>
               </div>
               <div class="mb_50">
@@ -99,7 +75,7 @@ get_header();
                  <span class="ls_subtxt">If your shipment is lost during transit, you will be eligible for a full refund or a replacement.</span>
               </div>
               <?php
-                     if(WEBSITE_TYPE=='RETAIL'){
+                     
                      ?>
                      <div>
                         <h2 class="h4 fw-600  mb_20">Shipping Insurance & Claims</h2>
@@ -113,7 +89,7 @@ get_header();
                         </ul>
                      </div>
                      <?php
-                  }
+                  
                      ?>
            </div>
         </div>

@@ -1663,7 +1663,7 @@ function custom_lost_password_css() {
         </style>
         <?php
     }
-    if(WEBSITE_TYPE=='RETAIL'){
+    
         ?>
         <style type="text/css">
             
@@ -1695,7 +1695,7 @@ function custom_lost_password_css() {
             }
         </style>
         <?php
-    }
+    
 }
 add_action('wp_head', 'custom_lost_password_css');
 

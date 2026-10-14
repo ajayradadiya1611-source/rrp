@@ -553,7 +553,7 @@ function single_product_what_customer_say(){
                 <?php endforeach; ?>
             </div>
             <?php
-            if(WEBSITE_TYPE=='RETAIL'){
+            
                 ?>
                 <div class="oc-line-trust mt-5">
              <div
@@ -573,7 +573,7 @@ function single_product_what_customer_say(){
             </div>
            
                 <?php
-            }
+            
             ?>
             
         </div>
@@ -595,7 +595,7 @@ function single_product_experience_history(){
                         <h2 class="mb-0">42+ Years Of Experience In <br class="d-none d-md-block"> Diamond Industry
                         </h2>
                         <br>
-                        <p class="fw-400 mb-0 h6">We are India based Manufacturer and has served more than <?php if(WEBSITE_TYPE=='WHOLESALE'){echo '250+';}else{echo '68,432+';}?>
+                        <p class="fw-400 mb-0 h6">We are India based Manufacturer and has served more than <?php echo '68,432+';?>
                             Customers
                             Internationally.</p>
                     </div>

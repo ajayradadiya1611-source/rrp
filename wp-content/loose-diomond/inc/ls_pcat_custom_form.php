@@ -925,20 +925,14 @@ function ls_ajax_video_request()
     $message = 'Customer requested a video for diamond SKU: ' . $sku;
 
     ob_start();
-    if (WEBSITE_TYPE == 'RETAIL') {
+    
         $html_content = '
         Hi ' . esc_html($firstName) . ',<br><br>
         Greetings from Loose Grown Diamond,<br><br>
         We received your video request for SKU <strong>' . esc_html($sku) . '</strong>. As inventory is live, please note the diamond may sell out before the video is ready. Our team will get back to you within 24-48 business hours.<br><br>
         For faster assistance, you can directly call, WhatsApp, or text us at +1 (646) 288-0810.<br><br>
         Regards,<br>' . SITE_OC_NAME;
-    } else {
-        $html_content = '
-        Hi ' . esc_html($firstName) . ',<br><br>
-        We received your video request for SKU <strong>' . esc_html($sku) . '</strong>. As inventory is live, please note the diamond may sell out before the video is ready. Our team will get back to you within 24-48 business hours.<br><br>
-        For an urgent response, you can Text/WhatsApp us directly at +1 (929) 919-5214.<br><br>
-        Regards,<br>' . SITE_OC_NAME;
-    }
+    
 
     wc_get_template(
         'inc/email-templates/forms/customer-send.php',

@@ -1,8 +1,6 @@
 <?php
 /*include('ls-inventory/ls_inventory.php');
 include('ls-inventory-color/ls_inventory_c.php');*/
-// Inventory admin (React) moved to components/inventory-admin
-/*require_once get_template_directory() . '/components/inventory-admin/index.php';*/
 include('variation-image-data.php'); 
 include('marker-role.php'); 
 add_action('woocommerce_product_options_general_product_data', 'show_c_type_dropdown');

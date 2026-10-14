@@ -25,7 +25,7 @@ function ls_rest_contact_us(WP_REST_Request $request)
     $subject = 'Thank You for Contacting Us | Loose Grown Diamond ';
     ob_start();
 
-    if(WEBSITE_TYPE=='RETAIL'){
+    
         $html_content = '
         Hello ' . esc_html($name) . ',<br><br>
         Thank you for reaching out to Loose Grown Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
@@ -34,14 +34,7 @@ function ls_rest_contact_us(WP_REST_Request $request)
         <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
-    }else{
-        $html_content = '
-        Hi ' . esc_html($name) . ',<br><br>
-        We received your inquiry. One of our executives will get back to you within 24 hours.<br><br>
-        For an urgent response, you can Text/WhatsApp us directly at +1 (929) 919-5214.<br><br>
-        Regards,<br>
-        '.SITE_OC_NAME;
-    }
+    
     
     wc_get_template(
         'inc/email-templates/forms/customer-send.php',
@@ -192,7 +185,7 @@ function ls_rest_ask_us(WP_REST_Request $request)
     }
 
     ob_start();
-    if(WEBSITE_TYPE=='RETAIL'){
+    
         $html_content = '
         Hello ' . esc_html($name) . ',<br><br>
         Thank you for reaching out to Loose Grown Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
@@ -201,13 +194,7 @@ function ls_rest_ask_us(WP_REST_Request $request)
         <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
-    }else{
-        $html_content = '
-        Hi ' . esc_html($name) . ',<br><br>
-        We received your inquiry about the Diamond Search Request. Our business executive will contact you within 24-48 hours.<br><br>
-        For an urgent response, you can Text/WhatsApp us directly at +'.SUPPORT_MOBILE.'.<br><br>
-        Regards,<br>'.SITE_OC_NAME;
-    }
+    
     wc_get_template(
         'inc/email-templates/forms/customer-send.php',
         array(
@@ -370,7 +357,7 @@ function ls_rest_custom_setting_request(WP_REST_Request $request)
 
 
     ob_start();
-    if(WEBSITE_TYPE=='RETAIL'){
+    
         $html_content = '
         Hello ' . esc_html($firstName) . ',<br><br>
         Thank you for submitting your Custom Setting Request. We&rsquo;re delighted to help you create a setting tailored to your vision. One of our jewelry specialists will contact you within 12&ndash;24 business hours to discuss your requirements and assist you with the next steps.<br><br>
@@ -379,13 +366,7 @@ function ls_rest_custom_setting_request(WP_REST_Request $request)
         <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
-    }else{
-        $html_content = '
-        Hi ' . esc_html($firstName) . ',<br><br>
-        We received your inquiry about the Custom Setting Request. Our business executive will contact you within 24-48 hours.<br><br>
-        For an urgent response, you can Text/WhatsApp us directly at +1 (929) 919-5214.<br><br>
-        Regards,<br>'.SITE_OC_NAME;
-    }
+    
     
     wc_get_template(
         'inc/email-templates/forms/customer-send.php',
@@ -505,7 +486,7 @@ function ls_rest_feedback(WP_REST_Request $request)
     $to = get_option('admin_email');
     $subject = 'Thank You for Your Feedback | Loose Grown Diamond' ;
     ob_start();
-    if(WEBSITE_TYPE=='RETAIL'){
+    
         $html_content = '
         Hi ' . esc_html($name) . ',<br><br>
         Thank you for sharing your feedback with us. We truly appreciate you taking the time to help us improve your experience with Loose Grown Diamond.<br><br>
@@ -514,13 +495,7 @@ function ls_rest_feedback(WP_REST_Request $request)
         <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
-    }else{
-        $html_content = '
-        Hi ' . esc_html($name) . ',<br><br>
-        Thank you for your feedback. We will be in touch shortly.<br><br>
-        For an urgent response, you can Text/WhatsApp us directly at +1 (929) 919-5214.<br><br>
-        Regards,<br>'.SITE_OC_NAME;
-    }
+    
     
     wc_get_template(
         'inc/email-templates/forms/customer-send.php',
