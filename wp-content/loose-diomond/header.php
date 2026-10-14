@@ -167,30 +167,31 @@ $common_page = $text_change['common_page'];
 $oc_main_menu = array(
     array(
         'label' => 'Natural Diamonds',
-        'url'   => '/natural-diamonds/',
+        'url'   => '#',
         'children' => array(
-            array('name' => 'Melee Diamonds',    'url' => '/melee-diamond'),
-            array('name' => 'Mix Lot Diamonds',  'url' => '/mix-lot-diamonds/'),
-            array('name' => 'Fancy Diamonds',    'url' => '/fancy-diamonds/'),
+            array('name' => 'Melee Diamonds',   'url' => '/product/calibrated-diamonds/'),
+            array('name' => 'Mix Lot Diamonds', 'url' => '/product/melee-diamonds/'),
+            array('name' => 'Fancy Diamonds',   'url' => '/fancy-shape-white-diamonds/'),
         ),
     ),
-    array('label' => 'Black Diamonds', 'url' => '/black-diamonds/'),
+    array('label' => 'Black Diamonds', 'url' => '/product-category/black-diamonds/'),
     array(
         'label' => 'Antique Diamonds',
-        'url'   => '/antique-diamonds/',
+        'url'   => '/antique-diamond/',
         'children' => array(
-            array('name' => 'Salt and Pepper Diamonds',    'url' => '/salt-and-pepper-diamonds/'),
-            array('name' => 'ICY Diamonds',                'url' => '/icy-diamonds/'),
-            array('name' => 'Rose cut Chakri Round Diamonds','url' => '/rose-cut-chakri-round-diamonds/'),
-            array('name' => 'Polki Slice cut Diamonds',    'url' => '/polki-slice-cut-diamonds/'),
-            array('name' => 'Diamond Beads',               'url' => '/diamond-beads/'),
-            array('name' => 'Cubes Rough Diamonds',        'url' => '/cubes-rough-diamonds/'),
-            array('name' => 'Fancy Color Melee Diamonds',  'url' => '/fancy-color-melee-diamonds/'),
-            array('name' => 'Single Cut Diamonds',         'url' => '/single-cut-diamonds/'),
+            array('name' => 'Salt and Pepper Diamonds',       'url' => '/product-category/salt-and-pepper-diamonds/'),
+            array('name' => 'ICY Diamonds',                   'url' => '/product-category/natural-icy-diamonds/'),
+            array('name' => 'Rose cut Chakri Round Diamonds', 'url' => '/product-category/rose-cut-chakri-round-diamond/'),
+            array('name' => 'Polki Slice cut Diamonds',       'url' => '/product-category/polki-slice-cut-diamonds/'),
+            array('name' => 'Diamond Beads',                  'url' => '/product-category/diamond-beads/'),
+            array('name' => 'Cubes Rough Diamonds',           'url' => '/product-category/cubes-rough-diamonds/'),
+            array('name' => 'Fancy Color Melee Diamonds',     'url' => '/fancy-color-melee-diamond/'),
+            array('name' => 'Single Cut Diamonds',            'url' => '/product/single-cut-diamond/'),
         ),
     ),
-    array('label' => 'Education', 'url' => '/education/'),
+    array('label' => 'Education', 'url' => '/blog/'),
 );
+
 ?>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
@@ -240,7 +241,7 @@ $oc_main_menu = array(
             <?php foreach ($oc_main_menu as $m): ?>
               <?php if (!empty($m['children'])): ?>
               <li class="nav-item dropdown">
-                <a href="<?php echo esc_url(get_site_url() . $m['url']); ?>" class="nav-link dropdown-toggle">
+                <a href="<?php echo esc_url($m['url'] === '#' ? '#' : get_site_url() . $m['url']); ?>" class="nav-link dropdown-toggle">
                   <?php echo esc_html($m['label']); ?>
                 </a>
                 <ul class="dropdown-menu">
@@ -251,7 +252,7 @@ $oc_main_menu = array(
               </li>
               <?php else: ?>
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo esc_url(get_site_url() . $m['url']); ?>"><?php echo esc_html($m['label']); ?></a>
+                <a class="nav-link" href="<?php echo esc_url($m['url'] === '#' ? '#' : get_site_url() . $m['url']); ?>"><?php echo esc_html($m['label']); ?></a>
               </li>
               <?php endif; ?>
             <?php endforeach; ?>
@@ -361,7 +362,7 @@ $oc_main_menu = array(
             </button>
             <?php else: ?>
             <button class="accordion-button collapsed" type="button" aria-expanded="true">
-              <a href="<?php echo esc_url(get_site_url() . $m['url']); ?>" class="nav-link"><?php echo esc_html(strtoupper($m['label'])); ?></a>
+              <a href="<?php echo esc_url($m['url'] === '#' ? '#' : get_site_url() . $m['url']); ?>" class="nav-link"><?php echo esc_html(strtoupper($m['label'])); ?></a>
             </button>
             <?php endif; ?>
           </div>
