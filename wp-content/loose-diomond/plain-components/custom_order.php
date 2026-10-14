@@ -73,15 +73,6 @@ add_action('woocommerce_checkout_create_order_line_item', function ($item, $cart
         return;
     }
 
-    // Estimated days -> same meta keys as ls_save_order_item_estimated_delivery().
-    // Runs at priority 20 so the custom product's value overrides the default one.
-    $days = absint(get_field('custom_order_estimated_days', $product_id));
-    if ($days > 0) {
-        $date = date_i18n('l, M j', strtotime('+' . $days . ' days', current_time('timestamp')));
-        $item->add_meta_data('_ls_estimated_delivery_days', $days, true);
-        $item->add_meta_data('_ls_estimated_delivery_date', $date, true);
-    }
-
     // Label/value rows
     /*$custom_rows = get_field('custom_order_fields', $product_id);
     if (!empty($custom_rows) && is_array($custom_rows)) {

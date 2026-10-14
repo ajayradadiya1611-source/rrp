@@ -74,11 +74,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
                             // Processing days = slowest item in the cart.
                             $lgd_ship_days = 0;
-                            foreach ( WC()->cart->get_cart() as $lgd_ci ) {
-                                if ( function_exists( 'ls_get_cart_item_delivery_days' ) ) {
-                                    $lgd_ship_days = max( $lgd_ship_days, (int) ls_get_cart_item_delivery_days( $lgd_ci ) );
-                                }
-                            }
                             $lgd_same_day = $lgd_ship_days <= 1;
                             $lgd_dispatch = $lgd_same_day ? 0 : $lgd_ship_days;
 
@@ -221,24 +216,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
     				</div>
     				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
     			</div>
-                <?php
-                 $cart_total = WC()->cart->get_subtotal() - WC()->cart->get_discount_total();
-
-    $max_delivery_days = 0;
-    foreach ( WC()->cart->get_cart() as $ls_ci_key => $ls_ci_item ) {
-        $ls_ci_days = ls_get_cart_item_delivery_days( $ls_ci_item );
-        if ( $ls_ci_days > $max_delivery_days ) {
-            $max_delivery_days = $ls_ci_days;
-        }
-    }
-                ?>
-                <div>
-                       <?php if ( $max_delivery_days > 0 ) : ?>
-                            <div class="font_size_12 fw-500 text-left ls_est_delivery_msg mt-1">
-                                Insured shipping by <?php echo esc_html( ls_est_delivery_date( $max_delivery_days ) ); ?> with FedEx overnight delivery. <a href="javascript:void(0)" onclick="openZohoChat('Hi, I need this sooner than the estimated delivery date. Product page: ' + window.location.href)">Need it sooner?</a>
-                            </div>
-                        <?php endif; ?>
-                </div>
                 <div class="faq-checkout-order">
                   <h4>FAQ</h4>
                     <?php

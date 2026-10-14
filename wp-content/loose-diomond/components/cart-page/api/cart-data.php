@@ -210,19 +210,6 @@ function lgd_cart_page_get_data() {
     $threshold  = 500;
     $cart_total = $cart->get_subtotal() - $cart->get_discount_total();
 
-    // Delivery estimate
-    $max_days = 0;
-    if ( function_exists( 'ls_get_cart_item_delivery_days' ) ) {
-        foreach ( $cart->get_cart() as $ci ) {
-            $max_days = max( $max_days, (int) ls_get_cart_item_delivery_days( $ci ) );
-        }
-    }
-    $delivery_date = ( $max_days > 0 && $website === 'RETAIL' )
-        ? ( function_exists( 'ls_est_delivery_date' )
-            ? ls_est_delivery_date( $max_days )
-            : date_i18n( 'l, M j', strtotime( '+' . $max_days . ' days', current_time( 'timestamp' ) ) ) )
-        : '';
-
     // Notices (printed once, then cleared)
     $notices = function_exists( 'wc_print_notices' ) ? lgd_cart_capture( 'wc_print_notices' ) : '';
 
@@ -249,7 +236,6 @@ function lgd_cart_page_get_data() {
         'checkoutUrl'    => wc_get_checkout_url(),
         'cartUrl'        => wc_get_cart_url(),
         'freeShipLeft'   => ( $cart_total < $threshold ) ? number_format( $threshold - $cart_total, 2 ) : '',
-        'deliveryDate'   => $delivery_date,
         'returnDays'     => defined( 'RETURN_DAYS' ) ? RETURN_DAYS : '30',
         'supportMobile'  => defined( 'SUPPORT_MOBILE' ) ? SUPPORT_MOBILE : '',
         'themeUri'       => get_template_directory_uri(),

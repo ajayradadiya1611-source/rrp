@@ -298,7 +298,6 @@ function _diamond_build_product_schema_script($diamond, $page_url, $fallback_des
 
     // ── Shipping ─────────────────────────────────────────────────
     // DB `shipping`: 2 = Overnight, 1 = Ships within 3 days, else standard
-    // (standard uses delivery_days when set).
     $ship = (int) ($diamond->shipping ?? 0);
     if ($ship === 2) {
         $ship_label = 'Overnight Delivery'; $t_min = 1; $t_max = 1;
@@ -306,8 +305,6 @@ function _diamond_build_product_schema_script($diamond, $page_url, $fallback_des
         $ship_label = 'Express Shipping';   $t_min = 2; $t_max = 3;
     } else {
         $ship_label = 'Standard Shipping';  $t_min = 5; $t_max = 7;
-        $dd = (int) ($diamond->delivery_days ?? 0);
-        if ($dd > 0) { $t_max = max($dd, 1); $t_min = max(1, min($t_min, $t_max)); }
     }
 
     // ── Name / description ───────────────────────────────────────

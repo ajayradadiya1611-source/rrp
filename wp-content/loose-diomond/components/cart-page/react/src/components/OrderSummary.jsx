@@ -132,15 +132,6 @@ export default function OrderSummary({ cart, actions }) {
           </div>
         )}
 
-        {cart.deliveryDate && (
-          <div className="font_size_12 fw-500 text-left ls_est_delivery_msg mt-1">
-            Insured shipping by {cart.deliveryDate} with FedEx overnight delivery.{' '}
-            <a href="#" onClick={chat('Hi, I need this sooner than the estimated delivery date. Product page: ')}>
-              Need it sooner?
-            </a>
-          </div>
-        )}
-
         <div className="trust-block">
           <h6 className="trust-item-head">Your order includes:</h6>
           <div className="trust-item-parent">

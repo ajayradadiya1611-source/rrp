@@ -438,25 +438,6 @@ if ( function_exists('WC') && WC()->cart && ! empty( $diamond->pid ) ) {
     }
 }
 
-$delivery_days = $diamond->delivery_days;
-
-// Estimated delivery date — delivery_days from today (site timezone), falls back to 7 days if unset.
-$delivery_days_offset = ( isset( $diamond->delivery_days ) && (int) $diamond->delivery_days > 0 ) ? (int) $diamond->delivery_days : 7;
-
-// If a ring setting was already chosen in the ring builder (setting chosen
-// first, diamond chosen second), the final delivery date has to account
-// for both lead times together — the setting has to be made and the
-// diamond set into it, so the two add up rather than run in parallel.
-// The setting's lead time depends on its selected metal (Platinum ships
-// later than Gold, and lead time also depends on the setting's Style —
-// see ls_style_metal_delivery_days()).
-if ( ! empty( $_SESSION['ls_ring_builder']['setting']['sp_vid'] ) ) {
-    $rb_setting_delivery_days = ls_get_setting_delivery_days_by_variation( $_SESSION['ls_ring_builder']['setting']['sp_vid'] );
-    $delivery_days_offset     = $delivery_days_offset + $rb_setting_delivery_days;
-}
-
-$estimated_delivery_date = ls_est_delivery_date( $delivery_days_offset );
-
 $raw_video_field = trim( $diamond->video ?? '' );
 
 $video_type = ''; // 'loupe', 'medialink', 'other', or '' (empty)
@@ -1109,22 +1090,6 @@ if ( $diamond->certificate != '' ) {
                             </div>
                           </form>
 
-                         <?php
-                            
-                            ?>
-                            <div class="est_delivery_date mt-2">
-                                <p class="mb-0">
-                                    <?php echo $price > 500 ? 'Free Insured ' : ' Insured '; ?> shipping by <strong><?php echo esc_html( $estimated_delivery_date ); ?></strong>
-                                    <i class="fa-regular fa-circle-question ms-1 text-muted" data-bs-toggle="tooltip" data-bs-placement="top" title="Estimated delivery date. Actual delivery may vary based on your shipping location and carrier." style="cursor: pointer;"></i>
-                                </p>
-                                <p class="mb-0">
-                                    if you order in the next 15 hours. <a href="javascript:void(0)" onclick="openZohoChat('Hi, I need this diamond sooner than the estimated delivery date. Product page: ' + window.location.href)">Need it sooner?</a>
-                                </p>
-                            </div>
-                            <?php
-                            
-                            ?>
-                      
                         <div class="ls-iconcnt">
                             <div><img src="<?php echo get_template_directory_uri().'/aj_custom/single-product/'; ?>Frame-1.svg" title=""><span class="ls-cnt">Insured Shipping Worldwide</span></div>
                             <div><img src="<?php echo get_template_directory_uri().'/aj_custom/single-product/'; ?>Frame-2.svg" title=""><span class="ls-cnt">Easy <?php echo RETURN_DAYS; ?> Day Returns</span></div>
