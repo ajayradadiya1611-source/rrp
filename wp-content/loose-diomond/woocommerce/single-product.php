@@ -84,7 +84,6 @@ if ( $product->is_type('variable') ) {
 }
 
 $is_melee_diamond = has_term( 'melee-diamond', 'product_tag', $pid );
-$is_setting_product = is_setting_product($pid);
 $c_ctype = get_post_meta($product->id, 'c_type', true);
 $image_white_black = get_field('image_white_black',$pid);
 $image_diamond_carat_size_guide = get_field('image_diamond_carat_size_guide',$pid);
@@ -119,10 +118,6 @@ $spin_images = implode(" ", $spin_imageurls);
 
 
 ?>
-<script>
-	var isSettingProduct = <?php echo json_encode($is_setting_product); ?>;
-	console.log('Is Setting Product:', isSettingProduct);
-</script>
 
 
 <!-- start banner section  -->
@@ -175,12 +170,6 @@ $spin_images = implode(" ", $spin_imageurls);
 			</nav>
 		</div>
 	</div>
-	<?php if ($is_setting_product['is_setting']) { ?>
-		<div class="container-fluid">
-			<?php ls_ring_builder_breadcrumb('setting'); ?>
-			<div id="ring-builder-breadcrumb-root"></div>
-		</div>
-	<?php } ?>
 
 	<div class="container-fluid">
 		<div class="product_image">
@@ -592,26 +581,6 @@ if ( ! empty( $short_description ) ) {
 								<?php if ( function_exists( 'lgd_extend_pdp_offer_markup' ) ) { lgd_extend_pdp_offer_markup( $product ); } ?>
 
 										<div class="add_cart d-flex align-items-center gap_13">
-											<?php if ($is_setting_product['is_setting']) { ?>
-												<?php
-												// LGD EXTRA FEATURES: this branch doesn't add to cart yet
-												// (it stores the setting choice in session and redirects
-												// into the ring-builder flow — the real add-to-cart happens
-												// later, from the Ring Preview page). So a selection made
-												// here is captured into $_SESSION by
-												// handle_ring_builder_setting() in functions.php (tagged
-												// "LGD EXTRA FEATURES") from this same hidden
-												// "extra_features" field, then carried through to that
-												// final Add To Bag step and re-verified there — see
-												// ls_rb_addtobag() and page-ring-preview.php.
-												
-												?>
-												<input type="hidden" name="quantity" class="qty" min="1" value="1">
-												<button type="button" class="common_btn md_common_btn  w-100" id="ajax-add-to-cart" disabled>
-													<span>Select This Setting</span>
-													<span class="single_p_loader ls_stng_loder spinner-border spinner-border-sm d-none"></span>
-												</button>
-											<?php } else { ?>
 												<?php
 												// LGD EXTRA FEATURES: real "Add To Bag" branch — adds
 												// straight to cart, so this is captured directly by
@@ -627,8 +596,7 @@ if ( ! empty( $short_description ) ) {
 													<span>Add To Bag</span>
 													<span class="single_p_loader ls_stng_loder spinner-border spinner-border-sm d-none"></span>
 												</button>
-											<?php } ?>
-										</div>
+																					</div>
 										<div class="ajax-cart-message" style="display:none; margin-top: 10px; padding: 10px; border-radius: 5px;"></div>
 								
 							</form>
@@ -1293,7 +1261,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				var body = new URLSearchParams();
 				body.set('action', 'custom_ajax_add_to_cart');
 				body.set('form_data', new URLSearchParams(new FormData(form)).toString());
-				appendParam(body, 'isSettingProduct', typeof isSettingProduct !== 'undefined' ? isSettingProduct : '');
 
 				setLoading(true);
 
@@ -1346,7 +1313,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <?php } ?>
 
 <?php
-if($is_setting_product['is_setting'] || $c_ctype==4){
+if($c_ctype==4){
 	single_product_product_info();
 	echo '<div class="light_gray_background ">';
 	single_product_what_customer_say();

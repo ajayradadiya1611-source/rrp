@@ -1,79 +1,8 @@
 <?php
 
 // ls_render_diamond_detail_page() and the visual-set helpers — shared by
-// diamond-detail.php (below) and woocommerce/single-product.php (for
-// products tagged "sale").
+// woocommerce/single-product.php (for products tagged "sale").
 require_once __DIR__ . '/diamond-detail-render.php';
-
-add_action('template_redirect', function () {
- 
-    if (!is_product()) {
-        return;
-    }
- 
-    global $post;
-    if (!$post) {
-        return;
-    }
- 
-    // Get the SKU for this product.
-    $product = wc_get_product($post->ID);
-    if (!$product) {
-        return;
-    }
-    $sku = $product->get_sku();
-    if (!$sku) {
-        return;
-    }
- 
-    // Certificate type meta — adjust the meta key below if yours differs.
-    $c_type = get_post_meta($post->ID, 'c_type', true);
-    if ($c_type === '') {
-        $c_type = get_post_meta($post->ID, '_c_type', true);
-    }
- 
-    if (!in_array((string) $c_type, ['1', '3'], true)) {
-        return;
-    }
- 
-    // Products tagged "sale" stay on their own product URL and render
-    // via the sale-tag branch in woocommerce/single-product.php (same
-    // page structure, via ls_render_diamond_detail_page()) instead of
-    // being redirected to /diamond/{sku}/.
-    if (has_term('sale', 'product_tag', $post->ID)) {
-        return;
-    }
- 
-    $redirect_url = home_url('/diamond/' . rawurlencode($sku) . '/');
- 
-    wp_safe_redirect($redirect_url, 301);
-    exit;
-});
-
-// ── Diamond SKU Rewrite ──────────────────────────────────────────
-add_action('init', function () {
-    add_rewrite_rule(
-        '^diamond/([a-zA-Z0-9_-]+)/?$',
-        'index.php?diamond_sku=$matches[1]',
-        'top'
-    );
-});
-
-add_filter('query_vars', function ($vars) {
-    $vars[] = 'diamond_sku';
-    return $vars;
-});
-
-add_filter('template_include', function ($template) {
-    if (get_query_var('diamond_sku')) {
-
-        $custom = get_stylesheet_directory() . '/diamond-detail.php';
-        if (file_exists($custom)) {
-            return $custom;
-        }
-    }
-    return $template;
-});
 
 /**
  * Look up a diamond by SKU across BOTH inventory tables — white

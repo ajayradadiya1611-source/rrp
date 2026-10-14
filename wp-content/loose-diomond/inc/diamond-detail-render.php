@@ -417,27 +417,6 @@ $multiplier = 0.7;
 $price = (int) round($diamond->price );
 $org_price = (int) round($price / $multiplier);
 
-$is_in_cart = false;
-$is_in_cart_ring = false;
-if ( function_exists('WC') && WC()->cart && ! empty( $diamond->pid ) ) {
-    foreach ( WC()->cart->get_cart() as $cart_item ) {
-        if ( $cart_item['product_id'] == $diamond->pid && function_exists('ls_is_diamond_in_cart_ring') && ls_is_diamond_in_cart_ring( $diamond->pid ) ) {
-           
-            $is_in_cart_ring = true;
-            
-        }
-        if ( $cart_item['product_id'] == $diamond->pid ) {
-            /*echo "<pre>";
-            print_r($cart_item);
-            echo "</pre>";
-            exit;*/
-            $is_in_cart = true;
-            break;
-        }
-       
-    }
-}
-
 $raw_video_field = trim( $diamond->video ?? '' );
 
 $video_type = ''; // 'loupe', 'medialink', 'other', or '' (empty)
@@ -1013,11 +992,6 @@ if ( $diamond->certificate != '' ) {
                         echo "</pre>";*/
 
                         ?>
-                          <!-- Simple product Add to Cart (uses linked WooCommerce product `pid`) -->
-                          <form class="cart" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="add-to-cart" value="<?php echo esc_attr($diamond->pid ?? 0); ?>">
-                            <input type="hidden" name="type" value="<?php echo esc_attr($inventory_type); ?>">
-
                             <div class="price-display oc_simple_product" style="margin-bottom: 10px; font-size: 16px; font-weight: 500;">
                               <?php if (!empty($org_price) && $org_price > $price) : ?>
     <span class="price">
@@ -1028,67 +1002,13 @@ if ( $diamond->certificate != '' ) {
     <span class="price"><?php echo wc_price($price, ['decimals' => 0]); ?></span>
 <?php endif; ?>
                             </div>
-                            
+                            <?php if ( $is_custom_setting_shape ) : ?>
                             <div class="add_cart d-flex flex-column align-items-center gap-3">
-                              <input type="hidden" name="quantity" min="1" value="1">
-                              <input type="hidden" name="custom_note" value="<?php echo esc_attr(wp_strip_all_tags($diamond->note ?? '')); ?>">
-                              <?php if ( $is_sale_page ) : ?>
-                                <?php // Sale-tag pages: just Add To Cart + Similar Diamonds — no Add To Ring / Ask About a Custom Setting. ?>
-                                <?php if ( $is_in_cart ) : ?>
-                                <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="common_btn md_common_btn w-100">
-                                  <span>Go To Cart</span>
-                                </a>
-                                <?php else : ?>
-                                <button type="button" class="common_btn md_common_btn w-100" data-type="default">
-                                  <span>Add To Bag</span>
-                                  <span class="single_p_loader ls_stng_loder spinner-border spinner-border-sm d-none"></span>
-                                </button>
-                                <?php endif; ?>
-                                <a href="<?php echo esc_url( add_query_arg( 'is_sale', 1, home_url( '/lab-diamonds/' ) ) ); ?>" class="common_btn md_common_btn common_btn_outline w-100">
-                                  <span>Similar Diamonds</span>
-                                </a>
-                              <?php else : ?>
-                              <?php
-                              if($is_setting==true && $is_in_cart_ring==false && (int) $diamond->certificate_type !== 4){
-                              ?>
-
-
-                              <button type="button" class="common_btn md_common_btn   w-100" data-type="<?php echo $is_colored ? 'ringbuilder_c' : 'ringbuilder'; ?>">
-                                <span>Add To Ring</span>
-                                <span class="single_p_loader ls_stng_loder spinner-border spinner-border-sm d-none"></span>
-                              </button>
-
-
-                              <?php
-                              }
-                              ?>
-                              <?php if ( $is_in_cart ) : ?>
-                              <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="common_btn md_common_btn w-100">
-                                <span>Go To Cart</span>
-                              </a>
-
-                              <?php else : ?>
-                                   <?php
-                                   // "Add To Bag" is only outlined when it's sharing space with
-                                   // another CTA (Add To Ring and/or Ask About a Custom Setting) —
-                                   // if it's the only button, it stays solid.
-                                   $has_multiple_bag_buttons = $is_setting == true || $is_custom_setting_shape;
-                                   ?>
-                                   <?php if ( $is_custom_setting_shape ) : ?>
                                    <a  href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#customSettingModal"  class="common_btn md_common_btn w-100">
                                   <span>Ask About a Custom Setting</span>
                                 </a>
-                                   <?php endif; ?>
-
-                                <button type="button" class="common_btn md_common_btn<?php echo $has_multiple_bag_buttons ? ' common_btn_outline' : ''; ?> w-100" data-type="default">
-                                  <span>Add To Bag</span>
-                                  <span class="single_p_loader ls_stng_loder spinner-border spinner-border-sm d-none"></span>
-                                </button>
-                              <?php endif; ?>
-                              <?php endif; ?>
-                              
                             </div>
-                          </form>
+                            <?php endif; ?>
 
                         <div class="ls-iconcnt">
                             <div><img src="<?php echo get_template_directory_uri().'/aj_custom/single-product/'; ?>Frame-1.svg" title=""><span class="ls-cnt">Insured Shipping Worldwide</span></div>
@@ -1717,93 +1637,6 @@ single_product_what_customer_say();
 <?php
 single_diomond_faq();
 ?>
-
-
-   <script>
-  // Values injected by PHP (keep this block in the PHP template)
-  window.LS_PRODUCT_CONFIG = {
-    defaultInventoryType: '<?php echo esc_js($inventory_type); ?>',
-    iid: '<?php echo esc_js($diamond->id); ?>',
-    action: '<?php echo $is_colored ? "ls_add_to_cart_c" : "ls_add_to_cart"; ?>',
-    ajaxUrl: '<?php echo esc_url(admin_url('admin-ajax.php')); ?>',
-    nonce: '<?php echo esc_js(wp_create_nonce('ls_add_to_cart_nonce')); ?>'
-  };
-</script>
-
-<script>
-(function () {
-  function init() {
-    var form = document.querySelector('.product_information form.cart');
-    if (!form) return;
-
-    var cfg = window.LS_PRODUCT_CONFIG || {};
-    var buttons = form.querySelectorAll('button[type="button"]');
-
-    buttons.forEach(function (btn) {
-      btn.addEventListener('click', async function (e) {
-        e.preventDefault();
-
-        var clickedType = btn.dataset.type || cfg.defaultInventoryType;
-        var pidInput = form.querySelector('input[name="add-to-cart"]');
-        var pid = pidInput ? pidInput.value : '';
-        var loader = btn.querySelector('.single_p_loader');
-
-        btn.disabled = true;
-        if (loader) loader.classList.remove('d-none');
-
-        try {
-          var ajaxObj = window.ls_ajax_object || {};
-          var ajaxUrl = ajaxObj.ajax_url || cfg.ajaxUrl;
-          var nonce = ajaxObj.nonce || cfg.nonce;
-
-          var formData = new FormData();
-          formData.append('action', cfg.action);
-          formData.append('product_id', pid);
-          formData.append('iid', cfg.iid);
-          formData.append('quantity', 1);
-          formData.append('type', clickedType);
-          if (nonce) formData.append('nonce', nonce);
-
-          var resp = await fetch(ajaxUrl, {
-            method: 'POST',
-            body: formData,
-            credentials: 'same-origin'
-          });
-          var json = await resp.json();
-
-          if (!resp.ok || (json && json.success === false)) {
-            var msg = (json && (json.data || json.message)) ||
-              'Failed to add to cart. Please try again.';
-            console.error('Add to cart failed', msg);
-            alert(msg);
-            return;
-          }
-
-          var data = json.success ? json.data : json;
-          if (data.status) {
-            window.location.href = data.redirect || '/cart';
-          } else {
-            console.error('Add to cart failed', data);
-            alert(data.content || 'Failed to add to cart. Please try again.');
-          }
-        } catch (err) {
-          console.error('API error', err);
-          alert('Failed to add to cart due to a network error. Please try again.');
-        } finally {
-          btn.disabled = false;
-          if (loader) loader.classList.add('d-none');
-        }
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
 
 
 <?php if ( $render_header_footer ) { get_footer('shop'); } ?>

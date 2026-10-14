@@ -1088,7 +1088,6 @@ function variation_settings_fields( $loop, $variation_data, $variation ) {
         
     // Ring Builder
     $ls_variation = wc_get_product( $variation->ID );
-    $is_setting_product = is_setting_product( $ls_variation->get_parent_id() );
     
     // ring type product - FIXED: use wc_get_product() instead of new WC_Product()
     $product = wc_get_product( get_the_ID() );
@@ -1190,7 +1189,6 @@ function save_variation_settings_fields( $post_id, $loop ) {
 
     // Ring Builder
     $ls_variation = wc_get_product( $post_id );
-    $is_setting_product = is_setting_product( $ls_variation->get_parent_id() );
     $pid = wp_get_post_parent_id( $post_id );
     $c_ctype = get_post_meta( $pid, 'c_type', true );
 
@@ -1399,7 +1397,7 @@ function oc_wp_footer() {
           
         <?php
     }
-    if (is_page_template(array( 'page-ring-preview.php')) || is_product() || get_query_var('diamond_sku')) {
+    if (is_product() || get_query_var('diamond_sku')) {
         ?>
         <style>
             
