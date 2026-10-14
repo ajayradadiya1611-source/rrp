@@ -204,28 +204,14 @@ $oc_main_menu = array(
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="<?php echo home_url(); ?>">
+
           <img
-            src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
+            src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
             alt="loosegrowndiamond_logo" />
         </a>
         <form class="d-flex align-items-center gap-3 d-lg-none" role="search">
           <i class="fa-solid fa-magnifying-glass" id="mobileSearchIcon"></i>
-         <!--  <div class="d-flex flex-column gap-1">
-            <a href="<?php echo esc_url($myaccount_link); ?>" class="text-decoration-none">
-                  <div class="account-avatar <?php if ( is_user_logged_in() ) {echo "account_logged";}else{echo "account_not_logged";}?>"> 
-                      <?php
-                      if ( is_user_logged_in() ) {
-                          $current_user = wp_get_current_user();
-                          echo strtoupper( substr( $current_user->display_name, 0, 1 ) );
-                      } else {
-                          ?>
-                          <img src="<?php echo get_template_directory_uri(); ?>/aj_custom/header/user.svg" alt="User">
-                          <?php
-                      }
-                      ?>
-                  </div>
-                </a>
-          </div> -->
+         
           <a href="<?php echo home_url(); ?>/wishlist/"><i class="fa-heart fa-regular fa-lg"></i></a>
           <a href="<?php echo wc_get_cart_url(); ?>" class="position-relative cart-badge">
             <img
