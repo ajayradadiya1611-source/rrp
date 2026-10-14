@@ -150,7 +150,6 @@ $ct_badge = get_field('ct_badge',$pid);
 						
 						?>
 						<div class="reviwewidgetp">
-							<?php  echo do_shortcode( '[rating_snippet sku="' . $product->get_sku() . '"]' );?>
 						</div>
 						<?php
 						
