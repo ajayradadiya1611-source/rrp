@@ -5,6 +5,318 @@
  */
 
 get_header();
+
+$faq_sections = [
+    [
+        'id'    => 'about',
+        'title' => 'About Us',
+        'class' => '',
+        'items' => [
+            [
+                'title'       => 'What is RRP Diamond?',
+                'description' => '<div>RRP Diamond is a Surat based manufacturing company which deals only in the manufacturing and selling of Natural diamonds/jewelry.</div>',
+            ],
+            [
+                'title'       => 'Do you have a retail store located in my state?',
+                'description' => '<div><p>RRP Diamond has a factory located in Surat city. You would find our factory on 177 Ghanshyam Nagar, remember to book an appointment with us in advance and will be more than happy to meet you. <b>We at RRP Diamond, operate mostly online. Operating online saves us operational costs and also helps us in keeping all our attention on the quality and manufacturing of your diamond. The reason for our high quality service is primarily that we focus all our attention on our service and hence you get a much lower price on our product then you would in comparison to any other local jewelry store or online store.</b></p></div>',
+            ],
+            [
+                'title'       => 'Do you have gemologists on staff?',
+                'description' => '<div>Absolutely, we currently employ graduates from the Gemological Institute of America. All of the graduates are an essential part of our team. They help us in offering great customer service. If our consumers have any sort of queries regarding our service or product you can get in touch with our staff gemologists.</div>',
+            ],
+            [
+                'title'       => 'Where are the corporate office of RRP Diamond located?',
+                'description' => '<div><p>Our corporate office is located in Surat city. You will find our office in the Diamond District. The exact address of our office is listed below.</p><p>RRP Diamond Corporate Office<br>
+301, Ashok chamber, Moti-Bazaar,<br>
+Mahidharpura, Surat, Gujarat – 395008</p></div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'insurance-care',
+        'title' => 'Insurance & Care',
+        'class' => 'accordion-insurance',
+        'items' => [
+            [
+                'title'       => 'Do you clean or provide care for jewelry sold on your site?',
+                'description' => '<div>NO, we do not provide cleaning services or external care for the diamond jewelry sold on our website, the <strong>reason behind this is that we already offer the lowest price possible on our product. We do not include any middleman cost or extra margin on our product. Including any other cost like cleaning would not be financially feasible for our business.</strong></div>',
+            ],
+            [
+                'title'       => 'What is covered by your manufacturing warranty?',
+                'description' => '<div><p>Our warranty covers any manufacturing defects that you might find the moment you received a product. Our warranty also covers prong-tightening, re-polishing and rhodium plating but only within the seven days of purchase. We give full guarantee that all our products will be free from manufacturing defects but in case you do find any please reach out to us. If you encounter any other problem with a product which is not covered under the warranty you can always reach out to us. We will ask for your product and after being inspected by our gemologist we shall let you know the charges for our services.</p></div>',
+            ],
+            [
+                'title'       => 'Do you provide insurance on jewelry?',
+                'description' => '<div>We only provide insurance on our guaranteed shipping, but not on our products.</div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'orders-ring-sizes',
+        'title' => 'Orders & Ring Sizes',
+        'class' => 'accordion-order',
+        'items' => [
+            [
+                'title'       => 'I saw a ring on your site, and I love it! Can I try it on?',
+                'description' => '<div>We provide a money back guarantee. Once you receive the product, feel free to try it on and see how it looks. We at RRP Diamonds, have full faith in our products and believe that you will absolutely love them after you receive them. In case you are not satisfied with the product you can avail the <strong>money back guarantee and return our product within 7-days.</strong></div>',
+            ],
+            [
+                'title'       => 'Can I order through your website?',
+                'description' => '<div>Yes absolutely you can order through our website. All the products which are displayed on RRP Diamond’s website are available for purchase (unless stated otherwise).</div>',
+            ],
+            [
+                'title'       => 'Can I custom design an engagement ring?',
+                'description' => '<div>Yes absolutely, you can ask for your desired design and get in touch with us through our website. We will be more than happy to design a customized engagement ring for you.</div>',
+            ],
+            [
+                'title'       => 'What if I need help placing an order?',
+                'description' => '<div>If you need any sort of assistance from us the number mentioned below is available 24 hours a day, 7 days a week. Customer service: +91 9016106290 or info@rrpdiamonds.com</div>',
+            ],
+            [
+                'title'       => 'What if I have a question about my order, want to change it, or need to cancel it?',
+                'description' => '<div><p>For questions about your order, call Customer Service at +91 9016106290, 24 hours a day, 7 days a week, or send an <a href="mailto:info@rrpdiamonds.com">e-mail</a>. You can check your order status online by clicking <a class="link--2Z1lc" href="/my-account/" target="_blank" rel="noindex noopener">here</a>. You will need to login.</p></div>',
+            ],
+            [
+                'title'       => 'I’d like to place an international order. Do I pay customs fees to RRP or to FedEx/UPS?',
+                'description' => '<div>We ship all International orders for free. Orders priced below $1500 are shipped through priority mail by UPS. Orders which are valued above $1500 are given insured shipping by FedEx/ UPS. Once you have received your package the courier will get in touch with you to get any duty taxes or fees on your product.</div>',
+            ],
+            [
+                'title'       => 'What if my shipment is stuck in the Customs?',
+                'description' => '<div>We are not responsible for the customs clearance, in any case if you are not able to clear the customs, we are not liable &amp; responsible.</div>',
+            ],
+            [
+                'title'       => 'how do I get my ring size?',
+                'description' => '<div>Please <a href="https://www.rrpdiamonds.com/wp-content/uploads/2022/06/RRP-Diamond-Ring-Sizer.pdf">click here</a> for a ring size chart option. OR We suggest you go to a local jewelry store and get your exact ring size measured from there for 100% accuracy.</div>',
+            ],
+            [
+                'title'       => 'Can you engrave my ring/jewelry?',
+                'description' => '<div>We provide free customization/personalization services and would be more than happy to engrave a ring/jewelry for you.</div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'our-diamond-jewelry',
+        'title' => 'Our Diamond & Jewelry',
+        'class' => 'accordion-jewelry',
+        'items' => [
+            [
+                'title'       => 'Are your Natural diamonds Sustainable and Conflict Free?',
+                'description' => '<div>Yes, Natural diamonds are sustainable and conflict free.</div>',
+            ],
+            [
+                'title'       => 'I found a diamond on your website that I like. Is it available?',
+                'description' => '<div>Absolutely, all of the products available on our website are up for purchase.</div>',
+            ],
+            [
+                'title'       => 'How often do you add diamonds to your inventory?',
+                'description' => '<div>We add new diamonds to our inventory almost everyday.</div>',
+            ],
+            [
+                'title'       => 'What if the diamond does not have the 360 video?',
+                'description' => '<div>Do not hesitate, many time diamonds video are not uploaded. Just contact us and we will share you the 360 video/ live video of the diamond.</div>',
+            ],
+            [
+                'title'       => 'How can I make sure the diamonds I receive are actually the diamonds I ordered?',
+                'description' => '<div>When we ship a product to our customers we also provide them with an independent and IGI/GIA report to certify their quality and that you’ve received the exact product you ordered. You can take our product to a local gemologist and compare them against all of the properties mentioned in the report to cross verify the credibility of your product.</div>',
+            ],
+            [
+                'title'       => 'What is HOLD on the diamond?',
+                'description' => '<div>We at RRP Diamond provide an option to customers of ‘holding a diamond’. In this option a customer has to notify us that they are interested in a diamond but want to confirm with friends/family/spouse as to whether they should purchase it or not. On doing so, we hold the diamond for them so that they can make a decision with ease. It works on <strong>first come first serve basis </strong></div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'natural-diamonds',
+        'title' => 'Natural Diamonds',
+        'class' => 'accordion-diamonds',
+        'items' => [
+            [
+                'title'       => 'Are they same as lab-created diamonds? If not, how are they different?',
+                'description' => '<div>Natural diamonds obtain their value from their uniqueness and rarity as billion-year-old precious gems older than life itself. Lab-grown diamonds are currently sold at a slightly reduced price compared to natural diamonds, but the cost continues to decline due to mass production. Therefore, they have little to no resale value.</div>',
+            ],
+            [
+                'title'       => 'Will I still receive a laboratory certificate?',
+                'description' => '<div><p>Yes –  natural diamond will be accompanied by an independent laboratory (GIA/IGI) report detailing its “4 Cs” – cut, color, clarity, and carat weight. If your diamond is mounted into jewelry, it will also be accompanied by an independent laboratory.</p></div>',
+            ],
+            [
+                'title'       => 'Why some of the fancy shapes does not have the cut grade listed on the website?',
+                'description' => '<div><p>Please note GIA and IGI does not provide cut ratings for fancy cut stones, i.e any shape outside of round. That’s why some of the fancy shapes does not have the cut grade listed on the website.</p></div>',
+            ],
+            [
+                'title'       => 'Will the return policy be the same?',
+                'description' => '<div>Yes! We stand behind all our products and want you to be 100% satisfied with your purchase. You may return your diamond/jewelry piece for a full refund within 7 days.</div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'payments',
+        'title' => 'Payments',
+        'class' => 'accordion-payment',
+        'items' => [
+            [
+                'title'       => 'What types of payment do you accept?',
+                'description' => '<div><p>We accept all major credit cards (Visa, MasterCard, American Express, and Discover), PayPal as well as Crypto.</p><p>Many customers purchasing items valued over $1,000 prefer paying by wire/wise transfer. Customers paying by wire will receive wiring instructions once they have placed the order. We must receive confirmation from our bank that a wire transfer has been completed before items can be shipped.</p><p>If you have any questions, Please <a href="/contact-us/"><strong>contact us</strong></a> for or <strong>call/WhatsApp us at +91 9016106290</strong></p></div>',
+            ],
+            [
+                'title'       => 'Will I receive a discount if I pay by bank wire?',
+                'description' => '<div>No.</div>',
+            ],
+            [
+                'title'       => 'Will I be charged sales tax on my order?',
+                'description' => '<div>No, We don’t collects sales tax on orders that are shipped from our South Asia Locations.</div>',
+            ],
+            [
+                'title'       => 'Can I pay with two different credit cards?',
+                'description' => '<div>Yes. If you’d like pay with two different cards, please place your order over the phone with customer service at +91 9016106290. We are available 24 hours a day, 7 days a week.</div>',
+            ],
+            [
+                'title'       => 'Do you offer Financing/EMI?',
+                'description' => '<div>No. As of now we don’t offer a EMI/finance.</div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'shipping',
+        'title' => 'Shipping',
+        'class' => 'accordion-shipping',
+        'items' => [
+            [
+                'title'       => 'Do you Ship WORLDWIDE?',
+                'description' => '<div>Yes, we do ship <strong>WORLDWIDE.</strong></div>',
+            ],
+            [
+                'title'       => 'When will my order ship?',
+                'description' => '<div><p>Free Shipping: Orders typically <strong>ship within 3 to 5 days.</strong> Express Shipping($125): Orders typically <strong>ship within 2 to 3 days.</strong></p><p><strong><i>Transit time is not included in the lead times stated above</i></strong> because transit times vary so dramatically.</p><p>If you need an order to ship by, or arrive by, an specific date we urge you to type in special instructions in the space provided during check out. We’ll do our best to exceed your request or attempt to reach you and advise the best we can do.</p><p>Note: We do not shipped on Weekends &amp; Holidays.</p></div>',
+            ],
+            [
+                'title'       => 'Where is my diamond shipped from?',
+                'description' => '<div>The diamonds are shipped from the India.</div>',
+            ],
+            [
+                'title'       => 'Is free shipping Insured?',
+                'description' => '<div>No, The shipment under free shipping is not Insured, If the good lost, We are not liable &amp; responsible.</div>',
+            ],
+            [
+                'title'       => 'What’s included in my order?',
+                'description' => '<div>In the box, you will receive Diamond/Ring, Hard Copy of IGI/GIA certificate (if applicable)</div>',
+            ],
+            [
+                'title'       => 'When Does the shipment come with insurance?',
+                'description' => '<div>If you have chose the Insured Shipping, on the checkout page, The shipment will be will ship with full insurance via Malca Amit and Ferrari, FedEx/UPS/Aramex.</div>',
+            ],
+            [
+                'title'       => 'I received my diamond but I didn’t received the physical certificate Why?',
+                'description' => '<div>For all the orders below $1,500 cart total – The diamond certificate shipped with individual shipment via USPS/UPS/FedEx/Aramex.</div>',
+            ],
+            [
+                'title'       => 'How much time will it take to deliver it to my home?',
+                'description' => '<div>Once it is dispatched, it will take 5-7 working days to deliver at your doorstep.</div>',
+            ],
+            [
+                'title'       => 'Can I track my order online?',
+                'description' => '<div>You can obtain the status of your current orders on the “Orders” under “My Account” page.</div>',
+            ],
+            [
+                'title'       => 'Are there any duties I have to pay? How much duty/taxes do I have to pay in custom?',
+                'description' => '<div>Customers have to pay the duties and taxes. Once the package arrives in your country, the courier will contact you to collect any taxes or duties. We don’t have any exact figure of how much duty as it depends on the state/country government. usually it’s up to 5%.</div>',
+            ],
+            [
+                'title'       => 'What do I do if my order doesn’t arrive in the prescribed time frame?',
+                'description' => '<div>Contact customer service at +91 9016106290 Monday to Friday from 9:00 AM to 5:00 PM IST, and they would gladly help you track the package for you.</div>',
+            ],
+            [
+                'title'       => 'What if my diamond/jewelry gets lost during shipment?',
+                'description' => '<div>RRP takes every precaution to ensure that your order arrives safely. Your order is fully insured during transit, and we require a signature for all packages.</div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'returns-refund',
+        'title' => 'Return/Refund Policy',
+        'class' => 'accordion-refund',
+        'items' => [
+            [
+                'title'       => 'Why is the return policy of RRP Diamond only for 7-days?',
+                'description' => '<div><p>As we are both diamond manufacturers and sellers it should be noted that we in no way include any extra charges to our final prices, like ‘middle-men fee’. Something which is commonly billed when purchasing from a diamond retailer. With a minimal profit margin we are giving you the best quality diamonds as swiftly as we can, hence we keep a 7-day return policy to ensure maximum efficiency for all our customers.</p><p>Many times 3-4 customers end up liking the same diamond/diamond jewelry, if we sell it to someone and they want to return it within 7-days we are then able to sell that diamond to another interested buyer. This helps us maintain the market balance.</p></div>',
+            ],
+            [
+                'title'       => 'What is RRP’s Cancellation Policy?',
+                'description' => '<div>All Orders are eligible for cancellation when it is in packed/shipped status, as long as the cancel option is available.</div>',
+            ],
+            [
+                'title'       => 'I just cancelled my order. When will I receive my refund?',
+                'description' => '<div>You will receive refund into the source account within 1-5 days from the time of order cancellation.</div>',
+            ],
+            [
+                'title'       => 'Can I modify the shipping address of my order after it has been placed?',
+                'description' => '<div>Yes, please <strong><a href="/contact-us/">contact us</a></strong> to change your address.</div>',
+            ],
+            [
+                'title'       => 'Can special/bespoke orders returned &amp; eligible for refund?',
+                'description' => '<div>Special orders cannot be returned. A ring plus center diamond that we mount together – such as the Design your Own rings – is not considered a special order.</div>',
+            ],
+            [
+                'title'       => 'When are returns not possible?',
+                'description' => '<div><p>We cannot accept returns after return timeline has lapsed. Product must have in the same condition (unused)along with the certificate.(if apply)We cannot accept returns on CUSTOM ORDER.</p></div>',
+            ],
+            [
+                'title'       => 'How can I initiate a return?',
+                'description' => '<div>You will have to send us an email along with order number &amp; the reason for your return.</div>',
+            ],
+            [
+                'title'       => 'What is the time-period within which I can return a product?',
+                'description' => '<div>Products can be returned within 7 days of receiving the product. Post this, return is not allowed.</div>',
+            ],
+            [
+                'title'       => 'Can I get a replacement for the product I’ve ordered?',
+                'description' => '<div>Unfortunately, we can’t replace products that you’ve already ordered. Instead, you can request a return and place a separate order for the new products you want to order.</div>',
+            ],
+            [
+                'title'       => 'Why has my return request been rejected??',
+                'description' => '<div>It’s unfortunate, but the reason for making the return does not comply with our policy.</div>',
+            ],
+            [
+                'title'       => 'What is the pick-up process for the return of a product?',
+                'description' => '<div>Once you’ve made a return request with us via email, our team will get back you with the shipping address.</div>',
+            ],
+            [
+                'title'       => 'What is the mode of payment for refunds?',
+                'description' => '<div>All refunds are credited back to the account/card used to place the original order.</div>',
+            ],
+            [
+                'title'       => 'How will I know that my refund has been initiated?',
+                'description' => '<div>You’ll never have to ask. We’ll send you an email confirming the initiation of your refund. Your refund should reach you within 1-4 working days.</div>',
+            ],
+            [
+                'title'       => 'I still haven’t got my refund. Why?',
+                'description' => '<div>If we’ve sent you a confirmation on the approval of your refund, you will definitely get your refund. However, in rare cases, we face technical difficulties that can delay refund transfers. If the wait seems too long, <a href="/contact-us/"><strong>contact us</strong></a> for support.</div>',
+            ],
+        ],
+    ],
+    [
+        'id'    => 'origin-supply-chain',
+        'title' => 'Origin & Supply Chain',
+        'class' => 'accordion-origin',
+        'items' => [
+            [
+                'title'       => 'What is the Kimberelry Process?',
+                'description' => '<div><p>The Kimberley Process (KP) is an international, multi-stakeholder initiative created to increase transparency and oversight in the diamond industry in order to eliminate trade in conflict diamonds, or rough diamonds sold by rebel groups or their allies to fund conflict against legitimate governments.</p></div>',
+            ],
+            [
+                'title'       => 'Where do you source your rough diamonds from?',
+                'description' => '<div>RRP sources its rough diamonds from De Beers and Alrosa.</div>',
+            ],
+            [
+                'title'       => 'Where are the polished diamonds manufactured?',
+                'description' => '<div>Our diamonds are polished in Surat, Gujarat, India. The city is also known as Diamond City of the world.</div>',
+            ],
+            [
+                'title'       => 'How can you Guarantee 100% Natural Diamonds?',
+                'description' => '<div><p>We were one of the first suppliers to fully address Diamond Integrity Assurance by introducing 100% screening of all melee diamonds leaving our factory. We’ve also assessed possible contamination points and installed systems and processes to guarantee 100% natural diamonds.</p><p>The screening process for stones between 1mm and 3.8mm takes place in-house and is executed using HRD-developed M-Screen 4.0 technology. All stones smaller or bigger are screened at independent laboratories such as IIDGR (Forevermark) or IGI (International Gemological Institute).</p></div>',
+            ],
+        ],
+    ],
+];
 ?>
 
 <!-- FAQ section -->
@@ -26,388 +338,46 @@ get_header();
                         About Us
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#about">About Us</a></li>
-                        <li><a class="dropdown-item" href="#insurance-care">Insurance & Care</a></li>
-                        <li><a class="dropdown-item" href="#orders-ring-sizes">Orders & Ring Sizes</a></li>
-                        <li><a class="dropdown-item" href="#our-diamond-jewelry">Our Diamond & Jewelry</a></li>
-                        <li><a class="dropdown-item" href="#lab-created-diamonds">Lab Created diamonds</a></li>
-                        <li><a class="dropdown-item" href="#payments">Payments</a></li>
-                        <li><a class="dropdown-item" href="#shipping">Shipping</a></li>
-                        <li><a class="dropdown-item" href="#returns-refund">Returns/Refund</a></li>
+                        <?php foreach ($faq_sections as $section): ?>
+                            <li><a class="dropdown-item" href="#<?= $section['id'] ?>"><?= $section['title'] ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 
                 <ul class="title_list d-none d-md-block">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#insurance-care">Insurance & Care</a></li>
-                    <li><a href="#orders-ring-sizes">Orders & Ring Sizes</a></li>
-                    <li><a href="#our-diamond-jewelry">Our Diamond & Jewelry</a></li>
-                    <li><a href="#lab-created-diamonds">Lab Created diamonds</a></li>
-                    <li><a href="#payments">Payments</a></li>
-                    <li><a href="#shipping">Shipping</a></li>
-                    <li><a href="#returns-refund">Returns/Refund</a></li>
+                    <?php foreach ($faq_sections as $section): ?>
+                        <li><a href="#<?= $section['id'] ?>"><?= $section['title'] ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="col-lg-9">
                 <div class="faq_list">
                     <div id="faq-accordion">
-                    <!-- About Us  -->
-                    <h2 class="main_faq">About Us</h2>
-                    <div class="accordion " id="about">
-                         <?php
-                        global $faq_page_about;
-                        ?>
-
-                        <?php foreach ($faq_page_about as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse1<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse1<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                    </button>
-                                </h3>
-                                <div id="order-collapse1<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
+                        <?php foreach ($faq_sections as $s => $section): ?>
+                            <h2 class="main_faq"><?= $section['title'] ?></h2>
+                            <div class="accordion <?= $section['class'] ?>" id="<?= $section['id'] ?>">
+                                <?php foreach ($section['items'] as $index => $faq): ?>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-<?= $s ?>-<?= $index ?>" aria-expanded="false"
+                                                aria-controls="faq-collapse-<?= $s ?>-<?= $index ?>">
+                                                <?= $faq['title'] ?>
+                                            </button>
+                                        </h3>
+                                        <div id="faq-collapse-<?= $s ?>-<?= $index ?>" class="accordion-collapse collapse"
+                                            data-bs-parent="#faq-accordion">
+                                            <div class="accordion-body">
+                                                <?= $faq['description'] ?>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-
-                    </div>
-
-                    <!-- Insurance & Care -->
-                    <h2 class="main_faq">Insurance & Care</h2>
-                    <div class="accordion accordion-insurance" id="insurance-care">
-                        <?php
-                        global $faq_page_insurance_care;
-                        
-                        ?>
-
-                        <?php foreach ($faq_page_insurance_care as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse2<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse2<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                    </button>
-                                </h3>
-                                <div id="order-collapse2<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- Orders & Ring Sizes -->
-                    <h2 class="main_faq">Orders & Ring Sizes</h2>
-                    <div class="accordion accordion-order" id="orders-ring-sizes">
-                        <?php
-                        $faqData = [
-                            [
-                                'title' => 'I saw a ring on your website and love it! Can I try it on?',
-                                'description' => '<div><p><strong>Absolutely!</strong> We want you to shop with complete confidence. That\'s why we offer a <strong>'.RETURN_DAYS.'-day money-back guarantee.</strong></p><p>Once your ring arrives, you can try it on in the comfort of your home and see how it looks and feels. We\'re confident you\'ll love your purchase, but if it isn\'t the perfect fit or doesn\'t meet your expectations, you can return it within '.RETURN_DAYS.'-days for a refund.</p><p>This way, you can shop with peace of mind, knowing there\'s no risk in finding the perfect ring.</p></div>'
-                            ],
-                            [
-                                'title' => 'Can I order through your website?',
-                                'description' => '<div><p><strong>Absolutely!</strong> You can securely place your order directly through our website. Unless otherwise stated, all products displayed on the Loose Grown Diamond website are available for purchase.</p></div>'
-                            ],
-                            [
-                                'title' => 'Can I custom-design an engagement ring?',
-                                'description' => '<div>
-<div><strong>Absolutely!</strong> We specialize in custom engagement rings. Simply share your design idea, inspiration photos, or requirements with us through our website or email, and our team will work with you to create a one-of-a-kind ring that\'s uniquely yours.</div><p>We\'ll guide you through every step of the process, from the initial concept and Free CAD design to the finished piece, ensuring your custom ring perfectly matches your vision.</p>
-</div>'
-                            ],
-                            [
-                                'title' => 'Can I reserve my diamond if I\'m choosing a custom setting?',
-                                'description' => '<div><p><strong>Absolutely!</strong> If you\'ve found a diamond you love, we recommend purchasing it as soon as possible and sharing your order number with us. This allows us to reserve your diamond while we create your custom CAD and 3D design, which typically takes up to 24-48 hours.</p><p>Because our inventory is live and in high demand, diamonds can sell quickly. Purchasing your diamond first ensures it is reserved exclusively for you while we complete your custom setting design.</p></div>'
-                            ],
-                            [
-                                'title' => 'What if I need help placing an order?',
-                                'description' => '<div>If you need any assistance placing your order, our customer support team is here to help. You can reach us 24 hours a day, 7 days a week using the contact information below.<br><br>Customer Support: <a href="tel:+'.SUPPORT_MOBILE.'">'.SUPPORT_MOBILE.'</a><br>Email: <a href="mailto:'.SUPPORT_EMAIL.'">'.SUPPORT_EMAIL.'</a></div>'
-                            ],
-                            [
-                                'title' => 'What if I have a question about my order, want to make changes, or need to cancel it?',
-                                'description' => '<div>If you have any questions about your order, need to make changes, or would like to cancel it, our customer support team is here to help.<p></p>
-<p>You can contact us 24 hours a day, 7 days a week by calling <a href="tel:+'.SUPPORT_MOBILE.'">'.SUPPORT_MOBILE.'</a> or by sending us an <a href="mailto:'.SUPPORT_EMAIL.'">email</a>.</p><p>You can also check your order status at any time by logging into <a href="/my-account/">your account</a>.</p></div>'
-                            ],
-                            [
-                                'title' => 'How do I find my ring size?',
-                                'description' => '<div><p>Use our Ring Size Guide by <a href="/wp-content/uploads/2021/08/LGD-RING-SIZER.pdf">clicking here</a>, or visit a local jeweler to have your finger professionally measured for the most accurate fit.</p></div>'
-                            ],
-                            [
-                                'title' => 'How do I know what ring size to buy? What if I get the wrong size?',
-                                'description' => '<div><p>You can use our Ring Size Guide by <a href="/wp-content/uploads/2021/08/LGD-RING-SIZER.pdf">clicking here</a>. For the most accurate fit, we recommend visiting a local jeweler to have your finger professionally measured.<br><br><p>Don\'t worry if you order the wrong size - we offer one complimentary ring resize within '.RETURN_DAYS.' days of delivery on all eligible rings purchased from Loose Grown Diamond.</p><p><strong>Please note:</strong> Certain wedding bands cannot be resized and are not covered under this policy.</p><p>To request a resize, simply contact our support team via live chat or email us at <a href="mailto:'.SUPPORT_EMAIL.'"><b>'.SUPPORT_EMAIL.'</b></a>. To help us process your request as quickly as possible, please have your order number and desired ring size ready.</p></div>'
-                            ],
-                            [
-                                'title' => 'Do you offer free resizing for all your rings?',
-                                'description' => '<div><p>Yes! We offer one complimentary ring resize within '.RETURN_DAYS.' days of delivery on all rings purchased from Loose Grown Diamond.</p><p>To request a resize, simply contact our support team via live chat or email us at <a href="mailto:'.SUPPORT_EMAIL.'">'.SUPPORT_EMAIL.'</a>. To help us process your request as quickly as possible, please have your order number and desired ring size ready.</p><p>Please note: Certain wedding bands cannot be resized and are not covered under this policy.</p></div>'
-                            ],
-                            [
-                                'title' => 'Can you engrave my ring or jewelry for free?',
-                                'description' => '<div><p>Yes! We offer complimentary engraving on eligible rings and jewelry to make your piece even more personal.</p><p>When placing your order, simply enter your engraving request on the cart page. If you have any questions or special requests, our customer support team will be happy to assist you.</p><p><strong>Please note:</strong> Engraving is subject to space limitations and the design of the jewelry.</p></div>'
-                            ],
-                            [
-                                'title' => 'Can you help keep the ring a surprise? Is Loose Grown Diamond\'s packaging discreet?',
-                                'description' => '<div><p><strong>Absolutely!</strong> Simply mention it in the <strong>Order Notes</strong> section during checkout, and we\'ll make the necessary arrangements.</p><p>Your order will be shipped in plain, unbranded packaging to help keep your surprise safe.</p><p><strong>Note:</strong> If you have any special delivery instructions, feel free to include them in the <strong>Order Notes</strong> or contact our customer support team after placing your order.</p></div>'
-                            ],
-                            [
-                                'title' => 'Are your prices in U.S. dollars?',
-                                'description' => '<div>
-<div><strong>Yes.</strong> All prices displayed on our website are listed in <strong>U.S. Dollars (USD).</strong></div></div><div>Please note: If you make a payment from outside the U.S., your bank or card provider may charge additional foreign exchange (forex) or currency conversion fees. These fees are determined by your bank or payment provider and are not charged by us.</div>'
-                            ],
-                            [
-                                'title' => 'Can I place my order by phone?',
-                                'description' => '<div>
-<div>Absolutely! If you\'d prefer to place your order over the phone, our Customer Support team will be happy to assist you.<br><br><strong>Call us:</strong> <a href="tel:+'.SUPPORT_MOBILE.'">'.SUPPORT_MOBILE.'</a></div>
-</div>'
-                            ],
-                            [
-                                'title' => 'Do you offer Price Matching?',
-                                'description' => '<div><p>Yes! We offer a Price Match Guarantee, and in many cases, we\'ll even beat the competitor\'s price. 😊</p><p>Simply share the SKU or a link to the certified diamond you\'d like us to match, and our team will review it and provide you with our best possible price. Read our full Price Match Policy <a href="/diamond-price-match/">here</a>.</p></div>'
-                            ],
-                            [
-                                'title' => 'Can I customize the band width?',
-                                'description' => ' Yes! You can customize your ring’s band width. The standard band width depends on the size of the center diamond. If you choose a larger or smaller center stone, our design team will adjust the band width accordingly to keep the ring well-proportioned.<br><br>
-
-For example, a ring with a 1 ct center diamond typically has a band width of 1.50 mm or less.<br><br>
-
-To customize the band width or other ring details, please click <strong>Add Extra Feature</strong> on the product page and select your preferred band width and other available customizations.<br><br>
-
-Please note that increasing the band width may increase the ring’s total gold weight and customization cost.'
-                            ],
-
-                        ];
-                        ?>
-
-                        <?php foreach ($faqData as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse3<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse3<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                        
-                                    </button>
-                                </h3>
-                                <div id="order-collapse3<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <!-- Our Diamond & Jewelry -->
-                    <h2 class="main_faq">Our Diamond & Jewelry</h2>
-                    <div class="accordion accordion-jewelry" id="our-diamond-jewelry">
-                        <?php
-                        global $faq_page_diamond_jewelry;
-                        ?>
-
-                        <?php foreach ($faq_page_diamond_jewelry as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse4<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse4<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                    </button>
-                                </h3>
-                                <div id="order-collapse4<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <!-- Lab Created Diamonds -->
-                    <h2 class="main_faq">Lab Created Diamonds</h2>
-                    <div class="accordion accordion-diamonds" id="lab-created-diamonds">
-                        <?php
-                        $faqData = [
-                            [
-                                'title' => 'Are they the same as earth-created diamonds? If not, how are they different?',
-                                'description' => '<div>
-<div>Lab-grown diamonds and earth-created diamonds have identical optical, chemical, and physical properties. Their sparkle is exactly the same.</div>
-</div>'
-                            ],
-                            [
-                                'title' => 'Will I still receive a physical laboratory certificate/grading report?',
-                                'description' => '<div><p>Yes. Every certified lab-grown diamond is accompanied by an independent grading report from GIA, IGI, or GCAL, detailing the diamond\'s 4Cs—cut, color, clarity, and carat weight.</p><p>If your diamond is mounted in a piece of jewelry, the original laboratory grading report will be included with your order.</p><p>Please note:</p><ul><li>GIA grading reports are also available in digital format through GIA\'s online Report Check service.</li><li>As of April 9, 2023, GIA resumed issuing printed Diamond Dossier® grading reports for all newly graded diamonds, returning to the format used before January 2023.</li><li>If your diamond was previously issued with a digital-only GIA report, you may request a printed copy directly from GIA at no additional cost. Digital reports remain available for customers who prefer them.</li></ul></div>'
-                            ],
-                            [
-                                'title' => 'Why don\'t some fancy-shaped diamonds have a cut grade listed?',
-                                'description' => '<div><p>Please note that GIA, IGI, and GCAL do not assign cut grades to fancy-shaped diamonds (any shape other than round). As a result, fancy shapes such as Oval, Cushion, Emerald, Pear, Marquise, Radiant, Princess, and others will not have an official cut grade listed on our website.</p><p>Instead, we recommend evaluating these diamonds based on their proportions, symmetry, polish, and overall appearance, or consulting one of our GIA-trained gemologists for guidance.</p><p>Please note: Our inventory is sourced from 750+ trusted manufacturing partners. While we make every effort to ensure the accuracy of our listings, occasional discrepancies may occur. We strongly recommend reviewing the grading certificate before placing your order to verify all diamond specifications.</p><p>If you notice any discrepancies after receiving your order, please contact us immediately. We offer a '.RETURN_DAYS.'-day return policy, allowing you to shop with confidence. After this period, we may not be able to accommodate claims related to listing discrepancies or product specifications.</p></div>'
-                            ],
-                            [
-                                'title' => 'Are all the diamonds listed on your website manufactured by Loose Grown Diamond?',
-                                'description' => '<div><p>No. While we manufacture many of our own diamonds and jewelry, we also partner with 750+ trusted manufacturers around the world to offer a wider selection and more competitive pricing.</p><p>Every diamond listed on our website meets our quality standards, regardless of whether it is manufactured by Loose Grown Diamond or one of our trusted manufacturing partners.</p></div>'
-                            ],
-                            [
-                                'title' => 'Do you provide ASET images for your diamonds?',
-                                'description' => '<div><p>No. We do not provide ASET images for our diamonds. However, most of our certified diamonds include 360° videos and grading reports to help you evaluate their quality. If you need assistance selecting a diamond, our GIA-trained gemologists are happy to help.</p></div>'
-                            ],
-                            [
-                                'title' => 'I\'ve received an email saying the diamond I ordered is incorrectly priced or unavailable. What should I do?',
-                                'description' => '<div><p>Occasionally, our manufacturing partners may list a diamond with an incorrect price or mark it as available when it is no longer in stock. Since our inventory is sourced from multiple manufacturers, we do not have direct control over these listings.</p><p>After you place your order, we contact the manufacturer to secure the diamond. This process can take 24–48 business hours, as many of our manufacturing partners are located overseas.</p><p>If the diamond is available, we\'ll proceed with your order as normal. If it is unavailable or the price has changed, we\'ll contact you with the following options:</p><ul><li>Choose a comparable alternative diamond.</li><li>Pay the price difference (if applicable).</li><li>Cancel your order and receive a full refund.</li></ul><p>We\'ll always work with you to find the best possible solution and keep you informed throughout the process.</p></div>'
-                            ],
-                        ];
-                        ?>
-
-                        <?php foreach ($faqData as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse5<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse5<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                    </button>
-                                </h3>
-                                <div id="order-collapse5<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <!-- Payments -->
-                    <h2 class="main_faq">Payments</h2>
-                    <div class="accordion accordion-payment" id="payments">
-                        <?php
-                        global $faq_page_payments;
-                        ?>
-
-                        <?php foreach ($faq_page_payments as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse6<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse6<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                    </button>
-                                </h3>
-                                <div id="order-collapse6<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <!-- Shipping -->
-                    <h2 class="main_faq">Shipping</h2>
-                    <div class="accordion accordion-shipping" id="shipping">
-                        <?php
-                        global $shippingFaqData;
-                        $faqData = $shippingFaqData;
-                        ?>
-
-                        <?php foreach ($faqData as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse7<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse7<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                    </button>
-                                </h3>
-                                <div id="order-collapse7<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <!-- Returns/Refund -->
-                    <h2 class="main_faq">Returns/Refund</h2>
-                    <div class="accordion accordion-refund" id="returns-refund">
-                        <?php
-                        global $returnfaqData;
-                        ?>
-
-                        <?php foreach ($returnfaqData as $index => $faq): ?>
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#order-collapse8<?= $index ?>" aria-expanded="false"
-                                        aria-controls="order-collapse8<?= $index ?>">
-                                        <?= $faq['title'] ?>
-                                        <?php
-                                        if(isset($faq['isyoutube'])){
-                                            echo '<i class="fa-brands fa-youtube text-danger fs-3"></i>';
-                                        }
-                                        ?>
-                                    </button>
-                                </h3>
-                                <div id="order-collapse8<?= $index ?>" class="accordion-collapse collapse"
-                                    data-bs-parent="#faq-accordion">
-                                    <div class="accordion-body">
-                                        <?= $faq['description'] ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    </div>
-
-                    <?php 
-    help_box();
-    ?>
+                    <?php help_box(); ?>
                 </div>
             </div>
         </div>
