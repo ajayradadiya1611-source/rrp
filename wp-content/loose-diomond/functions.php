@@ -342,6 +342,7 @@ include('inc/contact-us-form-api.php');
 include('inc/checkout-login-popup.php');
 include('inc/newsletter.php');
 include('inc/retail.php');
+include('inc/ls-unit-option.php');
 
 include('inc/custom-payment-gateway.php');
 include('inc/admin-contact-form.php');
@@ -474,7 +475,7 @@ function custom_ajax_add_to_cart_handler() {
     $variation_attributes = [];
     if ($variation_id) {
         foreach ($form_data as $key => $value) {
-            if (strpos($key, 'attribute_') === 0) {
+            if (strpos($key, 'attribute_') === 0 && $key !== 'attribute_pa_unit') {
                 $variation_attributes[$key] = sanitize_text_field($value);
             }
         }
@@ -487,6 +488,11 @@ function custom_ajax_add_to_cart_handler() {
             ]);
             wp_die();
         }
+    }
+
+    // Unit option (carat / pieces) is stored as cart item data, not as a variation attribute
+    if (isset($form_data['attribute_pa_unit'])) {
+        $_REQUEST['attribute_pa_unit'] = sanitize_text_field($form_data['attribute_pa_unit']);
     }
 
     // Add product to cart

@@ -275,7 +275,26 @@ if ( ! empty( $short_description ) ) {
 									<?php endforeach; ?>
 								
 
-								<input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>">
+<?php
+								// Unit option (carat / pieces) - see inc/ls-unit-option.php
+								$ls_unit_option = (string) get_post_meta( $product->get_id(), 'ls_unit_option', true );
+								if ( in_array( $ls_unit_option, array( '0', '2', '3' ), true ) ) : ?>
+									<div class="common_select_dropdown mb_15">
+										<label for="Unit">Unit</label>
+										<select id="Unit" name="attribute_pa_unit" class="form-select ls-unit-select">
+											<?php if ( '0' === $ls_unit_option ) : ?>
+												<option value="carat">CARAT</option>
+												<option value="pieces">PIECES</option>
+											<?php elseif ( '2' === $ls_unit_option ) : ?>
+												<option value="carat" selected="selected">CARAT</option>
+											<?php else : ?>
+												<option value="pieces" selected="selected">PIECES</option>
+											<?php endif; ?>
+										</select>
+									</div>
+								<?php endif; ?>
+
+																<input type="hidden" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>">
 								<input type="hidden" name="product_id" value="<?php echo esc_attr($product->get_id()); ?>">
 								<input type="hidden" name="variation_id" class="variation_id" value="0">
 								<div class="price-display" style="margin-bottom: 15px; font-size: 16px; font-weight: 500;"></div>
@@ -485,11 +504,19 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (!variation.display_price) return;
 
 		var extra     = lsRefExtraTotal();
-		var showPrice = (parseFloat(variation.display_price) + extra).toFixed(2);
-		var showReg   = (parseFloat(variation.display_regular_price) + extra).toFixed(2);
+
+		// Unit option (carat / pieces): per-piece price = variation price / pieces
+		var unitSel   = form.querySelector('.ls-unit-select');
+		var unit      = unitSel ? unitSel.value : '';
+		var pieces    = parseFloat(variation.ls_pieces) || 0;
+		var divisor   = (unit === 'pieces' && pieces > 0) ? pieces : 1;
+		var basePrice = parseFloat(variation.display_price) / divisor;
+		var baseReg   = parseFloat(variation.display_regular_price) / divisor;
+		var showPrice = (basePrice + extra).toFixed(2);
+		var showReg   = (baseReg + extra).toFixed(2);
 		var priceHtml;
 
-		if (parseFloat(variation.display_price) < parseFloat(variation.display_regular_price)) {
+		if (basePrice < baseReg) {
 			priceHtml =
 				'<span class="price" data-ls-own="1">' +
 					'<del><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>' + showReg + '</bdi></span></del>' +
@@ -500,6 +527,12 @@ document.addEventListener('DOMContentLoaded', function () {
 				'<span class="price" data-ls-own="1">' +
 					'<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>' + showPrice + '</bdi></span>' +
 				'</span>';
+		}
+
+		if (unit === 'pieces') {
+			priceHtml += '<span class="ls_perval"> / per piece</span>';
+		} else if (unit === 'carat') {
+			priceHtml += '<span class="ls_perval"> / per carat</span>';
 		}
 
 		<?php if ( $is_melee_diamond == true ) { ?>
@@ -712,6 +745,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	attrSelects.forEach(function (sel) {
 		sel.addEventListener('change', onAttributeChange);
 	});
+
+	// Unit select: re-render the price for the chosen unit
+	var unitSelect = form.querySelector('.ls-unit-select');
+	if (unitSelect) {
+		unitSelect.addEventListener('change', function () {
+			if (lsLastVariation) lsRenderVariationPrice(lsLastVariation);
+		});
+	}
 
 	// Resolve pre-selected attributes on load
 	if (attrSelects.length) onAttributeChange();

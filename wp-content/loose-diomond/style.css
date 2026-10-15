@@ -1,0 +1,16 @@
+/*
+Theme Name: Loose Diamond
+Theme URI: https://rrpdiamonds.com/
+Author: RRP Diamond
+Author URI: https://rrpdiamonds.com/
+Description: Custom WooCommerce theme for RRP Diamond. Styles are compiled by Vite into out/theme/css/styles.css and enqueued from functions.php.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: loose-diomond
+Tags: e-commerce, woocommerce, custom-theme
+*/
+
+/* Intentionally empty: theme styles are built from /sass (npm run build). */
