@@ -1990,25 +1990,6 @@ p {
   color: #fff;
   font-weight: 600;
 }
-.bg_img {
-  background-image: url("../../../assets/image/banner.svg");
-  width: 100%;
-  padding: 112px 0px 130px;
-  background-color: #eff5fa;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-  @media only screen and (max-width: 992px) {
-    background: #eff5fa;
-    padding: 90px 0;
-  }
-  @media only screen and (max-width: 767px) {
-    padding: 60px 0;
-  }
-  @media only screen and (max-width: 575px) {
-    padding: 40px 0px;
-  }
-}
 .banner_section {
   p {
     color: #0B131A;

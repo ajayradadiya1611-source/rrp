@@ -780,58 +780,36 @@ function start_engagement_rings($title_tag='h3'){
     <?php
 }
 
-function start_engagement_rings_by_shape($is_btn=true,$is_expore=true,$title='Lab Diamonds in Customizable  Shapes',$title_tag='h1'){
+function start_engagement_rings_by_shape(){
     global $text_change;
 
     // Only these shapes are shown
     $shapes = [
-        ['slug' => 'round',        'label' => 'ROUND',        'stroke' => false],
-        ['slug' => 'princess',     'label' => 'PRINCESS',     'stroke' => false],
-        ['slug' => 'emerald',      'label' => 'EMERALD',      'stroke' => false],
-        ['slug' => 'baguette',     'label' => 'BAGUETTE',     'stroke' => false],
-        ['slug' => 'pear',         'label' => 'PEAR',         'stroke' => false],
-        ['slug' => 'old_european', 'label' => 'OLD EUROPEAN', 'stroke' => true],
+        ['slug' => 'round',        'label' => 'Round'],
+        ['slug' => 'princess',     'label' => 'Princess'],
+        ['slug' => 'emerald',      'label' => 'Emerald'],
+        ['slug' => 'baguette',     'label' => 'Baguette'],
+        ['slug' => 'pear',         'label' => 'Pear'],
+        ['slug' => 'old_european', 'label' => 'Old European'],
     ];
-
-    $is_rings_by_shape = ($title == 'Shop Engagement Rings By Shape');
-
-    // Rings-by-shape uses clean URLs like /lab-grown-diamond-engagement-rings/round/
-    $rings_base_url = '/lab-grown-diamond-engagement-rings';
     ?>
-    <div class="bg_light_blue section">
-    <div class="container-fluid">
-        <div class="text-center">
-
-            <<?php echo $title_tag; ?> class=" h1 text_black_secondary font_literata text-center mb-3">
-                 <?php echo $title; ?>
-            </<?php echo $title_tag; ?>>
-        <?php if ($is_btn == true): ?>
-            <div class="fw-400 mb-0 h5">Explore our collection of 2,500,000+ IGI, GIA, GCAL certified lab diamonds</div>
-        <?php endif; ?>
-        </div>
-        <div class="diamond_shap_section <?php echo ($is_btn == false) ? 'pb-0' : ''; ?>">
-            <?php foreach ($shapes as $shape):
-                $href = $is_rings_by_shape
-                    ? $rings_base_url . '/' . $shape['slug'] . '/'
-                    : $text_change['inventory_url'] . '?shape=' . $shape['slug'];
-            ?>
-                <div class="diamond_colum text-center<?php echo !empty($shape['stroke']) ? ' diamond_colum_stroke' : ''; ?>">
-                    <a class="text-decoration-none" href="<?php echo esc_url( $href ); ?>">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/home-page/shape-icon/' . $shape['slug'] . '.svg' ); ?>"
-                             alt="<?php echo esc_attr( ucwords( strtolower( $shape['label'] ) ) ); ?> shape lab diamond"
-                             loading="lazy">
-                        <span><?php echo $shape['label']; ?></span>
+    <section class="shape-circles">
+        <div class="container">
+            <h2 class="shape-circles__title">Lab Diamonds in Customizable Shapes</h2>
+            <p class="shape-circles__subtitle">Explore our collection of 2,500,000+ IGI, GIA, GCAL certified lab diamonds</p>
+            <div class="shape-circles__list">
+                <?php foreach ( $shapes as $shape ) : ?>
+                    <a class="shape-circles__item" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=' . $shape['slug'] ); ?>">
+                        <span class="shape-circles__circle">
+                            <img src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/diamond/shape/' . $shape['slug'] . '.webp' ); ?>"
+                                 alt="<?php echo esc_attr( $shape['label'] ); ?> shape lab diamond"
+                                 width="108" height="108" loading="lazy">
+                        </span>
+                        <span class="shape-circles__label"><?php echo esc_html( $shape['label'] ); ?></span>
                     </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <?php if ($is_btn == true): ?>
-            <div class="text-center">
-                <a href="<?php echo $is_rings_by_shape ? $rings_base_url . '/' : $text_change['inventory_url']; ?>" class="common_btn">Shop Lab Grown Diamonds</a>
+                <?php endforeach; ?>
             </div>
-        <?php endif; ?>
-
-    </div>
-</div>
+        </div>
+    </section>
     <?php
 }
