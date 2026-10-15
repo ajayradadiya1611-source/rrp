@@ -15,7 +15,7 @@ get_header();
                 <h1 class="text-center main_title mb_30">Why Choose Us</h1>
                 <div class="why_quote">
                     <p class="mb-0">
-                        Save over 40% compared to traditional retail prices on lab-grown diamonds. By eliminating inventory, showroom, and overhead costs, we ship diamonds directly from the manufacturer to your doorstep.
+                        Over 40% savings on retail prices of <strong>Natural Diamond</strong>! No inventory costs, store costs, and overhead costs. Diamonds shipped directly from the manufacturer to your doorstep.
                     </p>
                 </div>
                 <video
@@ -24,45 +24,43 @@ get_header();
                     loop="loop"
                     muted="muted">
                     <source
-                        src="<?php echo get_site_url(); ?>/wp-content/uploads/ls_custom/loose-grown-diamond-banner-video.mp4"
+                        src="<?php echo get_template_directory_uri(); ?>/rrp-img/why-choose/loose-grown-diamond-banner-video.mp4"
                         type="video/mp4" />
                 </video>
                 <div class="row row_gap_30">
                     <div class="col-lg-4">
                         <div class="box">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/icon/certified.svg" alt="certified" />
-                            <p class="box_why_title">2,500,000+ GIA, IGI & GCAL Certified Lab-Grown Diamonds</p>
+                            <p class="box_why_title">40,000+ GIA/IGI Certified Natural Diamonds</p>
                             <p class="mb-0">
-                                Choose from over 2.5 million lab-grown diamonds, sourced directly from the manufacturers who cut and polish each stone. This direct-to-consumer approach allows us to offer exceptional quality at highly competitive prices.
+                                Diamonds directly from those that cut and polish the stones – Direct to the factory, we’re uniquely placed to offer you the world’s most luxurious stones at a price that’s affordable.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="box">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/icon/handmade.svg" alt="handmade" />
-                            <p class="box_why_title">
-                                Fancy-Cut Diamonds, Handcrafted to Order
-                            </p>
+                            <p class="box_why_title">Fancy Cut Diamonds are handmade to order by our master craftsmen</p>
                             <p class="mb-0">
-                                Every fancy-cut lab-grown diamond is handcrafted to order by our master craftsmen. Since no two diamonds are alike, we create each piece specifically for you, including custom-shaped lab-grown diamonds.
+                                We strongly believe that as no two diamonds are alike, neither should the jewelry and we make each piece to order which in turn keeps our costs down and therefore the price you pay. we will make the custom shape Natural diamonds just for you.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="box">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/icon/right-hands.svg" alt="right-hands" />
-                            <p class="box_why_title">You're in the Right Hands</p>
+                            <p class="box_why_title">You’re in the right hands</p>
                             <p class="mb-0">
-                                Our founder is a third-generation diamond manufacturer, and with over 42 years of combined industry experience, our team has the expertise to make your diamond purchase truly special.
+                                With a company founder that is a third-generation diamond manufacturer and a combined experience within our workshops of over 43+ years, we know what it takes to make your unique purchase extra special.
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="box">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/icon/happy-customers.svg" alt="happy-customers" />
-                            <p class="box_why_title">Thousands of Happy Customers</p>
+                            <p class="box_why_title">Thousands of happy customers</p>
                             <p class="mb-0">
-                                Don't just take our word for it. Thousands of customers have trusted Loose Grown Diamond for their special moments. Read their reviews and discover why they love our products and customer service.
+                                Don’t just take our word for it, we have made so many dreams come true with our Natural diamonds and you can read online from those that have experienced our products and customer service.
                             </p>
                         </div>
                     </div>
@@ -71,7 +69,7 @@ get_header();
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/icon/guarantee.svg" alt="guarantee" />
                             <p class="box_why_title">Manufacturer Warranty</p>
                             <p class="mb-0">
-                                Every purchase is backed by our <?php echo RETURN_DAYS;?> day manufacturer warranty, covering eligible manufacturing defects for your peace of mind.
+                                All our items are covered against our manufacturer warranty such as a production warranty that addresses any manufacturing issues within <?php echo RETURN_DAYS;?> days.
                             </p>
                         </div>
                     </div>
@@ -80,7 +78,7 @@ get_header();
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/image/icon/worldwide_delivery.svg" alt="worldwide_delivery" />
                             <p class="box_why_title">Worldwide Delivery</p>
                             <p class="mb-0">
-                                We ship worldwide. Wherever you are, your order will be fully insured during transit and delivered safely to your doorstep.
+                                We ship Worldwide. Wherever you are, we will dispatch your item to you fully insured by us until the item has reached your address.
                             </p>
                         </div>
                     </div>
