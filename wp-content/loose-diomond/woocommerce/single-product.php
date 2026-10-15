@@ -873,9 +873,6 @@ single_product_faq();
 <?php
 
 ?>
-<div class="container-fluid my-5">
-	<?php  echo do_shortcode( '[product_reviews_widget sku="' . $product->get_sku() . '"]' );?>
-</div>
 <?php
 
 ?>
