@@ -38,14 +38,35 @@ get_header();
             </div>
             <div class="container second_section">
                 <div class="row">
-                    <h2 class="text_black_secondary fw-600 mb_25 text-center">Cryptocurrency Payment FAQs</h2>
+                    <h2 class="text_black_secondary fw-600 mb_25 text-center">Payment FAQ’s</h2>
                     <div class="faq_list">
 <?php
-global $crypytoFaqData;
+$crypto_faqs = [
+    [
+        'title'       => 'What types of payment do you accept?',
+        'description' => '<p>We accept all major credit cards (Visa, MasterCard, American Express, and Discover), PayPal as well as Crypto.</p><p>Many customers purchasing items valued over $1,000 prefer paying by wire/wise transfer. <strong>Wire transfer orders receive a 2% discount from our listed price.</strong> Customers paying by wire will receive wiring instructions once they have placed the order. We must receive confirmation from our bank that a wire transfer has been completed before items can be shipped.</p><p>If you have any questions, Please <a href="/contact-us/"><strong>contact us</strong></a> for or <strong>call/WhatsApp us at +91 9016106290</strong></p><p>PS: If we didn’t received the order payment within 3 working business days, the order will be cancelled due to non-payment &amp; we are not responsible for the same.</p>',
+    ],
+    [
+        'title'       => 'Will I receive a discount if I pay by Crypto?',
+        'description' => '<div class="faq_item_p">Yes. Bank wire/wise.com/Crypto customers receive a 2% discount off their entire order. Please request coupon code from our <a href="/contact-us/"><strong>support</strong></a>.</div>',
+    ],
+    [
+        'title'       => 'Will I be charged sales tax on my order?',
+        'description' => '<p>No, We don’t collects sales tax on orders that are shipped from our South Asia Locations.</p>',
+    ],
+    [
+        'title'       => 'Can I pay with two different credit cards?',
+        'description' => '<p>Yes. If you’d like pay with two different cards, please place your order over the phone with customer service at +91 9016106290. We are available 24 hours a day, 7 days a week.</p>',
+    ],
+    [
+        'title'       => 'Do you offer Financing/EMI?',
+        'description' => '<p>No. as of now we don’t offer a EMI/finance.</p>',
+    ],
+];
 ?>
 
 <div class="accordion accordion-order" id="accordionorderExample">
-    <?php foreach ($crypytoFaqData as $index => $faq): ?>
+    <?php foreach ($crypto_faqs as $index => $faq): ?>
         <div class="accordion-item">
             <h3 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
