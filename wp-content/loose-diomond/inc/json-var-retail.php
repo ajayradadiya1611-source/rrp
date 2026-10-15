@@ -86,3 +86,4 @@ $common_page['desktop_footer_4'] = [
     ["name" => "Feedback Form", "url" => get_site_url() . "/feedback-form/"]
 ];
 
+$text_change['common_page']=$common_page;
