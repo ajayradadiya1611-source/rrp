@@ -435,9 +435,9 @@ The value of any incentive we provide is reasonably related to the value of the 
                             </ul>
                     </div>
                     <p><strong>Nevada Residents.</strong></p>
-                    <p>Nevada law gives you the right to opt out of the sale of certain "covered information" for monetary consideration. We do not currently sell covered information for monetary consideration. If you would like to submit a request regarding this right in case our practices change, email <a href="mailto:support@loosegrowndiamond.com">support@loosegrowndiamond.com</a>.</p>
+                    <p>Nevada law gives you the right to opt out of the sale of certain "covered information" for monetary consideration. We do not currently sell covered information for monetary consideration. If you would like to submit a request regarding this right in case our practices change, email <a href="mailto:info@rrpdiamonds.com">info@rrpdiamonds.com</a>.</p>
                     <p><strong>California "Shine the Light" Law.</strong></p>
-                    <p>Under California Civil Code Section 1798.83, California residents may request, once per calendar year, information about any personal information we have disclosed to third parties for their own direct marketing purposes during the preceding calendar year, and the categories of personal information disclosed. To make such a request, email support@loosegrowndiamond.com with "Shine the Light Request" in the subject line, and include your full name, mailing address, and a statement confirming you are a California resident. We may require additional information to verify your identity and residency.</p>
+                    <p>Under California Civil Code Section 1798.83, California residents may request, once per calendar year, information about any personal information we have disclosed to third parties for their own direct marketing purposes during the preceding calendar year, and the categories of personal information disclosed. To make such a request, email info@rrpdiamonds.com with "Shine the Light Request" in the subject line, and include your full name, mailing address, and a statement confirming you are a California resident. We may require additional information to verify your identity and residency.</p>
 
                     <h2 class="fw-500">COOKIES, TRACKING OPTIONS, AND DO NOT TRACK DISCLOSURES</h2>
                     <div>
@@ -473,7 +473,7 @@ The value of any incentive we provide is reasonably related to the value of the 
                     <p>You have the right to opt out of the "sale" or "sharing" of your personal information, including for cross-context behavioral or targeted advertising. To opt out, you may:</p>
                     <div>
                         <ul>
-                            <li>Email support@loosegrowndiamond.com with "Opt-Out of Sale/Sharing" in the subject line; or</li>
+                            <li>Email info@rrpdiamonds.com with "Opt-Out of Sale/Sharing" in the subject line; or</li>
                             <li>Enable a recognized Global Privacy Control (GPC) signal in your browser. We will treat a detected GPC signal as a valid opt-out request for the browser and device on which it is enabled.</li>
                         </ul>
                     </div>
@@ -520,9 +520,9 @@ The value of any incentive we provide is reasonably related to the value of the 
                             <li><strong>Right to non-discrimination</strong> - you will not be denied goods or services, charged different prices, or given a different level of service for exercising these rights.;</li>
                         </ul>
                     </div>
-                    <p>To exercise these rights, email support@loosegrowndiamond.com. We may need to verify your identity before processing your request.</p>
+                    <p>To exercise these rights, email info@rrpdiamonds.com. We may need to verify your identity before processing your request.</p>
 
-                    <p>9.9 <strong>Right to Appeal</strong>. If we deny  your privacy rights request, you may appeal our decision by emailing support@loosegrowndiamond.com with the subject line "Privacy Rights Appeal." Please include your original request and the reason you believe our decision should be reconsidered. We will respond to your appeal within 45 days.</p>
+                    <p>9.9 <strong>Right to Appeal</strong>. If we deny  your privacy rights request, you may appeal our decision by emailing info@rrpdiamonds.com with the subject line "Privacy Rights Appeal." Please include your original request and the reason you believe our decision should be reconsidered. We will respond to your appeal within 45 days.</p>
 
 
                     <h2 class="fw-500">HOW TO CONTACT US?</h2>

@@ -75,7 +75,7 @@ get_header();
                           <?php
                      
                      ?>
-                          <p class="ls_subtxt fw-400 mb-2 mb-md-3">If you have any questions about returning your item, please contact us at <a class="linkHover" href="mailto:support@loosegrowndiamond.com">support@loosegrowndiamond.com</a>.</p>
+                          <p class="ls_subtxt fw-400 mb-2 mb-md-3">If you have any questions about returning your item, please contact us at <a class="linkHover" href="mailto:info@rrpdiamonds.com">info@rrpdiamonds.com</a>.</p>
                        </div>
                        <div>
                           <h2 class="h4 fw-600 mb-2 mb-md-3">Klarna Orders</h2>

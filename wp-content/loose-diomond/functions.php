@@ -19,7 +19,7 @@ define('LD_RECAPTCHA_MIN_SCORE', 0.5); // optional, defaults to 0.5
 
 define('RETURN_DAYS', '30');
 define('SITE_OC_NAME', 'Loose Grown Diamond');
-define('SUPPORT_EMAIL', 'support@loosegrowndiamond.com');
+define('SUPPORT_EMAIL', 'info@rrpdiamonds.com');
 
 define('SUPPORT_MOBILE', '1 646-288-0810');
 define('WA_SUPPORT_MOBILE', '+16462880810');

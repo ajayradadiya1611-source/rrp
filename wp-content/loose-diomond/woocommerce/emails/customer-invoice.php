@@ -85,7 +85,7 @@ if ( ! empty( $order->get_billing_first_name() ) ) {
 		?>
 			<p>Congratulations! Your order has been confirmed and is now being processed.
 				Refer to our delivery timeframe, it’s available on our website. Expect dispatch updates via email.</p>
-				<p>Questions or concerns? Contact us at support@loosegrowndiamond.com; our customer service team is here to help.</p>
+				<p>Questions or concerns? Contact us at info@rrpdiamonds.com; our customer service team is here to help.</p>
 			<?php
 		
 	
