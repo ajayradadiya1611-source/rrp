@@ -343,6 +343,7 @@ include('inc/checkout-login-popup.php');
 include('inc/newsletter.php');
 include('inc/retail.php');
 include('inc/ls-unit-option.php');
+include('inc/product-materials.php');
 
 include('inc/custom-payment-gateway.php');
 include('inc/admin-contact-form.php');
