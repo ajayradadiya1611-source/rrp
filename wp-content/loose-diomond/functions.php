@@ -19,7 +19,7 @@ define('LD_RECAPTCHA_MIN_SCORE', 0.5); // optional, defaults to 0.5
 
 define('RETURN_DAYS', '30');
 define('SITE_OC_NAME', 'Loose Grown Diamond');
-define('SUPPORT_EMAIL', 'info@rrpdiamonds.com');
+define('SUPPORT_EMAIL', 'support@loosegrowndiamond.com');
 
 define('SUPPORT_MOBILE', '91 9016106290');
 define('WA_SUPPORT_MOBILE', '+919016106290');
@@ -336,6 +336,7 @@ include('inc/comman-function.php');
 include('inc/ls-custom-myaccount.php');
 include('inc/ls_pcat_custom_form.php');
 include('inc/static-html.php');
+include('inc/ls-common-sections.php');
 include('inc/ls-category-product-get-api.php');
 include('inc/contact-us-form-api.php');
 include('inc/checkout-login-popup.php');

@@ -134,27 +134,30 @@ function ls_render_product_information( $product ) {
         return;
     }
     ?>
-    <div class="container-fluid my-5 product-info">
-        <h2 class="product-info__title">Product Information</h2>
+    <div class="container-fluid">
+         <div class=" my-5 product-info">
+            <h2 class="product-info__title">Product Information</h2>
 
-        <?php foreach ( $blocks as $vid => $block ) : ?>
-            <div class="product-info__variation row" data-variation-id="<?php echo esc_attr( $vid ); ?>" hidden>
-                <div class="product-info__col col-sm-6 col-lg-4">
-                    <?php if ( '' !== $block['label'] ) : ?>
-                        <p class="product-info__subtitle"><?php echo esc_html( $block['label'] ); ?></p>
-                    <?php endif; ?>
-                    <?php foreach ( $block['rows'] as $row ) : ?>
-                        <p class="product-info__item">- <?php echo esc_html( $row ); ?></p>
-                    <?php endforeach; ?>
+            <?php foreach ( $blocks as $vid => $block ) : ?>
+                <div class="product-info__variation row" data-variation-id="<?php echo esc_attr( $vid ); ?>" hidden>
+                    <div class="product-info__col col-sm-6 col-lg-4">
+                        <?php if ( '' !== $block['label'] ) : ?>
+                            <p class="product-info__subtitle"><?php echo esc_html( $block['label'] ); ?></p>
+                        <?php endif; ?>
+                        <?php foreach ( $block['rows'] as $row ) : ?>
+                            <p class="product-info__item">- <?php echo esc_html( $row ); ?></p>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="product-info__col col-sm-6 col-lg-4">
+                        <p class="product-info__subtitle">Delivery</p>
+                        <p class="product-info__item">- Express international shipping with insurance</p>
+                        <p class="product-info__item">- Expected delivery time: 3-4 working weeks</p>
+                    </div>
                 </div>
-                <div class="product-info__col col-sm-6 col-lg-4">
-                    <p class="product-info__subtitle">Delivery</p>
-                    <p class="product-info__item">- Express international shipping with insurance</p>
-                    <p class="product-info__item">- Expected delivery time: 3-4 working weeks</p>
-                </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
+   
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {

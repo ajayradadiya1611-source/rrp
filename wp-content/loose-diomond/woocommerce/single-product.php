@@ -852,7 +852,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <?php } ?>
 
 <?php
-ls_render_product_information( $product );
+if ( function_exists( 'ls_render_product_information' ) ) { ls_render_product_information( $product ); }
 single_product_buy_direct_us();
 single_product_experience_history();
 echo '<div class="light_gray_background ">';
