@@ -233,13 +233,22 @@ $black_shapes = [
     </div>
 </section>
 
+<!-- start salt and pepper section -->
+<section class="salt-pepper" style="background-image:url('<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/salt-pepper-diamonds.png' ); ?>');">
+    <div class="container">
+        <div class="salt-pepper__content">
+            <h2 class="salt-pepper__title">Shop Natural Salt and Pepper Diamonds</h2>
+            <p class="salt-pepper__text">Select your perfect one of a kind natural diamond from thousands of ethically sourced salt and pepper diamonds.</p>
+            <a class="salt-pepper__btn" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=salt-pepper' ); ?>">Shop Salt and Pepper Diamonds</a>
+        </div>
+    </div>
+</section>
+<?php
+ingle_product_buy_direct_us();
+?>
 <!-- start diamond resources -->
 <div class="bg_light_gray">
-   <?php
-    
-
-
-    ?>
+   
         <div class="section">
             <!-- diamond buying resources section -->
             <div class="container-fluid">

@@ -230,6 +230,35 @@ $hero-text: #2d2926;
     }
 }
 
+// Home: salt and pepper
+.salt-pepper {
+    display: flex;
+    align-items: center;
+    min-height: 410px;
+    background: #ececec no-repeat center / cover;
+    font-family: "Montserrat", sans-serif;
+
+    .container { width: 100%; }
+    &__content { max-width: 520px; padding: 40px 0; }
+    &__title { margin: 0 0 24px; font-size: clamp(24px, 2.4vw, 32px); font-weight: 500; line-height: 1.2; color: #000; }
+    &__text { margin: 0 0 28px; font-size: 16px; line-height: 1.7; color: #000; }
+    &__btn {
+        display: inline-block; padding: 18px 52px; background: #2d3f8f; color: #fff;
+        font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+        border-radius: 2px; transition: background .2s;
+        &:hover, &:focus-visible { background: #1f2d6b; color: #fff; }
+    }
+
+    @media (max-width: 991px) {
+        min-height: 0;
+        padding-bottom: 150px;
+        background-size: auto 140px;
+        background-position: right 30% bottom 10px;
+        &__content { max-width: none; padding: 36px 0 0; }
+        &__btn { padding: 15px 28px; }
+    }
+}
+
 // Home: info cards (slanted photo, title, text, outline button)
 .info-cards-section {
     background: #f0f0f0;
