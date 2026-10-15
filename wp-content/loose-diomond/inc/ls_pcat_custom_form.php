@@ -930,7 +930,7 @@ function ls_ajax_video_request()
         Hi ' . esc_html($firstName) . ',<br><br>
         Greetings from Loose Grown Diamond,<br><br>
         We received your video request for SKU <strong>' . esc_html($sku) . '</strong>. As inventory is live, please note the diamond may sell out before the video is ready. Our team will get back to you within 24-48 business hours.<br><br>
-        For faster assistance, you can directly call, WhatsApp, or text us at +1 (646) 288-0810.<br><br>
+        For faster assistance, you can directly call, WhatsApp, or text us at +91 9016106290.<br><br>
         Regards,<br>' . SITE_OC_NAME;
     
 

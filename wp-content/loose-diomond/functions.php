@@ -21,8 +21,8 @@ define('RETURN_DAYS', '30');
 define('SITE_OC_NAME', 'Loose Grown Diamond');
 define('SUPPORT_EMAIL', 'info@rrpdiamonds.com');
 
-define('SUPPORT_MOBILE', '1 646-288-0810');
-define('WA_SUPPORT_MOBILE', '+16462880810');
+define('SUPPORT_MOBILE', '91 9016106290');
+define('WA_SUPPORT_MOBILE', '+919016106290');
 define('CONTENTSQUARE', '6fe1a3c7dd8f0');
 define('ZOHOCHATBOT', 'siq335d327ea7c08a4066f85c9ff99ba220040132820e4c43ecccf727119b416690');
 define('ZOHOAPIENDPOINT', 'https://api.rrpdiamonds.com/lgd/webhook/');

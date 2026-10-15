@@ -31,7 +31,7 @@ function ls_rest_contact_us(WP_REST_Request $request)
         Thank you for reaching out to Loose Grown Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
         If you didn&rsquo;t hear back, please check your spam or junk folder.<br><br>
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
-        <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
+        <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
     
@@ -191,7 +191,7 @@ function ls_rest_ask_us(WP_REST_Request $request)
         Thank you for reaching out to Loose Grown Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
         If you didn&rsquo;t hear back, please check your spam or junk folder.<br><br>
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
-        <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
+        <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
     
@@ -363,7 +363,7 @@ function ls_rest_custom_setting_request(WP_REST_Request $request)
         Thank you for submitting your Custom Setting Request. We&rsquo;re delighted to help you create a setting tailored to your vision. One of our jewelry specialists will contact you within 12&ndash;24 business hours to discuss your requirements and assist you with the next steps.<br><br>
         If you didn&rsquo;t hear back, please check your spam or junk folder.<br><br>
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
-        <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
+        <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
     
@@ -492,7 +492,7 @@ function ls_rest_feedback(WP_REST_Request $request)
         Thank you for sharing your feedback with us. We truly appreciate you taking the time to help us improve your experience with Loose Grown Diamond.<br><br>
         Our team will review your feedback and get back to you shortly if a response is required.<br><br>
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
-        <a href="https://wa.me/16462880810">+1 646-288-0810</a><br><br>
+        <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
         Team Loose Grown Diamond<br>';
     
@@ -589,14 +589,16 @@ function ls_rest_wholesale(WP_REST_Request $request)
     $name    = sanitize_text_field($request->get_param('name'));
     $email   = sanitize_email($request->get_param('email'));
     $store   = sanitize_text_field($request->get_param('store'));
-    $website = esc_url_raw($request->get_param('website'));
+    $website_raw = trim((string) $request->get_param('website'));
+    $website = esc_url_raw(preg_match('#^https?://#i', $website_raw) ? $website_raw : 'https://' . $website_raw);
+    if ($website_raw === '') { $website = ''; }
     $number  = sanitize_text_field($request->get_param('number'));
     $country = sanitize_text_field($request->get_param('country'));
     $city    = sanitize_text_field($request->get_param('city'));
     $source  = sanitize_text_field($request->get_param('source'));
 
-    if (empty($name) || empty($email) || empty($store) || empty($number)) {
-        return new WP_REST_Response(['error' => 'Name, Email, Store Name and Mobile Number are required.'], 400);
+    if (empty($name) || empty($email) || empty($store) || empty($website) || empty($number) || empty($country) || empty($city)) {
+        return new WP_REST_Response(['error' => 'All fields are required.'], 400);
     }
     if (!is_email($email)) {
         return new WP_REST_Response(['error' => 'Please enter a valid email address.'], 400);
