@@ -76,21 +76,24 @@
 
 // Product information (variation materials) block
 .product-info {
+    margin: 60px 0;
+    font-family: "Montserrat", sans-serif;
+
     &.is-empty {
         display: none;
     }
 
     &__title {
-        margin: 0 0 24px;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
+        margin: 0 0 50px;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.2;
         text-transform: uppercase;
+        color: #2d2926;
     }
 
     &__variation {
-        padding-top: 20px;
-        border-top: 1px solid #e5e5e5;
+        padding: 0 3px;
     }
 
     &__col {
@@ -98,16 +101,26 @@
     }
 
     &__subtitle {
-        margin: 0 0 8px;
-        font-size: 15px;
+        margin: 0 0 18px;
+        font-size: 16px;
         font-weight: 600;
-        color: #222;
+        line-height: 1.4;
+        color: #2d2926;
     }
 
     &__item {
-        margin: 0 0 4px;
-        font-size: 14px;
-        line-height: 1.6;
-        color: #555;
+        margin: 0;
+        font-size: 12.5px;
+        line-height: 22px;
+        color: #777;
+    }
+
+    @media (max-width: 767px) {
+        margin: 40px 0;
+
+        &__title {
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
     }
 }
