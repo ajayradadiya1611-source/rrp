@@ -158,8 +158,8 @@ $black_shapes = [
     'marquise' => 'Marquise',
 ];
 ?>
-<section class="shape-circles shape-circles--melee">
-    <div class="container">
+<div class="section shape-circles shape-circles--melee">
+    <div class="container-fluid">
         <h2 class="shape-circles__title">10+ Melee Diamonds Available in all Classic &amp; Custom Shapes</h2>
         <p class="shape-circles__subtitle">Choose from our wide range of high-Quality Natural Melee Diamonds.</p>
         <div class="shape-circles__list">
@@ -173,11 +173,12 @@ $black_shapes = [
             <?php endforeach; ?>
         </div>
     </div>
-</section>
+</div>
 
 <!-- start info cards section -->
 <div class="section info-cards-section">
-    <div class="info-cards container">
+    <div class="container-fluid">
+    <div class="info-cards">
         <?php $info_img = get_template_directory_uri() . '/rrp-img/home/'; ?>
 
         <article class="info-card info-card--tall">
@@ -213,11 +214,12 @@ $black_shapes = [
             </div>
         </article>
     </div>
+    </div>
 </div>
 
 <!-- start black diamonds by shape section -->
-<section class="shape-circles shape-circles--black">
-    <div class="container">
+<div class="section shape-circles shape-circles--black">
+    <div class="container-fluid">
         <h2 class="shape-circles__title">Shop Natural Black Diamonds by Shape</h2>
         <p class="shape-circles__subtitle">Choose from a collection of Natural Black Diamonds. Each Diamond is crafted with Love &amp; Passion.</p>
         <div class="shape-circles__list">
@@ -231,20 +233,20 @@ $black_shapes = [
             <?php endforeach; ?>
         </div>
     </div>
-</section>
+</div>
 
 <!-- start salt and pepper section -->
-<section class="salt-pepper" style="background-image:url('<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/salt-pepper-diamonds.png' ); ?>');">
-    <div class="container">
+<div class="section salt-pepper" style="background-image:url('<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/salt-pepper-diamonds.png' ); ?>');">
+    <div class="container-fluid">
         <div class="salt-pepper__content">
             <h2 class="salt-pepper__title">Shop Natural Salt and Pepper Diamonds</h2>
             <p class="salt-pepper__text">Select your perfect one of a kind natural diamond from thousands of ethically sourced salt and pepper diamonds.</p>
             <a class="salt-pepper__btn" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=salt-pepper' ); ?>">Shop Salt and Pepper Diamonds</a>
         </div>
     </div>
-</section>
+</div>
 <?php
-ingle_product_buy_direct_us();
+single_product_buy_direct_us();
 ?>
 <!-- start diamond resources -->
 <div class="bg_light_gray">
@@ -359,7 +361,7 @@ ingle_product_buy_direct_us();
 </div>
 
 <!-- start featured section -->
-<div class="pt-5">
+<div class="section">
     <div class="container-fluid">
         <h2 class="text-center py_60 pt-0 mb-0 text-uppercase home_we_have_featured_title">We've been featured in</h2>
         <div class="featured_img">
@@ -378,6 +380,8 @@ ingle_product_buy_direct_us();
         </div>
     </div>
 </div>
+
+
 
 <!-- start instagram section -->
 <div class="section  mb-0  pb-0">

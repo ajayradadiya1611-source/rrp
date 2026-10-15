@@ -195,7 +195,6 @@ $hero-text: #2d2926;
 
 // Home: shapes
 .shape-circles {
-    padding: 45px 0 55px;
     background: #fff;
     text-align: center;
     font-family: "Montserrat", sans-serif;
@@ -224,7 +223,6 @@ $hero-text: #2d2926;
         &__label { margin-top: 12px; font-size: 17px; }
     }
     @media (max-width: 575px) {
-        padding: 30px 0 36px;
         &__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 10px; }
         &__label { margin-top: 8px; font-size: 14px; }
     }
@@ -251,7 +249,6 @@ $hero-text: #2d2926;
 
     @media (max-width: 991px) {
         min-height: 0;
-        padding-bottom: 150px;
         background-size: auto 140px;
         background-position: right 30% bottom 10px;
         &__content { max-width: none; padding: 36px 0 0; }
@@ -272,6 +269,7 @@ $hero-text: #2d2926;
         "tall wide2";
     gap: 32px 27px;
     max-width: 1034px;
+    margin: 0 auto;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -406,4 +404,8 @@ $hero-text: #2d2926;
             clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
         }
     }
+}
+
+@media (max-width: 991px) {
+    .section.salt-pepper { padding-bottom: 150px; }
 }
