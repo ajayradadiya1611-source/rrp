@@ -9,6 +9,23 @@ global $text_change;
 global $oc_common;
 $home_page = $text_change['home_page'];
 $common_page = $text_change['common_page'];
+
+$melee_shapes = [
+    'round'        => 'Round',
+    'princess'     => 'Princess',
+    'emerald'      => 'Emerald',
+    'baguette'     => 'Baguette',
+    'pear'         => 'Pear',
+    'old_european' => 'Old European',
+];
+$black_shapes = [
+    'round'    => 'Round',
+    'oval'     => 'Oval',
+    'pear'     => 'Pear',
+    'princess' => 'Princess',
+    'cushion'  => 'Cushion',
+    'marquise' => 'Marquise',
+];
 ?>
 
 <!-- start banner section -->
@@ -90,27 +107,7 @@ $common_page = $text_change['common_page'];
     </div>
 </div>
 
-<!-- start shop engagement rings section -->
-<?php
-$er_dir = get_template_directory() . '/assets/image/';
-$er_uri = get_template_directory_uri() . '/assets/image/';
-
-$er_items = [
-    [
-        'file' => 'engagement_rings_1.webp',
-        'url'  => $text_change['inventory_url'],
-        'alt'  => 'Start with a lab grown diamond',
-        'text' => 'Start with Diamonds',
-    ],
-    [
-        'file' => 'engagement_rings_2.webp',
-        'url'  => get_site_url() . '/build-a-ring/',
-        'alt'  => 'Start with an engagement ring setting',
-        'text' => 'Start with Setting',
-    ],
-];
-?>
-<!-- start shop engagement rings section -->
+<!-- start popular categories section -->
 <div class="section">
     <div class="container-fluid">
         <h2 class="text-center mb_40 h2">Popular Categories</h2>
@@ -140,24 +137,6 @@ $er_items = [
 </div>
 
 <!-- start melee shapes section -->
-<?php
-$melee_shapes = [
-    'round'        => 'Round',
-    'princess'     => 'Princess',
-    'emerald'      => 'Emerald',
-    'baguette'     => 'Baguette',
-    'pear'         => 'Pear',
-    'old_european' => 'Old European',
-];
-$black_shapes = [
-    'round'    => 'Round',
-    'oval'     => 'Oval',
-    'pear'     => 'Pear',
-    'princess' => 'Princess',
-    'cushion'  => 'Cushion',
-    'marquise' => 'Marquise',
-];
-?>
 <div class="section shape-circles shape-circles--melee">
     <div class="container-fluid">
         <h2 class="shape-circles__title">10+ Melee Diamonds Available in all Classic &amp; Custom Shapes</h2>
@@ -178,42 +157,42 @@ $black_shapes = [
 <!-- start info cards section -->
 <div class="section info-cards-section">
     <div class="container-fluid">
-    <div class="info-cards">
-        <?php $info_img = get_template_directory_uri() . '/rrp-img/home/'; ?>
+        <div class="info-cards">
+            <?php $info_img = get_template_directory_uri() . '/rrp-img/home/'; ?>
 
-        <article class="info-card info-card--tall">
-            <div class="info-card__media">
-                <img src="<?php echo esc_url( $info_img . 'blog1.svg' ); ?>" width="360" height="326" alt="What are melee diamonds" loading="lazy">
-            </div>
-            <div class="info-card__body">
-                <h3 class="info-card__title">What are Melee Diamonds?</h3>
-                <p class="info-card__text">The word "melee" is used in the diamond business to refer to smaller brilliant-cut diamonds and any other small loose diamonds that are used to decorate the settings of bigger jewels. Melee is defined by the GIA as little diamonds weighing less than 1/5 carat that is either single cut or full cut (ct). Melee diamonds can be as little as 0.001 carats (1/1000 carat) in size.</p>
-                <a class="info-card__btn" href="<?php echo esc_url( home_url( '/melee-diamond' ) ); ?>">Shop Melee Diamonds</a>
-            </div>
-        </article>
+            <article class="info-card info-card--tall">
+                <div class="info-card__media">
+                    <img src="<?php echo esc_url( $info_img . 'blog1.svg' ); ?>" width="360" height="326" alt="What are melee diamonds" loading="lazy">
+                </div>
+                <div class="info-card__body">
+                    <h3 class="info-card__title">What are Melee Diamonds?</h3>
+                    <p class="info-card__text">The word "melee" is used in the diamond business to refer to smaller brilliant-cut diamonds and any other small loose diamonds that are used to decorate the settings of bigger jewels. Melee is defined by the GIA as little diamonds weighing less than 1/5 carat that is either single cut or full cut (ct). Melee diamonds can be as little as 0.001 carats (1/1000 carat) in size.</p>
+                    <a class="info-card__btn" href="<?php echo esc_url( home_url( '/melee-diamond' ) ); ?>">Shop Melee Diamonds</a>
+                </div>
+            </article>
 
-        <article class="info-card info-card--wide info-card--media-right">
-            <div class="info-card__body">
-                <h3 class="info-card__title">Do natural diamonds have value?</h3>
-                <p class="info-card__text">Natural diamonds are more precious. But many people in this culture may have outmoded logic. Its worth is determined by its emotional and monetary value. Natural diamonds have a much higher monetary value than lab diamonds (30%–40%) due to the difficult manufacturing process.</p>
-                <a class="info-card__btn" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
-            </div>
-            <div class="info-card__media">
-                <img src="<?php echo esc_url( $info_img . 'blog2.svg' ); ?>" width="300" height="381" alt="Do natural diamonds have value" loading="lazy">
-            </div>
-        </article>
+            <article class="info-card info-card--wide info-card--media-right">
+                <div class="info-card__body">
+                    <h3 class="info-card__title">Do natural diamonds have value?</h3>
+                    <p class="info-card__text">Natural diamonds are more precious. But many people in this culture may have outmoded logic. Its worth is determined by its emotional and monetary value. Natural diamonds have a much higher monetary value than lab diamonds (30%–40%) due to the difficult manufacturing process.</p>
+                    <a class="info-card__btn" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
+                </div>
+                <div class="info-card__media">
+                    <img src="<?php echo esc_url( $info_img . 'blog2.svg' ); ?>" width="300" height="381" alt="Do natural diamonds have value" loading="lazy">
+                </div>
+            </article>
 
-        <article class="info-card info-card--wide info-card--media-left">
-            <div class="info-card__media">
-                <img src="<?php echo esc_url( $info_img . 'blog3.svg' ); ?>" width="300" height="381" alt="Do natural diamonds last forever" loading="lazy">
-            </div>
-            <div class="info-card__body">
-                <h3 class="info-card__title">Do Natural Diamonds Last Forever?</h3>
-                <p class="info-card__text">Diamonds don't last indefinitely. Diamonds deteriorate to graphite under normal conditions because graphite has a lower energy configuration. Both diamonds (the material used in wedding rings) and graphite (the material used in pencils) are crystalline forms of pure carbon.</p>
-                <a class="info-card__btn" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
-            </div>
-        </article>
-    </div>
+            <article class="info-card info-card--wide info-card--media-left">
+                <div class="info-card__media">
+                    <img src="<?php echo esc_url( $info_img . 'blog3.svg' ); ?>" width="300" height="381" alt="Do natural diamonds last forever" loading="lazy">
+                </div>
+                <div class="info-card__body">
+                    <h3 class="info-card__title">Do Natural Diamonds Last Forever?</h3>
+                    <p class="info-card__text">Diamonds don't last indefinitely. Diamonds deteriorate to graphite under normal conditions because graphite has a lower energy configuration. Both diamonds (the material used in wedding rings) and graphite (the material used in pencils) are crystalline forms of pure carbon.</p>
+                    <a class="info-card__btn" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
+                </div>
+            </article>
+        </div>
     </div>
 </div>
 
@@ -245,120 +224,100 @@ $black_shapes = [
         </div>
     </div>
 </div>
-<?php
-single_product_buy_direct_us();
-?>
+<?php single_product_buy_direct_us(); ?>
+<!-- start customers say section -->
+<div class="section">
+    <?php echo single_product_what_customer_say(); ?>
+</div>
 <!-- start diamond resources -->
 <div class="bg_light_gray">
-   
-        <div class="section">
-            <!-- diamond buying resources section -->
-            <div class="container-fluid">
-                <h2 class="h1 font_literata text_black_secondary text-center mb-0">Diamond Buying Resources</h2>
-                <div class="py_60">
-                    <div class="row g-4 mb-4">
-                        <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm diamond_resources_card">
-                                <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/09/Why-Choose-Lab-Grown-Diamonds1.jpg"
-                                    class="card-img-top img-fluid"
-                                    alt="Why Choose Lab-Created Diamonds"
-                                    loading="lazy">
-                                <div class="card-body">
-                                    <h3 class="h5">Why Choose Lab-Created Diamonds?</h3>
-                                    <p>
-                                        Lab-grown diamonds are environmentally friendly and cost-efficient.
-                                        They undergo the same processing and grading standards as mined diamonds,
-                                        based on the 4Cs of diamond certification.
-                                    </p>
-                                    <a href="<?php echo get_site_url(); ?>/real-facts-about-lab-created-diamonds/" class="text-dark fw-medium">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm diamond_resources_card">
-                                <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/09/What-are-Lab-Grwon-Diamonds-555x278.jpg"
-                                    class="card-img-top img-fluid"
-                                    alt="What are Lab Grown Diamonds"
-                                    loading="lazy">
-                                <div class="card-body">
-                                    <h3 class="h5">What are Lab Grown Diamonds?</h3>
-                                    <p>
-                                        Lab-grown diamonds are created in a lab using two methods:
-                                        High-Pressure High-Temperature (HPHT) and Chemical Vapor Deposition (CVD),
-                                        unlike mined diamonds extracted from the earth.
-                                    </p>
-                                    <a href="<?php echo get_site_url(); ?>/different-types-of-lab-grown-diamonds/" class="text-dark fw-medium">
-                                        Read More
-                                    </a>
-                                </div>
+
+    <!-- diamond buying resources section -->
+    <div class="section">
+        <div class="container-fluid">
+            <h2 class="h1 font_literata text_black_secondary text-center mb-0">Diamond Buying Resources</h2>
+            <div class="py_60">
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm diamond_resources_card">
+                            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/09/Why-Choose-Lab-Grown-Diamonds1.jpg"
+                                class="card-img-top img-fluid"
+                                alt="Why Choose Lab-Created Diamonds"
+                                loading="lazy">
+                            <div class="card-body">
+                                <h3 class="h5">Why Choose Lab-Created Diamonds?</h3>
+                                <p>
+                                    Lab-grown diamonds are environmentally friendly and cost-efficient.
+                                    They undergo the same processing and grading standards as mined diamonds,
+                                    based on the 4Cs of diamond certification.
+                                </p>
+                                <a href="<?php echo get_site_url(); ?>/real-facts-about-lab-created-diamonds/" class="text-dark fw-medium">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-0 align-items-stretch">
-        
-        <div class="col-md-6 d-flex p-0">
-            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/09/Lab-Grown-Diamond-Grading-and-Report1-555x278.jpg"
-                class="img-fluid w-100 h-100 object-fit-cover"
-                alt="Lab Created Diamonds Grading & Certification"
-                loading="lazy">
-        </div>
-
-        <div class="col-md-6 d-flex p-0">
-            <div class="card border-0 shadow-sm w-100 p-4 d-flex flex-column justify-content-center diamond_resources_card">
-                <h3 class="h5 mb-3">
-                    Lab Created Diamonds Grading &amp; Certification
-                </h3>
-
-                <p class="mb-3">
-                    We send all of our lab-grown diamonds for inspection to renowned
-                    institutions such as GIA, IGI, and GCAL.
-                </p>
-
-                <a href="<?php echo get_site_url(); ?>/how-lab-grown-diamonds-are-certification-and-grading/"
-                    class="text-dark fw-medium">
-                    Read More
-                </a>
-            </div>
-        </div>
-
-    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-0 shadow-sm diamond_resources_card">
+                            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/09/What-are-Lab-Grwon-Diamonds-555x278.jpg"
+                                class="card-img-top img-fluid"
+                                alt="What are Lab Grown Diamonds"
+                                loading="lazy">
+                            <div class="card-body">
+                                <h3 class="h5">What are Lab Grown Diamonds?</h3>
+                                <p>
+                                    Lab-grown diamonds are created in a lab using two methods:
+                                    High-Pressure High-Temperature (HPHT) and Chemical Vapor Deposition (CVD),
+                                    unlike mined diamonds extracted from the earth.
+                                </p>
+                                <a href="<?php echo get_site_url(); ?>/different-types-of-lab-grown-diamonds/" class="text-dark fw-medium">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-0 align-items-stretch">
+                    <div class="col-md-6 d-flex p-0">
+                        <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/09/Lab-Grown-Diamond-Grading-and-Report1-555x278.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="Lab Created Diamonds Grading &amp; Certification"
+                            loading="lazy">
+                    </div>
+                    <div class="col-md-6 d-flex p-0">
+                        <div class="card border-0 shadow-sm w-100 p-4 d-flex flex-column justify-content-center diamond_resources_card">
+                            <h3 class="h5 mb-3">Lab Created Diamonds Grading &amp; Certification</h3>
+                            <p class="mb-3">
+                                We send all of our lab-grown diamonds for inspection to renowned
+                                institutions such as GIA, IGI, and GCAL.
+                            </p>
+                            <a href="<?php echo get_site_url(); ?>/how-lab-grown-diamonds-are-certification-and-grading/" class="text-dark fw-medium">Read More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <?php 
-     
-        ?>
-
-    <!-- start lab diamond section -->
-    <div class="bg_lab_diamond">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <img
-              src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/home-page/mobile-Lab-Grown-Color-Diamond-1-1.webp' ); ?>"
-              class="d-md-none img-fluid"
-              alt="Lab Grown Color Diamond"
-              loading="lazy"
-              decoding="async">
-            <div class="lab_diamond_text">
-              <h2 class="text_white_primary font_literata mb_10 h1">Shop Colored Lab Diamonds</h2>
-              <p class="text_white_primary fw-400 mb_40">Select your perfect fancy color lab created diamond from thousands of <br class="d-none d-lg-block">ethically sourced diamonds.</p>
-              <a href="<?php echo esc_url( home_url( '/lab-created-colored-diamonds/' ) ); ?>" class="common_btn white_btn">Shop Colored Lab Grown Diamonds</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- start customers say section -->
-    <div class="section">
-        <?php
-        echo single_product_what_customer_say();
-        ?>
     </div>
 </div>
+    <!-- start lab diamond section -->
+    <div class="bg_lab_diamond">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img
+                        src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/home-page/mobile-Lab-Grown-Color-Diamond-1-1.webp' ); ?>"
+                        class="d-md-none img-fluid"
+                        alt="Lab Grown Color Diamond"
+                        loading="lazy"
+                        decoding="async">
+                    <div class="lab_diamond_text">
+                        <h2 class="text_white_primary font_literata mb_10 h1">Shop Colored Lab Diamonds</h2>
+                        <p class="text_white_primary fw-400 mb_40">Select your perfect fancy color lab created diamond from thousands of <br class="d-none d-lg-block">ethically sourced diamonds.</p>
+                        <a href="<?php echo esc_url( home_url( '/lab-created-colored-diamonds/' ) ); ?>" class="common_btn white_btn">Shop Colored Lab Grown Diamonds</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
 
 <!-- start featured section -->
 <div class="section">
@@ -381,10 +340,8 @@ single_product_buy_direct_us();
     </div>
 </div>
 
-
-
 <!-- start instagram section -->
-<div class="section  mb-0  pb-0">
+<div class="section mb-0 pb-0">
     <div class="container-fluid">
         <h2 class="text-center py_25 pt-0 mb-0 home_we_have_instagram_title">Follow us on Instagram</h2>
         <div class="instagram-header d-flex justify-content-center align-items-center gap-2 mb-4">
@@ -392,42 +349,37 @@ single_product_buy_direct_us();
                 target="_blank"
                 rel="noopener nofollow"
                 class="d-flex align-items-center gap-2 text-decoration-none">
-
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
                     alt="loosegrown_diamond Instagram profile"
                     class="rounded-circle"
                     width="40"
                     height="40"
                     loading="lazy">
-
-                <span class="fw-medium text-decoration-underline text-dark">
-                    @loosegrown_diamond
-                </span>
+                <span class="fw-medium text-decoration-underline text-dark">@loosegrown_diamond</span>
             </a>
         </div>
-        <!-- Image Grid -->
-        
     </div>
+
+    <!-- image grid -->
     <div class="row g-3 mx-0">
-      <?php
-      $insta_dir = get_template_directory_uri() . '/aj_custom/home-page/insta/';
-      for ( $i = 1; $i <= 6; $i++ ) : ?>
-        <div class="col-6 col-md-4 col-lg-2">
-          <div class="insta-item">
-            <img
-              src="<?php echo esc_url( $insta_dir . $i . '.jpeg' ); ?>"
-              class="img-fluid rounded"
-              alt="Loose Grown Diamond Instagram post <?php echo $i; ?>"
-              width="400"
-              height="400"
-              loading="lazy"
-              decoding="async"
-              fetchpriority="low">
-          </div>
-        </div>
-      <?php endfor; ?>
+        <?php
+        $insta_dir = get_template_directory_uri() . '/aj_custom/home-page/insta/';
+        for ( $i = 1; $i <= 6; $i++ ) : ?>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="insta-item">
+                    <img
+                        src="<?php echo esc_url( $insta_dir . $i . '.jpeg' ); ?>"
+                        class="img-fluid rounded"
+                        alt="Loose Grown Diamond Instagram post <?php echo $i; ?>"
+                        width="400"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                        fetchpriority="low">
+                </div>
+            </div>
+        <?php endfor; ?>
     </div>
 </div>
 
-<?php
-get_footer();
+<?php get_footer(); ?>
