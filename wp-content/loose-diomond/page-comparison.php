@@ -22,8 +22,8 @@ get_header();
                   class="img-fluid d-md-block d-none"
                 />
                 <p>
-                  Loose Grown Diamond delivers the very best value. We believe
-                  we can <br class="d-none d-md-block" />
+                  RRP Diamond delivers the very best value. We believe we
+                  can <br class="d-none d-md-block" />
                   make a difference by more carats and less prices.
                 </p>
               </div>
@@ -37,24 +37,24 @@ get_header();
             <div class="text-center">
               <h2 class="text-center comparing_title">Comparing Price</h2>
               <p class="text-center comparing_text">
-                1.50 ct round stone in F color <br />
-                and VS2 clarity and minimum <br />
+                1.50 mm round stone in DEF color <br />
+                and VVS clarity and minimum <br />
                 very good cut grade.
               </p>
               <div class="d-flex pt_35 ml_20 h_200 comparison_table">
                 <div class="compare_box">
                   <div class="main">
                     <img
-                      src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
-                      alt="loosegrowndiamond_logo"
+                      src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
+                      alt="RRP Diamond"
                     />
                     <span
-                      >Lab Grown <br />
+                      >Natural <br />
                       Diamond
                     </span>
                   </div>
                   <div class="price_box bg-dark">
-                    <span class="text-white">$326.00</span>
+                    <span class="text-white">$627.00</span>
                   </div>
                 </div>
 
@@ -62,63 +62,31 @@ get_header();
                   <table>
                     <tr>
                       <th>
-                        <strong>CLEAN ORIGIN</strong> <br /><span
+                        <strong>MELEE EXPRESS</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>MIADONNA</strong> <br /><span
+                        <strong>K.ROSENGART</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>RITANI</strong> <br /><span
+                        <strong>BRILLIANCE</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>RARE CARAT</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BRILLIANT EARTH</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BLUE NILE</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>WITH CLARITY</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                     </tr>
                     <tr>
-                      <td>$760.00</td>
-                      <td>$713.00</td>
-                      <td>$625.00</td>
-                      <td>$965.00</td>
-                      <td>$1,680.00</td>
-                      <td>$1,055.00</td>
-                      <td>$940.00</td>
+                      <td>$720.00</td>
+                      <td>$1,275.00</td>
+                      <td>$2,840.00</td>
                     </tr>
                   </table>
                 </div>
@@ -134,27 +102,27 @@ get_header();
             </div>
             <div class="text-center pt_15">
               <p class="text-center comparing_text">
-                2.00 ct round stone in H color <br />
-                and VS1 clarity and minimum <br />
+                1.50 mm round stone in DEF color <br />
+                and VS clarity and minimum <br />
                 very good cut grade.
               </p>
               <p class="mt_25 mb-0">
-                (Miadonna Price stands for 2.01 ct stone)
+                (Brilliance Price stands for F color and VS clarity)
               </p>
               <div class="d-flex pt_35 ml_20 h_200 comparison_table">
                 <div class="compare_box">
                   <div class="main">
                     <img
-                      src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
-                      alt="loosegrowndiamond_logo"
+                      src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
+                      alt="RRP Diamond"
                     />
                     <span
-                      >Lab Grown <br />
+                      >Natural <br />
                       Diamond
                     </span>
                   </div>
                   <div class="price_box bg-dark">
-                    <span class="text-white">$406.00</span>
+                    <span class="text-white">$527.00</span>
                   </div>
                 </div>
 
@@ -162,63 +130,31 @@ get_header();
                   <table>
                     <tr>
                       <th>
-                        <strong>CLEAN ORIGIN</strong> <br /><span
+                        <strong>MELEE EXPRESS</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>MIADONNA</strong> <br /><span
+                        <strong>K.ROSENGART</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>RITANI</strong> <br /><span
+                        <strong>BRILLIANCE</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>RARE CARAT</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BRILLIANT EARTH</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BLUE NILE</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>WITH CLARITY</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                     </tr>
                     <tr>
-                      <td>$1,025.00</td>
-                      <td>$964.00</td>
-                      <td>$670.00</td>
-                      <td>$1,035.00</td>
-                      <td>$1,760.00</td>
-                      <td>$1,481.00</td>
-                      <td>$1,221.00</td>
+                      <td>$648.00</td>
+                      <td>$965.00</td>
+                      <td>$2,840.00</td>
                     </tr>
                   </table>
                 </div>
@@ -230,10 +166,10 @@ get_header();
           <div class="container">
             <div class="col-12">
               <p class="mb_35 text">
-                Prices shown are for round, lab-created diamonds listed on
-                LooseGrownDiamond.com for specified characteristics vs. lowest
-                priced round lab-created diamonds (as noted) listed on
-                competitors’ websites as of July 1, 2026
+                Prices shown are for round, natural diamonds listed on
+                rrpdiamonds.com for specified characteristics vs. lowest
+                priced round natural diamonds (as noted) listed on
+                competitors’ websites as of July 11, 2022.
               </p>
             </div>
             <div class="second_box">
@@ -246,21 +182,22 @@ get_header();
                   </div>
                   <div class="col-md-8">
                     <p>
-                      We have over 42+ years of diamond jewelry experience. We
+                      We have over 41+ years of diamond jewelry experience. We
                       are diamond manufacturers. We believe we can make a
                       difference by giving more carats at less prices
                     </p>
                     <p>
                       The diamond jewelry industry is a global business with
                       ethical and environmental impact around the world. The
-                      folks at Loose Grown Diamond believe that we, as
+                      folks at RRP Diamond believe that we, as
                       consumers, have an obligation to consider this impact when
                       purchasing any diamond.
                     </p>
                     <p>
-                      By using 100% lab-grown diamonds in all of our product we
-                      ensure that your purchase is 100% conflict free giving you
-                      the choice to make a difference!
+                      By using 100% sustainable and ethically sourced natural
+                      diamonds in all of our product we ensure that your
+                      purchase is 100% conflict free giving you the choice to
+                      make a difference!
                     </p>
                   </div>
                 </div>
@@ -277,17 +214,17 @@ get_header();
                 Comparing Sourcing
               </h2>
               <p class="text-center comparing_text">
-                100% Conflict Free vs Ethically Sourced
+                100% Conflict Free &amp; Ethically Sourced
               </p>
               <div class="d-flex pt_35 ml_20 h_200 comparison_table">
                 <div class="compare_box">
                   <div class="main">
                     <img
-                      src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
-                      alt="loosegrowndiamond_logo"
+                      src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
+                      alt="RRP Diamond"
                     />
                     <span
-                      >Lab Grown <br />
+                      >Natural <br />
                       Diamond
                     </span>
                   </div>
@@ -300,60 +237,28 @@ get_header();
                   <table>
                     <tr>
                       <th>
-                        <strong>BRILLIANT EARTH</strong> <br /><span
+                        <strong>MELEE EXPRESS</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>MIADONNA</strong> <br /><span
+                        <strong>K.ROSENGART</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>ADA DIAMONDS</strong> <br /><span
+                        <strong>BRILLIANCE</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BLUE NILE</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Mined <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BRILLIANT EARTH</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Mined <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>CLEAN ORIGIN</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Mined <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>RITANI</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Mined <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                     </tr>
                     <tr>
-                      <td>100% Conflict Free</td>
-                      <td>100% Conflict Free</td>
-                      <td>100% Conflict Free</td>
-                      <td>100% Conflict Free</td>
                       <td>100% Conflict Free</td>
                       <td>100% Conflict Free</td>
                       <td>100% Conflict Free</td>
@@ -367,11 +272,11 @@ get_header();
         <div class="last_section">
           <div class="container">
             <p>
-              LGD diamonds are guaranteed conflict free, because our diamonds
-              are created in a lab and are independently verified as lab-created
-              diamonds so that we can certify that they are guaranteed to not
-              fund conflict. We provide IGI/GIA Certificate for each lab created
-              diamond.
+              RRP diamonds are guaranteed conflict free, because our diamonds
+              are purchased from the direct sight holder and are independently
+              verified as natural diamonds so that we can certify that they are
+              guaranteed to not fund conflict. We provide IGI/GIA Certificate
+              for each natural diamond.
             </p>
           </div>
         </div>
@@ -384,17 +289,17 @@ get_header();
                 Comparing Return Policies
               </h2>
               <p class="text-center comparing_text">
-                Loose Grown Diamond return windows vs competitors.
+                RRP Diamond return windows vs competitors.
               </p>
               <div class="d-flex pt_35 ml_20 h_200 comparison_table">
                 <div class="compare_box">
                   <div class="main">
                     <img
-                      src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
-                      alt="loosegrowndiamond_logo"
+                      src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
+                      alt="RRP Diamond"
                     />
                     <span
-                      >Lab Grown <br />
+                      >Natural <br />
                       Diamond
                     </span>
                   </div>
@@ -407,62 +312,30 @@ get_header();
                   <table>
                     <tr>
                       <th>
-                        <strong>CLEAN ORIGIN</strong> <br /><span
+                        <strong>MELEE EXPRESS</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>MIADONNA</strong> <br /><span
+                        <strong>K.ROSENGART</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                       <th>
-                        <strong>RITANI</strong> <br /><span
+                        <strong>BRILLIANCE</strong> <br /><span
                           class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>RARE CARAT</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BRILLIANT EARTH</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>BLUE NILE</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
-                          Diamonds</span
-                        >
-                      </th>
-                      <th>
-                        <strong>WITH CLARITY</strong> <br /><span
-                          class="diamonds fw-normal"
-                          >Lab Grown <br />
+                          >Natural <br />
                           Diamonds</span
                         >
                       </th>
                     </tr>
                     <tr>
-                      <td>60 Days</td>
-                      <td>30 Days</td>
-                      <td>30 Days</td>
-                      <td>30 Days</td>
-                      <td>30 Days</td>
-                      <td>30 Days</td>
+                      <td>Not Specified</td>
+                      <td>7 Days</td>
                       <td>30 Days</td>
                     </tr>
                   </table>
@@ -475,7 +348,7 @@ get_header();
           <div class="container">
             <p>
               1. Day counting starts once you receive the product. <br />
-              Return policies as posted as of July 1, 2026.
+              Return policies as posted as of July 11, 2022.
             </p>
             <p>
               As we are both diamond manufacturers and sellers it should be
@@ -508,7 +381,7 @@ get_header();
                 />
                 <p>
                   Configure the perfect engagement ring the purest way with our
-                  lab-grown diamonds.
+                  Natural Diamonds.
                 </p>
                 <a href="/lab-diamonds/" class="btn mb_35">START WITH A DIAMOND</a>
               </div>
