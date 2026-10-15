@@ -195,21 +195,21 @@ $hero-text: #2d2926;
 
 // Home: lab diamond shapes as white circles
 .shape-circles {
-    padding: 40px 0 50px;
+    padding: 45px 0 55px;
     background: #f7f7f7;
     text-align: center;
     font-family: "Montserrat", sans-serif;
 
     &__title {
-        margin: 0 0 8px;
-        font-size: clamp(22px, 2.2vw, 30px);
+        margin: 0 0 4px;
+        font-size: clamp(22px, 2.4vw, 32px);
         font-weight: 500;
         line-height: 1.3;
         color: #000;
     }
 
     &__subtitle {
-        margin: 0 0 36px;
+        margin: 0 0 40px;
         font-size: 15px;
         color: #000;
     }
@@ -281,6 +281,155 @@ $hero-text: #2d2926;
         &__label {
             margin-top: 8px;
             font-size: 14px;
+        }
+    }
+}
+
+// Home: info cards (slanted photo, title, text, outline button)
+.info-cards-section {
+    background: #f0f0f0;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: 327px minmax(0, 1fr);
+    grid-template-areas:
+        "tall wide1"
+        "tall wide2";
+    gap: 32px 27px;
+    max-width: 1034px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.info-card {
+    display: flex;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+
+    &__media {
+        flex: 0 0 auto;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 24px 23px 30px;
+    }
+
+    &__title {
+        margin: 0 0 18px;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: #000;
+    }
+
+    &__text {
+        margin: 0 0 30px;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.7;
+        color: #666;
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 22px;
+        border: 1px solid #2d3f8f;
+        background: transparent;
+        color: #2d3f8f;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        line-height: 1;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+
+        &:hover {
+            background: #2d3f8f;
+            color: #fff;
+        }
+    }
+
+    // Tall card: photo on top with a slanted bottom edge
+    &--tall {
+        grid-area: tall;
+        flex-direction: column;
+
+        .info-card__media {
+            aspect-ratio: 360 / 326;
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+        }
+
+        .info-card__body {
+            justify-content: space-between;
+            flex: 1 1 auto;
+        }
+    }
+
+    // Wide cards: text + photo side by side
+    &--wide {
+        min-height: 343px;
+
+        .info-card__media {
+            width: 40%;
+        }
+    }
+
+    &--media-right {
+        grid-area: wide1;
+
+        .info-card__media {
+            clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+
+    &--media-left {
+        grid-area: wide2;
+
+        .info-card__media {
+            clip-path: polygon(0 0, 96% 0, 100% 100%, 0 100%);
+        }
+    }
+
+    @media (max-width: 991px) {
+        &--wide {
+            min-height: 0;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .info-cards {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "tall"
+            "wide1"
+            "wide2";
+        gap: 24px;
+    }
+
+    .info-card--wide {
+        flex-direction: column;
+
+        .info-card__media {
+            order: -1;
+            width: 100%;
+            aspect-ratio: 300 / 240;
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
         }
     }
 }
