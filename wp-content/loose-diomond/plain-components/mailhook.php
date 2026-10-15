@@ -308,17 +308,6 @@ function my_custom_email_content( $order, $sent_to_admin, $plain_text, $email ) 
 
             }
         }
-        //echo $email->id;
-        if ( $email->id === 'wc_custom_status_order_confirmed' ) {
-
-            echo '<p>Please note that our estimated delivery times can be found on our website. If you have any questions or concerns about your order, feel free to contact us at ' . SUPPORT_EMAIL . '. Our customer support team is always happy to help.</p>';
-
-            echo '<p>Thank you for choosing Loose Grown Diamond. We appreciate your business and look forward to delivering your order.</p>';
-
-            echo '<p>Best regards,<br/>
-                Loose Grown Diamond</p>';
-        }
-    
 }
 add_filter('woocommerce_email_heading_customer_invoice', 'custom_invoice_email_headinga', 10, 2);
 

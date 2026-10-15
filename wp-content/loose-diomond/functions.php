@@ -335,7 +335,6 @@ include('inc/retail-json.php');
 include('inc/comman-function.php');
 include('inc/ls-custom-myaccount.php');
 include('inc/ls_pcat_custom_form.php');
-include('inc/custom_order_status.php');
 include('inc/static-html.php');
 include('inc/ls-category-product-get-api.php');
 include('inc/contact-us-form-api.php');
@@ -365,63 +364,6 @@ include('js-php/checkout.php');
 include('js-php/slick-slider.php');
 
 
-
-// Load classes after WooCommerce, register via the email classes filter
-add_filter( 'woocommerce_email_classes', function( $email_classes ) {
-    require_once get_stylesheet_directory() . '/inc/custom-order-status-emails.php';
-
-    $email_classes['WC_Email_Status_Order_Received']  = new WC_Email_Status_Order_Received();
-    $email_classes['WC_Email_Status_Order_Confirmed'] = new WC_Email_Status_Order_Confirmed();
-    $email_classes['WC_Email_Status_Cad_3d_Design']   = new WC_Email_Status_Cad_3d_Design();
-    $email_classes['WC_Email_Status_Crafting']        = new WC_Email_Status_Crafting();
-    $email_classes['WC_Email_Status_Quality_Check']   = new WC_Email_Status_Quality_Check();
-    $email_classes['WC_Email_Status_Dispatched']      = new WC_Email_Status_Dispatched();
-    $email_classes['WC_Email_Status_Shipped']         = new WC_Email_Status_Shipped();
-    $email_classes['WC_Email_Status_Delivered']       = new WC_Email_Status_Delivered();
-    $email_classes['WC_Email_Status_Delivered_Jewelry'] = new WC_Email_Status_Delivered_Jewelry();
-
-    return $email_classes;
-} );
-
-// Trigger emails on status change
-add_action( 'woocommerce_order_status_changed', function( $order_id, $old_status, $new_status, $order ) {
-
-    $mailer = WC()->mailer();
-    $emails = $mailer->get_emails();
-
-    // Status → Email class map
-    $map = [
-        'order-received'   => 'WC_Email_Status_Order_Received',
-        'order-confirmed'  => 'WC_Email_Status_Order_Confirmed',
-        'cad-3d-design'    => 'WC_Email_Status_Cad_3d_Design',
-        'crafting'         => 'WC_Email_Status_Crafting',
-        'quality-check'    => 'WC_Email_Status_Quality_Check',
-        'dispatched'       => 'WC_Email_Status_Dispatched',
-        'shipped'          => 'WC_Email_Status_Shipped',
-        'delivered'        => 'WC_Email_Status_Delivered',
-    ];
-
-    // Send main email
-    if ( isset( $map[ $new_status ] ) ) {
-
-        $email_class = $map[ $new_status ];
-
-        if ( ! empty( $emails[ $email_class ] ) && is_object( $emails[ $email_class ] ) ) {
-            //$emails[ $email_class ]->trigger( $order_id );
-        }
-    }
-
-    // Always send jewelry email when delivered
-    if ( $new_status === 'delivered' ) {
-
-        if ( ! empty( $emails['WC_Email_Status_Delivered_Jewelry'] ) 
-            && is_object( $emails['WC_Email_Status_Delivered_Jewelry'] ) ) {
-
-            $emails['WC_Email_Status_Delivered_Jewelry']->trigger( $order_id );
-        }
-    }
-
-}, 10, 4 );
 
 add_action('woocommerce_order_status_cancelled', 'trigger_customer_cancelled_email', 20, 1);
 
@@ -2056,20 +1998,6 @@ add_filter('disable_woo_variation_gallery', function( $disable ) {
 
 });
 
-
-add_action( 'woocommerce_payment_complete', 'webappick_set_completed_for_paid_orders' );
-
-function webappick_set_completed_for_paid_orders( $order_id ) {
-
-
-
-    $order = wc_get_order( $order_id );
-
-    $order->update_status( 'wc-order-received' );
-
-
-
-}
 
 function my_custom_body_class( $classes ) {
 
