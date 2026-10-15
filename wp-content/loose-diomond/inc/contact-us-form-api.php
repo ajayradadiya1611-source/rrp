@@ -575,3 +575,134 @@ function ls_rest_feedback(WP_REST_Request $request)
         return new WP_REST_Response(['error' => 'Failed to send your message. Please try again later.'], 500);
     }
 }
+
+add_action('rest_api_init', function () {
+    register_rest_route('ls/v1', '/wholesale', [
+        'methods'  => 'POST',
+        'callback' => 'ls_rest_wholesale',
+        'permission_callback' => '__return_true',
+    ]);
+});
+
+function ls_rest_wholesale(WP_REST_Request $request)
+{
+    $name    = sanitize_text_field($request->get_param('name'));
+    $email   = sanitize_email($request->get_param('email'));
+    $store   = sanitize_text_field($request->get_param('store'));
+    $website = esc_url_raw($request->get_param('website'));
+    $number  = sanitize_text_field($request->get_param('number'));
+    $country = sanitize_text_field($request->get_param('country'));
+    $city    = sanitize_text_field($request->get_param('city'));
+    $source  = sanitize_text_field($request->get_param('source'));
+
+    if (empty($name) || empty($email) || empty($store) || empty($number)) {
+        return new WP_REST_Response(['error' => 'Name, Email, Store Name and Mobile Number are required.'], 400);
+    }
+    if (!is_email($email)) {
+        return new WP_REST_Response(['error' => 'Please enter a valid email address.'], 400);
+    }
+
+    // Everything beyond name/email/phone is kept in the message column
+    $details = [
+        'Store Name' => $store,
+        'Website'    => $website,
+        'Country'    => $country,
+        'City'       => $city,
+        'Source'     => $source,
+    ];
+    $message = '';
+    foreach ($details as $label => $value) {
+        if ($value !== '') {
+            $message .= $label . ': ' . $value . "\n";
+        }
+    }
+    $message = trim($message);
+
+    $to      = get_option('admin_email');
+    $subject = 'Thank You for Your Wholesale Inquiry | Loose Grown Diamond';
+    $headers = ['Content-Type: text/html; charset=UTF-8'];
+
+    ob_start();
+    $html_content = '
+        Hello ' . esc_html($name) . ',<br><br>
+        Thank you for your wholesale inquiry. Our team will review your details and get back to you within 12&ndash;24 business hours.<br><br>
+        If you didn&rsquo;t hear back, please check your spam or junk folder.<br><br>
+        Best regards,<br>
+        Team Loose Grown Diamond<br>';
+    wc_get_template(
+        'inc/email-templates/forms/customer-send.php',
+        [
+            'uname'         => $name,
+            'email'         => $email,
+            'message'       => $message,
+            'html_content'  => $html_content,
+            'email_heading' => 'Wholesale Inquiry',
+        ],
+        '',
+        get_stylesheet_directory() . '/'
+    );
+    $body = ob_get_clean();
+
+    ob_start();
+    $html_content2  = '<strong>Submission details:</strong><br><br>';
+    $html_content2 .= '<table style="border-collapse:collapse;width:100%;max-width:600px;">';
+    $html_content2 .= '<tr><td style="padding:8px;">Name</td><td style="padding:8px;">' . esc_html($name) . '</td></tr>';
+    $html_content2 .= '<tr><td style="padding:8px;">Email</td><td style="padding:8px;">' . esc_html($email) . '</td></tr>';
+    $html_content2 .= '<tr><td style="padding:8px;">Phone</td><td style="padding:8px;">' . esc_html($number) . '</td></tr>';
+    foreach ($details as $label => $value) {
+        if ($value !== '') {
+            $html_content2 .= '<tr><td style="padding:8px;">' . esc_html($label) . '</td><td style="padding:8px;">' . esc_html($value) . '</td></tr>';
+        }
+    }
+    $html_content2 .= '</table><br>Regards,<br>' . SITE_OC_NAME;
+    wc_get_template(
+        'inc/email-templates/forms/customer-send.php',
+        [
+            'uname'         => $name,
+            'email'         => $email,
+            'message'       => $message,
+            'html_content'  => $html_content2,
+            'email_heading' => 'New Wholesale Inquiry',
+        ],
+        '',
+        get_stylesheet_directory() . '/'
+    );
+    $body2 = ob_get_clean();
+
+    // Store first so the lead is never lost if mail fails
+    ls_store_submission([
+        'form_type'   => 'wholesale',
+        'name'        => $name,
+        'email'       => $email,
+        'phone'       => $number,
+        'message'     => $message,
+        'reference'   => '',
+        'attachments' => '',
+    ]);
+
+    wp_remote_post(
+        ZOHOAPIENDPOINT . 'lead-create',
+        [
+            'headers' => ['Content-Type' => 'application/json'],
+            'body'    => json_encode([
+                'lead_type' => 'wholesale',
+                'fname'     => $name,
+                'email'     => $email,
+                'message'   => $message,
+                'store'     => $store,
+                'website'   => $website,
+                'phone'     => $number,
+                'country'   => $country,
+                'city'      => $city,
+                'form_name' => 'wholesale',
+                'edate'     => current_time('Y-m-d H:i:s'),
+            ]),
+            'timeout' => 15,
+        ]
+    );
+
+    wp_mail($to, $subject, $body2, $headers);
+    wp_mail($email, $subject, $body, $headers);
+
+    return new WP_REST_Response(['success' => 'Thank you! Your wholesale inquiry has been received.'], 200);
+}

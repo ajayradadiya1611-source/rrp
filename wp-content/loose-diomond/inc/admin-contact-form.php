@@ -214,7 +214,7 @@ function ls_contact_admin_page()
     echo '<input type="hidden" name="page" value="ls-contact-submissions" />';
     echo '<label style="margin-right:8px;">Form Type:</label>';
     echo '<select name="form_type" style="margin-right:12px;">';
-    $types = [ 'all' => 'All', 'contact' => 'Contact Us', 'ask-us' => 'Ask Us', 'custom-setting-request' => 'Custom Setting', 'feedback' => 'Feedback', 'video-request' => 'Video Request', 'thankyou_question' => 'Thank You Question' ];
+    $types = [ 'all' => 'All', 'contact' => 'Contact Us', 'ask-us' => 'Ask Us', 'custom-setting-request' => 'Custom Setting', 'feedback' => 'Feedback', 'wholesale' => 'Wholesale', 'video-request' => 'Video Request', 'thankyou_question' => 'Thank You Question' ];
     foreach ($types as $key => $label) {
         $sel = ($form_type === $key) ? ' selected' : '';
         echo '<option value="' . esc_attr($key) . '"' . $sel . '>' . esc_html($label) . '</option>';
