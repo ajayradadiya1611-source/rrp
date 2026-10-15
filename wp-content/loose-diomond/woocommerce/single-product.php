@@ -310,7 +310,18 @@ if ( ! empty( $short_description ) ) {
 												// rides along in $form.serialize().
 												
 												?>
-												<input type="hidden" name="quantity" class="qty" min="1" value="1">
+												<?php
+												// Quantity box (hidden for ready-to-ship / custom products, which are always qty 1)
+												$ls_show_qty = ! ( has_term( array( 'ready-to-ship', 'custom' ), 'product_cat', $product->get_id() ) );
+												if ( $ls_show_qty ) : ?>
+													<div class="ls-qty">
+														<button type="button" class="ls-qty__btn" data-ls-qty-step="-1" aria-label="Decrease quantity">&minus;</button>
+														<input type="number" name="quantity" class="qty ls-qty__input" min="1" step="1" value="1" inputmode="numeric" aria-label="Quantity">
+														<button type="button" class="ls-qty__btn" data-ls-qty-step="1" aria-label="Increase quantity">+</button>
+													</div>
+												<?php else : ?>
+													<input type="hidden" name="quantity" class="qty" min="1" value="1">
+												<?php endif; ?>
 												<button type="button" class="common_btn md_common_btn  w-100" id="ajax-add-to-cart" disabled>
 													<span>Add To Bag</span>
 													<span class="single_p_loader ls_stng_loder spinner-border spinner-border-sm d-none"></span>
@@ -352,7 +363,18 @@ if ( ! empty( $short_description ) ) {
 										?>
 
 										<div class="add_cart d-flex align-items-center gap_13 ">
-											<input type="hidden" name="quantity" min="1" value="1">
+											<?php
+												// Quantity box (hidden for ready-to-ship / custom products, which are always qty 1)
+												$ls_show_qty = ! ( has_term( array( 'ready-to-ship', 'custom' ), 'product_cat', $product->get_id() ) );
+												if ( $ls_show_qty ) : ?>
+													<div class="ls-qty">
+														<button type="button" class="ls-qty__btn" data-ls-qty-step="-1" aria-label="Decrease quantity">&minus;</button>
+														<input type="number" name="quantity" class="qty ls-qty__input" min="1" step="1" value="1" inputmode="numeric" aria-label="Quantity">
+														<button type="button" class="ls-qty__btn" data-ls-qty-step="1" aria-label="Increase quantity">+</button>
+													</div>
+												<?php else : ?>
+													<input type="hidden" name="quantity" class="qty" min="1" value="1">
+												<?php endif; ?>
 											<input type="hidden" name="custom_note" value="<?php echo esc_attr(wp_strip_all_tags($customer_notes)); ?>">
 											<button type="button" id="lgd-simple-add-to-cart" class="common_btn md_common_btn  w-100">
 												<span>Add To Bag</span>
@@ -891,6 +913,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			e.preventDefault();
 			$(this).closest('form.cart').trigger('submit');
 		});
+	});
+</script>
+<script type="text/javascript">
+	// Quantity stepper (+ / -) beside Add To Bag
+	document.addEventListener('click', function (e) {
+		var btn = e.target.closest('[data-ls-qty-step]');
+		if (!btn) return;
+		var input = btn.parentNode.querySelector('.ls-qty__input');
+		if (!input) return;
+		var next = (parseInt(input.value, 10) || 1) + parseInt(btn.getAttribute('data-ls-qty-step'), 10);
+		input.value = Math.max(1, next);
+	});
+	document.addEventListener('change', function (e) {
+		if (e.target.classList && e.target.classList.contains('ls-qty__input')) {
+			e.target.value = Math.max(1, parseInt(e.target.value, 10) || 1);
+		}
 	});
 </script>
 <?php get_footer('shop'); ?>

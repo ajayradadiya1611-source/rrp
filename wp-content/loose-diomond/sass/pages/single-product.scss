@@ -25,3 +25,51 @@
     display:none;
   }
 }
+
+// Quantity box beside the Add To Bag button
+.ls-qty {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: stretch;
+    height: 50px;
+    border: 1px solid #ddd;
+    background: #fff;
+
+    &__btn {
+        width: 38px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        font-size: 20px;
+        line-height: 1;
+        color: #222;
+        cursor: pointer;
+
+        &:hover {
+            background: #f3f3f3;
+        }
+    }
+
+    // beats the generic ".add_cart input" rule
+    .ls-qty__input {
+        width: 46px;
+        height: 100%;
+        padding: 0;
+        border: 0;
+        text-align: center;
+        font-size: 15px;
+        -moz-appearance: textfield;
+        appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            margin: 0;
+            -webkit-appearance: none;
+        }
+    }
+
+    + .common_btn {
+        flex: 1 1 auto;
+        width: auto !important;
+    }
+}
