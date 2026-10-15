@@ -780,36 +780,3 @@ function start_engagement_rings($title_tag='h3'){
     <?php
 }
 
-function start_engagement_rings_by_shape(){
-    global $text_change;
-
-    // Only these shapes are shown
-    $shapes = [
-        ['slug' => 'round',        'label' => 'Round'],
-        ['slug' => 'princess',     'label' => 'Princess'],
-        ['slug' => 'emerald',      'label' => 'Emerald'],
-        ['slug' => 'baguette',     'label' => 'Baguette'],
-        ['slug' => 'pear',         'label' => 'Pear'],
-        ['slug' => 'old_european', 'label' => 'Old European'],
-    ];
-    ?>
-    <section class="shape-circles">
-        <div class="container">
-            <h2 class="shape-circles__title">Lab Diamonds in Customizable Shapes</h2>
-            <p class="shape-circles__subtitle">Explore our collection of 2,500,000+ IGI, GIA, GCAL certified lab diamonds</p>
-            <div class="shape-circles__list">
-                <?php foreach ( $shapes as $shape ) : ?>
-                    <a class="shape-circles__item" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=' . $shape['slug'] ); ?>">
-                        <span class="shape-circles__circle">
-                            <img src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/diamond/shape/' . $shape['slug'] . '.webp' ); ?>"
-                                 alt="<?php echo esc_attr( $shape['label'] ); ?> shape lab diamond"
-                                 width="108" height="108" loading="lazy">
-                        </span>
-                        <span class="shape-circles__label"><?php echo esc_html( $shape['label'] ); ?></span>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-    <?php
-}

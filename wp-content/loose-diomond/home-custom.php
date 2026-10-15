@@ -139,10 +139,41 @@ $er_items = [
     </div>
 </div>
 
-<!-- start customisable shapes section -->
+<!-- start melee shapes section -->
 <?php
-start_engagement_rings_by_shape();
+$melee_shapes = [
+    'round'        => 'Round',
+    'princess'     => 'Princess',
+    'emerald'      => 'Emerald',
+    'baguette'     => 'Baguette',
+    'pear'         => 'Pear',
+    'old_european' => 'Old European',
+];
+$black_shapes = [
+    'round'    => 'Round',
+    'oval'     => 'Oval',
+    'pear'     => 'Pear',
+    'princess' => 'Princess',
+    'cushion'  => 'Cushion',
+    'marquise' => 'Marquise',
+];
 ?>
+<section class="shape-circles shape-circles--melee">
+    <div class="container">
+        <h2 class="shape-circles__title">10+ Melee Diamonds Available in all Classic &amp; Custom Shapes</h2>
+        <p class="shape-circles__subtitle">Choose from our wide range of high-Quality Natural Melee Diamonds.</p>
+        <div class="shape-circles__list">
+            <?php foreach ( $melee_shapes as $slug => $label ) : ?>
+                <a class="shape-circles__item" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=' . $slug ); ?>">
+                    <span class="shape-circles__circle">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/diamond/shape/' . $slug . '.webp' ); ?>" alt="<?php echo esc_attr( $label ); ?>" width="108" height="108" loading="lazy">
+                    </span>
+                    <span class="shape-circles__label"><?php echo esc_html( $label ); ?></span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
 
 <!-- start info cards section -->
 <div class="section info-cards-section">
@@ -184,12 +215,24 @@ start_engagement_rings_by_shape();
     </div>
 </div>
 
-<!-- start engagement rings section -->
-<div class="section">
-<?php
-start_engagement_rings();
-?>
-</div>
+<!-- start black diamonds by shape section -->
+<section class="shape-circles shape-circles--black">
+    <div class="container">
+        <h2 class="shape-circles__title">Shop Natural Black Diamonds by Shape</h2>
+        <p class="shape-circles__subtitle">Choose from a collection of Natural Black Diamonds. Each Diamond is crafted with Love &amp; Passion.</p>
+        <div class="shape-circles__list">
+            <?php foreach ( $black_shapes as $slug => $label ) : ?>
+                <a class="shape-circles__item" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=' . $slug ); ?>">
+                    <span class="shape-circles__circle">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/shape/' . $slug . '.svg' ); ?>" alt="<?php echo esc_attr( $label ); ?>" width="165" height="165" loading="lazy">
+                    </span>
+                    <span class="shape-circles__label"><?php echo esc_html( $label ); ?></span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
 <!-- start diamond resources -->
 <div class="bg_light_gray">
    <?php
