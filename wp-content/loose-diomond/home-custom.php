@@ -12,48 +12,36 @@ $common_page = $text_change['common_page'];
 ?>
 
 <!-- start banner section -->
-<div class="banner_section home_banner_hero">
-    <div class="bg_img" style="<?php  ?>">
-        <div class="<?php  ?>">
-            <?php
-            
-                $hero_d = $home_page['hero_banner_image_desktop'];
-                $hero_m = $home_page['hero_banner_image_mobile'];
-                $size_d = lgd_img_size( $hero_d );
-                $size_m = lgd_img_size( $hero_m );
-                ?>
-                <div class="retail_banner">
-                    <picture>
-                        <source
-                            media="(min-width: 992px)"
-                            srcset="<?php echo esc_url( $hero_d ); ?>"
-                            <?php if ( $size_d ) : ?>width="<?php echo $size_d[0]; ?>" height="<?php echo $size_d[1]; ?>"<?php endif; ?>>
-                        <img
-                            src="<?php echo esc_url( $hero_m ); ?>"
-                            <?php if ( $size_m ) : ?>width="<?php echo $size_m[0]; ?>" height="<?php echo $size_m[1]; ?>"<?php endif; ?>
-                            alt="Lab grown diamond engagement rings"
-                            class="d-block mx-auto mt-0 img-fluid"
-                            fetchpriority="high"
-                            loading="eager">
-                    </picture>
-                </div>
-                <?php
-            
-            ?>
-            <div class="banner_text text-center ">
-                <?php
-                     
-                ?>
-                <div class="d-flex align-items-center justify-content-center flex-wrap gap-3">
-                    <a href="<?php echo $home_page['hero_banner_button_link2']; ?>" class="common_btn"><?php echo $home_page['hero_banner_button_text2']; ?></a>
-                    <a href="<?php echo $home_page['hero_banner_button_link1']; ?>" class="common_btn"><?php echo $home_page['hero_banner_button_text1']; ?></a>
-                    
-                </div>
+<div class="banner_section home_banner_hero hero-split">
+    <div class="hero-split__inner container">
+        <div class="hero-split__content">
+            <h1 class="hero-split__title"><?php echo $home_page['hero_banner_heading']; ?></h1>
+            <p class="hero-split__text"><?php echo $home_page['hero_banner_description']; ?></p>
+            <div class="hero-split__actions">
+                <a href="<?php echo esc_url( $home_page['hero_banner_button_link2'] ); ?>" class="hero-split__btn"><?php echo $home_page['hero_banner_button_text2']; ?></a>
+                <a href="<?php echo esc_url( $home_page['hero_banner_button_link1'] ); ?>" class="hero-split__btn hero-split__btn--outline"><?php echo $home_page['hero_banner_button_text1']; ?></a>
             </div>
-            <?php
-            
-            ?>
         </div>
+    </div>
+    <?php
+    $hero_d = $home_page['hero_banner_image_desktop'];
+    $hero_m = $home_page['hero_banner_image_mobile'];
+    $size_d = lgd_img_size( $hero_d );
+    $size_m = lgd_img_size( $hero_m );
+    ?>
+    <div class="hero-split__media">
+        <picture>
+            <source
+                media="(min-width: 992px)"
+                srcset="<?php echo esc_url( $hero_d ); ?>"
+                <?php if ( $size_d ) : ?>width="<?php echo $size_d[0]; ?>" height="<?php echo $size_d[1]; ?>"<?php endif; ?>>
+            <img
+                src="<?php echo esc_url( $hero_m ); ?>"
+                <?php if ( $size_m ) : ?>width="<?php echo $size_m[0]; ?>" height="<?php echo $size_m[1]; ?>"<?php endif; ?>
+                alt="Lab grown diamond engagement rings"
+                fetchpriority="high"
+                loading="eager">
+        </picture>
     </div>
     <!-- <div class="ls_btmheader text-center">
         Buy now, pay later with affirm.
@@ -125,26 +113,26 @@ $er_items = [
 <!-- start shop engagement rings section -->
 <div class="section">
     <div class="container-fluid">
-        <h2 class="text-center mb_40 h2">SHOP ENGAGEMENT RINGS</h2>
+        <h2 class="text-center mb_40 h2">Popular Categories</h2>
         <div class="row">
             <div class="col-6">
-                <a href="<?php echo esc_url( $text_change['inventory_url'] ); ?>" class="engagement_rings text-decoration-none">
+                <a href="/product/melee-diamonds/" class="engagement_rings text-decoration-none">
                     <img src="<?php echo get_template_directory_uri(); ?>/aj_custom/home-page/shop-by-engagement/engagement_rings_1.webp"
                         alt="Start with a lab grown diamond"
                         width="555" height="400"
                         class="img-fluid mb-3 mb-md-4"
                         loading="lazy" decoding="async">
-                    <p class="fw-600 text-uppercase mb-3 mb-md-0">Start with Diamonds</p>
+                    <p class="fw-600 text-uppercase mb-3 mb-md-0">Melee Diamonds</p>
                 </a>
             </div>
             <div class="col-6">
-                <a href="<?php echo esc_url( get_site_url() . '/build-a-ring/' ); ?>" class="engagement_rings text-decoration-none">
+                <a href="/product/calibrated-diamonds/" class="engagement_rings text-decoration-none">
                     <img src="<?php echo get_template_directory_uri(); ?>/aj_custom/home-page/shop-by-engagement/engagement_rings_2.webp"
                         alt="Start with an engagement ring setting"
                         width="555" height="400"
                         class="img-fluid mb-3 mb-md-4"
                         loading="lazy" decoding="async">
-                    <p class="fw-600 text-uppercase mb-3 mb-md-0">Start with Setting</p>
+                    <p class="fw-600 text-uppercase mb-3 mb-md-0">Calibrated Diamonds</p>
                 </a>
             </div>
         </div>

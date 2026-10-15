@@ -8,8 +8,8 @@ $home_page = array(
     'hero_banner_button_link1' => $text_change['inventory_url'] ,
     'hero_banner_button_text2' => 'Shop Engagement Rings',
     'hero_banner_button_link2' => get_site_url().'/build-a-ring/',
-    'hero_banner_image_desktop' => get_template_directory_uri().'/aj_custom/home-page/main-desktop.webp',
-    'hero_banner_image_mobile' => get_template_directory_uri().'/aj_custom/home-page/main-mobile.webp',
+    'hero_banner_image_desktop' => get_template_directory_uri().'/rrp-img/home/main-desktop.webp',
+    'hero_banner_image_mobile' => get_template_directory_uri().'/rrp-img/home/main-mobile.webp',
 );
 $text_change['home_page'] = $home_page;
 $common_page = array(

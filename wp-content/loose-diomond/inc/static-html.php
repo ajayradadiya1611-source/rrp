@@ -783,42 +783,18 @@ function start_engagement_rings($title_tag='h3'){
 function start_engagement_rings_by_shape($is_btn=true,$is_expore=true,$title='Lab Diamonds in Customizable  Shapes',$title_tag='h1'){
     global $text_change;
 
-    // Base shapes shown always
+    // Only these shapes are shown
     $shapes = [
-        ['slug' => 'round',      'label' => 'ROUND'],
-        ['slug' => 'princess',   'label' => 'PRINCESS'],
-        ['slug' => 'radiant',    'label' => 'RADIANT'],
-        ['slug' => 'asscher',    'label' => 'ASSCHER'],
-        ['slug' => 'cushion',    'label' => 'CUSHION'],
-        ['slug' => 'oval',       'label' => 'OVAL'],
-        ['slug' => 'emerald',    'label' => 'EMERALD'],
-        ['slug' => 'pear',       'label' => 'PEAR'],
-        ['slug' => 'marquise',   'label' => 'MARQUISE'],
-        ['slug' => 'heart',      'label' => 'HEART'],
-    ];
-
-    // Extra shapes shown only when $title != 'Shop Engagement Rings By Shape'
-    $extra_shapes = [
-        ['slug' => 'rose_cut',            'label' => 'ROSE CUT',            'stroke' => false],
-        ['slug' => 'old_european',        'label' => 'OLD EUROPEAN',        'stroke' => true],
-        ['slug' => 'half_moon',           'label' => 'HALF MOON',           'stroke' => false],
-        ['slug' => 'baguette_trapezoid',  'label' => 'BAGUETTE TRAPEZOID',  'stroke' => true],
-        ['slug' => 'baguette',            'label' => 'BAGUETTE',            'stroke' => false],
-        ['slug' => 'hexagon',             'label' => 'HEXAGON',             'stroke' => true],
-        ['slug' => 'kite',                'label' => 'KITE',                'stroke' => false],
-        ['slug' => 'old_mine',            'label' => 'OLD MINE',            'stroke' => false],
-        ['slug' => 'trapezoid',           'label' => 'TRAPEZOID',           'stroke' => true],
-        ['slug' => 'triangular',          'label' => 'TRIANGULAR',          'stroke' => true],
+        ['slug' => 'round',        'label' => 'ROUND',        'stroke' => false],
+        ['slug' => 'princess',     'label' => 'PRINCESS',     'stroke' => false],
+        ['slug' => 'emerald',      'label' => 'EMERALD',      'stroke' => false],
+        ['slug' => 'baguette',     'label' => 'BAGUETTE',     'stroke' => false],
+        ['slug' => 'pear',         'label' => 'PEAR',         'stroke' => false],
+        ['slug' => 'old_european', 'label' => 'OLD EUROPEAN', 'stroke' => true],
     ];
 
     $is_rings_by_shape = ($title == 'Shop Engagement Rings By Shape');
 
-    if (!$is_rings_by_shape) {
-        $shapes = array_merge($shapes, $extra_shapes);
-    }
-    if (wp_is_mobile()) {
-        $shapes = array_slice($shapes, 0, 12);
-    }
     // Rings-by-shape uses clean URLs like /lab-grown-diamond-engagement-rings/round/
     $rings_base_url = '/lab-grown-diamond-engagement-rings';
     ?>
