@@ -854,15 +854,15 @@ single_product_experience_history();
 echo '<div class="light_gray_background ">';
 single_product_what_customer_say();
 echo '</div>';
-single_product_shop_by_shape();
-if (! has_term( array('custom'), 'product_cat', $product_id ) ){
+
+
 ?>
 	<div class="oc-related-product   pt-5">
 	   <h2 class="text-center fw-600  pt-2 single_rt_product">Related Product</h2>
 	   <div id="inventory-listing-root"></div>
 	</div>
 	<?php
-	}
+
 single_product_faq();
 
 
