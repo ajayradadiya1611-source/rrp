@@ -183,7 +183,10 @@ console.log("Wishlist IDs loaded:", wishlistIds);
     const isSearch = !categoryId && searchQuery;
     const isCategory = categoryId && taxonomy;
 
-    if (!isSearch && !isCategory) return;
+    // /shop/ (flag set in PHP): no category or search, list all products
+    const isShopAll = !!window?.LD_THEME?.isShop && !isSearch && !isCategory;
+
+    if (!isSearch && !isCategory && !isShopAll) return;
 
     const controller = new AbortController();
     const signal = controller.signal;
@@ -200,6 +203,10 @@ console.log("Wishlist IDs loaded:", wishlistIds);
           url += `&category_id=${categoryId}&taxonomy=${taxonomy}`;
         }
         
+        if (isShopAll) {
+          url += `&all=1`;
+        }
+
         // Add search query for search pages
         if (isSearch) {
           url += `&search=${encodeURIComponent(searchQuery)}`;

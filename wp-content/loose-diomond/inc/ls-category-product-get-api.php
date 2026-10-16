@@ -18,6 +18,9 @@ add_action('rest_api_init', function () {
                     return is_string($param);
                 },
             ],   
+            'all' => [
+                'required' => false,
+            ],
             'search' => [
                 'required' => false,
                 'validate_callback' => function ($param) {
@@ -179,7 +182,9 @@ function get_products_by_category_and_taxonomy($request) {
     $page        = $request->get_param('page')     ? intval($request->get_param('page'))     : 1;
     $per_page    = $request->get_param('per_page') ? intval($request->get_param('per_page')) : 50;
 
-    if (empty($category_id) && empty($taxonomy) && empty($search)) {
+    $all_products = !empty($request->get_param('all'));
+
+    if (empty($category_id) && empty($taxonomy) && empty($search) && !$all_products) {
         return new WP_Error('missing_params', 'Either category_id + taxonomy or search is required', ['status' => 400]);
     }
 
@@ -194,7 +199,7 @@ function get_products_by_category_and_taxonomy($request) {
         ];
     }
 
-    $skip_keys  = ['category_id', 'taxonomy', 'search', 'page', 'per_page', 'price_min', 'price_max', 'orderby', 'order'];
+    $skip_keys  = ['category_id', 'taxonomy', 'search', 'all', 'page', 'per_page', 'price_min', 'price_max', 'orderby', 'order'];
     $all_params = $request->get_params();
 
     foreach ($all_params as $key => $val) {

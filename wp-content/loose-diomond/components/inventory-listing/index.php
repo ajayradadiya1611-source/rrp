@@ -105,6 +105,7 @@ function lgd_enqueue_inventory_listing() {
         || is_page_template( 'page-lab-grown-engagement-rings.php' )
         || is_page_template( 'page-shape-products.php' )
         || is_product()
+        || is_shop()
     ) ) {
         return;
     }
@@ -264,43 +265,18 @@ function lgd_enqueue_inventory_listing() {
     } elseif ( ! empty( $_GET['s'] ) && isset( $_GET['post_type'] ) && $_GET['post_type'] === 'product' ) {
         $localize_data['searchQuery'] = $_GET['s'];
 
-    } elseif ( is_page_template( 'page-lab-grown-engagement-rings.php' ) ) {
-        $localize_data['categoryId']    = 1079;
-        $localize_data['categorySlug']  = 'engagement-rings';
-        $localize_data['taxonomy']      = 'product_cat';
-        $localize_data['with_ordering'] = false;
-        $localize_data['perPage']       = 12;
-
-    } elseif ( $shape_page ) {
-        $localize_data['categoryId']    = $shape_page['term'] ? $shape_page['term']->term_id : 1079;
-        $localize_data['categorySlug']  = $shape_page['term'] ? $shape_page['term']->slug : 'engagement-rings';
-        $localize_data['taxonomy']      = 'product_cat';
-        $localize_data['with_ordering'] = true;
-        $localize_data['perPage']       = $shape_page['per_page'];
-        $localize_data['presetFilters'] = $shape_page['filters'];
+    } elseif ( function_exists( 'is_shop' ) && is_shop() ) {
+        // /shop/ has no category or search term: list every product
+        $localize_data['isShop'] = true;
 
     } elseif ( is_product() ) {
         $product_id = get_the_ID();
 
-        if ( has_term( 'white-melee-diamonds', 'product_cat', $product_id ) ) {
-            $term                           = get_term_by( 'slug', 'white-melee-diamonds', 'product_cat' );
-            $localize_data['categoryId']   = $term ? $term->term_id : 0;
-            $localize_data['categorySlug'] = 'white-melee-diamonds';
-            $localize_data['taxonomy']     = 'product_cat';
-
-        } elseif ( has_term( 'color-melee-diamonds', 'product_cat', $product_id ) ) {
-            $term                           = get_term_by( 'slug', 'color-melee-diamonds', 'product_cat' );
-            $localize_data['categoryId']   = $term ? $term->term_id : 0;
-            $localize_data['categorySlug'] = 'color-melee-diamonds';
-            $localize_data['taxonomy']     = 'product_cat';
-
-        } else {
-            $terms = get_the_terms( $product_id, 'product_cat' );
-            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                $term                           = $terms[0];
-                $localize_data['categoryId']   = $term->term_id;
-                $localize_data['categorySlug'] = $term->slug;
-            }
+        $terms = get_the_terms( $product_id, 'product_cat' );
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+            $term                           = $terms[0];
+            $localize_data['categoryId']   = $term->term_id;
+            $localize_data['categorySlug'] = $term->slug;
         }
 
         $localize_data['taxonomy']      = 'product_cat';
