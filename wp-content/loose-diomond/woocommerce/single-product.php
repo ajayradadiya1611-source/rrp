@@ -235,7 +235,7 @@ if ( ! empty( $short_description ) ) {
 											<div class="common_select_dropdown mb_15">
 												<div class="ls-label-row">
 													<label for="<?php echo esc_attr(sanitize_title($attr_name)); ?>">
-														 <?php echo esc_html( ucfirst( wc_attribute_label( $attr_name ) ) ); ?>
+														 <?php echo esc_html( ucfirst(strtolower( wc_attribute_label( $attr_name ) ) )); ?>
 													</label>
 													<?php if ( function_exists( 'ls_variation_guide_link' ) ) { echo ls_variation_guide_link( $attr_name ); } ?>
 												</div>
