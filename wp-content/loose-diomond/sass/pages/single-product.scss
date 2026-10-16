@@ -26,22 +26,46 @@
   }
 }
 
-// Quantity number field beside the Add To Bag button
+// Quantity box beside the Add To Bag button
 .ls-qty {
     display: inline-flex;
     flex: 0 0 auto;
     align-items: stretch;
     height: 50px;
+    border: 1px solid #ddd;
+    background: #fff;
+
+    &__btn {
+        width: 38px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        font-size: 20px;
+        line-height: 1;
+        color: #222;
+        cursor: pointer;
+
+        &:hover {
+            background: #f3f3f3;
+        }
+    }
 
     // beats the generic ".add_cart input" rule
     .ls-qty__input {
-        width: 80px;
+        width: 46px;
         height: 100%;
-        padding: 0 8px;
-        border: 1px solid #ddd;
-        background: #fff;
+        padding: 0;
+        border: 0;
         text-align: center;
         font-size: 15px;
+        -moz-appearance: textfield;
+        appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            margin: 0;
+            -webkit-appearance: none;
+        }
     }
 
     + .common_btn {
@@ -314,3 +338,54 @@
     }
 }
 
+// Variation labels (Size, Purity, Color, Unit ...) always uppercase
+.custom-variations-form .common_select_dropdown label {
+    text-transform: uppercase;
+}
+
+// Schedule Now (consultation) popup — same look as the Contact Us form
+.ls-consult-modal {
+  .ls-consult-modal__form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+
+    .form-control {
+      background-color: #f7f7f7;
+      border: none;
+      padding: 16px;
+      font-size: 14px;
+      line-height: 24px;
+      color: #999;
+      border-radius: 4px;
+      height: 60px;
+      box-shadow: none;
+    }
+    textarea.form-control {
+      height: 252px;
+    }
+    .iti {
+      width: 100%;
+    }
+    .form-control[type="tel"] {
+      padding-left: 52px !important;
+    }
+    .btn {
+      display: block;
+      margin-left: auto;
+      padding: 16px 60px;
+      background-color: #000;
+      border: 1px solid #000;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 4px;
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+      @media (max-width: 575px) {
+        padding: 12.5px 20px;
+      }
+    }
+  }
+}

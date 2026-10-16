@@ -96,7 +96,6 @@ function ls_render_consult_why() {
             </div>
         </div>
     </div>
-    </div>
     <?php
     $c_name = $c_email = $c_phone = '';
     if ( is_user_logged_in() ) {
@@ -106,16 +105,16 @@ function ls_render_consult_why() {
         $c_phone = get_user_meta( $cu->ID, 'billing_phone', true );
     }
     ?>
-    <div class="modal fade" id="lsConsultModal" tabindex="-1" aria-labelledby="lsConsultModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade ls-consult-modal" id="lsConsultModal" tabindex="-1" aria-labelledby="lsConsultModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="lsConsultModalLabel">Get in Touch</h5>
+                <div class="modal-header border-0 pb-0">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="ls-consult-form" novalidate>
-                        <div class="row row-gap-3">
+                    <div class="ls-consult-modal__box">
+                    <form class="ls-consult-modal__form" id="ls-consult-form" novalidate>
+                        <div class="row row-gap-4">
                             <div class="col-md-6">
                                 <input type="text" name="name" class="form-control" placeholder="Your name*" value="<?php echo esc_attr( $c_name ); ?>">
                                 <small class="text-danger" data-err="name"></small>
@@ -124,19 +123,20 @@ function ls_render_consult_why() {
                                 <input type="email" name="email" class="form-control" placeholder="Your email*" value="<?php echo esc_attr( $c_email ); ?>">
                                 <small class="text-danger" data-err="email"></small>
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-12">
                                 <input type="tel" name="number" class="form-control" placeholder="Your Number*" value="<?php echo esc_attr( $c_phone ); ?>">
                                 <small class="text-danger" data-err="number"></small>
                             </div>
                             <div class="col-12">
-                                <textarea name="message" class="form-control" rows="3" placeholder="Your message*">I would like to book a free 30 minute consultation call with a gemologist.</textarea>
+                                <textarea name="message" class="form-control" rows="3" placeholder="Your message*"></textarea>
                                 <small class="text-danger" data-err="message"></small>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary text-uppercase mt-3">Let's talk</button>
+                        <button type="submit" class="btn btn-primary text-uppercase mt-4">Let's talk</button>
                         <p class="mt-3 border border-danger text-danger p-2" id="ls-consult-error" style="display:none;">Something went wrong. Please try again.</p>
                         <p class="mt-3 border border-success text-success p-2" id="ls-consult-success" style="display:none;">Thank you! We will contact you shortly.</p>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
