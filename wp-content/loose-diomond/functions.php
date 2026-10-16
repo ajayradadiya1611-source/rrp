@@ -327,10 +327,8 @@ require_once get_template_directory() . '/components/cart-page/index.php';
 
 
 include('plain-components/comman_option.php');
-include('plain-components/custom_order.php');
-include('plain-components/hide_order_meta.php');
+
 include('plain-components/mailhook.php');
-include('plain-components/cart.php');
 include('plain-components/mobile-checkout-order-summary.php');
 include('js-php/checkout.php');
 include('js-php/slick-slider.php');
@@ -861,13 +859,6 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
     // Category आधारित flags
     $cart_item_data['is_readyToShipProduct'] = has_term('ready-to-ship', 'product_cat', $product_id);
 
-    // Custom note
-    if (isset($_POST['custom_note'])) {
-        $cart_item_data['custom_note'] = sanitize_text_field(
-            wp_unslash($_POST['custom_note'])
-        );
-    }
-
     // Quantity box logic
     if (
         $cart_item_data['is_readyToShipProduct'] == true ||
@@ -881,17 +872,6 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
     return $cart_item_data;
 }
 
-add_filter( 'woocommerce_get_item_data', 'ls_fn_display_cart_note', 10, 2 );
-function ls_fn_display_cart_note( $item_data, $cart_item ) {
-    if (isset($cart_item['custom_note'])) {
-        $item_data[] = array(
-            'key'  => 'Description',
-            'value' => $cart_item['custom_note']
-        );
-    }
-    return $item_data;
-}
-
 add_action( 'woocommerce_checkout_create_order_line_item', 'ls_save_all_custom_data_to_order_item', 10, 4 );
 
 
@@ -901,9 +881,6 @@ function ls_save_all_custom_data_to_order_item( $item, $cart_item_key, $values, 
     exit;*/
     global $wpdb;
      $product_id = $item->get_product_id();
-    if (isset($values['custom_note'])) {
-        $item->add_meta_data('Description', $values['custom_note'], true);
-    }
     add_action('woocommerce_checkout_create_order_line_item', function($item, $cart_item_key, $values, $order) {
         $product = $item->get_product();
         if ($product) {
