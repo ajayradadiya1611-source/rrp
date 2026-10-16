@@ -267,6 +267,7 @@ $hero-text: #2d2926;
 
         .shape-circles__circle {
             background: #fff;
+            border-color: transparent !important;
 
             img {
                 width: 63%;
@@ -305,7 +306,7 @@ $hero-text: #2d2926;
     display: flex;
     align-items: center;
     min-height: 410px;
-    background: #ececec no-repeat center / cover;
+    background: #ececec;
     font-family: "Montserrat", sans-serif;
 
     .container-fluid {
@@ -347,8 +348,8 @@ $hero-text: #2d2926;
 
         &:hover,
         &:focus-visible {
-            background: #fff;
-            color: #1f2d6b;
+            background: #1f2d6b;
+            color: #fff;
         }
     }
 

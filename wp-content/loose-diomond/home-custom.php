@@ -214,12 +214,19 @@ $black_shapes = [
 </div>
 
 <!-- start salt and pepper section -->
-<div class="section salt-pepper" style="background-image:url('<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/salt-pepper-diamonds.png' ); ?>');">
+<div class="section salt-pepper">
     <div class="container-fluid">
-        <div class="salt-pepper__content">
-            <h2 class="salt-pepper__title">Shop Natural Salt and Pepper Diamonds</h2>
-            <p class="salt-pepper__text">Select your perfect one of a kind natural diamond from thousands of ethically sourced salt and pepper diamonds.</p>
-            <a class="salt-pepper__btn btn_comman_dark" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=salt-pepper' ); ?>">Shop Salt and Pepper Diamonds</a>
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6 col-12">
+                <div class="salt-pepper__content">
+                    <h2 class="salt-pepper__title">Shop Natural Salt and Pepper Diamonds</h2>
+                    <p class="salt-pepper__text">Select your perfect one of a kind natural diamond from thousands of ethically sourced salt and pepper diamonds.</p>
+                    <a class="salt-pepper__btn btn_comman_dark" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=salt-pepper' ); ?>">Shop Salt and Pepper Diamonds</a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6 col-12">
+                <img class="img-fluid w-100" src="<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/salt-pepper-diamonds.png' ); ?>" alt="Natural salt and pepper diamonds" loading="lazy">
+            </div>
         </div>
     </div>
 </div>
