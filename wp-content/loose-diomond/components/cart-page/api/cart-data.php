@@ -180,7 +180,7 @@ function lgd_cart_page_get_data() {
         'checkoutUrl'    => wc_get_checkout_url(),
         'cartUrl'        => wc_get_cart_url(),
         'freeShipLeft'   => ( $cart_total < $threshold ) ? number_format( $threshold - $cart_total, 2 ) : '',
-        'returnDays'     => defined( 'RETURN_DAYS' ) ? RETURN_DAYS : '30',
+        'returnDays'     => defined( 'RETURN_DAYS' ) ? RETURN_DAYS : '7',
         'supportMobile'  => defined( 'SUPPORT_MOBILE' ) ? SUPPORT_MOBILE : '',
         'themeUri'       => get_template_directory_uri(),
         'unboxingVideo'  => 'https://media.loosegrowndiamond.com/wait-till-you-see-inside-this-box.mp4',

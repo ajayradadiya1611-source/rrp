@@ -396,7 +396,7 @@ if ( ! is_search() || have_posts() ) {
                                         </div>
 
                                         <div class="col-3 col-md-6 d-flex flex-column gap-2">
-                                          <img src="<?php echo get_template_directory_uri();?>/aj_custom/breadcum/icon-returns.png" alt="30-day returns" width="40" height="40">
+                                          <img src="<?php echo get_template_directory_uri();?>/aj_custom/breadcum/icon-returns.png" alt="<?php echo RETURN_DAYS;?>-day returns" width="40" height="40">
                                           <span><?php echo RETURN_DAYS;?>-Day Easy Returns</span>
                                         </div>
 
@@ -472,11 +472,11 @@ if ( ! is_search() || have_posts() ) {
                          <div class="benefits-box-parent">
                             <div class="benefits-box">
                                 <div class="benefit-item benefit-return">
-                                    30 Day Returns
+                                    <?php echo RETURN_DAYS;?> Day Returns
                                 </div>
 
                                 <div class="benefit-item benefit-resize">
-                                    30 Day Resizing
+                                    <?php echo RETURN_DAYS;?> Day Resizing
                                 </div>
 
                                 <div class="benefit-item benefit-warranty">

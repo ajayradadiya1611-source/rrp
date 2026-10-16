@@ -194,7 +194,7 @@ echo '<script type="application/ld+json">' . wp_json_encode(
                                         </div>
 
                                         <div class="col-3 col-md-6 d-flex flex-column gap-2">
-                                          <img src="<?php echo get_template_directory_uri();?>/aj_custom/breadcum/icon-returns.png" alt="30-day returns" width="40" height="40">
+                                          <img src="<?php echo get_template_directory_uri();?>/aj_custom/breadcum/icon-returns.png" alt="<?php echo RETURN_DAYS;?>-day returns" width="40" height="40">
                                           <span><?php echo RETURN_DAYS;?>-Day Easy Returns</span>
                                         </div>
 

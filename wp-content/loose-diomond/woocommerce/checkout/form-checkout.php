@@ -223,7 +223,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                                 [
                                     'id'       => 'faq1',
                                     'question' => 'Can I return my order?',
-                                    'answer'   => 'Absolutely. You have 30 days from the shipping date to return or exchange your order, with free, fully insured shipping both ways for customers in the USA. We’ll provide a prepaid return label and promptly process your return.',
+                                    'answer'   => 'Absolutely. You have ' . RETURN_DAYS . ' days from the shipping date to return or exchange your order, with free, fully insured shipping both ways for customers in the USA. We’ll provide a prepaid return label and promptly process your return.',
                                 ],
                                 [
                                     'id'       => 'faq2',

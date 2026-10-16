@@ -879,7 +879,7 @@ $faq_page_about = [
                                 'title' => 'Do you have a retail store near me?',
                                 'description' => '<div><p>Loose Grown Diamond has a showroom and office in New York City. If you\'d like to visit us, please schedule an appointment in advance, and our team will be happy to assist you.</p>
                                 <p>As an online-first retailer, we keep our operating costs low and work directly with manufacturers. This allows us to offer certified lab-grown diamonds and fine jewelry at manufacturer-direct prices without compromising on quality or service.</p> 
-                                <p>We also offer <strong>Free insured shipping</strong> on orders over <strong>$500, 30-day returns and Expert support</strong> from our GIA-certified gemologists.</p></div>'
+                                <p>We also offer <strong>Free insured shipping</strong> on orders over <strong>$500, 7-day returns and Expert support</strong> from our GIA-certified gemologists.</p></div>'
                                     
                             ],
                             [
@@ -890,7 +890,7 @@ $faq_page_about = [
                             ],
                             [
                                 'title' => 'Where is the corporate office of Loose Grown Diamond located?',
-                                'description' => '<div><p>Our corporate office is located in New York City, in the heart of the Diamond District. The address is listed below:<br><br>Loose Grown Diamond Corporate Office<br>55W 47th St., Suite #790<br>New York, NY-10036, USA<br><br>📍 View on Google Maps:<br><a href="https://g.page/r/CfgPY3z14oWaEAE">https://g.page/r/CfgPY3z14oWaEAE</a></p><p>If you\'d like to visit us, please schedule an appointment in advance, and our team will be happy to assist you.</p></div>'
+                                'description' => '<div><p>Our corporate office is located in Surat, Gujarat. The address is listed below:<br><br>Loose Grown Diamond Corporate Office<br>2nd Floor, Red Turning Point,<br>Near, Matawadi Police Chowki, L.H.Road,<br>Varachha, Surat, Gujarat - 395006</p><p>If you\'d like to visit us, please schedule an appointment in advance, and our team will be happy to assist you.</p></div>'
                             ],
                             [
                                 'title' => 'Can I take a virtual tour of your factory?',

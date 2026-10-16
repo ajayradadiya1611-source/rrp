@@ -17,7 +17,7 @@ define('LD_RECAPTCHA_SITE_KEY', '6Lc2a54tAAAAAExcxKygkVz5fByttLWN1gjyEAc6');
 define('LD_RECAPTCHA_SECRET_KEY', '6Lc2a54tAAAAAOvWIl2KuDjK_qkTNmpozQMKITUD');
 define('LD_RECAPTCHA_MIN_SCORE', 0.5); // optional, defaults to 0.5
 
-define('RETURN_DAYS', '30');
+define('RETURN_DAYS', '7');
 define('SITE_OC_NAME', 'Loose Grown Diamond');
 define('SUPPORT_EMAIL', 'support@loosegrowndiamond.com');
 
