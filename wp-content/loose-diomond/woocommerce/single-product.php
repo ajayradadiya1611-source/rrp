@@ -228,13 +228,17 @@ if ( ! empty( $short_description ) ) {
 								var productVariations = <?php echo wp_json_encode($available_variations); ?>;
 							</script>
 
+							<?php if ( function_exists( 'ls_variation_guide_modals' ) ) { ls_variation_guide_modals(); } ?>
 							<form class="variations_form cart custom-variations-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post" enctype="multipart/form-data" data-product_id="<?php echo esc_attr($product->get_id()); ?>">
 								
 									<?php foreach ($attributes as $attr_name => $options) : ?>
 											<div class="common_select_dropdown mb_15">
-												<label for="<?php echo esc_attr(sanitize_title($attr_name)); ?>">
-													<?php echo wc_attribute_label($attr_name); ?>
-												</label>
+												<div class="ls-label-row">
+													<label for="<?php echo esc_attr(sanitize_title($attr_name)); ?>">
+														<?php echo wc_attribute_label($attr_name); ?>
+													</label>
+													<?php if ( function_exists( 'ls_variation_guide_link' ) ) { echo ls_variation_guide_link( $attr_name ); } ?>
+												</div>
 												<select
 													id="<?php echo esc_attr(sanitize_title($attr_name)); ?>"
 													name="attribute_<?php echo esc_attr(sanitize_title($attr_name)); ?>"

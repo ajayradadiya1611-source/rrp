@@ -124,3 +124,137 @@
         }
     }
 }
+
+// Variation "Guide" / "Chart" links + modals
+.ls-label-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    .ls-guide-link {
+        font-size: 13px;
+        font-weight: 500;
+        color: #2d2926;
+        text-decoration: underline;
+
+        &:hover {
+            color: #2d3f8f;
+        }
+    }
+}
+
+.ls-guide-modal {
+    .modal-content {
+        border: 0;
+        border-radius: 4px;
+        padding: 10px 20px 20px;
+    }
+
+    .modal-title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        color: #2d2926;
+    }
+
+    .ls-guide-table {
+        width: 100%;
+        margin-bottom: 20px;
+
+        th,
+        td {
+            padding: 10px 8px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        th {
+            font-weight: 600;
+        }
+    }
+
+    .ls-guide-download {
+        font-size: 13px;
+        font-weight: 600;
+        color: #2d2926;
+        text-decoration: none;
+
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    &--wide .modal-title {
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+
+.ls-clarity {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+    text-align: center;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+
+        svg {
+            width: 100%;
+            max-width: 100px;
+            height: auto;
+        }
+    }
+
+    &__grade {
+        font-size: 15px;
+        color: #2d2926;
+    }
+
+    &--groups {
+        margin-top: 24px;
+    }
+
+    &__group {
+        grid-column: span 1;
+
+        &--2 {
+            grid-column: span 2;
+        }
+
+        span {
+            display: block;
+            height: 18px;
+            margin: 0 auto 14px;
+            width: 100px;
+            border: 4px solid #2d3f8f;
+            border-top: 0;
+            background: linear-gradient(#2d3f8f, #2d3f8f) bottom / 100% 6px no-repeat;
+        }
+
+        &--2 span {
+            width: calc(100% - 20px);
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #2d2926;
+        }
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(4, 1fr);
+
+        &--groups {
+            display: none;
+        }
+    }
+}
