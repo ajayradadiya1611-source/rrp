@@ -876,12 +876,7 @@ single_product_faq();
 
 
 ?>
-<?php
 
-?>
-<?php
-
-?>
 
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function () {
