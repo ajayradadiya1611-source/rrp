@@ -64,3 +64,41 @@ function ls_render_faq_cards( $title, array $faqs ) {
         <?php
     }
 }
+
+/**
+ * "Book a Free 30 Minute Consultation" band + "Why RRP Diamond?" icon row.
+ * Used on the single product page.
+ */
+function ls_render_consult_why() {
+    $icons = get_template_directory_uri() . '/rrp-img/melee-diamonds-for-sale/icons/';
+    $why   = [
+        [ 'Our_-Sources.svg',      'Our Sources',      'Our diamonds are conflict and blood free.' ],
+        [ 'Our_-Assortments.svg',  'Our Assortments',  'Quality ensured by proficient assorters.' ],
+        [ 'Our_-Calibration.svg',  'Our Calibration',  'Fully calibrated diamonds, equal in size.' ],
+        [ 'Our_-Packaging.svg',    'Our Packaging',    'Individually packed and labeled by size.' ],
+        [ 'Express_-Delivery.svg', 'Express Delivery', 'Fast and insured delivery worldwide.' ],
+        [ 'No_-Lab_Grown.svg',     'No Lab Grown',     'All diamonds tested, 100% natural and mined.' ],
+    ];
+    ?>
+    <div id="book_Consultation" class="ls-consult">
+        <div class="container">
+            <h2>Book a Free 30 Minute Consultation Call with Gemologist</h2>
+            <a class="ls-consult__btn" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Schedule Now</a>
+        </div>
+    </div>
+    <div id="why_lab_cdmnd" class="ls-why">
+        <div class="container">
+            <h2 class="ls-why__title">Why RRP Diamond?</h2>
+            <div class="ls-why__grid">
+                <?php foreach ( $why as $item ) : ?>
+                    <div class="ls-why__item">
+                        <img src="<?php echo esc_url( $icons . $item[0] ); ?>" alt="<?php echo esc_attr( $item[1] ); ?>" loading="lazy">
+                        <h5><?php echo esc_html( $item[1] ); ?></h5>
+                        <p><?php echo esc_html( $item[2] ); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <?php
+}

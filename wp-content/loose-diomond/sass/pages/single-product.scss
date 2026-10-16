@@ -258,3 +258,82 @@
         }
     }
 }
+
+// Consultation band + Why RRP Diamond (single product)
+.ls-consult {
+    padding: 50px 0;
+    background: #efefef;
+    text-align: center;
+
+    h2 {
+        max-width: 640px;
+        margin: 0 auto 28px;
+        font-size: clamp(22px, 2.4vw, 30px);
+        font-weight: 600;
+    }
+
+    &__btn {
+        display: inline-block;
+        padding: 14px 40px;
+        background: #2d3f8f;
+        border: 1px solid #2d3f8f;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+            background: #fff;
+            color: #2d3f8f;
+        }
+    }
+}
+
+.ls-why {
+    padding: 60px 0;
+    background: #f8f8f8;
+    text-align: center;
+
+    &__title {
+        margin: 0 0 40px;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 24px;
+
+        @media (max-width: 991px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 575px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__item {
+        img {
+            height: 56px;
+            margin-bottom: 12px;
+        }
+
+        h5 {
+            margin: 0 0 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #777;
+        }
+    }
+}
