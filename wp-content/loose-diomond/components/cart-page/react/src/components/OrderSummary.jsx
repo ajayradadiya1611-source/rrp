@@ -94,26 +94,7 @@ export default function OrderSummary({ cart, actions }) {
 
         <Row label="Shipping" value={cart.shippingHtml} valueClass="text-uppercase" />
 
-        <Row
-          label={
-            <>
-              Tax{' '}
-              <a href="javascript:void(0)" 
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title="Applicable taxes are calculated based on your delivery address and local tax rates."
-                className="tax-tooltip"
-                >
-                  <i
-                    className="fa-regular fa-circle-question"
-                    
-                  />
-              </a>
-            </>
-          }
-          value={<>Calculated at next step</>}
-        />
-
+       
         <div className="border_top" />
 
         <Row label="Total" value={cart.totalHtml} valueClass="cart-total-amount" bold />
