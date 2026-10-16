@@ -146,6 +146,11 @@ console.log("Wishlist IDs loaded:", wishlistIds);
           attribute: attributes.join(","),
           exclude: exclude.join(","),
         });
+        // Optional per-attribute include lists, set in PHP (LD_THEME.termInclude)
+        const include = window?.LD_THEME?.termInclude;
+        if (include && include.shape && include.shape.length) {
+          params.set("include_shape", include.shape.join(","));
+        }
 
         const res = await fetch(`/wp-json/custom/v1/get-attribute-terms?${params}`);
         const json = await res.json();

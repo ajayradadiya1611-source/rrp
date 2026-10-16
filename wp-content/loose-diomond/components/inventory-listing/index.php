@@ -308,6 +308,30 @@ function lgd_enqueue_inventory_listing() {
         $localize_data['perPage']       = 8;
     }
 
+    // Categories that list only specific shape terms (slugs, in display order)
+    $term_include_by_category = array(
+        'black-diamonds' => array(
+            'shape' => array(
+                'radiant',
+                'princess',
+                'pear',
+                'oval',
+                'marquise',
+                'heart',
+                'cushion',
+                'asscher',
+                'emerald',
+            ),
+        ),
+    );
+    foreach ( array( 'categorySlug', 'parentCategorySlug' ) as $slug_key ) {
+        $slug = isset( $localize_data[ $slug_key ] ) ? $localize_data[ $slug_key ] : '';
+        if ( $slug && isset( $term_include_by_category[ $slug ] ) ) {
+            $localize_data['termInclude'] = $term_include_by_category[ $slug ];
+            break;
+        }
+    }
+
     wp_localize_script(
         'lgd-inventory-listing',
         'LD_THEME',

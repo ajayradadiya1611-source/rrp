@@ -55,6 +55,12 @@ add_action('rest_api_init', function () {
                         return is_string($param) && !empty($param);
                     },
                 ],
+                'include_shape' => [
+                    'required' => false,
+                    'validate_callback' => function ($param) {
+                        return is_string($param);
+                    },
+                ],
                 'exclude' => [
                     'required' => false,
                     'validate_callback' => function ($param) {
@@ -119,6 +125,23 @@ add_action('rest_api_init', function () {
             'hide_empty' => false,
             'exclude'    => $exclude_ids, // ✅ Correct way
         ]);
+
+        // Optional: only these slugs (e.g. include_shape=slug1,slug2), in the given order
+        $include_param = sanitize_text_field($request->get_param('include_' . $attribute));
+        if (!is_wp_error($terms) && !empty($include_param)) {
+            $include_slugs = array_map('sanitize_title', explode(',', $include_param));
+            $by_slug = [];
+            foreach ($terms as $t) {
+                $by_slug[$t->slug] = $t;
+            }
+            $ordered = [];
+            foreach ($include_slugs as $slug) {
+                if (isset($by_slug[$slug])) {
+                    $ordered[] = $by_slug[$slug];
+                }
+            }
+            $terms = $ordered;
+        }
 
         if (is_wp_error($terms)) {
             $result[$attribute] = [];
