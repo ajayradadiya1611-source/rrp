@@ -35,8 +35,7 @@ $black_shapes = [
             <h1 class="hero-split__title"><?php echo $home_page['hero_banner_heading']; ?></h1>
             <p class="hero-split__text"><?php echo $home_page['hero_banner_description']; ?></p>
             <div class="hero-split__actions">
-                <a href="<?php echo esc_url( $home_page['hero_banner_button_link2'] ); ?>" class="hero-split__btn"><?php echo $home_page['hero_banner_button_text2']; ?></a>
-                <a href="<?php echo esc_url( $home_page['hero_banner_button_link1'] ); ?>" class="hero-split__btn hero-split__btn--outline"><?php echo $home_page['hero_banner_button_text1']; ?></a>
+                <a href="<?php echo esc_url( $home_page['hero_banner_button_link2'] ); ?>" class="hero-split__btn">Shop Natural Melee Diamonds</a>
             </div>
         </div>
     </div>
@@ -72,7 +71,7 @@ $black_shapes = [
         'Conflict-Free Diamonds',
         'Stress-Free Purchase',
         'Free Insured Shipping*',
-        'Easy &amp; Free ' . RETURN_DAYS . ' Day Returns*',
+        'Easy & Free 30 Day Returns*',
         'Manufacturer Warranty',
     ];
 

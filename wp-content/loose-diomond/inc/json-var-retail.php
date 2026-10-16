@@ -2,11 +2,11 @@
 global $text_change,$oc_common;
 $text_change['inventory_url'] = $oc_common['inventory_url'];
 $home_page = array(
-    'hero_banner_heading' => 'Beautiful, Certified Lab <br class="d-none d-md-block"> Grown Diamonds',
-    'hero_banner_description' => 'Mining free. Direct to you. No middlemen',
+    'hero_banner_heading' => 'Naturally Beautiful, <br class="d-none d-md-block"> Ethically Sourced Diamonds',
+    'hero_banner_description' => 'Conflict free. Direct to you. No middlemen',
     'hero_banner_button_text1' => 'Shop Lab Grown Diamonds',
     'hero_banner_button_link1' => $text_change['inventory_url'] ,
-    'hero_banner_button_text2' => 'Shop Engagement Rings',
+    'hero_banner_button_text2' => 'Shop Natural Melee Diamonds',
     'hero_banner_button_link2' => get_site_url().'/build-a-ring/',
     'hero_banner_image_desktop' => get_template_directory_uri().'/rrp-img/home/main-desktop.webp',
     'hero_banner_image_mobile' => get_template_directory_uri().'/rrp-img/home/main-mobile.webp',

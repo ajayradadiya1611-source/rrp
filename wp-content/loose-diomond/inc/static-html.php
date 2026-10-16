@@ -496,25 +496,25 @@ function single_product_what_customer_say(){
                 <?php
                 $reviews = [
                     [
-                        'title' => 'Reliable, definitely recommend!',
-                        'description' => "I was really scared to make this kind of purchase online. I read all the positive reviews and decided to give them a chance. I'm so glad I did!! My diamond is beautiful! The payment process was quick and easy, my diamond was delivered 10 days after my order was placed.",
+                        'title' => 'Good stock at good prices',
+                        'description' => "I purchased a sample amount of rose cut diamonds for my business. The parcel turned up safely and well wrapped. The quality of stones is considerably better than the same price stones in the UK, will be using again. Also excellent communication.",
                         'image' => get_template_directory_uri() . '/assets/image/icon/review_client_img_1.svg',
-                        'name' => 'Anuschka Grobler',
-                        'location' => 'Kentucky',
+                        'name' => 'David Price',
+                        'location' => 'United Kingdom',
                     ],
                     [
-                        'title' => 'I had an extremely positive experience…',
-                        'description' => "I was looking for rings online and nothing came up within my style/budget until I came across this site. I was skeptical from it being online, but I was always notified of what was happening behind the scenes. I couldn't be happier with this company.",
+                        'title' => 'Gorgeous diamonds',
+                        'description' => "Gorgeous diamonds and the delivery was super fast will definitely buy more in the future.",
                         'image' => get_template_directory_uri() . '/assets/image/icon/review_client_img_2.svg',
-                        'name' => 'Evan Onuskanych',
-                        'location' => 'New York',
+                        'name' => 'Marie Faulcon',
+                        'location' => 'United States',
                     ],
                     [
-                        'title' => 'Great prices, great customer service!',
-                        'description' => "The prices on this site are significantly lower than other retailers for the exact same diamond. Shipping does take longer than expected, but it was worth the wait, and Sarah did keep me updated the entire process.",
+                        'title' => 'Great communication fantastic service…',
+                        'description' => "Great communication fantastic service would highly recommend to anyone I will be using them again and you should too I have been in the diamond trade for 30 years and times have changed this company understands what you want and delivers on time I am a very satisfied customer",
                         'image' => get_template_directory_uri() . '/assets/image/icon/review_client_img_3.svg',
-                        'name' => 'Samantha A',
-                        'location' => 'Massachusetts',
+                        'name' => 'Dawn Greenfield',
+                        'location' => 'United Kingdom',
                     ],
                 ];
 

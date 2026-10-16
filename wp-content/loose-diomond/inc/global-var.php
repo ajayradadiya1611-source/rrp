@@ -2,7 +2,7 @@
 global $oc_common;
 
 $oc_common['notification_email']=SUPPORT_EMAIL;
-$oc_common['inventory_url'] = get_site_url().'/lab-diamonds/';
+$oc_common['inventory_url'] = get_site_url().'/shop/';
 $oc_common['white_inventory_url'] = get_site_url().'/lab-diamonds/';
 $oc_common['color_inventory_url'] = get_site_url().'/lab-created-colored-diamonds/';
 
