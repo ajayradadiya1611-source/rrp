@@ -81,9 +81,20 @@ function ls_render_consult_why() {
     ];
     ?>
     <div id="book_Consultation" class="ls-consult">
-        <div class="container">
-            <h2>Book a Free 30 Minute Consultation Call with Gemologist</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2">
+                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/dia.png'; ?>">
+                </div>
+                <div class="col-8">
+                    <h2>Book a Free 30 Minute Consultation Call with Gemologist</h2>
             <a class="ls-consult__btn" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Schedule Now</a>
+                </div>
+                <div class="col-2">
+                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/dia.png'; ?>">
+                </div>
+            </div>
+            
         </div>
     </div>
     <div id="why_lab_cdmnd" class="ls-why">
