@@ -267,7 +267,6 @@ $hero-text: #2d2926;
 
         .shape-circles__circle {
             background: #fff;
-            border-color: transparent !important;
 
             img {
                 width: 63%;
@@ -348,8 +347,8 @@ $hero-text: #2d2926;
 
         &:hover,
         &:focus-visible {
-            background: #1f2d6b;
-            color: #fff;
+            background: #fff;
+            color: #1f2d6b;
         }
     }
 

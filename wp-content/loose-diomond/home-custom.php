@@ -219,7 +219,7 @@ $black_shapes = [
         <div class="salt-pepper__content">
             <h2 class="salt-pepper__title">Shop Natural Salt and Pepper Diamonds</h2>
             <p class="salt-pepper__text">Select your perfect one of a kind natural diamond from thousands of ethically sourced salt and pepper diamonds.</p>
-            <a class="salt-pepper__btn" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=salt-pepper' ); ?>">Shop Salt and Pepper Diamonds</a>
+            <a class="salt-pepper__btn btn_comman_dark" href="<?php echo esc_url( $text_change['inventory_url'] . '?shape=salt-pepper' ); ?>">Shop Salt and Pepper Diamonds</a>
         </div>
     </div>
 </div>

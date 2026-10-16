@@ -657,7 +657,7 @@ function single_product_buy_direct_us(){
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/user.svg" alt="user">
                                 
                                 <div class="text_black_secondary fw-600 my-2 h5">You (as Buyer)  </div>
-                                <span class="font_size_15">(Jewellery Owners, Diamond Traders) </span>
+                                <span class="font_size_15">(Jewerly Owners, Diamond Traders) </span>
                             </div>
                         </div>
                     </div>

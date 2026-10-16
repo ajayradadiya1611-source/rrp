@@ -1,3 +1,15 @@
+.btn_comman_dark{
+  border: 1px solid #2d3f8f;
+  background: #2d3f8f;
+  border-radius: 4px;
+  &:hover,&:focus-visible {
+    background: #fff;
+    color: #2d3f8f;
+  }
+}
+
+
+
 
 // Inventory styles (SCSS)
 // Add component-specific styles for the inventory React app here.
