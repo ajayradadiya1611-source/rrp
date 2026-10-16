@@ -88,15 +88,97 @@ function ls_render_consult_why() {
                 </div>
                 <div class="col-8">
                     <h2>Book a Free 30 Minute Consultation Call with Gemologist</h2>
-            <a class="ls-consult__btn" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Schedule Now</a>
+                    <a class="ls-consult__btn" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" data-bs-toggle="modal" data-bs-target="#lsConsultModal">Schedule Now</a>
                 </div>
                 <div class="col-2">
                     <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/bg_book_consultation_1.png'; ?>">
                 </div>
             </div>
-            
         </div>
     </div>
+    </div>
+    <?php
+    $c_name = $c_email = $c_phone = '';
+    if ( is_user_logged_in() ) {
+        $cu      = wp_get_current_user();
+        $c_name  = trim( ( $cu->first_name ?: $cu->display_name ) . ' ' . $cu->last_name );
+        $c_email = $cu->user_email;
+        $c_phone = get_user_meta( $cu->ID, 'billing_phone', true );
+    }
+    ?>
+    <div class="modal fade" id="lsConsultModal" tabindex="-1" aria-labelledby="lsConsultModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lsConsultModalLabel">Get in Touch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="ls-consult-form" novalidate>
+                        <div class="row row-gap-3">
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Your name*" value="<?php echo esc_attr( $c_name ); ?>">
+                                <small class="text-danger" data-err="name"></small>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="email" class="form-control" placeholder="Your email*" value="<?php echo esc_attr( $c_email ); ?>">
+                                <small class="text-danger" data-err="email"></small>
+                            </div>
+                            <div class="col-12">
+                                <input type="tel" name="number" class="form-control" placeholder="Your Number*" value="<?php echo esc_attr( $c_phone ); ?>">
+                                <small class="text-danger" data-err="number"></small>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" class="form-control" rows="3" placeholder="Your message*">I would like to book a free 30 minute consultation call with a gemologist.</textarea>
+                                <small class="text-danger" data-err="message"></small>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary text-uppercase mt-3">Let's talk</button>
+                        <p class="mt-3 border border-danger text-danger p-2" id="ls-consult-error" style="display:none;">Something went wrong. Please try again.</p>
+                        <p class="mt-3 border border-success text-success p-2" id="ls-consult-success" style="display:none;">Thank you! We will contact you shortly.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('ls-consult-form');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var v = function (n) { return form.elements[n].value.trim(); };
+            var errs = {};
+            if (!v('name')) errs.name = 'Name is required';
+            if (!v('email')) errs.email = 'Email is required';
+            else if (!/^\S+@\S+\.\S+$/.test(v('email'))) errs.email = 'Enter a valid email';
+            if (!v('number')) errs.number = 'Phone number is required';
+            else if (!/^\+?[0-9\s\-()]{7,15}$/.test(v('number'))) errs.number = 'Enter a valid phone number';
+            if (!v('message')) errs.message = 'Message is required';
+            form.querySelectorAll('[data-err]').forEach(function (el) { el.textContent = errs[el.getAttribute('data-err')] || ''; });
+            if (Object.keys(errs).length) return;
+
+            var btn = form.querySelector('button[type="submit"]');
+            var ok = document.getElementById('ls-consult-success');
+            var bad = document.getElementById('ls-consult-error');
+            ok.style.display = bad.style.display = 'none';
+            btn.disabled = true;
+            fetch('<?php echo esc_url_raw( site_url( '/wp-json/ls/v1/contact-us' ) ); ?>', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                body: new URLSearchParams(new FormData(form))
+            }).then(function (r) {
+                if (!r.ok) throw new Error('failed');
+                return r.json();
+            }).then(function () {
+                ok.style.display = 'block';
+                form.reset();
+            }).catch(function () {
+                bad.style.display = 'block';
+            }).finally(function () { btn.disabled = false; });
+        });
+    });
+    </script>
     <div id="why_lab_cdmnd" class="ls-why">
         <div class="container">
             <h2 class="ls-why__title">Why RRP Diamond?</h2>
