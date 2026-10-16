@@ -779,7 +779,7 @@ console.log("Wishlist IDs loaded:", wishlistIds);
                 <>
                   <div className="cat_heading">No Products were found</div>
                   <div className="cat_dsearch_pup">
-                    <a href="/lab-diamonds/" className="cat_ls_bbtn">Return to Shop</a>
+                    <a href="/shop/" className="cat_ls_bbtn">Return to Shop</a>
                   </div>
                 </>
               ) : (

@@ -383,7 +383,7 @@ get_header();
                   Configure the perfect engagement ring the purest way with our
                   Natural Diamonds.
                 </p>
-                <a href="/lab-diamonds/" class="btn mb_35">START WITH A DIAMOND</a>
+                <a href="/shop/" class="btn mb_35">START WITH A DIAMOND</a>
               </div>
             </div>
             <div class="col-md-6 second_color">

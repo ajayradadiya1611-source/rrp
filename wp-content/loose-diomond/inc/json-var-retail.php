@@ -45,7 +45,7 @@ $common_page['top_bar_checkout_mobile'] = [
 ];
 
 $common_page['desktop_footer_1']= [
-    ["name" => "Lab Diamonds", "url" => "/lab-diamonds/"],
+    ["name" => "Lab Diamonds", "url" => "/shop/"],
     ["name" => "Engagement Rings", "url" => "/build-a-ring/"],
     ["name" => "Custom Engagement Ring", "url" => "/custom-engagement-rings/"],
     ["name" => "Wedding Bands", "url" => "/lab-diamond-wedding-bands"],

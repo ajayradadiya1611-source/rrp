@@ -322,6 +322,7 @@ include('inc-admin/admin-page.php');
 include('inc-admin/order-tracking.php');
 
 include('inc/blog-shortcode.php');
+include('inc/acf-fancy-shapes.php');
 require_once get_template_directory() . '/components/inventory-listing/index.php';
 require_once get_template_directory() . '/components/cart-page/index.php';
 
@@ -332,6 +333,7 @@ include('plain-components/mailhook.php');
 include('plain-components/mobile-checkout-order-summary.php');
 include('js-php/checkout.php');
 include('js-php/slick-slider.php');
+
 
 
 
@@ -1871,7 +1873,7 @@ add_action( 'template_redirect', function () {
     }
 
     if ( ( is_cart() || is_checkout() ) && WC()->cart->is_empty() ) {
-        wp_safe_redirect( home_url( '/lab-diamonds/' ) );
+        wp_safe_redirect( home_url( '/shop/' ) );
         exit;
     }
 }, 20 );

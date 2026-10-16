@@ -126,7 +126,7 @@ foreach ( $wishlist as $entry ) {
       <div class="container-fluid">
        
         <?php if (empty($items)) : ?>
-         <div class="container-fluid d-flex flex-column align-items-center mt-4 wishlist-empty"><h4 class="text-uppercase fw-700">Your wishlist is empty.</h4><p class="text-center">Add items that you like to your wishlist. Review them anytime and easily move them to the bag</p><img alt="empty_wishlist" width="300" height="300" decoding="async" data-nimg="1" class="img-fluid" src="<?php echo get_stylesheet_directory_uri() . '/aj_custom/whishlist/empty-wishlist.png';?>"><a href="/lab-diamonds/" class="btn common_black_btn outline-btn py-2 px-4 fw-400 text-uppercase ">CONTINUE SHOPPING</a></div>
+         <div class="container-fluid d-flex flex-column align-items-center mt-4 wishlist-empty"><h4 class="text-uppercase fw-700">Your wishlist is empty.</h4><p class="text-center">Add items that you like to your wishlist. Review them anytime and easily move them to the bag</p><img alt="empty_wishlist" width="300" height="300" decoding="async" data-nimg="1" class="img-fluid" src="<?php echo get_stylesheet_directory_uri() . '/aj_custom/whishlist/empty-wishlist.png';?>"><a href="/shop/" class="btn common_black_btn outline-btn py-2 px-4 fw-400 text-uppercase ">CONTINUE SHOPPING</a></div>
 
 
         <?php else : ?>

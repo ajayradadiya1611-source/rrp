@@ -127,7 +127,7 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 	    
 	    <h4 class="mb-3">No Orders</h4>
 	    
-	    <a href="/lab-diamonds/" class="btn btn-dark px-4 oc-dark">
+	    <a href="/shop/" class="btn btn-dark px-4 oc-dark">
 	      Go To Shopping
 	    </a>
 
