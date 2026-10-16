@@ -26,46 +26,22 @@
   }
 }
 
-// Quantity box beside the Add To Bag button
+// Quantity number field beside the Add To Bag button
 .ls-qty {
     display: inline-flex;
     flex: 0 0 auto;
     align-items: stretch;
     height: 50px;
-    border: 1px solid #ddd;
-    background: #fff;
-
-    &__btn {
-        width: 38px;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        font-size: 20px;
-        line-height: 1;
-        color: #222;
-        cursor: pointer;
-
-        &:hover {
-            background: #f3f3f3;
-        }
-    }
 
     // beats the generic ".add_cart input" rule
     .ls-qty__input {
-        width: 46px;
+        width: 80px;
         height: 100%;
-        padding: 0;
-        border: 0;
+        padding: 0 8px;
+        border: 1px solid #ddd;
+        background: #fff;
         text-align: center;
         font-size: 15px;
-        -moz-appearance: textfield;
-        appearance: textfield;
-
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            margin: 0;
-            -webkit-appearance: none;
-        }
     }
 
     + .common_btn {
@@ -336,4 +312,9 @@
             color: #777;
         }
     }
+}
+
+// Variation labels (Size, Purity, Color, Unit ...) always uppercase
+.custom-variations-form .common_select_dropdown label {
+    text-transform: uppercase;
 }
