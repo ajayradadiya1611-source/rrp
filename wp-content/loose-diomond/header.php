@@ -229,6 +229,7 @@ $oc_main_menu = array(
               <li class="nav-item dropdown">
                 <a href="<?php echo esc_url($m['url'] === '#' ? '#' : get_site_url() . $m['url']); ?>" class="nav-link dropdown-toggle">
                   <?php echo esc_html($m['label']); ?>
+                <i class="fa-solid fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu">
                   <?php foreach ($m['children'] as $c): ?>

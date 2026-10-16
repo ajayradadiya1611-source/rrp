@@ -29,3 +29,26 @@
         max-width: 25px !important;
     }
 }
+
+// Small down arrow on top-level menu items that have a dropdown
+.header_wrap .navbar-nav .nav-item.dropdown > .dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    > i.fa-angle-down {
+        font-size: 10px;
+        line-height: 1;
+        transition: transform 0.3s ease;
+    }
+
+    &.show > i.fa-angle-down {
+        transform: rotate(180deg);
+    }
+}
+
+.header_wrap .navbar-nav .nav-item.dropdown:hover > .dropdown-toggle > i.fa-angle-down {
+    @media screen and (min-width: 992px) {
+        transform: rotate(180deg);
+    }
+}
