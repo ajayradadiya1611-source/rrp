@@ -1,0 +1,77 @@
+// Fancy Shape White Diamonds (page-fancy-shape-white-diamonds.php)
+.fancy-shapes {
+    padding-bottom: 60px;
+
+    &__title {
+        margin: 30px 0 10px;
+        font-size: clamp(26px, 3vw, 36px);
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__desc {
+        max-width: 760px;
+        margin: 0 auto 40px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 215px;
+        padding: 0 0 0 45px;
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+    }
+
+    &__txt {
+        flex: 0 0 auto;
+        max-width: 55%;
+
+        h2 {
+            margin: 0 0 18px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+    }
+
+    &__btn {
+        display: inline-block;
+        padding: 10px 26px;
+        border: 1px solid #2d3f8f;
+        color: #2d3f8f;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        background: #fff;
+
+        &:hover {
+            background: #2d3f8f;
+            color: #fff;
+        }
+    }
+
+    &__img {
+        align-self: stretch;
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 50%;
+        object-fit: contain;
+        object-position: right center;
+    }
+}

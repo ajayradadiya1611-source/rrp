@@ -28,10 +28,10 @@ get_header();
             </div>
             <div class="col-lg-6">
                 <h2 class="main_title">
-                    42+ Years of Experience in the Diamond Industry
+                    43+ Years of Experience in the Diamond Industry
                 </h2>
                 <p class="text_p mb_40">
-                    Established in 1984, RRP Diamond has over 42 years of experience in the diamond industry. For more than four decades, we've been committed to creating a more sustainable future. We believe beautiful diamonds shouldn't come at the expense of our planet, which is why we proudly manufacture laboratory-grown diamonds.
+                    Established in 1984, RRP Diamond has over 43 years of experience in the diamond industry. For more than four decades, we've been committed to creating a more sustainable future. We believe beautiful diamonds shouldn't come at the expense of our planet, which is why we proudly manufacture laboratory-grown diamonds.
                 </p>
                 <p class="text_p mb_40">
                     RRP Diamond is a trusted manufacturer and supplier of 100% GIA, IGI, and GCAL-certified lab-grown diamonds, as well as custom engagement rings, wedding bands, and fine jewelry.
