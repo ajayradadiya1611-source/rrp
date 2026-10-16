@@ -100,6 +100,7 @@ export default function InventoryApp3() {
   const sliderRefs = useRef({});
 
   const [terms, setTerms] = useState({});
+  const extraAttributeFilters = window?.LD_THEME?.extraAttributeFilters || [];
   // Static terms list for "ready-to-ship" category
   const readyToShipTerms = [
     { term_id: 1936, name: 'Engagement Rings', slug: 'ready-to-ship-engagement-ring', count: 23 },
@@ -135,7 +136,8 @@ console.log("Wishlist IDs loaded:", wishlistIds);
     let mounted = true;
     const fetchTerms = async () => {
       try {
-        const attributes = ["style", "shape"];
+        // extra attribute filters are defined per category in PHP (LD_THEME.extraAttributeFilters)
+        const attributes = ["style", "shape", ...extraAttributeFilters.map((f) => f.attribute)];
         const exclude = [
           "bespoke", "antique-loose-black-diamonds", 
           "hoops-and-drops", "tennis", "4-prong", "4-prong-lgdfsp-01", "bezel-lgdfsp-11", "solitaire-lgdfp-09",
@@ -484,6 +486,21 @@ console.log("Wishlist IDs loaded:", wishlistIds);
                 {((  isshow_shape==true  ) && categorySlug !== 'chains'  && categorySlug !== 'ready-to-ship-lab-diamonds' )&& (
                   <FilterDropdown id="diamond-shape" menuWidth="match-button" menuWidthMobile={280} title="Diamond Shape" activeId={activeDropdown} toggle={toggleDropdown} terms={terms.shape || []} attribute="shape" selectedValues={selectedFilters.shape || []} disabledFilter={disabledFilter} />
                 )}
+
+                {extraAttributeFilters.map((f) => (
+                  <FilterDropdown
+                    key={f.attribute}
+                    id={f.attribute}
+                    menuWidth="match-button"
+                    menuWidthMobile={280}
+                    title={f.title}
+                    activeId={activeDropdown}
+                    toggle={toggleDropdown}
+                    terms={terms[f.attribute] || []}
+                    attribute={f.attribute}
+                    selectedValues={selectedFilters[f.attribute] || []}
+                  />
+                ))}
 
                 <FilterDropdown
                   id="price"

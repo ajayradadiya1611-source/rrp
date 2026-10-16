@@ -300,6 +300,21 @@ function lgd_enqueue_inventory_listing() {
             ),
         ),
     );
+    // Extra attribute filters per category (attribute slug without "pa_" + dropdown title)
+    $extra_filters_by_category = array(
+        'salt-and-pepper-diamonds' => array(
+            array( 'attribute' => 'sizef',            'title' => 'Product Size' ),
+            array( 'attribute' => 'salt-pepper-size', 'title' => 'Size' ),
+        ),
+    );
+    foreach ( array( 'categorySlug', 'parentCategorySlug' ) as $slug_key ) {
+        $slug = isset( $localize_data[ $slug_key ] ) ? $localize_data[ $slug_key ] : '';
+        if ( $slug && isset( $extra_filters_by_category[ $slug ] ) ) {
+            $localize_data['extraAttributeFilters'] = $extra_filters_by_category[ $slug ];
+            break;
+        }
+    }
+
     foreach ( array( 'categorySlug', 'parentCategorySlug' ) as $slug_key ) {
         $slug = isset( $localize_data[ $slug_key ] ) ? $localize_data[ $slug_key ] : '';
         if ( $slug && isset( $term_include_by_category[ $slug ] ) ) {
