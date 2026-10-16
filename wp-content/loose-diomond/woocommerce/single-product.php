@@ -235,7 +235,7 @@ if ( ! empty( $short_description ) ) {
 											<div class="common_select_dropdown mb_15">
 												<div class="ls-label-row">
 													<label for="<?php echo esc_attr(sanitize_title($attr_name)); ?>">
-														<?php echo wc_attribute_label($attr_name); ?>
+														 <?php echo esc_html( ucfirst( wc_attribute_label( $attr_name ) ) ); ?>
 													</label>
 													<?php if ( function_exists( 'ls_variation_guide_link' ) ) { echo ls_variation_guide_link( $attr_name ); } ?>
 												</div>
@@ -863,7 +863,6 @@ single_product_experience_history();
 echo '<div class="light_gray_background ">';
 single_product_what_customer_say();
 echo '</div>';
-
 if (! has_term( array('custom'), 'product_cat', $product_id ) ){
 ?>
 	<div class="oc-related-product   pt-5">
