@@ -198,7 +198,7 @@ function ls_handle_email_subscribe() {
         wp_send_json_error( array( 'message' => __( 'Something went wrong. Please try again later.', 'textdomain' ) ) );
     }
  
-    wp_send_json_success( array( 'message' => __( 'Thank you for subscribing to the Loose Grown Diamond newsletter.', 'textdomain' ) ) );
+    wp_send_json_success( array( 'message' => __( 'Thank you for subscribing to the RRP Diamond newsletter.', 'textdomain' ) ) );
 }
 add_action( 'wp_ajax_ls_email_subscribe',        'ls_handle_email_subscribe' );
 add_action( 'wp_ajax_nopriv_ls_email_subscribe', 'ls_handle_email_subscribe' );

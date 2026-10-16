@@ -22,18 +22,18 @@ function ls_rest_contact_us(WP_REST_Request $request)
     }
 
     $to = get_option('admin_email');
-    $subject = 'Thank You for Contacting Us | Loose Grown Diamond ';
+    $subject = 'Thank You for Contacting Us | RRP Diamond ';
     ob_start();
 
     
         $html_content = '
         Hello ' . esc_html($name) . ',<br><br>
-        Thank you for reaching out to Loose Grown Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
+        Thank you for reaching out to RRP Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
         If you didn&rsquo;t hear back, please check your spam or junk folder.<br><br>
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
         <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
-        Team Loose Grown Diamond<br>';
+        Team RRP Diamond<br>';
     
     
     wc_get_template(
@@ -173,7 +173,7 @@ function ls_rest_ask_us(WP_REST_Request $request)
     
 
     $to = get_option('admin_email');
-    $subject ='We’ve Received Your Diamond Search Request | Loose Grown Diamond"';
+    $subject ='We’ve Received Your Diamond Search Request | RRP Diamond"';
     $name = sanitize_text_field($request->get_param('name'));
     $email = sanitize_email($request->get_param('email'));
     $message = sanitize_textarea_field($request->get_param('message'));
@@ -188,12 +188,12 @@ function ls_rest_ask_us(WP_REST_Request $request)
     
         $html_content = '
         Hello ' . esc_html($name) . ',<br><br>
-        Thank you for reaching out to Loose Grown Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
+        Thank you for reaching out to RRP Diamond. We&rsquo;re happy to have received your inquiry. One of our customer support representatives will get back to you within 12&ndash;24 business hours.<br><br>
         If you didn&rsquo;t hear back, please check your spam or junk folder.<br><br>
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
         <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
-        Team Loose Grown Diamond<br>';
+        Team RRP Diamond<br>';
     
     wc_get_template(
         'inc/email-templates/forms/customer-send.php',
@@ -353,7 +353,7 @@ function ls_rest_custom_setting_request(WP_REST_Request $request)
     //print_r( $attachments);
 
     $to = get_option('admin_email');
-    $subject = 'Thank You for Your Custom Setting Inquiry | Loose Grown Diamond';
+    $subject = 'Thank You for Your Custom Setting Inquiry | RRP Diamond';
 
 
     ob_start();
@@ -365,7 +365,7 @@ function ls_rest_custom_setting_request(WP_REST_Request $request)
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
         <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
-        Team Loose Grown Diamond<br>';
+        Team RRP Diamond<br>';
     
     
     wc_get_template(
@@ -484,17 +484,17 @@ function ls_rest_feedback(WP_REST_Request $request)
     }
 
     $to = get_option('admin_email');
-    $subject = 'Thank You for Your Feedback | Loose Grown Diamond' ;
+    $subject = 'Thank You for Your Feedback | RRP Diamond' ;
     ob_start();
     
         $html_content = '
         Hi ' . esc_html($name) . ',<br><br>
-        Thank you for sharing your feedback with us. We truly appreciate you taking the time to help us improve your experience with Loose Grown Diamond.<br><br>
+        Thank you for sharing your feedback with us. We truly appreciate you taking the time to help us improve your experience with RRP Diamond.<br><br>
         Our team will review your feedback and get back to you shortly if a response is required.<br><br>
         If you have any further questions or need immediate assistance, please feel free to contact us via WhatsApp:<br>
         <a href="https://wa.me/919016106290">+91 9016106290</a><br><br>
         Best regards,<br>
-        Team Loose Grown Diamond<br>';
+        Team RRP Diamond<br>';
     
     
     wc_get_template(
@@ -621,7 +621,7 @@ function ls_rest_wholesale(WP_REST_Request $request)
     $message = trim($message);
 
     $to      = get_option('admin_email');
-    $subject = 'Thank You for Your Wholesale Inquiry | Loose Grown Diamond';
+    $subject = 'Thank You for Your Wholesale Inquiry | RRP Diamond';
     $headers = ['Content-Type: text/html; charset=UTF-8'];
 
     ob_start();
@@ -630,7 +630,7 @@ function ls_rest_wholesale(WP_REST_Request $request)
         Thank you for your wholesale inquiry. Our team will review your details and get back to you within 12&ndash;24 business hours.<br><br>
         If you didn&rsquo;t hear back, please check your spam or junk folder.<br><br>
         Best regards,<br>
-        Team Loose Grown Diamond<br>';
+        Team RRP Diamond<br>';
     wc_get_template(
         'inc/email-templates/forms/customer-send.php',
         [

@@ -921,14 +921,14 @@ function ls_ajax_video_request()
     }
 
     $to = get_option('admin_email');
-    $subject = 'Loose Grown Diamond - "Video Request"';
+    $subject = 'RRP Diamond - "Video Request"';
     $message = 'Customer requested a video for diamond SKU: ' . $sku;
 
     ob_start();
     
         $html_content = '
         Hi ' . esc_html($firstName) . ',<br><br>
-        Greetings from Loose Grown Diamond,<br><br>
+        Greetings from RRP Diamond,<br><br>
         We received your video request for SKU <strong>' . esc_html($sku) . '</strong>. As inventory is live, please note the diamond may sell out before the video is ready. Our team will get back to you within 24-48 business hours.<br><br>
         For faster assistance, you can directly call, WhatsApp, or text us at +91 9016106290.<br><br>
         Regards,<br>' . SITE_OC_NAME;

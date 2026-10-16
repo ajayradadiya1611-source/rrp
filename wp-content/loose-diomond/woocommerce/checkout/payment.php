@@ -78,7 +78,7 @@ if ( ! wp_doing_ajax() ) {
 
 		<?php wp_nonce_field( 'woocommerce-process_checkout', 'woocommerce-process-checkout-nonce' ); ?>
 	</div>
-    <p  class="mt-2 mb-5" style="font-size: 12px;" >By placing your order, you agree to Loose Grown Diamond’s <a href="/term-of-use/">Terms</a> and <a href="/privacy-policy/">Privacy Policy</a>. We may send you communications</p>
+    <p  class="mt-2 mb-5" style="font-size: 12px;" >By placing your order, you agree to RRP Diamond’s <a href="/term-of-use/">Terms</a> and <a href="/privacy-policy/">Privacy Policy</a>. We may send you communications</p>
 </div>
 <?php
 if ( ! wp_doing_ajax() ) {

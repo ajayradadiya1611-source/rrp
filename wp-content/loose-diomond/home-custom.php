@@ -363,7 +363,7 @@ $black_shapes = [
                     <img
                         src="<?php echo esc_url( $insta_dir . $i . '.jpeg' ); ?>"
                         class="img-fluid rounded"
-                        alt="Loose Grown Diamond Instagram post <?php echo $i; ?>"
+                        alt="RRP Diamond Instagram post <?php echo $i; ?>"
                         width="400"
                         height="400"
                         loading="lazy"

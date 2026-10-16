@@ -27,7 +27,7 @@ $inventory_faq = array(
     ),
     array(
         'question' => 'Where can I buy lab grown diamonds online?',
-        'answer'   => 'To get high quality lab grown diamonds online one of the most reputable online platforms is Loose Grown Diamond. Our website provides certified diamonds with detailed specifications and transparent policies.'
+        'answer'   => 'To get high quality lab grown diamonds online one of the most reputable online platforms is RRP Diamond. Our website provides certified diamonds with detailed specifications and transparent policies.'
     ),
     array(
         'question' => 'Are lab grown diamonds more ethical than mined diamonds?',
@@ -39,7 +39,7 @@ $inventory_faq = array(
     ),
     array(
         'question' => 'Do you offer financing options for lab grown diamonds?',
-        'answer'   => 'Yes, Loose grown diamond provides exceptional <a href="/diamond-financing/">financing</a> options for lab diamonds with transparent policies and easy installments.'
+        'answer'   => 'Yes, RRP Diamond provides exceptional <a href="/diamond-financing/">financing</a> options for lab diamonds with transparent policies and easy installments.'
     ),
     array(
         'question' => 'How often is your loose lab diamond inventory updated?',
@@ -91,7 +91,7 @@ $inventory_color_faq = array(
     ),
     array(
         'question' => 'Where to buy colored lab grown diamonds online?',
-        'answer'   => 'You can buy certified fancy colored lab grown diamonds online from trusted retailers like Loose Grown Diamond, which offer certified diamonds, transparent pricing, and customization options to suit your preferences.'
+        'answer'   => 'You can buy certified fancy colored lab grown diamonds online from trusted retailers like RRP Diamond, which offer certified diamonds, transparent pricing, and customization options to suit your preferences.'
     )
 );
 
@@ -145,7 +145,7 @@ Please note that increasing the band width may increase the ring’s total gold 
             ),
             array(
                 'question' => 'Do you offer free resizing for all your rings?',
-                'answer'   => 'Yes! We offer one complimentary ring resize within '.RETURN_DAYS.' days of delivery on all rings purchased from Loose Grown Diamond.<br><br>
+                'answer'   => 'Yes! We offer one complimentary ring resize within '.RETURN_DAYS.' days of delivery on all rings purchased from RRP Diamond.<br><br>
                 To request a resize, simply contact our support team via live chat or email us at <a href="mailto:'.SUPPORT_EMAIL.'">'.SUPPORT_EMAIL.'</a>. To help us process your request as quickly as possible, please have your order number and desired ring size ready.<br><br>
                 Please note: Certain wedding bands cannot be resized and are not covered under this policy.'
             ),
@@ -243,7 +243,7 @@ Please note that increasing the band width may increase the ring’s total gold 
             ),
             array(
                 'question'      => 'Do you offer free resizing for all your rings?',
-                'answer'        => 'Yes! We offer one complimentary ring resize within '.RETURN_DAYS.' days of delivery on all rings purchased from Loose Grown Diamond.<br><br>
+                'answer'        => 'Yes! We offer one complimentary ring resize within '.RETURN_DAYS.' days of delivery on all rings purchased from RRP Diamond.<br><br>
                 To request a resize, simply contact our support team via live chat or email us at <a href="mailto:'.SUPPORT_EMAIL.'">'.SUPPORT_EMAIL.'</a>. To help us process your request as quickly as possible, please have your order number and desired ring size ready.<br><br>
                 <strong>Please note:</strong> Certain wedding bands cannot be resized and are not covered under this policy.'
             ),
@@ -682,7 +682,7 @@ If the package is returned and needs to be reshipped, a $50 reshipping fee will 
     ],
     [
         'title' => 'What if my diamond or jewelry gets lost during shipment?',
-        'description' => '<div><p>At Loose Grown Diamond, we take every precaution to ensure your order arrives safely. All shipments are fully insured during transit and require an adult signature upon delivery.</p>
+        'description' => '<div><p>At RRP Diamond, we take every precaution to ensure your order arrives safely. All shipments are fully insured during transit and require an adult signature upon delivery.</p>
 <p>In the unlikely event that your package is lost in transit, we will investigate the shipment with the carrier. If the package is confirmed as lost, you will receive either a full refund or a replacement, based on your preference and product availability.</p></div>'
     ],
     [
@@ -705,7 +705,7 @@ $returnfaqData = [
         'description' => '<div><p>We want you to shop with complete confidence. That\'s why we offer a ' . RETURN_DAYS . '-day return policy, giving you plenty of time to inspect your purchase, try it on, and ensure it\'s exactly what you expected.</p><p>If you\'re not completely satisfied, you can return your eligible item within ' . RETURN_DAYS . ' days of delivery, subject to our Returns &amp; Refund Policy.</p><p><strong>Note: The ' . RETURN_DAYS . '-day return period begins on the date your order is delivered.</strong></p></div>'
     ],
     [
-        'title' => 'What is Loose Grown Diamond\'s cancellation policy?',
+        'title' => 'What is RRP Diamond\'s cancellation policy?',
         'description' => '<div><p>You may cancel your order before it has been packed or shipped. Once an order has been shipped, it can no longer be canceled. Please contact our support team as soon as possible if you need assistance.</p></div>'
     ],
     [
@@ -866,8 +866,8 @@ $engagementRingFinancingFaqData = [
 global $faq_page_about;
 $faq_page_about = [
                             [
-                                'title' => 'What is Loose Grown Diamond?',
-                                'description' => '<div><p>Loose Grown Diamond is a leading manufacturer and retailer of premium lab-grown diamonds and fine jewelry, offering exceptional quality directly to customers at competitive prices.</p></div>'
+                                'title' => 'What is RRP Diamond?',
+                                'description' => '<div><p>RRP Diamond is a leading manufacturer and retailer of premium lab-grown diamonds and fine jewelry, offering exceptional quality directly to customers at competitive prices.</p></div>'
                             ],
                             [
                                 'title' => 'Why are our prices so competitive?',
@@ -877,7 +877,7 @@ $faq_page_about = [
                             ],
                             [
                                 'title' => 'Do you have a retail store near me?',
-                                'description' => '<div><p>Loose Grown Diamond has a showroom and office in New York City. If you\'d like to visit us, please schedule an appointment in advance, and our team will be happy to assist you.</p>
+                                'description' => '<div><p>RRP Diamond has a showroom and office in New York City. If you\'d like to visit us, please schedule an appointment in advance, and our team will be happy to assist you.</p>
                                 <p>As an online-first retailer, we keep our operating costs low and work directly with manufacturers. This allows us to offer certified lab-grown diamonds and fine jewelry at manufacturer-direct prices without compromising on quality or service.</p> 
                                 <p>We also offer <strong>Free insured shipping</strong> on orders over <strong>$500, 7-day returns and Expert support</strong> from our GIA-certified gemologists.</p></div>'
                                     
@@ -889,8 +889,8 @@ $faq_page_about = [
 </div>'
                             ],
                             [
-                                'title' => 'Where is the corporate office of Loose Grown Diamond located?',
-                                'description' => '<div><p>Our corporate office is located in Surat, Gujarat. The address is listed below:<br><br>Loose Grown Diamond Corporate Office<br>2nd Floor, Red Turning Point,<br>Near, Matawadi Police Chowki, L.H.Road,<br>Varachha, Surat, Gujarat - 395006</p><p>If you\'d like to visit us, please schedule an appointment in advance, and our team will be happy to assist you.</p></div>'
+                                'title' => 'Where is the corporate office of RRP Diamond located?',
+                                'description' => '<div><p>Our corporate office is located in Surat, Gujarat. The address is listed below:<br><br>RRP Diamond Corporate Office<br>2nd Floor, Red Turning Point,<br>Near, Matawadi Police Chowki, L.H.Road,<br>Varachha, Surat, Gujarat - 395006</p><p>If you\'d like to visit us, please schedule an appointment in advance, and our team will be happy to assist you.</p></div>'
                             ],
                             [
                                 'title' => 'Can I take a virtual tour of your factory?',
@@ -922,7 +922,7 @@ $faq_page_diamond_jewelry = [
                             [
                                 'title' => 'I found the same diamond on another retailer\'s website. Can I buy it from you?',
                                 'description' => '<div>
-<div>Absolutely! Simply share the product URL and we\'ll review it and we\'ll match or even beat the competitor\'s price.</div><p>You\'ll enjoy the same certified diamond, exceptional customer service, and the confidence of shopping with Loose Grown Diamond.</p>
+<div>Absolutely! Simply share the product URL and we\'ll review it and we\'ll match or even beat the competitor\'s price.</div><p>You\'ll enjoy the same certified diamond, exceptional customer service, and the confidence of shopping with RRP Diamond.</p>
 </div>'
                             ],
                             [
@@ -1021,12 +1021,12 @@ $faq_page_diamond_jewelry = [
                                 'description' => '<div><p>Yes! Your first CAD/3D design is completely free. We don\'t charge for creating the initial CAD/3D model of your custom jewelry, and we offer unlimited revisions to that design until you\'re satisfied.</p><p>However, if you decide to change the <strong>entire ring setting</strong> or request a <strong>new CAD/3D design</strong> after the initial design has been completed, each additional CAD/3D design will incur a <strong>non-refundable fee of $20</strong>.</p><p>This fee helps cover the time and resources required to create a completely new design.</p></div>'
                             ],
                             [
-                                'title' => 'If I order a diamond and a setting from Loose Grown Diamond, will it arrive as a complete ring?',
-                                'description' => '<div><p>Yes! If you purchase both a diamond and a setting from Loose Grown Diamond, your diamond will be professionally set by our expert jewelers and shipped to you as a fully assembled, ready-to-wear ring.</p><p>Before shipping, every ring undergoes a thorough quality inspection to ensure it meets our high standards of craftsmanship and security.</p></div>'
+                                'title' => 'If I order a diamond and a setting from RRP Diamond, will it arrive as a complete ring?',
+                                'description' => '<div><p>Yes! If you purchase both a diamond and a setting from RRP Diamond, your diamond will be professionally set by our expert jewelers and shipped to you as a fully assembled, ready-to-wear ring.</p><p>Before shipping, every ring undergoes a thorough quality inspection to ensure it meets our high standards of craftsmanship and security.</p></div>'
                             ],
                             [
-                                'title' => 'Can I buy a setting without a diamond from Loose Grown Diamond?',
-                                'description' => '<div><p>Yes! You can purchase a setting without a center diamond from Loose Grown Diamond.</p><p>If you plan to use your own diamond, please provide us with the diamond\'s grading certificate (IGI, GIA, or GCAL) or its exact measurements (length × width × depth) before placing your order. This allows our jewelers to craft the setting for a precise and secure fit.</p><p>Please note: Since the setting is custom-made specifically for your diamond, orders for settings without a center diamond are final sale and are not eligible for return or exchange.</p><p>If you have any questions about compatibility, our customer support team will be happy to assist you before you place your order.</p></div>'
+                                'title' => 'Can I buy a setting without a diamond from RRP Diamond?',
+                                'description' => '<div><p>Yes! You can purchase a setting without a center diamond from RRP Diamond.</p><p>If you plan to use your own diamond, please provide us with the diamond\'s grading certificate (IGI, GIA, or GCAL) or its exact measurements (length × width × depth) before placing your order. This allows our jewelers to craft the setting for a precise and secure fit.</p><p>Please note: Since the setting is custom-made specifically for your diamond, orders for settings without a center diamond are final sale and are not eligible for return or exchange.</p><p>If you have any questions about compatibility, our customer support team will be happy to assist you before you place your order.</p></div>'
                             ],
                             [
                                 'title' => 'Does your fine jewelry come with a certificate?',
@@ -1062,7 +1062,7 @@ $faq_page_payments = [
                             ],
                             [
                                 'title' => 'Why wasn\'t my purchase approved by Klarna?',
-                                'description' => '<div><p>Klarna independently reviews every financing application and makes the final approval decision based on its own eligibility criteria, which may include your credit profile, payment history, purchase amount, and other factors. <a href="https://www.klarna.com/us/customer-service/why-was-my-purchase-not-approved-with-klarna/">Read more here</a> </p><p>Unfortunately, Loose Grown Diamond does not have access to the reason for a declined application and cannot influence Klarna\'s decision.</p><p>If your application wasn\'t approved, you can:</p><ul><li>Try another payment method, such as a credit/debit card, Wire Transfer, Wise, or Cryptocurrency.</li><li>Choose an alternative financing provider, such as Affirm, Splitit or Afterpay (if eligible).</li></ul><p>If you need assistance completing your purchase, please contact our customer support team - we\'ll be happy to help you find the best payment option.</p></div>'
+                                'description' => '<div><p>Klarna independently reviews every financing application and makes the final approval decision based on its own eligibility criteria, which may include your credit profile, payment history, purchase amount, and other factors. <a href="https://www.klarna.com/us/customer-service/why-was-my-purchase-not-approved-with-klarna/">Read more here</a> </p><p>Unfortunately, RRP Diamond does not have access to the reason for a declined application and cannot influence Klarna\'s decision.</p><p>If your application wasn\'t approved, you can:</p><ul><li>Try another payment method, such as a credit/debit card, Wire Transfer, Wise, or Cryptocurrency.</li><li>Choose an alternative financing provider, such as Affirm, Splitit or Afterpay (if eligible).</li></ul><p>If you need assistance completing your purchase, please contact our customer support team - we\'ll be happy to help you find the best payment option.</p></div>'
                             ],
                             [
                                 'title' => 'I\'m trying to place an order through Splitit, but it isn\'t working. Why?',
@@ -1085,6 +1085,6 @@ $faq_page_insurance_care = [
                             ],
                             [
                                 'title' => 'Do you offer jewelry insurance?',
-                                'description' => '<div><p>While we do not directly provide jewelry insurance, we do provide an insurance appraisal with your purchase that you can use to obtain coverage.</p><p>For added peace of mind, we\'ve partnered with Jewelers Mutual® Insurance Company and Extend to offer the option of insuring your jewelry through their personal jewelry insurance plans. Applying is quick and easy, helping protect your jewelry against theft, loss, damage, and more. <a href="https://www.loosegrowndiamond.com/jewelry-insurance/">Learn more here</a>.</p><p>Important:</p><p>Jewelry insurance is available in all U.S. states and Canada, except the province of Quebec. Loose Grown Diamond is not a licensed insurance agent or broker for Jewelers Mutual Insurance Company and does not sell or endorse insurance products. Coverage is subject to Jewelers Mutual\'s terms, conditions, and eligibility requirements.</p></div>'
+                                'description' => '<div><p>While we do not directly provide jewelry insurance, we do provide an insurance appraisal with your purchase that you can use to obtain coverage.</p><p>For added peace of mind, we\'ve partnered with Jewelers Mutual® Insurance Company and Extend to offer the option of insuring your jewelry through their personal jewelry insurance plans. Applying is quick and easy, helping protect your jewelry against theft, loss, damage, and more. <a href="https://www.loosegrowndiamond.com/jewelry-insurance/">Learn more here</a>.</p><p>Important:</p><p>Jewelry insurance is available in all U.S. states and Canada, except the province of Quebec. RRP Diamond is not a licensed insurance agent or broker for Jewelers Mutual Insurance Company and does not sell or endorse insurance products. Coverage is subject to Jewelers Mutual\'s terms, conditions, and eligibility requirements.</p></div>'
                             ],
                         ];

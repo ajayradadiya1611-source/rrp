@@ -2,7 +2,7 @@
 /**
  * Customer Reset Password email
  *
- * Custom override for Loose Grown Diamond.
+ * Custom override for RRP Diamond.
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
@@ -37,7 +37,7 @@ $reset_url = add_query_arg(
 
 <p><?php printf( esc_html__( 'Hello %s,', 'woocommerce' ), esc_html( $display_name ) ); ?></p>
 
-<p><?php esc_html_e( 'We received a request to reset the password for your Loose Grown Diamond account.', 'woocommerce' ); ?></p>
+<p><?php esc_html_e( 'We received a request to reset the password for your RRP Diamond account.', 'woocommerce' ); ?></p>
 
 <p><?php echo wp_kses( sprintf( __( 'Username: <b>%s</b>', 'woocommerce' ), esc_html( $user_login ) ), array( 'b' => array() ) ); ?></p>
 
@@ -50,7 +50,7 @@ $reset_url = add_query_arg(
 <p><?php esc_html_e( 'For security reasons, we recommend not sharing this email or your password reset link with anyone.', 'woocommerce' ); ?></p>
 
 <p><?php esc_html_e( 'Best regards,', 'woocommerce' ); ?><br>
-<?php esc_html_e( 'Team Loose Grown Diamond', 'woocommerce' ); ?></p>
+<?php esc_html_e( 'Team RRP Diamond', 'woocommerce' ); ?></p>
 
 <?php echo $email_improvements_enabled ? '</div>' : ''; ?>
 

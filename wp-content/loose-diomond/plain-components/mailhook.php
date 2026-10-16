@@ -286,12 +286,12 @@ function my_custom_email_content( $order, $sent_to_admin, $plain_text, $email ) 
                 </p>
 
                 <p>
-                    Thank you for choosing Loose Grown Diamond.
+                    Thank you for choosing RRP Diamond.
                 </p>
 
                 <p>
                     Best regards,<br/>
-                    Loose Grown Diamond
+                    RRP Diamond
                 </p>';
 
             } else {

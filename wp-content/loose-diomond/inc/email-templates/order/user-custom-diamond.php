@@ -77,7 +77,7 @@ defined( 'ABSPATH' ) || exit;
             <div >
                 <p>
                     Best regards,<br>
-                    <strong>Team Loose Grown Diamond</strong>
+                    <strong>Team RRP Diamond</strong>
                 </p>
             </div>
 

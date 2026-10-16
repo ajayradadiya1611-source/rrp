@@ -2,7 +2,7 @@
 /**
  * Customer new account email
  *
- * Custom override for Loose Grown Diamond.
+ * Custom override for RRP Diamond.
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
@@ -21,7 +21,7 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p><?php printf( esc_html__( 'Hello %s,', 'woocommerce' ), esc_html( $user_login ) ); ?></p>
 
-<p><?php esc_html_e( 'Welcome to Loose Grown Diamond!', 'woocommerce' ); ?></p>
+<p><?php esc_html_e( 'Welcome to RRP Diamond!', 'woocommerce' ); ?></p>
 
 <p><?php esc_html_e( 'Thank you for creating an account with us. Your account is now active and ready to use.', 'woocommerce' ); ?></p>
 
@@ -39,7 +39,7 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 <p><?php esc_html_e( 'We look forward to helping you find the perfect diamond or jewelry piece.', 'woocommerce' ); ?></p>
 
 <p><?php esc_html_e( 'Best regards,', 'woocommerce' ); ?><br>
-<?php esc_html_e( 'Team Loose Grown Diamond', 'woocommerce' ); ?></p>
+<?php esc_html_e( 'Team RRP Diamond', 'woocommerce' ); ?></p>
 
 <?php echo $email_improvements_enabled ? '</div>' : ''; ?>
 

@@ -20,22 +20,21 @@ get_header();
                             href=""> click here.</a> In addition, we offer the loosegrowndiamond.com Safe Purchase
                         Guarantee (see here: <a href="<?php echo get_site_url();?>/faq/#Insurance_Care"> <?php echo get_site_url();?>/faq/#Insurance_Care </a>)
                         to ensure your comfort when buying on a Site.</p>
-                    <p>“Loose Grown Diamond” is a brand operated by Grown Diamond LLC <strong> (“Grown Diamond
+                    <p>“RRP Diamond” is a brand operated by Grown Diamond LLC <strong> (“Grown Diamond
                         LLC”, “we“, “our” or “us“) </strong>, which provides services to you subject to the terms
                         and conditions included in this General Terms and Conditions of Sale (“<strong> Terms
                         </strong>“) and other customer service pages which we have prepared to help make your
-                        shopping experience with Loose Grown Diamond as enjoyable and problem-free as possible.
-                        Please read them carefully. By visiting or using the Site or any other Loose Grown Diamond
+                        shopping experience with RRP Diamond as enjoyable and problem-free as possible.
+                        Please read them carefully. By visiting or using the Site or any other RRP Diamond
                         service you acknowledge that you have read and understood, and agree to be bound by, these
                         Terms. You also agree to comply with all applicable laws and regulations, including,
                         without limitation, the applicable copyright and trademark laws and not to violate any
                         third-party rights. In addition, You agree that you will not use, sell or supply any
-                        product(s) purchased from Loose Grown Diamond in an unlawful manner and, in particular,
+                        product(s) purchased from RRP Diamond in an unlawful manner and, in particular,
                         will comply with all export controls and sanctions rules. If you do not agree to these
                         Terms, please do not use the Site. Please note that we do not assume any responsibility or
-                        liability for your reliance on any tax-estimation tool available on Loose Grown Diamond’s
-                        Site. By purchasing Loose Grown Diamond products, you acknowledge that Loose Grown
-                        Diamond’s approved payment processors will take your payment, and approved carriers will
+                        liability for your reliance on any tax-estimation tool available on RRP Diamond’s
+                        Site. By purchasing RRP Diamond products, you acknowledge that RRP Diamond’s approved payment processors will take your payment, and approved carriers will
                         deliver your order.</p>
 
                     <h2 class="fw-500">Privacy</h2>
@@ -46,36 +45,33 @@ get_header();
                         any information submitted to us is true, complete, and accurate. Any breach of these Terms
                         and/or of the Privacy Policy may result in the suspension of your user account.</p>
                     <h2 class="fw-500">Ownership; Feedback and Copyright</h2>
-                    <p>This Site is owned and operated by Grown Diamond LLC, doing business as “Loose Grown
-                        Diamond.” Unless otherwise noted, all design and content included on this Site, including
+                    <p>This Site is owned and operated by Grown Diamond LLC, doing business as “RRP Diamond.” Unless otherwise noted, all design and content included on this Site, including
                         text, graphics, logos, icons, images, artwork, audio, and video clips, and software is the
-                        property of Loose Grown Diamond (or is used under license to Loose Grown Diamond) and, for
+                        property of RRP Diamond (or is used under license to RRP Diamond) and, for
                         the avoidance of doubt, it is protected by applicable copyright and trademark laws, and
                         other laws and regulations.</p>
-                    <p>To the extent you provide any feedback, comments, or suggestions to Loose Grown Diamond in
+                    <p>To the extent you provide any feedback, comments, or suggestions to RRP Diamond in
                         connection with your use of the Site (“Feedback“), you acknowledge that any and all rights,
-                        including intellectual property rights in such Feedback shall belong exclusively to Loose
-                        Grown Diamond, and that such Feedback shall be considered confidential information and you
-                        hereby irrevocably and unconditionally transfer and assign to Loose Grown Diamond all
+                        including intellectual property rights in such Feedback shall belong exclusively to RRP Diamond, and that such Feedback shall be considered confidential information and you
+                        hereby irrevocably and unconditionally transfer and assign to RRP Diamond all
                         intellectual property rights in such Feedback, and waive any and all moral rights that you
                         may have with respect thereto. It is further understood that the use of Feedback, if any,
-                        may be made by Loose Grown Diamond at its sole discretion and that Loose Grown Diamond in no
+                        may be made by RRP Diamond at its sole discretion and that RRP Diamond in no
                         way shall be obliged to make use of any kind of the Feedback or part thereof.</p>
 
                     <p> Notwithstanding the foregoing, we appreciate hearing from our customers and welcome your
-                        Feedback regarding Loose Grown Diamond’s Site and the products offered for sale by Loose
-                        Grown Diamond, provided that such Feedback is not illegal, obscene, threatening, defamatory,
+                        Feedback regarding RRP Diamond’s Site and the products offered for sale by RRP Diamond, provided that such Feedback is not illegal, obscene, threatening, defamatory,
                         invasive of privacy, infringements of intellectual property rights or otherwise
                         objectionable or injurious to third parties and does not contain or consist of viruses,
                         political campaigning, commercial solicitation, chain letters, mass mailings or any form of
                         “spam”. You may not use a false email address, impersonate any person, or otherwise mislead
                         us as to the origin of any Feedback.</p>
 
-                    <p>If you do submit Feedback, you should be aware that Loose Grown Diamond’s policies do not
+                    <p>If you do submit Feedback, you should be aware that RRP Diamond’s policies do not
                         permit us to accept or consider creative ideas, suggestions, inventions, or materials other
-                        than those that we have specifically requested. Loose Grown Diamond values your Feedback but
+                        than those that we have specifically requested. RRP Diamond values your Feedback but
                         requests that you be specific in your comments and not submit creative ideas, inventions,
-                        suggestions, or materials. Loose Grown Diamond shall not be liable for any use or disclosure
+                        suggestions, or materials. RRP Diamond shall not be liable for any use or disclosure
                         of any such Feedback.</p>
 
                     <p>In addition, any violation of our intellectual property rights, including, without
@@ -83,20 +79,16 @@ get_header();
                         liability for damages incurred, injunctive relief, and/or any other potential legal action.
                     </p>
                     <h2 class="fw-500">Trademarks</h2>
-                    <p>As between you and us, the Loose Grown Diamond website, including its graphics, logos,
-                        headers, icons, scripts, and service names, contains trademarks (“Marks”) of Loose Grown
-                        Diamond. Loose Grown Diamond’s Marks may not be used in connection with any product or
-                        service that is not Loose Grown Diamond’s, in any manner that is likely to cause confusion
-                        among customers or potential customers, or in any manner that harms or discredits Loose
-                        Grown Diamond. All other trademarks related to the products sold on this Site are the sole
+                    <p>As between you and us, the RRP Diamond website, including its graphics, logos,
+                        headers, icons, scripts, and service names, contains trademarks (“Marks”) of RRP Diamond. RRP Diamond’s Marks may not be used in connection with any product or
+                        service that is not RRP Diamond’s, in any manner that is likely to cause confusion
+                        among customers or potential customers, or in any manner that harms or discredits RRP Diamond. All other trademarks related to the products sold on this Site are the sole
                         property of their respective owners.</p>
 
                     <p>Nothing on this Site or in these Terms should be construed as any license or right to use any
-                        Marks displayed on the Site without the express written permission of Loose Grown Diamond or
-                        the trademark or service mark owner. Neither the names “loosegrowndiamond.com” or “Loose
-                        Grown Diamond” nor Loose Grown Diamond’s logos may be used for any purpose without Loose
-                        Grown Diamond’s prior written consent. Loose Grown Diamond’s logos may not be used as a
-                        “hot” link to any other website without Loose Grown Diamond’s prior written consent.</p>
+                        Marks displayed on the Site without the express written permission of RRP Diamond or
+                        the trademark or service mark owner. Neither the names “loosegrowndiamond.com” or “RRP Diamond” nor RRP Diamond’s logos may be used for any purpose without RRP Diamond’s prior written consent. RRP Diamond’s logos may not be used as a
+                        “hot” link to any other website without RRP Diamond’s prior written consent.</p>
                     <h2 class="fw-500">Use of the Site</h2>
                     <p>The Site and content are intended solely for personal and non-commercial use by visitors and
                         online shoppers. Any use of any Site or its content other than for personal and
@@ -139,9 +131,9 @@ get_header();
                         all
                         activities that occur under Your Account or password. If you are under 18 years old, you may
                         use
-                        loosegrowndiamond.com only with the involvement of a parent or guardian. Loose Grown Diamond
+                        loosegrowndiamond.com only with the involvement of a parent or guardian. RRP Diamond
                         reserves the right to refuse service, terminate accounts, remove or edit content or cancel
-                        orders in its sole discretion. If Loose Grown Diamond is suspicious of any fraudulent
+                        orders in its sole discretion. If RRP Diamond is suspicious of any fraudulent
                         activity
                         coming from your account, it can reserve the right to refuse you access to your Account and
                         can
@@ -153,10 +145,10 @@ get_header();
                         (“Confirmation Notice”). Loose diamonds are shipped 1-4 days after payment, though certain
                         diamonds may be shipped up to 14 days after payment, and all other jewelry and engagement
                         rings will be shipped in 1-3 weeks, depending on the production schedule of that item. Prior
-                        to dispatch of the product(s), Loose Grown Diamond has the right to decline an order at its
+                        to dispatch of the product(s), RRP Diamond has the right to decline an order at its
                         discretion and for any reason (for example, this may happen for legal or regulatory reasons
                         or for reasons related to availability or stock). To the maximum extent permitted by law,
-                        Loose Grown Diamond shall have no liability to you as a result of such refusal of any such
+                        RRP Diamond shall have no liability to you as a result of such refusal of any such
                         order submitted.</p>
 
                     <p>If we cannot supply you with the product or service you ordered, we will not process your
@@ -164,15 +156,15 @@ get_header();
                         product, we will refund you in full as soon as reasonably possible, but in any event no
                         later than 14 days after receipt of your payment.</p>
                     <h2 class="fw-500">Delivery</h2>
-                    <p>Loose Grown Diamond may choose the carriers at its discretion. Delivery charges and
+                    <p>RRP Diamond may choose the carriers at its discretion. Delivery charges and
                         timescales vary depending on the type of products ordered, the service you select, and the
                         delivery address.</p>
 
                     <p> Please note that certain products and services may be subject to alternative delivery
                         charges, restrictions, and/or timescales. If delivery cannot be made to a customer due to
                         the customer not being present at the address at the time allotted by the carrier or if a
-                        customer refuses to accept the products, Loose Grown Diamond reserves the right to deduct
-                        the cost for returning products to the Loose Grown Diamond returns center from the
+                        customer refuses to accept the products, RRP Diamond reserves the right to deduct
+                        the cost for returning products to the RRP Diamond returns center from the
                         customer’s refund for the order.</p>
 
                     <p>All risks in the products you order (including the risk of loss and/or damage to the
@@ -190,7 +182,7 @@ get_header();
                     <h3 class="fw-500">Return Policy, Free Resize &amp; Warranty</h3>
                     <p>You may have cancellation and return rights under applicable local laws. Nothing in these
                         Terms affects your statutory rights.</p>
-                    <p>In addition to your statutory rights, Loose Grown Diamond offers the following customer
+                    <p>In addition to your statutory rights, RRP Diamond offers the following customer
                         benefits:</p>
                     <div>
                         <ul>
@@ -230,58 +222,54 @@ get_header();
 
                     <h2 class="fw-500">Ownership of User Submissions</h2>
                     <p>You represent and warrant that you own or have the necessary rights and permissions to use
-                        and authorize Loose Grown Diamond to use all intellectual property rights in and to your
+                        and authorize RRP Diamond to use all intellectual property rights in and to your
                         User Submissions and to enable inclusion and use thereof as contemplated by the Site and
                         these Terms. You retain all of your ownership rights in and to your User Submissions.</p>
 
                     <h2 class="fw-500">Product Descriptions</h2>
-                    <p>Loose Grown Diamond makes all reasonable efforts to display the products listed for sale on
+                    <p>RRP Diamond makes all reasonable efforts to display the products listed for sale on
                         its Site as accurately as possible. However, the colors we use, as well as the display and
                         color capabilities of your computer monitor, will affect the colors that you actually see on
-                        your screen. Loose Grown Diamond cannot guarantee that your monitor’s display of any product
-                        color, texture, or detail will be accurate. In addition, Loose Grown Diamond does not
+                        your screen. RRP Diamond cannot guarantee that your monitor’s display of any product
+                        color, texture, or detail will be accurate. In addition, RRP Diamond does not
                         warrant that product description or other content is accurate, complete, reliable, current,
-                        or error-free. While Loose Grown Diamond makes every effort to ensure that our products are
+                        or error-free. While RRP Diamond makes every effort to ensure that our products are
                         described and priced accurately, in the event that an item is deemed to be priced
-                        incorrectly, Loose Grown Diamond reserves the right to refuse the sale of that item. If the
-                        pricing error is discovered after payment has been finalized, Loose Grown Diamond reserves
+                        incorrectly, RRP Diamond reserves the right to refuse the sale of that item. If the
+                        pricing error is discovered after payment has been finalized, RRP Diamond reserves
                         the right to cancel the sale and refund the transaction in full. If a product offered by
-                        Loose Grown Diamond is not as described, your sole remedy is to return it in unused
+                        RRP Diamond is not as described, your sole remedy is to return it in unused
                         condition. All items are subject to availability. We will inform you as soon as possible if
                         the product(s) you have ordered are not available.</p>
 
                     <h2 class="fw-500">Other Sites</h2>
-                    <p>The Site contains links to websites that are not maintained by Loose Grown Diamond. We try to
+                    <p>The Site contains links to websites that are not maintained by RRP Diamond. We try to
                         include links to only those websites that are in good taste and safe for our visitors, but
                         we are not responsible for the content or accuracy of any websites other than our own and
                         cannot guarantee that such websites will not change without our knowledge. The inclusion of
-                        a link in this Site does not imply Loose Grown Diamond’s endorsement of the website. If you
+                        a link in this Site does not imply RRP Diamond’s endorsement of the website. If you
                         decide to use any links to access other websites, you do so at your own risk.</p>
                     <h2 class="fw-500">Disclaimer of Warranties and Limitation of Liability</h2>
                     <p> Nothing in these Terms limits or excludes our liability for any matter that cannot be
                         limited or
                         excluded by applicable law. Nothing in these Terms will affect your statutory rights.</p>
 
-                    <p> EXCEPT AS EXPRESSLY PROVIDED IN THESE TERMS, THE MATERIALS AND INFORMATION PROVIDED BY LOOSE
-                        GROWN DIAMOND ON THE SITE ARE PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. LOOSE GROWN
-                        DIAMOND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE
+                    <p> EXCEPT AS EXPRESSLY PROVIDED IN THESE TERMS, THE MATERIALS AND INFORMATION PROVIDED BY RRP DIAMOND ON THE SITE ARE PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. RRP DIAMOND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE
                         OPERATION OF ITS SITE OR THE INFORMATION, CONTENT, MATERIALS, OR PRODUCTS INCLUDED ON ITS
                         SITE.
-                        YOU AGREE THAT YOUR ACCESS TO, AND USE OF THE SITES IS AT YOUR OWN RISK. LOOSE GROWN DIAMOND
+                        YOU AGREE THAT YOUR ACCESS TO, AND USE OF THE SITES IS AT YOUR OWN RISK. RRP DIAMOND
                         EXPRESSLY DISCLAIMS ANY RESPONSIBILITY AND LIABILITY FOR THE ACCURACY OF, AND YOUR RELIANCE
                         ON,
-                        THE TAX-ESTIMATION TOOL AVAILABLE ON LOOSE GROWN DIAMOND’S SITE AND ANY ASPECTS RELATED
+                        THE TAX-ESTIMATION TOOL AVAILABLE ON RRP DIAMOND’S SITE AND ANY ASPECTS RELATED
                         THERETO.
                         V, ITS AFFILIATES, AND SUPPLIERS DO NOT GUARANTEE OR REPRESENT THAT YOUR USE OF THE
                         TAX-ESTIMATION TOOL WILL SATISFY OR ENSURE COMPLIANCE WITH ANY LEGAL OBLIGATIONS OR LAWS OR
-                        REGULATIONS. LOOSE GROWN DIAMOND IS NOT IN THE BUSINESS OF PROVIDING LEGAL, FINANCIAL,
+                        REGULATIONS. RRP DIAMOND IS NOT IN THE BUSINESS OF PROVIDING LEGAL, FINANCIAL,
                         ACCOUNTING, TAX, OR RELATED ADVICE OR SERVICES. TO THE FULLEST EXTENT PERMISSIBLE BY
                         APPLICABLE
-                        LAW, LOOSE GROWN DIAMOND DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT
+                        LAW, RRP DIAMOND DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, WITHOUT
                         LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-                        LOOSE
-                        GROWN DIAMOND DOES NOT WARRANT THAT THE SITE, ITS SERVERS, OR EMAILS SENT FROM LOOSE GROWN
-                        DIAMOND ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. LOOSE GROWN DIAMOND WILL NOT BE
+                        RRP DIAMOND DOES NOT WARRANT THAT THE SITE, ITS SERVERS, OR EMAILS SENT FROM RRP DIAMOND ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. RRP DIAMOND WILL NOT BE
                         LIABLE
                         FOR ANY DAMAGES OF ANY KIND ARISING FROM THE USE OF THIS SITE, INCLUDING, WITHOUT
                         LIMITATION,
@@ -294,9 +282,7 @@ get_header();
                         CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET
                         POSSESSION, NON-INFRINGEMENT, TITLE, QUALITY OF SERVICE, OR THAT OTHERWISE ARISE FROM A
                         COURSE
-                        OF PERFORMANCE OR DEALING, OR USAGE OF TRADE, ALL OF WHICH ARE HEREBY DISCLAIMED BY LOOSE
-                        GROWN
-                        DIAMOND AND ITS LICENSORS AND SUPPLIERS.</p>
+                        OF PERFORMANCE OR DEALING, OR USAGE OF TRADE, ALL OF WHICH ARE HEREBY DISCLAIMED BY RRP DIAMOND AND ITS LICENSORS AND SUPPLIERS.</p>
 
                     <p> YOU MUST FOLLOW ANY ADVICE OR INSTRUCTIONS WE GIVE YOU TO KEEP THE PRODUCTS WE SUPPLY TO YOU
                         SAFE (INCLUDING ANY INSTRUCTIONS OR PRODUCT MANUALS PROVIDED WITH THE PRODUCTS). WE CANNOT
@@ -307,13 +293,12 @@ get_header();
                         PUNITIVE DAMAGES OR LOSSES RELATED TO ANY BUSINESS OF YOURS INCLUDING (WITHOUT LIMITATION)
                         LOST
                         DATA, LOST PROFITS, LOST REVENUES, OR BUSINESS INTERRUPTION. THE AGGREGATE LIABILITY OF
-                        LOOSE
-                        GROWN DIAMOND UNDER, OR OTHERWISE IN CONNECTION WITH, THESE TERMS SHALL NOT EXCEED THE
+                        RRP DIAMOND UNDER, OR OTHERWISE IN CONNECTION WITH, THESE TERMS SHALL NOT EXCEED THE
                         AMOUNT
-                        ACTUALLY PAID BY THE CUSTOMER TO LOOSE GROWN DIAMOND UNDER THE PURCHASE ORDER IN WHICH THE
+                        ACTUALLY PAID BY THE CUSTOMER TO RRP DIAMOND UNDER THE PURCHASE ORDER IN WHICH THE
                         LIABILITY AROSE.</p>
 
-                    <p> THE FOREGOING EXCLUSIONS AND LIMITATIONS SHALL APPLY EVEN IF LOOSE GROWN DIAMOND HAS BEEN
+                    <p> THE FOREGOING EXCLUSIONS AND LIMITATIONS SHALL APPLY EVEN IF RRP DIAMOND HAS BEEN
                         ADVISED, OR SHOULD HAVE BEEN AWARE, OF THE POSSIBILITY OF LOSSES, DAMAGES, OR COSTS, EVEN IF
                         ANY
                         REMEDY IN THESE TERMS FAILS OF ITS ESSENTIAL PURPOSE; AND REGARDLESS OF THE THEORY OR BASIS
@@ -327,7 +312,7 @@ get_header();
                         destruction,
                         or unauthorized access to, alteration of, or use of records, whether for breach of contract,
                         tortious behavior, negligence, or under any other cause of action. You also specifically
-                        acknowledge that Loose Grown Diamond is not liable for your defamatory, offensive,
+                        acknowledge that RRP Diamond is not liable for your defamatory, offensive,
                         infringing,
                         or illegal materials or conduct or that of third parties.</p>
 
@@ -345,16 +330,16 @@ get_header();
                     <h2 class="fw-500">Applicable Law; General</h2>
                     <p> To the maximum extent permitted by law, you agree that the law of New York State, without
                         regard to principles of conflict of laws, shall govern these Terms and any dispute that may
-                        arise between you and Loose Grown Diamond. If any court of competent jurisdiction determines
+                        arise between you and RRP Diamond. If any court of competent jurisdiction determines
                         that any provision, or any portion thereof, contained in these Terms is unenforceable in any
                         respect, such provision shall be deemed limited to the extent that such court deems it
                         enforceable, and as so limited shall remain in full force and effect. If such court shall
                         deem any such provision, or portion thereof, wholly unenforceable, the remaining provisions
                         of these Terms shall nevertheless remain in full force and effect. These Terms, together
-                        with the Privacy Policy, constitute the entire agreement between you and Loose Grown Diamond
+                        with the Privacy Policy, constitute the entire agreement between you and RRP Diamond
                         relating to your access to and use of the Site.</p>
 
-                    <p> The rights and remedies of Loose Grown Diamond set forth in these Terms are not exclusive
+                    <p> The rights and remedies of RRP Diamond set forth in these Terms are not exclusive
                         of, but are cumulative to, any rights or remedies now or subsequently existing at law, in
                         equity, by statute or otherwise.</p>
 
@@ -386,27 +371,26 @@ get_header();
                         claims (from the SMS program) are frequently brought as class actions.</em></p>
 
                     <h2 class="fw-500">Modification</h2>
-                    <p>Loose Grown Diamond reserves the right, in its sole discretion, to change, modify, add, or
+                    <p>RRP Diamond reserves the right, in its sole discretion, to change, modify, add, or
                         remove portions of these Terms at any time. Please check this page periodically for changes.
                         You agree that each time you visit any Site, your visit to and use of such Site will be
                         subject to and bound by the then current version of these Terms.</p>
                     <h2 class="fw-500">Payment Terms</h2>
-                    <p> (a) <span class="text-decoration-underline"> Payment Processing </span>: Loose Grown Diamond
+                    <p> (a) <span class="text-decoration-underline"> Payment Processing </span>: RRP Diamond
                         provides international payment processing and
                         order fulfillment through one of its designated service providers Stripe, Afterpay, Klarna
                         or Splitit as the Merchants-of-Record. When placing an order through the Site, your order
                         will be processed using Payment Gateway checkout and payment processing services, and you
                         acknowledge and agree that: (i) your payment transaction will be processed via Payment
-                        Gateway, not Loose Grown Diamond, and (ii) upon successful verification and authentication
+                        Gateway, not RRP Diamond, and (ii) upon successful verification and authentication
                         by Payment Gateway of payment information provided by you, Payment Gateway will accept the
-                        transaction, and purchase the products from Loose Grown Diamond for the sole purpose of
+                        transaction, and purchase the products from RRP Diamond for the sole purpose of
                         reselling such products to you at a price equal to the amounts presented to and agreed-upon
-                        by you. Payment Gateway will provide the merchant or Loose Grown Diamond with its own
+                        by you. Payment Gateway will provide the merchant or RRP Diamond with its own
                         payment information to purchase the products you have ordered, and Payment Gateway will
                         resell such products to you and bill the payment information you have provided. Payment
                         Gateway acquires temporary title to the products when the products exit the jurisdiction of
-                        Loose Grown Diamond. After Payment Gateway purchases and takes title to products from Loose
-                        Grown Diamond to fulfill an order you have placed, you take title from Payment Gateway
+                        RRP Diamond. After Payment Gateway purchases and takes title to products from RRP Diamond to fulfill an order you have placed, you take title from Payment Gateway
                         before the products enter the jurisdiction that you have designated as your address for
                         delivery. All items purchased from Payment Gateway are made pursuant to a shipment contract.
                         In the event of any disparity or inconsistency between the terms of any shipment contract or
@@ -416,19 +400,17 @@ get_header();
                     <p>(b) <span class="text-decoration-underline">Billing </span>: If you provide a credit card as
                         your tender type, your credit card will be
                         billed by Payment Gateway, and charges to your account will be accompanied by the descriptor
-                        “Loose Grown Diamond” or “LGD” as applicable, (or such other descriptor as the Payment
+                        “RRP Diamond” or “LGD” as applicable, (or such other descriptor as the Payment
                         Gateway may deploy), which denotes the Payment Gateway system, and that the Payment Gateway
                         is the supplier whose products you have purchased through Payment Gateway. If you paid using
-                        your PayPal account, charges to your account will be accompanied by the descriptor “Loose
-                        Grown Diamond” (or such other descriptor as Payment Gateway may deploy). In either case, you
+                        your PayPal account, charges to your account will be accompanied by the descriptor “RRP Diamond” (or such other descriptor as Payment Gateway may deploy). In either case, you
                         will only be billed after your products have been received, processed and dispatched for
-                        delivery by Payment Gateway. In the event of the receipt of any parcel from Loose Grown
-                        Diamond containing only part of an order, Payment Gateway will process the products
+                        delivery by Payment Gateway. In the event of the receipt of any parcel from RRP Diamond containing only part of an order, Payment Gateway will process the products
                         received, and will only bill for an amount commensurate with the price of the products
                         therein, pro-rated amounts for shipping and/or handling, plus any duty, taxes, VAT (unless
-                        Payment Gateway and Loose Grown Diamond offered, and you accepted, the option of having your
+                        Payment Gateway and RRP Diamond offered, and you accepted, the option of having your
                         order shipped DAP (‘delivered at place’)). Notwithstanding the foregoing, in the event of an
-                        order being fulfilled by Loose Grown Diamond in multiple parcels, unless expressly consented
+                        order being fulfilled by RRP Diamond in multiple parcels, unless expressly consented
                         to by you, in no instance will the aggregate amount billed to you by Payment Gateway exceed
                         the total amount presented at the time of order placement by you. If there is a technical
                         error in the Payment Gateway system which processes or accepts a transaction at an exchange
@@ -439,7 +421,7 @@ get_header();
                         may be applied at the discretion of customs (and these charges differ from country to
                         country and are the customer’s responsibility). Applicable sales taxes will be charged
                         depending on your region. You may pay by PayPal and all major credit cards. The availability
-                        of a certain payment method may depend on your geographical location. Loose Grown Diamond
+                        of a certain payment method may depend on your geographical location. RRP Diamond
                         may change the prices and the payment methods at any time but this will not affect orders
                         with respect to which we have already sent you a Confirmation Notice.</p>
 
@@ -448,21 +430,18 @@ get_header();
                         completed before items can be shipped. At our sole discretion, we may require bank wire
                         payment for any international order or orders in excess of $20,000.</p>
 
-                    <p>If you place an order on our Site, then you acknowledge and agree that: (i) Loose Grown
-                        Diamond will charge you through the payment method you have selected for your order and such
+                    <p>If you place an order on our Site, then you acknowledge and agree that: (i) RRP Diamond will charge you through the payment method you have selected for your order and such
                         other amounts that may accrue in connection with the order; (ii) that you will provide valid
                         and current information for (a) yourself and (b) if applicable, another person, but only if
                         you have first obtained their express consent or have the relevant rights to do so; (iii)
-                        that Loose Grown Diamond may use tools, software or services of payment processors to
-                        process transactions on their behalf; and (iv) if your payment is not received by Loose
-                        Grown Diamond for any reason from your card issuer, you agree to promptly pay all amounts
+                        that RRP Diamond may use tools, software or services of payment processors to
+                        process transactions on their behalf; and (iv) if your payment is not received by RRP Diamond for any reason from your card issuer, you agree to promptly pay all amounts
                         due upon request.</p>
 
                     <h3 class="fw-500">SMS Terms of Service</h3>
                     <p>By providing your mobile phone number and opting in through our website sign-up form,
                         pop-up, or checkout field, you agree to receive recurring automated marketing text messages
-                        (including cart-abandonment reminders, promotions, and product updates) from Loose Grown
-                        Diamond (operated by Grown Diamond LLC) and its SMS platform provider, Attentive, at the
+                        (including cart-abandonment reminders, promotions, and product updates) from RRP Diamond (operated by Grown Diamond LLC) and its SMS platform provider, Attentive, at the
                         number provided. Consent to receive marketing text messages is not a condition of any
                         purchase.</p>
                     <p>Message and data rates may apply. Message frequency varies. Reply STOP at any time to
@@ -476,16 +455,16 @@ get_header();
                         For details on how your information is used and shared, please review our Privacy Policy.</p>
 
                     <h2 class="fw-500">Date of Last Update of these Terms: July 13, 2026.</h2>
-                    <p>Loose Grown Diamond’s website(s) are operated by Grown Diamond LLC from its offices at 55W
+                    <p>RRP Diamond’s website(s) are operated by Grown Diamond LLC from its offices at 55W
                         47th St., Suite #790, New York, NY-10036, USA. Grown Diamond LLC makes no representations
                         that the contents of any of its websites are appropriate or available for use in other
-                        locations. Visitors who choose to access any Loose Grown Diamond web site from other
+                        locations. Visitors who choose to access any RRP Diamond web site from other
                         locations do so on their own initiative and are responsible for compliance with applicable
                         local law.</p>
 
-                    <p class="m-0">Once again, we thank you for your interest in Loose Grown Diamond. We hope that your
+                    <p class="m-0">Once again, we thank you for your interest in RRP Diamond. We hope that your
                         experience
-                        at any Loose Grown Diamond web site is enjoyable.</p>
+                        at any RRP Diamond web site is enjoyable.</p>
 
                 </div>
 

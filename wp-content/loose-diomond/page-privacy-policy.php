@@ -14,11 +14,11 @@ get_header();
         <div class="py_60">
             <div class="container">
                 <div class="row">
-                    <h1 class="fw-500">LOOSE GROWN DIAMOND PRIVACY POLICY</h1>
+                    <h1 class="fw-500">RRP DIAMOND PRIVACY POLICY</h1>
                     <p>Last Updated: July 13, 2026</p>
 
-                    <p> This privacy policy <strong>(“Privacy Policy”)</strong> governs how we, Loose Grown Diamond
-                        (<?php echo SUPPORT_EMAIL;?>) <strong> (“Loose Grown Diamond” “we”, “our” or “us”)
+                    <p> This privacy policy <strong>(“Privacy Policy”)</strong> governs how we, RRP Diamond
+                        (<?php echo SUPPORT_EMAIL;?>) <strong> (“RRP Diamond” “we”, “our” or “us”)
                         </strong> use, collect, and store information pertaining to you <strong> (“User”, “you”)
                         </strong>, such as in the following use cases:</p>
                     <div class="p-0">
@@ -131,7 +131,7 @@ get_header();
                                     <p>Performance of a contract to which the data subject is a party (i.e. our
                                         terms of sale) or in order to take steps at the request of the data subject
                                         prior to entering into a contract (e.g. when you create your account)</p>
-                                    <p>Legitimate interest (e.g. to allow you to purchase Loose Grown Diamond’s
+                                    <p>Legitimate interest (e.g. to allow you to purchase RRP Diamond’s
                                         products)</p>
                                 </td>
                                 <td>Until we no longer need the information and proactively delete it or you send a
@@ -193,8 +193,7 @@ get_header();
                                         <li>Age</li>
                                         <li>Address</li>
                                         <li>Photo</li>
-                                        <li class="lastItem">Information related to the experience with Loose Grown
-                                            Diamond (E.g., How was the piece chosen?)</li>
+                                        <li class="lastItem">Information related to the experience with RRP Diamond (E.g., How was the piece chosen?)</li>
                                     </ul>
                                 </td>
                                 <td>
@@ -204,7 +203,7 @@ get_header();
                                                 <td style="border-bottom: none;">
                                                     <ul class="ul-table--eaMk9">
                                                         <li class="firstItem">To process your review</li>
-                                                        <li>To analyze your experience with Loose Grown Diamond
+                                                        <li>To analyze your experience with RRP Diamond
                                                             after the purchase</li>
                                                         <li class="lastItem">To share/publish your photo on our
                                                             social media channels (e.g. Instagram)</li>
@@ -223,7 +222,7 @@ get_header();
                                 <td>
                                     <ul class="ul-table--eaMk9">
                                         <li class="firstItem">Cannot process and share your review</li>
-                                        <li>Cannot analyze your experience with Loose Grown Diamond</li>
+                                        <li>Cannot analyze your experience with RRP Diamond</li>
                                         <li class="lastItem">Cannot share/publish your photo on social media</li>
                                     </ul>
                                 </td>
@@ -245,7 +244,7 @@ get_header();
                                     <ul class="ul-table--eaMk9">
                                         <li class="firstItem">To answer your questions</li>
                                         <li>To provide you with support</li>
-                                        <li class="lastItem">To analyze your experience with Loose Grown Diamond
+                                        <li class="lastItem">To analyze your experience with RRP Diamond
                                         </li>
                                     </ul>
                                 </td>
@@ -253,7 +252,7 @@ get_header();
                                     <p>Performance of a contract to which the data subject is party or in order to
                                         take steps at the request of the data subject prior to entering into a
                                         contract</p>
-                                    <p>Legitimate interest (e.g. to allow you to purchase Loose Grown Diamond’s
+                                    <p>Legitimate interest (e.g. to allow you to purchase RRP Diamond’s
                                         products)</p>
                                 </td>
                                 <td>Until we no longer need the information and proactively delete it or you send a
@@ -263,7 +262,7 @@ get_header();
                                     <ul class="ul-table--eaMk9">
                                         <li class="firstItem">Cannot assist you or respond to your query</li>
                                         <li>Cannot provide support</li>
-                                        <li class="lastItem">Cannot analyze your experience with Loose Grown Diamond
+                                        <li class="lastItem">Cannot analyze your experience with RRP Diamond
                                         </li>
                                     </ul>
                                 </td>
@@ -288,7 +287,7 @@ get_header();
                                 </td>
                                 <td>Depending on the context, our legal basis for collecting this information is the
                                     consent you give us for this purpose, legitimate interest (e.g., to send you
-                                    more information about Loose Grown Diamond), and/or for the purposes of
+                                    more information about RRP Diamond), and/or for the purposes of
                                     pre-contractual discussions</td>
                                 <td>Until you send a deletion request or unsubscribe or we proactively decide to
                                     delete the data. Please note that under applicable laws, we may be required to
@@ -421,7 +420,7 @@ get_header();
 
                     <p>5.3. Deleting your account: Should you ever decide to delete your account, you may do so by emailing support <?php echo SUPPORT_EMAIL;?>. If you terminate your account, any association between your account and the personal data we store will no longer be accessible through your account. However, given the nature of sharing on certain services, any public activity on your account prior to deletion will remain stored on our servers and will remain accessible to the public.</p>
                     <h2>Notice of Financial Incentives</h2>
-                    <p>From time to time, Loose Grown Diamond may offer promotional programs, discounts, or rewards that may be considered a <strong>"financial incentive"</strong> under applicable privacy laws, including the California Consumer Privacy Act (CCPA). Participation in these programs is entirely voluntary.</p>
+                    <p>From time to time, RRP Diamond may offer promotional programs, discounts, or rewards that may be considered a <strong>"financial incentive"</strong> under applicable privacy laws, including the California Consumer Privacy Act (CCPA). Participation in these programs is entirely voluntary.</p>
                     <h2>SMS/EMAIL Offers & Promotions</h2>
                     <div>
                             <ul>
@@ -502,7 +501,7 @@ The value of any incentive we provide is reasonably related to the value of the 
                     <p><strong>9.7. SMS and Email Marketing, Including Abandoned Cart Messages</strong></p>
                     <p>We use third-party platforms — currently including Attentive — to send SMS and email communications, including abandoned-cart reminders, promotional offers, and product updates.</p>
                     <p><strong>How you join.</strong> You may opt in by entering your phone number and/or email address through a Site sign-up form, pop-up, or checkout field. SMS sign-up requires an unchecked, affirmative opt-in action; we do not pre-check SMS or email marketing consent boxes.</p>
-                    <p><strong>What you're agreeing to</strong> By opting in to SMS marketing, you authorize Loose Grown Diamond and its SMS platform provider(s), including Attentive, to send you recurring automated marketing text messages — including abandoned-cart reminders — at the mobile number you provided, using an automatic telephone dialing system or similar technology. Consent to receive marketing text messages is not a condition of any purchase. Message and data rates may apply. Message frequency varies.</p>
+                    <p><strong>What you're agreeing to</strong> By opting in to SMS marketing, you authorize RRP Diamond and its SMS platform provider(s), including Attentive, to send you recurring automated marketing text messages — including abandoned-cart reminders — at the mobile number you provided, using an automatic telephone dialing system or similar technology. Consent to receive marketing text messages is not a condition of any purchase. Message and data rates may apply. Message frequency varies.</p>
                     <p><strong>How to opt out.</strong> Reply STOP to any text message to unsubscribe; you will receive a one-time confirmation message and may re-subscribe at any time by opting in again. You may unsubscribe from marketing emails by clicking "unsubscribe" at the bottom of any email. Opting out of marketing communications does not affect transactional messages related to an order you have placed.</p>
                     <p><strong>Sharing with our SMS/email provider.</strong> Your phone number, email address, and related engagement and purchase data are shared with our SMS and email marketing platform provider(s) (currently Attentive) solely to operate this program on our behalf. We do not authorize these providers to sell your information or use it to market their own unrelated products to you, and we do not share your phone number with unrelated third parties for their own independent marketing purposes.</p>
                     <p><strong>State-specific notice.</strong> Some states, including Florida and Oklahoma, have consumer text-messaging protection laws in addition to the federal Telephone Consumer Protection Act (TCPA). We take steps designed to obtain consent in a manner consistent with these laws where applicable.</p>

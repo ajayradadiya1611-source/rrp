@@ -638,7 +638,7 @@ function single_product_buy_direct_us(){
                         <div class="etheme_box_m text-center">
                             <div>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg" alt="loosegrowndiamond_logo">
-                                <div class="text_black_secondary fw-600 my-2 h5">Loose Grown Diamond </div>
+                                <div class="text_black_secondary fw-600 my-2 h5">RRP Diamond </div>
                                 <span class="font_size_15">(We as a Manufacturer) </span>
                             </div>
                         </div>

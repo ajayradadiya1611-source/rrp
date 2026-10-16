@@ -64,14 +64,14 @@ if ( '' === trim( $schema_desc ) && function_exists( 'get_field' ) ) {
 }
 $schema_desc = trim( wp_strip_all_tags( $schema_desc ) );
 if ( '' === $schema_desc ) {
-    $schema_desc = sprintf( 'Shop %s at Loose Grown Diamond.', $schema_name );
+    $schema_desc = sprintf( 'Shop %s at RRP Diamond.', $schema_name );
 }
 
 $schema_graph   = array();
 $schema_graph[] = array(
     '@type'  => 'Organization',
     '@id'    => $schema_home . '#organization',
-    'name'   => 'Loose Grown Diamond',
+    'name'   => 'RRP Diamond',
     'url'    => $schema_home,
     'logo'   => get_template_directory_uri() . '/assets/image/logo/loosegrowndiamond_logo.svg',
     'sameAs' => array(
@@ -83,7 +83,7 @@ $schema_graph[] = array(
     '@type'      => 'WebSite',
     '@id'        => $schema_home . '#website',
     'url'        => $schema_home,
-    'name'       => 'Loose Grown Diamond',
+    'name'       => 'RRP Diamond',
     'publisher'  => array( '@id' => $schema_home . '#organization' ),
     'inLanguage' => 'en-US',
 );

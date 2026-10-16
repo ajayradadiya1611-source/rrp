@@ -80,7 +80,7 @@ function add_text_above_login_form() {
 add_action('woocommerce_register_form_start', 'add_text_above_register_form');
 function add_text_above_register_form() {
     echo '<div class="reg-info">
-        <p style="margin: 0;">Create your Loose Grown Diamond account and enjoy:</p>
+        <p style="margin: 0;">Create your RRP Diamond account and enjoy:</p>
         <ul style="font-size: 14px;">
             <li>Easily request a ring resize online</li>
             <li>Faster, more secure checkout</li>

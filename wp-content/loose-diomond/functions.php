@@ -18,7 +18,7 @@ define('LD_RECAPTCHA_SECRET_KEY', '6Lc2a54tAAAAAOvWIl2KuDjK_qkTNmpozQMKITUD');
 define('LD_RECAPTCHA_MIN_SCORE', 0.5); // optional, defaults to 0.5
 
 define('RETURN_DAYS', '7');
-define('SITE_OC_NAME', 'Loose Grown Diamond');
+define('SITE_OC_NAME', 'RRP Diamond');
 define('SUPPORT_EMAIL', 'support@loosegrowndiamond.com');
 
 define('SUPPORT_MOBILE', '91 9016106290');

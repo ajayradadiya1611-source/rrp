@@ -143,7 +143,7 @@ export default function OrderSummary({ cart, actions }) {
             ))}
           </div>
 
-          <h6 className="why-item-head">Why Loose Grown Diamond?</h6>
+          <h6 className="why-item-head">Why RRP Diamond?</h6>
           <div className="why-item-parent">
             <div className="why-item">
               <div className="why-icon"><img src={icon('money-back.svg')} alt="" /></div>

@@ -27,7 +27,7 @@ export default function EngravingModal({ fonts, initialText, initialFont, onClos
       <div className="modal-body px-4 pt-0 pb-4">
         <h5 className="text-center fw-600 mb-3 ls-2" id="engravingModalLabel">ENGRAVING DETAILS</h5>
         <p className="text-center text-muted font_size_12 mb-4">
-          If no engraving is selected, your ring will only have the metal purity stamp and the Loose Grown Diamond logo.
+          If no engraving is selected, your ring will only have the metal purity stamp and the RRP Diamond logo.
         </p>
 
         <div className="engraving-fonts mb-4">
