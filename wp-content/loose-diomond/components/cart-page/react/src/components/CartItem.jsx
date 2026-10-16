@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Html from './Html.jsx'
-import styleString from './styleString.js'
 
 /* ---------------- Quantity ---------------- */
 function Qty({ item, onChange }) {
@@ -63,9 +62,7 @@ function Qty({ item, onChange }) {
 }
 
 /* ---------------- Cart item ---------------- */
-export default function CartItem({ item, fonts, actions, refreshSeq = 0 }) {
-  const fontStyle = styleString(fonts.find((f) => f.value === item.engraving.font)?.style || '')
-  const hasEngraving = !!item.engraving.text
+export default function CartItem({ item, actions, refreshSeq = 0 }) {
 
   const rowClass = 'cart_item d-flex flex-wrap w-100'
 
@@ -74,7 +71,7 @@ export default function CartItem({ item, fonts, actions, refreshSeq = 0 }) {
     : <Html as="span" html={item.thumbnailHtml} />
 
   return (
-    <div className={rowClass} data-engraving-key={item.key} data-qty={item.qty}>
+    <div className={rowClass} data-key={item.key} data-qty={item.qty}>
       {/* Thumbnail + title/meta */}
       <div className="product_name">
         <div>
@@ -107,39 +104,6 @@ export default function CartItem({ item, fonts, actions, refreshSeq = 0 }) {
 
           {item.noCertificate && (
             <div className="custom-certi-text">This diamond is sold without a certificate (no certificate included).</div>
-          )}
-
-          {item.isEngraving && (
-            <div className="ls_engraving_display_area">
-              {hasEngraving ? (
-                <div className="ls_engraving_display" style={{ fontSize: 13, marginTop: 4 }}>
-                  <strong>Engraving:</strong>{' '}
-                  <span
-                    className="ls_engraving_text"
-                    role="button"
-                    tabIndex={0}
-                    title="Edit engraving"
-                    style={{ textDecoration: 'underline', cursor: 'pointer', ...fontStyle }}
-                    onClick={() => actions.openEngraving(item.key)}
-                    onKeyDown={(e) => e.key === 'Enter' && actions.openEngraving(item.key)}
-                  >
-                    {item.engraving.text}
-                  </span>
-                  <a
-                    href="#"
-                    className="ls_remove_engraving text-decoration-none text-dark fw-700 ms-1"
-                    aria-label="Remove engraving"
-                    onClick={(e) => { e.preventDefault(); actions.removeEngraving(item.key) }}
-                  >
-                    &#10005;
-                  </a>
-                </div>
-              ) : (
-                <a href="#" className="add_engraving_btn" onClick={(e) => { e.preventDefault(); actions.openEngraving(item.key) }}>
-                  + Add engraving
-                </a>
-              )}
-            </div>
           )}
         </div>
       </div>

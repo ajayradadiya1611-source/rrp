@@ -12,8 +12,7 @@
  *                            lgd_cart_remove_item   (remove a line)
  *                            lgd_cart_remove_coupon (remove a coupon)
  *                          Everything else re-uses the existing handlers
- *                          (custom_update_cart_qty, custom_apply_coupon,
- *                          ls_save_engraving).
+ *                          (custom_update_cart_qty, custom_apply_coupon).
  *   - script/style enqueue for out/cart-page on is_cart()
  *   - lgd_render_cart_page() — prints the mount div + initial JSON
  *
@@ -79,7 +78,6 @@ function lgd_enqueue_cart_page() {
         'ajaxUrl' => admin_url( 'admin-ajax.php' ),
         'nonces'  => array(
             'cart'        => wp_create_nonce( 'lgd_cart_page' ),
-            'engraving'   => wp_create_nonce( 'ls_engraving_nonce' ),
             'coupon'      => wp_create_nonce( 'custom_coupon_nonce' ),
         ),
     ) );

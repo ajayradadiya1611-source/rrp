@@ -2097,3 +2097,269 @@ add_filter( 'woocommerce_add_message', function( $message ) {
 
 
 
+
+
+
+add_filter( 'woocommerce_add_to_cart_validation', 'validate_product_price', 10, 5 );
+
+function validate_product_price( $passed, $product_id, $quantity, $variation_id = 0, $variations = array() ) {
+
+    // Check either tag
+    if (
+        has_term( 'white-diamond', 'product_tag', $product_id ) ||
+        has_term( 'color-diamond', 'product_tag', $product_id )
+    ) {
+
+        $product = wc_get_product( $variation_id ? $variation_id : $product_id );
+
+        // Price should not be 0
+        if ( ! $product || $product->get_price() <= 0 ) {
+            wc_add_notice( 'This product cannot be added because the price is 0.', 'error' );
+            return false;
+        }
+    }
+
+    return $passed;
+}
+
+add_filter( 'woocommerce_get_breadcrumb', 'lgd_custom_breadcrumb_mapping', 20, 2 );
+function lgd_custom_breadcrumb_mapping( $crumbs, $breadcrumb ) {
+
+    // 1) Map by slug (last path segment of the crumb URL) => new URL and optional new label
+    $slug_map = array(
+         'lab-grown-diamond-earrings'     => array( 'url' => home_url( '/lab-diamond-earrings/' ) ),
+         'lab-grown-diamond-wedding-bands'     => array( 'url' => home_url( '/lab-diamond-wedding-bands/' ) ),
+         'lab-grown-diamond-pendants'     => array( 'url' => home_url( '/lab-diamond-pendants' ) ),
+         'lab-grown-diamond-bracelets'     => array( 'url' => home_url( 'lab-diamond-bracelets' ) ),
+         'lab-grown-diamond-necklaces'     => array( 'url' => home_url( 'lab-diamond-necklaces' ) ),
+         'melee-diamond'     => array( 'url' => home_url( 'melee-diamond' ) ),
+    );
+
+    // 2) Map by exact label (useful for crumbs with no slug, e.g. Home)
+    $label_map = array(
+        // 'Home' => array( 'url' => home_url( '/' ) ),
+    );
+
+    foreach ( $crumbs as $i => $crumb ) {
+        $label = isset( $crumb[0] ) ? $crumb[0] : '';
+        $url   = isset( $crumb[1] ) ? $crumb[1] : '';
+
+        $slug = $url ? basename( untrailingslashit( wp_parse_url( $url, PHP_URL_PATH ) ) ) : '';
+
+        $map = null;
+        if ( $slug && isset( $slug_map[ $slug ] ) ) {
+            $map = $slug_map[ $slug ];
+        } elseif ( isset( $label_map[ $label ] ) ) {
+            $map = $label_map[ $label ];
+        }
+
+        if ( $map ) {
+            if ( ! empty( $map['url'] ) )   { $crumbs[ $i ][1] = $map['url']; }
+            if ( ! empty( $map['label'] ) ) { $crumbs[ $i ][0] = $map['label']; }
+        }
+    }
+
+    // 3) Optional: remove a crumb entirely by slug
+    $remove_slugs = array( /* 'uncategorized' */ );
+    $crumbs = array_values( array_filter( $crumbs, function ( $c ) use ( $remove_slugs ) {
+        if ( empty( $c[1] ) ) return true;
+        $s = basename( untrailingslashit( wp_parse_url( $c[1], PHP_URL_PATH ) ) );
+        return ! in_array( $s, $remove_slugs, true );
+    } ) );
+
+    // 4) Optional: insert a crumb after Home on product pages
+    // if ( is_product() ) {
+    //     array_splice( $crumbs, 1, 0, array( array( 'Diamonds', home_url( '/diamonds/' ) ) ) );
+    // }
+
+    return $crumbs;
+}
+/**
+ * Disable ALL Rank Math schema on category archives.
+ */
+add_filter( 'rank_math/json_ld', function ( $data, $jsonld ) {
+
+    if (( function_exists( 'is_product_category' ) && is_product_category() ) ) {
+        return [];
+    }
+
+    return $data;
+}, 99, 2 );
+
+
+add_action( 'woocommerce_before_order_object_save', function ( $order ) {
+    if ( ! $order instanceof WC_Order ) return;
+
+    $changes = $order->get_changes();
+    if ( ( $changes['status'] ?? '' ) !== 'cancelled' ) return;
+
+    // Allow manual cancel by a logged-in staff member in wp-admin
+    $is_manual = is_admin()
+        && is_user_logged_in()
+        && current_user_can( 'edit_shop_orders' )
+        && ! wp_doing_cron()
+        && ! ( defined( 'REST_REQUEST' ) && REST_REQUEST );
+    if ( $is_manual ) return;
+
+    // Block auto-cancel only if the order is paid
+    if ( ! $order->get_date_paid() && ! $order->get_transaction_id() ) return;
+
+    $order->set_status( $order->get_data()['status'] );
+    $order->add_order_note( 'Auto-cancel blocked: order already paid (expired old checkout session).' );
+}, 10 );
+
+
+add_action( 'template_redirect', function () {
+    if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
+        return;
+    }
+
+    // Don't interfere with order-received / pay-for-order endpoints
+    if ( is_wc_endpoint_url( 'order-received' ) || is_wc_endpoint_url( 'order-pay' ) ) {
+        return;
+    }
+
+    if ( ( is_cart() || is_checkout() ) && WC()->cart->is_empty() ) {
+        wp_safe_redirect( home_url( '/lab-diamonds/' ) );
+        exit;
+    }
+}, 20 );
+
+function lgd_img_size( $url ) {
+    static $cache = [];
+    if ( ! $url ) return null;
+    if ( isset( $cache[ $url ] ) ) return $cache[ $url ];
+
+    $path = str_replace(
+        [ content_url(), site_url() ],
+        [ WP_CONTENT_DIR, untrailingslashit( ABSPATH ) ],
+        strtok( $url, '?' )
+    );
+
+    $size = ( $path && file_exists( $path ) ) ? @getimagesize( $path ) : false;
+    return $cache[ $url ] = $size ? [ (int) $size[0], (int) $size[1] ] : null;
+}
+
+/**
+ * Metal Swatches (site-wide) — converts every select[name="attribute_pa_metal"]
+ * into .dr-swatch colour boxes. Select stays hidden so existing JS still works.
+ */
+add_action( 'wp_footer', 'lgd_metal_swatches_footer', 99 );
+function lgd_metal_swatches_footer() {
+    ?>
+    <style>
+/* Hide the real dropdown once it has been converted */
+select.ls-metal-enhanced { display: none !important; }
+
+.ls-metal-swatches {    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+    justify-content: flex-start; }
+.ls-metal-swatches .dr-swatch { cursor: pointer; }
+.ls-metal-swatches .dr-swatch.is-disabled { opacity: .35; pointer-events: none; }
+.ls-metal-swatch-label { display: block; font-size: 13px; margin-top: 6px; }
+    </style>
+    <script>
+/**
+ * Site-wide metal swatches.
+ * Converts every select[name="attribute_pa_metal"] into .dr-swatches.
+ * The select stays as the real form field (hidden); clicking a swatch sets
+ * its value and fires a native "change" so existing JS reacts as before.
+ */
+(function () {
+  'use strict';
+
+  var SELECTOR = 'select[name="attribute_pa_metal"]';
+
+  // Same mapping as the product cards (inc/static-html.php)
+  function swatchClass(label) {
+    var lc = (label || '').toLowerCase();
+    if (lc.indexOf('rose') !== -1) return 'dr-swatch--rg';
+    if (lc.indexOf('yellow') !== -1) return 'dr-swatch--yg';
+    if (lc.indexOf('platinum') !== -1) return 'dr-swatch--pl';
+    return 'dr-swatch--w';
+  }
+
+  function enhance(sel) {
+    if (sel.classList.contains('ls-metal-enhanced')) return;
+    sel.classList.add('ls-metal-enhanced');
+
+    var wrap = document.createElement('div');
+    wrap.className = 'dr-swatches ls-metal-swatches';
+    var lbl = document.createElement('span');
+    lbl.className = 'ls-metal-swatch-label';
+
+    function build() {
+      wrap.innerHTML = '';
+      Array.prototype.forEach.call(sel.options, function (opt) {
+        if (!opt.value) return; // skip "Choose an option"
+        var text = opt.textContent.trim();
+        var sw = document.createElement('span');
+        sw.className = 'dr-swatch ' + swatchClass(text);
+        sw.setAttribute('role', 'button');
+        sw.setAttribute('tabindex', '0');
+        sw.setAttribute('title', text);
+        sw.setAttribute('aria-label', text);
+        sw.setAttribute('data-value', opt.value);
+        if (opt.disabled) sw.classList.add('is-disabled');
+        sw.addEventListener('click', function () { pick(sw); });
+        sw.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(sw); }
+        });
+        wrap.appendChild(sw);
+      });
+      sync();
+    }
+
+    function sync() {
+      var current = '';
+      Array.prototype.forEach.call(wrap.children, function (sw) {
+        var on = sw.getAttribute('data-value') === sel.value;
+        sw.classList.toggle('is-active', on);
+        if (on) current = sw.getAttribute('title');
+      });
+      lbl.textContent = current;
+    }
+
+    function pick(sw) {
+      var v = sw.getAttribute('data-value');
+      if (sel.value === v) return;
+      sel.value = v;
+      sel.dispatchEvent(new Event('change', { bubbles: true }));
+      sync();
+    }
+
+    sel.addEventListener('change', sync);
+    // WooCommerce re-renders options (e.g. disabling unavailable ones) — rebuild.
+    new MutationObserver(build).observe(sel, { childList: true, subtree: true, attributes: true });
+
+    sel.parentNode.insertBefore(wrap, sel.nextSibling);
+    wrap.parentNode.insertBefore(lbl, wrap.nextSibling);
+    build();
+  }
+
+  function scan(root) {
+    (root || document).querySelectorAll(SELECTOR).forEach(enhance);
+  }
+
+  function init() {
+    scan();
+    // Pick up dropdowns added later (quick view, AJAX, React)
+    new MutationObserver(function (muts) {
+      muts.forEach(function (m) {
+        m.addedNodes.forEach(function (n) {
+          if (n.nodeType !== 1) return;
+          if (n.matches && n.matches(SELECTOR)) enhance(n);
+          else if (n.querySelectorAll) scan(n);
+        });
+      });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+    </script>
+    <?php
+}

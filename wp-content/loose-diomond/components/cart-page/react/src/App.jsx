@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { ajax, fetchCart, nonce, refreshFragments, setHeaderCount } from './api.js'
 import CartItem from './components/CartItem.jsx'
 import OrderSummary from './components/OrderSummary.jsx'
-import EngravingModal from './components/EngravingModal.jsx'
 import VideoModal from './components/VideoModal.jsx'
 import Loader from './components/Loader.jsx'
 import Html from './components/Html.jsx'
@@ -16,7 +15,6 @@ export default function App({ initial }) {
   const [busy, setBusy] = useState(0)
   const loading = busy > 0
   const setLoading = useCallback((on) => setBusy((n) => Math.max(0, n + (on ? 1 : -1))), [])
-  const [engravingKey, setEngravingKey] = useState(null) // cart key whose modal is open
   const [videoOpen, setVideoOpen] = useState(false)
   const rootRef = useRef(null)
   // Default (Rank Math) title, used when the cart has no SKUs left
@@ -140,24 +138,6 @@ export default function App({ initial }) {
         applyCart(r.data)
       }),
 
-    saveEngraving: (key, text, font) =>
-      withLoader(async () => {
-        const r = await ajax('ls_save_engraving', {
-          cart_item_key: key,
-          engraving_text: text,
-          engraving_font: font,
-          security: nonce('engraving'),
-        })
-        if (!r.success) throw new Error('Could not save engraving. Please try again.')
-        setEngravingKey(null)
-        setCart((c) => ({
-          ...c,
-          items: c.items.map((i) => (i.key === key ? { ...i, engraving: { text, font } } : i)),
-        }))
-      }),
-
-    removeEngraving: (key) => actions.saveEngraving(key, '', ''),
-
     applyCoupon: async (code) => {
       setLoading(true)
       try {
@@ -179,13 +159,10 @@ export default function App({ initial }) {
         applyCart(r.data)
       }),
 
-    openEngraving: (key) => setEngravingKey(key),
     openVideo: () => setVideoOpen(true),
   }
 
   actionsRef.current = actions
-
-  const engravingItem = cart.items?.find((i) => i.key === engravingKey)
 
   return (
     <div ref={rootRef} onClick={onRootClick}>
@@ -198,7 +175,7 @@ export default function App({ initial }) {
             <h3 className="fw-600 mb-4">Bag</h3>
             <div className="cart_inner">
               {(cart.items || []).map((item) => (
-                <CartItem key={item.key} refreshSeq={refreshSeq} item={item} fonts={cart.engravingFonts || []} actions={actions} />
+                <CartItem key={item.key} refreshSeq={refreshSeq} item={item} actions={actions} />
               ))}
             </div>
           </div>
@@ -211,16 +188,6 @@ export default function App({ initial }) {
       </div>
 
       <Loader show={loading} src={`${cart.themeUri}/aj_custom/inventory/Loading.edc97a1c.gif`} />
-
-      {engravingItem && (
-        <EngravingModal
-          fonts={cart.engravingFonts || []}
-          initialText={engravingItem.engraving.text}
-          initialFont={engravingItem.engraving.font}
-          onClose={() => setEngravingKey(null)}
-          onSave={(text, font) => actions.saveEngraving(engravingItem.key, text, font)}
-        />
-      )}
 
       {videoOpen && <VideoModal src={cart.unboxingVideo} onClose={() => setVideoOpen(false)} />}
     </div>
