@@ -13,7 +13,6 @@ function ls_process_order_item_meta($formatted_meta, $item) {
     foreach ($formatted_meta as $key => $meta) {
         // Remove unwanted meta keys
         if (isset($meta->key) && in_array($meta->key, [
-            '_certificate_url',
             '_sku_snapshot'
         ])) {
             unset($formatted_meta[$key]);

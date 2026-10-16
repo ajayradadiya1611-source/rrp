@@ -34,14 +34,6 @@ $totals = $order->get_order_item_totals();
 				}
 
 				$_product        = $item->get_product();
-				$certificate_type = null;
-
-				// Support diamond_data if stored in item meta
-				$diamond_data = $item->get_meta( 'diamond_data' );
-				if ( $diamond_data && isset( $diamond_data->certificate_type ) ) {
-					$certificate_type = intval( $diamond_data->certificate_type );
-				}
-
 				if ( ! $_product || ! $_product->exists() ) {
 					continue;
 				}
@@ -87,11 +79,6 @@ $totals = $order->get_order_item_totals();
     <?php endif; ?>
 </div>
 
-								<?php if ( $certificate_type === 0 || $certificate_type==4) : ?>
-									<div class="custom-certi-text-checkout">
-										<?php esc_html_e( 'This diamond is sold without a certificate (no certificate included).', 'woocommerce' ); ?>
-									</div>
-								<?php endif; ?>
 							</div>
 						</div>
 					</td>

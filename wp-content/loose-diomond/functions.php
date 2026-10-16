@@ -899,13 +899,6 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
     $cart_item_data['is_ring_product'] = $is_ring_product;
     /*print_r(has_term(['wedding-rings', 'engagement-rings'], 'product_cat', $product_id));
     exit; */
-    // Engraving product
-    $is_engraving_product = false;
-    if (has_term(['wedding-rings', 'engagement-rings'], 'product_cat', $product_id)) {
-        $is_engraving_product = true;
-    }
-    $cart_item_data['is_engraving_product'] = $is_engraving_product;
-
     // Custom note
     if (isset($_POST['custom_note'])) {
         $cart_item_data['custom_note'] = sanitize_text_field(
@@ -953,18 +946,6 @@ function ls_fn_display_ringsize( $item_data, $cart_item ) {
                 'value' => sanitize_text_field( $certi_id )
             );
             
-        }
-    }
-     if ( ! empty( $cart_item['engraving_text'] ) ) {
-        $item_data[] = [
-            'key'   => __( 'Engraving', 'woocommerce' ),
-            'value' => wc_clean( $cart_item['engraving_text'] ),
-        ];
-        if ( ! empty( $cart_item['engraving_font'] ) ) {
-            $item_data[] = [
-                'key'   => __( 'Engraving Font', 'woocommerce' ),
-                'value' => wc_clean( $cart_item['engraving_font'] ),
-            ];
         }
     }
     if (isset($cart_item['custom_note'])) {
@@ -1104,23 +1085,6 @@ function ls_save_all_custom_data_to_order_item( $item, $cart_item_key, $values, 
         }
     }
 
-    // Engraving Text
-    if ( ! empty( $values['engraving_text'] ) ) {
-        $item->add_meta_data(
-            __( 'Engraving', 'woocommerce' ),
-            sanitize_text_field( $values['engraving_text'] ),
-            true
-        );
-    }
-
-    // Engraving Font
-    if ( ! empty( $values['engraving_font'] ) ) {
-        $item->add_meta_data(
-            __( 'Engraving Font', 'woocommerce' ),
-            sanitize_text_field( $values['engraving_font'] ),
-            true
-        );
-    }
     if (isset($values['custom_note'])) {
         $item->add_meta_data('Description', $values['custom_note'], true);
     }
@@ -1291,99 +1255,6 @@ function custom_apply_coupon_handler() {
 /*add_filter('woocommerce_coupon_message', '__return_empty_string');
 add_filter('woocommerce_coupon_error', '__return_empty_string');*/
 
-
-
-/* ============================================================
-   ENGRAVING FONTS — must match cart.php definition
-   ============================================================ */
-function ls_get_engraving_fonts() {
-    return [
-        'Arial'              => ['label' => 'Arial',              'style' => 'font-family:Arial, sans-serif;'],
-        'Elephant'           => ['label' => 'Elephant',           'style' => 'font-family:Georgia,serif; font-weight:900; letter-spacing:1px;'],
-        'Brush Script MT'    => ['label' => 'Brush Script',       'style' => 'font-family:"Brush Script MT", cursive; font-style:italic;'],
-        'Footlight MT Light' => ['label' => 'Footlight',          'style' => 'font-family:"Footlight MT Light", serif;'],
-        /*'Zephyr'             => ['label' => 'Zephyr',             'style' => 'font-family:Georgia, serif; font-style:italic;'],*/
-        'Bradley Hand ITC'   => ['label' => 'Bradley Hand ITC',   'style' => 'font-family:"Bradley Hand ITC", cursive; font-size:13px;'],
-        'Copperplate Gothic' => ['label' => 'Copperplate Gothic', 'style' => 'font-family:"Copperplate Gothic Light", serif; font-size:11px; letter-spacing:1px;'],
-        'Lucida Calligraphy' => ['label' => 'Lucida Calligraphy', 'style' => 'font-family:"Lucida Calligraphy", cursive; font-style:italic;'],
-    ];
-}
-
-/* ============================================================
-   AJAX: SAVE / REMOVE ENGRAVING TO WC SESSION
-   Handles both logged-in and guest users.
-   ============================================================ */
-add_action('wp_ajax_ls_save_engraving',        'ls_save_engraving_handler');
-add_action('wp_ajax_nopriv_ls_save_engraving', 'ls_save_engraving_handler');
-
-function ls_save_engraving_handler() {
-
-    // Verify nonce
-    if ( ! check_ajax_referer( 'ls_engraving_nonce', 'security', false ) ) {
-        wp_send_json_error( ['message' => 'Security check failed.'] );
-    }
-
-    $cart_item_key  = sanitize_text_field( $_POST['cart_item_key']  ?? '' );
-    $engraving_text = sanitize_text_field( $_POST['engraving_text'] ?? '' );
-    $engraving_font = sanitize_text_field( $_POST['engraving_font'] ?? '' );
-
-    if ( ! $cart_item_key ) {
-        wp_send_json_error( ['message' => 'Invalid cart item key.'] );
-    }
-
-    // Validate the cart item exists
-    $cart = WC()->cart->get_cart();
-    if ( ! isset( $cart[ $cart_item_key ] ) ) {
-        wp_send_json_error( ['message' => 'Cart item not found.'] );
-    }
-
-    // Read current engraving session data
-    $all_engravings = WC()->session->get( 'ls_engraving', [] );
-
-    if ( $engraving_text === '' ) {
-        // REMOVE engraving
-        unset( $all_engravings[ $cart_item_key ] );
-    } else {
-        // SAVE engraving
-        $all_engravings[ $cart_item_key ] = [
-            'text' => $engraving_text,
-            'font' => $engraving_font,
-        ];
-    }
-
-    // Persist back to WC session
-    WC()->session->set( 'ls_engraving', $all_engravings );
-
-    // Also store inside cart item session for order meta (optional but recommended)
-    WC()->cart->cart_contents[ $cart_item_key ]['engraving_text'] = $engraving_text;
-    WC()->cart->cart_contents[ $cart_item_key ]['engraving_font'] = $engraving_font;
-    WC()->cart->set_session();
-
-    // Return the font style so JS can update the DOM without a reload
-    $fonts      = ls_get_engraving_fonts();
-    $font_style = '';
-    if ( $engraving_font && isset( $fonts[ $engraving_font ] ) ) {
-        $font_style = $fonts[ $engraving_font ]['style'];
-    }
-
-    wp_send_json_success( [
-        'message'    => 'Engraving saved.',
-        'font_style' => $font_style,
-    ] );
-}
-
-
-
-
-/* ============================================================
-   CLEAR ENGRAVING SESSION ON ORDER COMPLETION
-   Prevents old engravings carrying over to a new cart.
-   ============================================================ */
-add_action( 'oc_woocommerce_thankyou', 'ls_clear_engraving_session' );
-
-function ls_clear_engraving_session( $order_id ) {
-    WC()->session->set( 'ls_engraving', [] );
-}
 
 
 add_action('oc_woocommerce_thankyou', function ($order_id) {
@@ -1638,19 +1509,6 @@ function get_cart_item_data_array( $cart_item,$is_cart=false ) {
     // Other meta (plugins, custom fields, etc.)
     $other_data = apply_filters( 'woocommerce_get_item_data', [], $cart_item );
     if ($is_cart === true) {
-
-        foreach ($other_data as $index => $data) {
-            /*if (
-                isset($data['key']) &&
-                in_array($data['key'], ['Engraving', 'Engraving Font', 'Ring Size'], true)
-            ) {*/
-            if (
-                isset($data['key']) &&
-                in_array($data['key'], ['Engraving', 'Engraving Font'], true)
-            ) {
-                unset($other_data[$index]);
-            }
-        }
 
         // Optional: reindex array
         $other_data = array_values($other_data);

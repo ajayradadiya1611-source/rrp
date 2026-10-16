@@ -27,14 +27,6 @@ global $wpdb;
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 			$sku     = $_product->get_sku();
-			$certificate_type = null;
-
-            if ( isset($cart_item['diamond_data']) ) {
-                $certificate_type = isset($cart_item['diamond_data']->certificate_type) 
-                    ? intval($cart_item['diamond_data']->certificate_type) 
-                    : null;
-
-            }
 
 
 
@@ -77,13 +69,6 @@ global $wpdb;
 									<?php endif; ?>
 								
 								</div>
-								<?php
-								if ( $certificate_type === 0 || $certificate_type === 4 ) {
-		                           echo '<div class="custom-certi-text-checkout" >';
-		                            echo 'This diamond is sold without a certificate (no certificate included).';
-		                            echo  '</div>';
-		                        }
-								?>
 							</div>
 						</div>
 						

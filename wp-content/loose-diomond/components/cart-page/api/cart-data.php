@@ -19,20 +19,6 @@ function lgd_cart_capture( callable $fn, ...$args ) {
     return trim( ob_get_clean() );
 }
 
-function lgd_cart_engraving_fonts() {
-    if ( function_exists( 'ls_get_engraving_fonts' ) ) {
-        return ls_get_engraving_fonts();
-    }
-    return array(
-        'Arial'              => array( 'label' => 'Arial',              'style' => 'font-family:Arial, sans-serif;' ),
-        'Elephant'           => array( 'label' => 'Elephant',           'style' => 'font-family:Georgia,serif; font-weight:900; letter-spacing:1px;' ),
-        'Brush Script MT'    => array( 'label' => 'Brush Script',       'style' => 'font-family:"Brush Script MT", cursive; font-style:italic;' ),
-        'Footlight MT Light' => array( 'label' => 'Footlight',          'style' => 'font-family:"Footlight MT Light", serif;' ),
-        'Bradley Hand ITC'   => array( 'label' => 'Bradley Hand ITC',   'style' => 'font-family:"Bradley Hand ITC", cursive; font-size:13px;' ),
-        'Copperplate Gothic' => array( 'label' => 'Copperplate Gothic', 'style' => 'font-family:"Copperplate Gothic Light", serif; font-size:11px; letter-spacing:1px;' ),
-        'Lucida Calligraphy' => array( 'label' => 'Lucida Calligraphy', 'style' => 'font-family:"Lucida Calligraphy", cursive; font-style:italic;' ),
-    );
-}
 
 /**
  * Build the full cart state.
@@ -49,8 +35,6 @@ function lgd_cart_page_get_data() {
         return array( 'items' => array(), 'empty' => true );
     }
 
-    $fonts          = lgd_cart_engraving_fonts();
-    $all_engravings = WC()->session ? WC()->session->get( 'ls_engraving', array() ) : array();
     $can_checkout   = true;
     $items          = array();
 
@@ -70,12 +54,6 @@ function lgd_cart_page_get_data() {
         $product_name = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
         $thumbnail    = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
-        // Certificate
-        $certificate_type = null;
-        if ( isset( $cart_item['diamond_data'] ) && isset( $cart_item['diamond_data']->certificate_type ) ) {
-            $certificate_type = intval( $cart_item['diamond_data']->certificate_type );
-        }
-
         // Stock
         $out_of_stock = $oc_product && ! $oc_product->is_in_stock();
         if ( $out_of_stock ) {
@@ -94,11 +72,6 @@ function lgd_cart_page_get_data() {
                 );
             }
         }
-
-        // Engraving
-        $saved = $all_engravings[ $cart_item_key ] ?? array();
-        $eng_text = $saved['text'] ?? '';
-        $eng_font = $saved['font'] ?? '';
 
         // Quantity
         $qty_box = ! empty( $cart_item['is_qty_box'] );
@@ -132,9 +105,6 @@ function lgd_cart_page_get_data() {
             'afterNameHtml'    => lgd_cart_capture( 'do_action', 'oc_woocommerce_after_cart_item_name', $cart_item, $cart_item_key ),
             'meta'             => $meta,
             'outOfStock'       => $out_of_stock,
-            'noCertificate'    => ( $certificate_type === 0 || $certificate_type === 4 ),
-            'isEngraving'      => ! empty( $cart_item['is_engraving_product'] ),
-            'engraving'        => array( 'text' => $eng_text, 'font' => $eng_font ),
             'qty'              => (int) $cart_item['quantity'],
             'qtyBox'           => $qty_box,
             'maxQty'           => $max_qty > 0 ? (int) $max_qty : 0,
@@ -164,10 +134,6 @@ function lgd_cart_page_get_data() {
     // Notices (printed once, then cleared)
     $notices = function_exists( 'wc_print_notices' ) ? lgd_cart_capture( 'wc_print_notices' ) : '';
 
-    $font_list = array();
-    foreach ( $fonts as $value => $font ) {
-        $font_list[] = array( 'value' => $value, 'label' => $font['label'], 'style' => $font['style'] );
-    }
     return array(
         'empty'          => $cart->is_empty(),
         'items'          => $items,
@@ -184,7 +150,6 @@ function lgd_cart_page_get_data() {
         'supportMobile'  => defined( 'SUPPORT_MOBILE' ) ? SUPPORT_MOBILE : '',
         'themeUri'       => get_template_directory_uri(),
         'unboxingVideo'  => 'https://media.loosegrowndiamond.com/wait-till-you-see-inside-this-box.mp4',
-        'engravingFonts' => $font_list,
         'noticesHtml'    => $notices,
         'pageTitle'      => lgd_cart_page_title(),
         'cartCount'      => (int) $cart->get_cart_contents_count(),
@@ -221,13 +186,6 @@ function lgd_cart_remove_item_ajax() {
         wp_send_json_error( array( 'message' => 'Item not found.' ) );
     }
     WC()->cart->remove_cart_item( $key );
-
-    // Drop engraving for the removed line
-    if ( WC()->session ) {
-        $eng = WC()->session->get( 'ls_engraving', array() );
-        unset( $eng[ $key ] );
-        WC()->session->set( 'ls_engraving', $eng );
-    }
 
     WC()->cart->calculate_totals();
 

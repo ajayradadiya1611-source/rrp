@@ -102,9 +102,6 @@ export default function CartItem({ item, actions, refreshSeq = 0 }) {
 
           {item.outOfStock && <p style={{ color: 'red' }} className="oc-cart-out-stock">This item has been sold out.</p>}
 
-          {item.noCertificate && (
-            <div className="custom-certi-text">This diamond is sold without a certificate (no certificate included).</div>
-          )}
         </div>
       </div>
 

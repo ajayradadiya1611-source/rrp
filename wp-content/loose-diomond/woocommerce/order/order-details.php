@@ -121,18 +121,12 @@ if ( $show_downloads ) {
                         $video_url = wc_get_order_item_meta( $item_id, 'video_url', true );
                         $setting_variation = wc_get_order_item_meta( $item_id, 'setting_variation', true );
                         $diamond = wc_get_order_item_meta( $item_id, 'diamond', true );
-                        $_diamond_data = wc_get_order_item_meta( $item_id, '_diamond_data', true );
 
                         $sku =$item->get_meta('_sku_snapshot');
-                        //print_r($_diamond_data);
-                        if(!empty($_diamond_data)){
-                            $thumbnail = get_template_directory_uri() . '/assets/image/ls-inventory/shape-diamond/png/'.strtolower($_diamond_data->shape).'.png';
-                        }else{
-                            // Thumbnail
-                            $thumbnail = $product && $product->get_image_id()
-                                ? wp_get_attachment_image_url( $product->get_image_id(), 'thumbnail' )
-                                : wc_placeholder_img_src( 'thumbnail' );
-                        }
+                        // Thumbnail
+                        $thumbnail = $product && $product->get_image_id()
+                            ? wp_get_attachment_image_url( $product->get_image_id(), 'thumbnail' )
+                            : wc_placeholder_img_src( 'thumbnail' );
                     ?>
                     <tr class="<?php if(!empty($setting_variation)){echo "setting_variation";}?> ">
                         <td class="<?php if(!empty($diamond)){echo "border-0";}?>">
@@ -171,7 +165,7 @@ if ( $show_downloads ) {
 
                                     <?php
                                     /**
-                                     * Loop through item meta (Metal, Setting Size, Certificate Type, etc.)
+                                     * Loop through item meta (Metal, Setting Size, etc.)
                                      * These keys come from product attributes or custom fields saved at checkout.
                                      */
                                     do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
