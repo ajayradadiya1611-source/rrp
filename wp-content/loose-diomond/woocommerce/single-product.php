@@ -284,7 +284,7 @@ if ( ! empty( $short_description ) ) {
 								$ls_unit_option = (string) get_post_meta( $product->get_id(), 'ls_unit_option', true );
 								if ( in_array( $ls_unit_option, array( '0', '2', '3' ), true ) ) : ?>
 									<div class="common_select_dropdown mb_15">
-										<label for="Unit">Unit</label>
+										<label for="Unit">UNIT</label>
 										<select id="Unit" name="attribute_pa_unit" class="form-select ls-unit-select">
 											<?php if ( '0' === $ls_unit_option ) : ?>
 												<option value="carat">CARAT</option>
@@ -863,6 +863,7 @@ single_product_experience_history();
 echo '<div class="light_gray_background ">';
 single_product_what_customer_say();
 echo '</div>';
+single_product_shop_by_shape();
 if (! has_term( array('custom'), 'product_cat', $product_id ) ){
 ?>
 	<div class="oc-related-product   pt-5">

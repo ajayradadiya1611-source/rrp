@@ -2,7 +2,7 @@
 /**
  * Cart Page — React version
  *
- * The whole cart UI (items, ring/setting size, engraving, upgrades,
+ * The whole cart UI (items, upgrades,
  * coupons, order summary, trust block, modals, loader) is rendered by
  * the React app in components/cart-page/react (built to out/cart-page).
  *

@@ -142,36 +142,6 @@ function getShapeValueById($id, $shapes) {
 }
 
 /**
- * Parse certificate info from type and URL/string
- *
- * @param mixed $certi_type
- * @param string $certificate
- * @return array ['id' => string, 'type' => string]
- */
-function ls_parse_certificate($certi_type, $certificate) {
-    $certi_id = '';
-    $certi = '';
-
-    if ( $certi_type == 3 ) {
-        $a = explode("?certificate_id=", $certificate);
-        $certi_id = $a[1] ?? '';
-        $certi = 'GCAL';
-
-    } elseif ( $certi_type == 2 ) {
-        $a = explode("reportno=", $certificate);
-        //print_r($a);
-        $certi_id = $a[1] ?? '';
-        $certi = 'GIA';
-
-    } elseif ( $certi_type == 1 )  {
-        $a = explode("?r=", $certificate);
-        $certi_id = $a[1] ?? '';
-        $certi = 'IGI';
-    }
-
-    return array('id' => $certi_id, 'type' => $certi);
-}
-/**
  * Enqueue scripts and styles.
  */
 function loose_diomond_scripts()
@@ -891,14 +861,6 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
     // Category आधारित flags
     $cart_item_data['is_readyToShipProduct'] = has_term('ready-to-ship', 'product_cat', $product_id);
 
-    $is_ring_product = false;
-    // Ring product
-     if (has_term('wedding-ring', 'product_cat', $product_id)) {
-        $is_ring_product = true;
-    }
-    $cart_item_data['is_ring_product'] = $is_ring_product;
-    /*print_r(has_term(['wedding-rings', 'engagement-rings'], 'product_cat', $product_id));
-    exit; */
     // Custom note
     if (isset($_POST['custom_note'])) {
         $cart_item_data['custom_note'] = sanitize_text_field(
@@ -919,35 +881,8 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
     return $cart_item_data;
 }
 
-add_filter( 'woocommerce_get_item_data', 'ls_fn_display_ringsize', 10, 2 );
-function ls_fn_display_ringsize( $item_data, $cart_item ) {
-
-    $product = $cart_item['data'];
-
-     if ( isset(  $cart_item['diamond_data']) ) {
-        $record= $cart_item['diamond_data'];
-        //print_r($record);
-
-        $cert_info = ls_parse_certificate($record->certificate_type ?? '', $record->certificate ?? '');
-        $certi_id = $cert_info['id'];
-        $certi = $cert_info['type'];
-
-        // ✅ Save to order item meta
-        if ( ! empty( $certi ) ) {
-            $item_data[] = array(
-                'key'  => 'Certificate Type',
-                'value' => $certi
-            );
-        }
-
-        if ( ! empty( $certi_id ) ) {
-            $item_data[] = array(
-                'key'  => 'Certificate ID',
-                'value' => sanitize_text_field( $certi_id )
-            );
-            
-        }
-    }
+add_filter( 'woocommerce_get_item_data', 'ls_fn_display_cart_note', 10, 2 );
+function ls_fn_display_cart_note( $item_data, $cart_item ) {
     if (isset($cart_item['custom_note'])) {
         $item_data[] = array(
             'key'  => 'Description',
@@ -955,93 +890,6 @@ function ls_fn_display_ringsize( $item_data, $cart_item ) {
         );
     }
     return $item_data;
-}
-
-add_filter('woocommerce_cart_item_name', 'custom_cart_item_name', 10, 3);
-
-function custom_cart_item_name($product_name, $cart_item, $cart_item_key) {
-
-    // Get product object
-    $product = $cart_item['data'];
-
-    if (!$product) {
-        return $product_name;
-    }
-
-    // Dynamic values
-    $product_id = $product->get_id();
-    $sku        = $product->get_sku();
-    $title      = $product->get_name();
-
-    $custom_title = $product_name;
-    $shipping = isset($cart_item['diamond_data']->shipping)
-                        ? intval($cart_item['diamond_data']->shipping)
-                        : null;
-    $express_shipping_img ='';
-                if($shipping==1){
-                    $express_shipping_img ='&nbsp;<img class="shippin-icon" src="'.get_template_directory_uri().'/assets/image/header/ready-to-ship.svg"/>';
-                } 
-
-    $is_overnight_img ='';
-                if($shipping==2){
-                    $is_overnight_img ='&nbsp;<img class="shippin-icon" src="'.get_template_directory_uri().'/aj_custom/inventory/space-rocket.svg"/>';
-                } 
-
-    return $custom_title.$express_shipping_img.$is_overnight_img;
-}
-
-
-
-
-
-
-add_filter('woocommerce_order_item_name', 'custom_order_item_name_with_diamond', 1000000, 2);
-
-function custom_order_item_name_with_diamond($item_name, $item) {
-    $diamond = $item->get_meta('_diamond_data');
-    $express_shipping_img ='';
-    $is_overnight_img ='';
-    if (!empty($diamond)) {
-
-        // Since it's an object (stdClass)
-        $shape = $diamond->shape ?? '';
-        $price = $diamond->price ?? '';
-
-        $shipping = isset($diamond->shipping)
-    ? intval($diamond->shipping)
-    : 0;
-    
-                if($shipping==1){
-                    $express_shipping_img ='&nbsp;<img class="shippin-icon" src="'.get_template_directory_uri().'/aj_custom/mail/ready-to-ship.svg"  width="15"/>';
-                } 
-                if($shipping==2){
-                    $is_overnight_img ='&nbsp;<img class="shippin-icon" src="'.get_template_directory_uri().'/aj_custom/mail/space-rocket.svg" width="15"/>';
-                } 
-    }
-
-    return $item_name.$express_shipping_img.$is_overnight_img;
-}
-add_filter('woocommerce_admin_order_preview_line_items', 'lgd_modify_preview_item_name', 10, 2);
-function lgd_modify_preview_item_name($line_items, $order) {
-    foreach ($line_items as $item_id => $item) {
-        $name_with_icons = custom_order_item_name_with_diamond($item->get_name(), $item);
-        $item->set_name($name_with_icons);
-    }
-    return $line_items;
-}
-add_action( 'woocommerce_order_item_meta_end', 'display_diamond_data', 10, 4 );
-
-function display_diamond_data( $item_id, $item, $order, $plain_text ) {
-    //echo "swww";
-    $diamond_data = $item->get_meta( '_diamond_data' );
-    //print_r($diamond_data);
-    if ( ! empty( $diamond_data ) ) {
-
-        if($diamond_data->certificate_type==0 || $diamond_data->certificate_type==4){
-            echo '<div class="order-custom-certi-text">This diamond is sold without a certificate (no certificate included).</div>';
-        }
-    }
-    
 }
 
 add_action( 'woocommerce_checkout_create_order_line_item', 'ls_save_all_custom_data_to_order_item', 10, 4 );
@@ -1053,38 +901,6 @@ function ls_save_all_custom_data_to_order_item( $item, $cart_item_key, $values, 
     exit;*/
     global $wpdb;
      $product_id = $item->get_product_id();
-     if ( isset( $values['diamond_data'] ) ) {
-
-        $item->add_meta_data('_diamond_data', $values['diamond_data'], true);
-
-        
-
-        $record = $values['diamond_data'];
-       // exit;
-        //print_r($record);
-        $cert_info = ls_parse_certificate($record->certificate_type ?? '', $record->certificate ?? '');
-        $certi_id = $cert_info['id'];
-        $certi = $cert_info['type'];
-        /*print_r($record);
-        print_r($certi);
-        print_r($certi_id);
-        exit;*/
-
-        // ✅ Save to order item meta
-        if ( ! empty( $certi ) ) {
-            $item->add_meta_data( 'Certificate Type', $certi, true );
-        }
-
-        if ( ! empty( $certi_id ) ) {
-            $item->add_meta_data( 'Certificate ID', sanitize_text_field( $certi_id ), true );
-            
-        }
-        if ( ! empty( $certi_id ) ) {
-            $item->add_meta_data( '_certificate_url', sanitize_text_field($certificate ), true );
-            
-        }
-    }
-
     if (isset($values['custom_note'])) {
         $item->add_meta_data('Description', $values['custom_note'], true);
     }
