@@ -7048,16 +7048,16 @@ textarea.form-control {
   --ship-border: #d9d9d9;
   --ship-text: #111;
   --ship-muted: #6b6b6b;
-  --ship-accent: #1d5fbf;
+  --ship-accent: #000;
   --ship-sel-bg: #f3f7fd;
-  --ship-sel-border: #1d5fbf;
+  --ship-sel-border: #000;
   margin: 24px 0;
   color: var(--ship-text);
 
   .lgd-ship__title {
-    font-size: 20px !important;
-    font-weight: 700 !important;
-    text-transform: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
     margin: 0 0 16px !important;
     color: var(--ship-text) !important;
   }
@@ -7142,7 +7142,7 @@ textarea.form-control {
       flex-wrap: wrap;
       gap: 6px;
       font-size: 16px !important;
-      font-weight: 700 !important;
+      font-weight: 500 !important;
       line-height: 1.3 !important;
       color: var(--ship-text) !important;
     }
