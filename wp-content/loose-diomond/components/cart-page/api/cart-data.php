@@ -187,6 +187,7 @@ function lgd_cart_page_get_data() {
         'engravingFonts' => $font_list,
         'noticesHtml'    => $notices,
         'pageTitle'      => lgd_cart_page_title(),
+        'cartCount'      => (int) $cart->get_cart_contents_count(),
     );
 }
 

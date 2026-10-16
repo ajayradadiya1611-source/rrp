@@ -38,6 +38,12 @@ export async function fetchCart() {
 }
 
 /** Tell mini-cart / header count (WooCommerce fragments) to refresh. */
+/** Update every header cart badge (.cart-count is plain PHP, not a Woo fragment). */
+export function setHeaderCount(n) {
+  if (typeof n !== 'number') return
+  document.querySelectorAll('.cart-count').forEach((el) => { el.textContent = n })
+}
+
 export function refreshFragments() {
   if (window.jQuery) window.jQuery(document.body).trigger('wc_fragment_refresh')
 }

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { ajax, fetchCart, nonce, refreshFragments } from './api.js'
+import { ajax, fetchCart, nonce, refreshFragments, setHeaderCount } from './api.js'
 import CartItem from './components/CartItem.jsx'
 import OrderSummary from './components/OrderSummary.jsx'
 import EngravingModal from './components/EngravingModal.jsx'
@@ -38,6 +38,7 @@ export default function App({ initial }) {
       return
     }
     setCart(data)
+    setHeaderCount(data.cartCount)
     setRefreshSeq((n) => n + 1)
     refreshFragments()
   }, [])
