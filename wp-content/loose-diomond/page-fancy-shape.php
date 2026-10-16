@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Fancy Shape White Diamonds
+ * Template Name: Fancy Shape
  *
  * Six fancy-shape melee category cards. Images are the product images in
  * rrp-img/<slug>/ (same files as the Melee Diamonds For Sale page).
