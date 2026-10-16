@@ -30,7 +30,7 @@ $black_shapes = [
 
 <!-- start banner section -->
 <div class="banner_section home_banner_hero hero-split">
-    <div class="hero-split__inner container">
+    <div class="hero-split__inner container-fluid">
         <div class="hero-split__content">
             <h1 class="hero-split__title"><?php echo $home_page['hero_banner_heading']; ?></h1>
             <p class="hero-split__text"><?php echo $home_page['hero_banner_description']; ?></p>
