@@ -863,7 +863,7 @@ single_product_experience_history();
 echo '<div class="light_gray_background ">';
 single_product_what_customer_say();
 echo '</div>';
-single_product_shop_by_shape();
+
 if (! has_term( array('custom'), 'product_cat', $product_id ) ){
 ?>
 	<div class="oc-related-product   pt-5">
