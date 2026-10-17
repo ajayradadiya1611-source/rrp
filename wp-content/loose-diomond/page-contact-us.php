@@ -32,7 +32,7 @@ get_header();
                             href="mailto:<?php echo SUPPORT_EMAIL;?>"><b><?php echo SUPPORT_EMAIL;?></b></a> </p>
                     <p class="text-center mb_20"><b>Business Phone (WhatsApp):</b> <a href="tel:+<?php echo SUPPORT_MOBILE ?>" >+<?php echo SUPPORT_MOBILE ?></a> </p>
                     <p class="text-center mb_70"><b>Office Address:</b> 55W 47th St., Suite#790 New York, NY-10036 USA </p>
-
+                    <p class="text-center mb_70"><b>India Address:</b> 2nd Floor, Red Turning Point, Near, Matawadi Police Chowki, L.H.Road, Varachha, Surat, Gujarat – 395006 </p>
                     <form class="form_box mx-auto" id="ls-contact-us-form">
                         <div class="row row-gap-4">
                             <div class="col-md-6">
