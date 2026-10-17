@@ -19,6 +19,7 @@ function ls_materials_variation_fields( $loop, $variation_data, $variation ) {
     $label = get_post_meta( $vid, 'section1label', true );
     $rows  = get_post_meta( $vid, 'section1data', true );
     $rows  = is_array( $rows ) ? array_values( array_filter( $rows, 'strlen' ) ) : array();
+    $video = get_post_meta( $vid, 'variation_video_link', true );
 
     if ( empty( $rows ) ) {
         $rows = array( '' );
@@ -28,6 +29,11 @@ function ls_materials_variation_fields( $loop, $variation_data, $variation ) {
         <div class="ls-materials__label">
             <label>Materials Label</label>
             <input type="text" class="short" name="section1label[<?php echo esc_attr( $vid ); ?>]" value="<?php echo esc_attr( $label ); ?>">
+        </div>
+
+        <div class="ls-materials__label">
+            <label>Video Link (mp4 file URL, shown in the product gallery)</label>
+            <input type="text" class="short" placeholder="https://example.com/video.mp4" name="variation_video_link[<?php echo esc_attr( $vid ); ?>]" value="<?php echo esc_attr( $video ); ?>">
         </div>
 
         <div class="ls-materials__data">
@@ -52,6 +58,10 @@ add_action( 'woocommerce_save_product_variation', 'ls_materials_save_variation',
 function ls_materials_save_variation( $variation_id, $i ) {
     if ( isset( $_POST['section1label'][ $variation_id ] ) ) {
         update_post_meta( $variation_id, 'section1label', sanitize_text_field( wp_unslash( $_POST['section1label'][ $variation_id ] ) ) );
+    }
+
+    if ( isset( $_POST['variation_video_link'][ $variation_id ] ) ) {
+        update_post_meta( $variation_id, 'variation_video_link', esc_url_raw( trim( wp_unslash( $_POST['variation_video_link'][ $variation_id ] ) ) ) );
     }
 
     if ( isset( $_POST['section1data'][ $variation_id ] ) && is_array( $_POST['section1data'][ $variation_id ] ) ) {
