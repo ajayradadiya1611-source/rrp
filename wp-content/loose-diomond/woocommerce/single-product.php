@@ -690,8 +690,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			var thumb = document.createElement('div');
 			thumb.className = 'img' + (idx === 0 ? ' active' : '');
 			if (img.video) {
-				thumb.style.cssText = 'display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:#111;color:#fff;font-size:22px;cursor:pointer;';
-				thumb.textContent = '\u25B6';
+				var vImg = document.createElement('img');
+				vImg.src = <?php echo wp_json_encode( get_template_directory_uri() . '/rrp-img/pdp/video-play.svg' ); ?>;
+				vImg.alt = 'Video';
+				thumb.appendChild(vImg);
 			} else {
 				var tImg = document.createElement('img');
 				tImg.src = img.thumb;
