@@ -520,8 +520,15 @@ if($is_checkout == true){
             </p>
             <!-- TrustBox widget - Mini -->
             <div class="footer_trustpilot mb-4">
-              <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5f6c3ba7296f83000100bdf0" data-style-height="100px" data-style-width="100%" data-theme="dark" data-token="6ab462c7-b106-4e0b-81de-d1fc75ebed72">
-              <a href="https://www.trustpilot.com/review/www.loosegrowndiamond.com" target="_blank" rel="noopener">Trustpilot</a>
+              <div class="trustpilot_btn">
+                  <a href="https://www.trustpilot.com/review/rrpdiamonds.com" target="_blank">
+                    <img
+                    src="<?php echo get_template_directory_uri().'/rrp-img/comman/trustpilot-review-btn.svg'; ?>"
+                    alt="ratings"
+                    class="img-fluid trustpilot_btn-rate-image"
+                    loading="lazy"
+                  />
+                  </a>
               </div>
             </div>
               <!-- End TrustBox widget -->
@@ -597,11 +604,16 @@ if($is_checkout == true){
               Reviews
             </p>
             <div class="footer_trustpilot  mb-4">
-            <!-- TrustBox widget - Mini -->
-              <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5f6c3ba7296f83000100bdf0" data-style-height="100px" data-style-width="100%" data-theme="dark" data-token="6ab462c7-b106-4e0b-81de-d1fc75ebed72">
-              <a href="https://www.trustpilot.com/review/www.loosegrowndiamond.com" target="_blank" rel="noopener">Trustpilot</a>
+            <div class="trustpilot_btn">
+                  <a href="https://www.trustpilot.com/review/rrpdiamonds.com" target="_blank">
+                    <img
+                    src="<?php echo get_template_directory_uri().'/rrp-img/comman/trustpilot-review-btn.svg'; ?>"
+                    alt="ratings"
+                    class="img-fluid trustpilot_btn-rate-image"
+                    loading="lazy"
+                  />
+                  </a>
               </div>
-              <!-- End TrustBox widget -->
               </div>
               <a href="https://g.page/r/CfgPY3z14oWaEAE" target="_blank" rel="noopener">
                         <img

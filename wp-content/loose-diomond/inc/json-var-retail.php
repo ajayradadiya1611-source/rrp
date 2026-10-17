@@ -13,7 +13,7 @@ $home_page = array(
 );
 $text_change['home_page'] = $home_page;
 $common_page = array(
-    "trustpilot_total_rating" => '13,100'
+    "trustpilot_total_rating" => '1310'
 );
 $common_page['top_bar'] = [
     "International Shipping & Free Returns (USA) | We Price Match | 100% Money-Back Guarantee",

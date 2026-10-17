@@ -75,7 +75,7 @@ do_action( 'oc_woocommerce_thankyou', $order->get_id() );
             height="30"
             decoding="async"
             class="d-block mx-auto"
-            src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
+            src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
         >
     </div>
 

@@ -109,7 +109,7 @@ if ( ! is_search() || have_posts() ) {
     }
 
     // Logo
-    $schema_logo = get_template_directory_uri() . '/assets/image/logo/loosegrowndiamond_logo.svg';
+    $schema_logo = get_template_directory_uri() . '/rrp-img/comman/logo.svg';
 
     $schema_graph = array();
 

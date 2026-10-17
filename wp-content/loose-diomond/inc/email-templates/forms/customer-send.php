@@ -28,7 +28,7 @@ $logo_url  = $logo_id ? wp_get_attachment_image_url($logo_id, 'full') : '';
     <!-- HEADER LOGO -->
     <tr>
         <td style="padding:32px 32px 0;text-align:center;">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/image/logo/loosegrowndiamond_logo.svg' ); ?>" 
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/rrp-img/comman/logo.svg' ); ?>" 
                      alt="<?php echo esc_attr( $site_name ); ?>"
                      style="max-width:120px;height:auto;display:block;margin:0 auto;">
             </td>

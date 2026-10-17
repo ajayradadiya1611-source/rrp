@@ -113,7 +113,7 @@ $black_shapes = [
         <div class="row">
             <div class="col-6">
                 <a href="/product/melee-diamonds/" class="engagement_rings text-decoration-none">
-                    <img src="<?php echo get_template_directory_uri(); ?>/aj_custom/home-page/shop-by-engagement/engagement_rings_1.webp"
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/home/popular_categories-1.svg"
                         alt="Start with a lab grown diamond"
                         width="555" height="400"
                         class="img-fluid mb-3 mb-md-4"
@@ -123,7 +123,7 @@ $black_shapes = [
             </div>
             <div class="col-6">
                 <a href="/product/calibrated-diamonds/" class="engagement_rings text-decoration-none">
-                    <img src="<?php echo get_template_directory_uri(); ?>/aj_custom/home-page/shop-by-engagement/engagement_rings_2.webp"
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/home/popular_categories-2.svg"
                         alt="Start with an engagement ring setting"
                         width="555" height="400"
                         class="img-fluid mb-3 mb-md-4"
@@ -349,7 +349,7 @@ $black_shapes = [
                 target="_blank"
                 rel="noopener nofollow"
                 class="d-flex align-items-center gap-2 text-decoration-none">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
+                <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
                     alt="loosegrown_diamond Instagram profile"
                     class="rounded-circle"
                     width="40"

@@ -181,21 +181,17 @@ function single_product_what_customer_say(){
             
                 ?>
                 <div class="oc-line-trust mt-5">
-             <div
-                  class="trustpilot-widget"
-                  data-locale="en-US"
-                  data-template-id="5419b6ffb0d04a076446a9af"
-                  data-businessunit-id="5f6c3ba7296f83000100bdf0"
-                  data-style-height="auto"
-                  data-style-width="100%"
-                 
-                  data-token="f24cfa9d-6ac7-4b9b-a381-8fcf03556d14"
-                >
-                  <a href="https://www.trustpilot.com/review/www.loosegrowndiamond.com" target="_blank" rel="noopener noreferrer">
-                    Trustpilot
-                  </a>
+                 <div class="trustpilot_btn">
+                      <a href="https://www.trustpilot.com/review/rrpdiamonds.com" target="_blank">
+                        <img
+                        src="<?php echo get_template_directory_uri().'/rrp-img/comman/trustpilot-review-btn.svg'; ?>"
+                        alt="ratings"
+                        class="img-fluid trustpilot_btn-rate-image"
+                        loading="lazy"
+                      />
+                      </a>
+                  </div>
                 </div>
-            </div>
            
                 <?php
             
@@ -262,7 +258,7 @@ function single_product_buy_direct_us(){
                     <div class="col-md-4">
                         <div class="etheme_box_m text-center">
                             <div>
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg" alt="loosegrowndiamond_logo">
+                                <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg" alt="loosegrowndiamond_logo">
                                 <div class="text_black_secondary fw-600 my-2 h5">RRP Diamond </div>
                                 <span class="font_size_15">(We as a Manufacturer) </span>
                             </div>

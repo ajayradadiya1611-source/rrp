@@ -418,7 +418,7 @@ $oc_main_menu = array(
        
               <a class="navbar-brand" href="<?php echo home_url(); ?>">
                 <img
-                  src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/loosegrowndiamond_logo.svg"
+                  src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
                   alt="loosegrowndiamond_logo" />
               </a>
               <div class="oc-checkout-mobile">

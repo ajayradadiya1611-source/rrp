@@ -73,7 +73,7 @@ $schema_graph[] = array(
     '@id'    => $schema_home . '#organization',
     'name'   => 'RRP Diamond',
     'url'    => $schema_home,
-    'logo'   => get_template_directory_uri() . '/assets/image/logo/loosegrowndiamond_logo.svg',
+    'logo'   => get_template_directory_uri() . '/rrp-img/comman/logo.svg',
     'sameAs' => array(
         'https://www.facebook.com/LooseGrownDiamond/',
         'https://twitter.com/grown_diamond',
