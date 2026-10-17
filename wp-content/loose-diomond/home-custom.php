@@ -35,7 +35,7 @@ $black_shapes = [
             <h1 class="hero-split__title"><?php echo $home_page['hero_banner_heading']; ?></h1>
             <p class="hero-split__text"><?php echo $home_page['hero_banner_description']; ?></p>
             <div class="hero-split__actions">
-                <a href="<?php echo esc_url( $home_page['hero_banner_button_link2'] ); ?>" class="hero-split__btn">Shop Natural Melee Diamonds</a>
+                <a href="/shop/" class="hero-split__btn">Shop Natural Melee Diamonds</a>
             </div>
         </div>
     </div>
