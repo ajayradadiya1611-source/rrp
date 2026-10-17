@@ -76,7 +76,7 @@ $logo_url  = $logo_id ? wp_get_attachment_image_url($logo_id, 'full') : '';
             </td>
 
             <td style="padding:0 6px;">
-                <a href="https://www.instagram.com/loosegrown_diamond/" target="_blank">
+                <a href="https://www.instagram.com/rrpdiamond/" target="_blank">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/aj_custom/email-social/insta.png' ); ?>" 
                          alt="Instagram" width="24" style="display:block;border:0;">
                 </a>

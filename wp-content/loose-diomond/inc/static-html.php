@@ -180,7 +180,7 @@ function single_product_what_customer_say(){
             <?php
             
                 ?>
-                <div class="oc-line-trust mt-5">
+                <div class="oc-line-trust mt-5 text-center">
                  <div class="trustpilot_btn">
                       <a href="https://www.trustpilot.com/review/rrpdiamonds.com" target="_blank">
                         <img

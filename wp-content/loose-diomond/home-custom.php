@@ -345,17 +345,17 @@ $black_shapes = [
     <div class="container-fluid">
         <h2 class="text-center py_25 pt-0 mb-0 home_we_have_instagram_title">Follow us on Instagram</h2>
         <div class="instagram-header d-flex justify-content-center align-items-center gap-2 mb-4">
-            <a href="https://www.instagram.com/loosegrown_diamond/"
+            <a href="https://www.instagram.com/rrpdiamond/"
                 target="_blank"
                 rel="noopener nofollow"
                 class="d-flex align-items-center gap-2 text-decoration-none">
                 <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
-                    alt="loosegrown_diamond Instagram profile"
+                    alt="rrpdiamond Instagram profile"
                     class="rounded-circle"
                     width="40"
                     height="40"
                     loading="lazy">
-                <span class="fw-medium text-decoration-underline text-dark">@loosegrown_diamond</span>
+                <span class="fw-medium text-decoration-underline text-dark">@rrpdiamond</span>
             </a>
         </div>
     </div>

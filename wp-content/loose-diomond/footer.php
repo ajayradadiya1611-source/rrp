@@ -317,7 +317,7 @@ if($is_checkout == true){
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/loosegrown_diamond/" target="_blank">
+                    <a href="https://www.instagram.com/rrpdiamond/" target="_blank">
                       <i class="fa-brands fa-instagram"></i>
                     </a>
                   </li>
@@ -447,7 +447,7 @@ if($is_checkout == true){
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/loosegrown_diamond/" target="_blank">
+                    <a href="https://www.instagram.com/rrpdiamond/" target="_blank">
                       <i class="fa-brands fa-instagram"></i>
                     </a>
                   </li>
