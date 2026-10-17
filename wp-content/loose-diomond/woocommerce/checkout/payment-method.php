@@ -24,11 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<label for="payment_method_<?php echo esc_attr( $gateway->id ); ?>">
 		<?php echo $gateway->get_title(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?> <?php echo $gateway->get_icon(); /* phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped */ ?>
-		<?php
-		if($gateway->id=='bacs'){
-			echo '<span class="aj-small-make">Save 2% on Card Payment Fees</span>';
-		}
-		?>
 	</label>
 	<?php if ( $gateway->has_fields() || $gateway->get_description() ) : ?>
 		<div class="payment_box payment_method_<?php echo esc_attr( $gateway->id ); ?>" <?php if ( ! $gateway->chosen ) : /* phpcs:ignore Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace */ ?>style="display:none;"<?php endif; /* phpcs:ignore Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace */ ?>>
