@@ -84,7 +84,7 @@ function ls_render_consult_why() {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-2">
-                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/bg_book_consultation_1.png'; ?>">
+                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/bg_book_consultation_2.png'; ?>">
                 </div>
                 <div class="col-8">
                     <h2>Book a Free 30 Minute Consultation Call with Gemologist</h2>
