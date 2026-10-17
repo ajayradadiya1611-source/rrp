@@ -16,32 +16,17 @@ $common_page = array(
     "trustpilot_total_rating" => '1310'
 );
 $common_page['top_bar'] = [
-    "International Shipping & Free Returns (USA) | We Price Match | 100% Money-Back Guarantee",
-    "Excellent ⭐ 5,000+ Verified 5-Star Reviews You Can Trust",
-    "Need Help? Speak with a GIA-Certified Gemologist | <a href='tel:+91 9016106290'>+91 9016106290</a>",
-    "🎃 HALLOWEEN Sale: Flat 30% Off Diamonds | Use Code: hallo30 🎃",
+    "INTERNATIONAL SHIPPING | We Price Match | 100% Money back Guarantee",
 ];
 
 $common_page['top_bar_checkout'] = [
-    "50,000+ Happy Couples",
-    "Free Resizing",
-    "Lifetime Warranty",
-    "7-Day Money-Back Guarantee",
-    "🎃 HALLOWEEN Sale: Flat 30% Off Diamonds | Use Code: HALLO30 🎃",
+    "INTERNATIONAL SHIPPING | We Price Match | 100% Money back Guarantee",
 ];
 $common_page['top_bar_mobile'] = [
-    "International Shipping & Free Returns (USA)",
-    "Price Match & 100% Money-Back Guarantee",
-    "Excellent ⭐ 5,000+ Verified 5-Star Reviews",
-    "Speak with a GIA Gemologist <a href='tel:+91 9016106290'>+91 9016106290</a>",
-    "🎃 HALLOWEEN Sale: Flat 30% Off Diamonds | HALLO30 🎃",
+    "INTERNATIONAL SHIPPING | We Price Match | 100% Money back Guarantee",
 ];
 $common_page['top_bar_checkout_mobile'] = [
-    "50,000+ Happy Couples",
-    "Free Resizing",
-    "Lifetime Warranty",
-    "7-Day Money-Back Guarantee",
-    "🎃 HALLOWEEN Sale: Flat 30% Off Diamonds | HALLO30 🎃",
+    "INTERNATIONAL SHIPPING | We Price Match | 100% Money back Guarantee",
 ];
 
 $common_page['desktop_footer_1']= [

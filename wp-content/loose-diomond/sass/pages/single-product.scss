@@ -272,7 +272,7 @@
 
     &__btn {
         display: inline-block;
-        padding: 14px 40px;
+        padding: 15px 52px;
         background: #2d3f8f;
         border: 1px solid #2d3f8f;
         color: #fff;
@@ -337,9 +337,6 @@
 }
 
 // Variation labels (Size, Purity, Color, Unit ...) always uppercase
-.custom-variations-form .common_select_dropdown label {
-    text-transform: uppercase;
-}
 
 // Schedule Now (consultation) popup — same look as the Contact Us form
 .ls-consult-modal {

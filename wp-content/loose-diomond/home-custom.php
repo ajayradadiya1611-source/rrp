@@ -32,8 +32,8 @@ $black_shapes = [
 <div class="banner_section home_banner_hero hero-split">
     <div class="hero-split__inner container-fluid">
         <div class="hero-split__content">
-            <h1 class="hero-split__title"><?php echo $home_page['hero_banner_heading']; ?></h1>
-            <p class="hero-split__text"><?php echo $home_page['hero_banner_description']; ?></p>
+            <h1 class="hero-split__title">Beautiful, Certified Lab<br/>Grown Diamonds</h1>
+            <p class="hero-split__text">Mining free. Direct to you. No middlemen</p>
             <div class="hero-split__actions">
                 <a href="/shop/" class="hero-split__btn">Shop Natural Melee Diamonds</a>
             </div>
