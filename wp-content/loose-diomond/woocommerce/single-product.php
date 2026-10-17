@@ -379,7 +379,7 @@ if ( ! empty( $short_description ) ) {
 									
 							</form>
 						<?php endif; ?>
-						<div class="klarna_price nrml mt-2">
+						<div class="klarna_price nrml mt-3">
 							<svg version="1.1" viewBox="0 0 45 25" height="25" width="45" xmlns="http://www.w3.org/2000/svg">
 								<title>Klarna Payment Badge</title>
 								<g fill="none" fill-rule="evenodd">
