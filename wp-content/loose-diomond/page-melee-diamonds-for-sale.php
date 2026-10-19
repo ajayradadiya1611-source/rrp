@@ -65,6 +65,8 @@ $faqs = [
 ];
 ?>
 
+
+
 <div class="melee-sale">
 
     <!-- hero -->
@@ -212,8 +214,81 @@ $faqs = [
 </div>
 
 <?php single_product_buy_direct_us(); ?>
+<div class="bg_light_gray">
+    <div class="section">
+    <!-- natural diamond FAQs section -->
+    
 
-<?php ls_render_faq_cards( 'Frequently Asked Questions', $faqs ); ?>
+    
+
+    <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="faq_list">
+                    <div class="faq_accordion accordion" id="faqAccordion">
+
+                        <?php foreach ( $faqs as $index => $faq ) : ?>
+                            <?php
+                            $is_youtube = ! empty( $faq['isyoutube'] ) && $faq['isyoutube'] === true;
+                            $has_video  = $is_youtube && ! empty( $faq['youtube_link'] );
+                            ?>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="heading<?php echo (int) $index; ?>">
+                                    <button class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse<?php echo (int) $index; ?>"
+                                            aria-expanded="false"
+                                            aria-controls="collapse<?php echo (int) $index; ?>">
+                                        <span><?php echo esc_html( $faq['question'] ); ?></span>
+
+                                        <?php if ( $is_youtube ) : ?>
+                                            <span class="faq-icon">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </span>
+                                        <?php endif; ?>
+                                    </button>
+                                </h3>
+
+                                <div id="collapse<?php echo (int) $index; ?>"
+                                     class="accordion-collapse collapse"
+                                     aria-labelledby="heading<?php echo (int) $index; ?>"
+                                     data-bs-parent="#faqAccordion">
+
+                                    <div class="accordion-body">
+
+                                        <?php if ( $has_video ) : ?>
+
+                                            <div class="ratio ratio-16x9">
+                                                <iframe
+                                                    src="<?php echo esc_url( str_replace( 'youtu.be/', 'www.youtube.com/embed/', $faq['youtube_link'] ) ); ?>"
+                                                    title="YouTube video"
+                                                    loading="lazy"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+
+                                        <?php else : ?>
+
+                                            <?php foreach ( (array) $faq['answer'] as $para ) : ?>
+                                                <p><?php echo wp_kses_post( $para ); ?></p>
+                                            <?php endforeach; ?>
+
+                                        <?php endif; ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 <div class="section">
     <?php echo single_product_what_customer_say(); ?>

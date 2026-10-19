@@ -111,6 +111,9 @@ $melee-band: #f7f7f7;
     &__price {
         font-size: 14px;
         font-weight: 600;
+        .screen-reader-text{
+            display:none;
+        }
     }
 
     &__why {
