@@ -301,8 +301,8 @@ strong {
 }
 a.product-content-image{
     @media (max-width: 767px) {
-        display: block;
-        max-height: 161px;    
+        /*display: block;
+        max-height: 161px;    */
     }
 }
 .product-content-image .slick-slide *:focus-visible {

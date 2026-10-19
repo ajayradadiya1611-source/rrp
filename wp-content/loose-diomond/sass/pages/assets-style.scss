@@ -3916,7 +3916,9 @@ footer .address_sec li:first-child:hover, footer .address-link a:hover {
   }
 }
 .ring_slick_slider {
-  min-height: 272px;
+  @media (min-width: 425px) {
+    min-height: 272px;
+  }
   .slick-dots {
     bottom: 10px;
     li {
