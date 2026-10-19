@@ -707,16 +707,18 @@ function cartwasrprice($cart_item,$_product,$cart_item_key){
     
 }
 
-function checkoutregularprice($cart_item, $_product, $cart_item_key) {
+function checkoutregularprice( $cart_item, $_product, $cart_item_key ) {
     $line_total = $cart_item['line_total'];
-    echo '<span class="oc-current-price">' .wp_kses_post( wc_price( $line_total ) ). '</span>';
+    $price_text = html_entity_decode( wp_strip_all_tags( wc_price( $line_total ) ) );
+    echo '<span class="oc-current-price">' . esc_html( $price_text ) . '</span>';
 }
-function checkoutwasprice($cart_item,$_product,$cart_item_key){
+function checkoutwasprice( $cart_item, $_product, $cart_item_key ) {
     $regular_price = $_product->get_regular_price();
     $current_price = $_product->get_price();
+
     if ( $regular_price && $regular_price != $current_price ) {
-        $regular_subtotal = wc_price( floatval( $regular_price ) * $cart_item['quantity'] );
-        echo '<span class="oc-regular-price" >was &nbsp;' . $regular_subtotal . '</span>';
+        $regular_subtotal = wp_strip_all_tags( wc_price( floatval( $regular_price ) * $cart_item['quantity'] ) );
+        echo '<span class="oc-regular-price">was &nbsp;' . esc_html( $regular_subtotal ) . '</span>';
     }
 }
 
