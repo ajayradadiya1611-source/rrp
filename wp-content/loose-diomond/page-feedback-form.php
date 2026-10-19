@@ -62,6 +62,7 @@ get_header();
     </div>
 </div>
 <!-- Shipping section end -->
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo esc_attr( LD_RECAPTCHA_SITE_KEY ); ?>" async defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -153,51 +154,71 @@ document.addEventListener('DOMContentLoaded', function () {
             if (s) s.remove();
         };
 
-        fetch('<?php echo site_url() . '/wp-json/ls/v1/feedback'; ?>', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-            body: formData
-        })
-        .then(async res => {
-            // Try to read JSON even on error responses (like xhr.responseJSON)
-            let data = null;
-            try { data = await res.json(); } catch (_) {}
+        const sendForm = (token) => {
+            formData.set('recaptcha_token', token);
+            fetch('<?php echo site_url() . '/wp-json/ls/v1/feedback'; ?>', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                body: formData
+            })
+            .then(async res => {
+                // Try to read JSON even on error responses (like xhr.responseJSON)
+                let data = null;
+                try { data = await res.json(); } catch (_) {}
 
-            if (!res.ok) {
-                const err = new Error('Request failed');
-                err.responseJSON = data;
-                throw err;
-            }
-            return data;
-        })
-        .then(response => {
-            if (response && response.success) {
-                showBox(successBox, response.success);
-                form.reset();
-            } else if (response && response.error) {
-                showBox(errorBox, response.error);
-            }
+                if (!res.ok) {
+                    const err = new Error('Request failed');
+                    err.responseJSON = data;
+                    throw err;
+                }
+                return data;
+            })
+            .then(response => {
+                if (response && response.success) {
+                    showBox(successBox, response.success);
+                    form.reset();
+                } else if (response && response.error) {
+                    showBox(errorBox, response.error);
+                }
 
-            setTimeout(() => {
-                fadeOut(successBox);
-                fadeOut(errorBox);
-            }, 5000);
+                setTimeout(() => {
+                    fadeOut(successBox);
+                    fadeOut(errorBox);
+                }, 5000);
 
+                resetButton();
+            })
+            .catch(err => {
+                const res = err.responseJSON;
+
+                // Handle field errors from backend
+                if (res && res.errors) {
+                    if (res.errors.name)    setText('.error-name', res.errors.name);
+                    if (res.errors.email)   setText('.error-email', res.errors.email);
+                    if (res.errors.message) setText('.error-message', res.errors.message);
+                } else if (res && res.error) {
+                    showBox(errorBox, res.error);
+                } else {
+                    showBox(errorBox, 'Something went wrong. Please try again.');
+                }
+
+                resetButton();
+            });
+        };
+
+        if (typeof grecaptcha === 'undefined') {
+            showBox(errorBox, 'reCAPTCHA failed to load. Please refresh the page and try again.');
             resetButton();
-        })
-        .catch(err => {
-            const res = err.responseJSON;
+            return;
+        }
 
-            // Handle field errors from backend
-            if (res && res.errors) {
-                if (res.errors.name)    setText('.error-name', res.errors.name);
-                if (res.errors.email)   setText('.error-email', res.errors.email);
-                if (res.errors.message) setText('.error-message', res.errors.message);
-            } else {
-                showBox(errorBox, 'Something went wrong. Please try again.');
-            }
-
-            resetButton();
+        grecaptcha.ready(function () {
+            grecaptcha.execute('<?php echo esc_js( LD_RECAPTCHA_SITE_KEY ); ?>', { action: 'feedback_form' })
+                .then(sendForm)
+                .catch(function () {
+                    showBox(errorBox, 'reCAPTCHA verification failed. Please try again.');
+                    resetButton();
+                });
         });
     });
 

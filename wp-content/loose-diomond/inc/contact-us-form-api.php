@@ -1,5 +1,42 @@
 <?php
 
+/**
+ * Verify a Google reCAPTCHA v3 token server-side.
+ * Returns true when valid, action matches and score >= LD_RECAPTCHA_MIN_SCORE.
+ */
+function ls_verify_recaptcha_v3($token, $expected_action = '')
+{
+    if (empty($token) || !defined('LD_RECAPTCHA_SECRET_KEY')) {
+        return false;
+    }
+
+    $resp = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
+        'timeout' => 10,
+        'body'    => [
+            'secret'   => LD_RECAPTCHA_SECRET_KEY,
+            'response' => $token,
+            'remoteip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '',
+        ],
+    ]);
+
+    if (is_wp_error($resp)) {
+        return false;
+    }
+
+    $data = json_decode(wp_remote_retrieve_body($resp), true);
+    if (empty($data['success'])) {
+        return false;
+    }
+
+    if ($expected_action !== '' && (!isset($data['action']) || $data['action'] !== $expected_action)) {
+        return false;
+    }
+
+    $min = defined('LD_RECAPTCHA_MIN_SCORE') ? (float) LD_RECAPTCHA_MIN_SCORE : 0.5;
+    return isset($data['score']) && (float) $data['score'] >= $min;
+}
+
+
 add_action('rest_api_init', function () {
     register_rest_route('ls/v1', '/contact-us', [
         'methods'  => 'POST',
@@ -478,6 +515,10 @@ function ls_rest_feedback(WP_REST_Request $request)
     $name = sanitize_text_field($request->get_param('name'));
     $email = sanitize_email($request->get_param('email'));
     $message = sanitize_textarea_field($request->get_param('message'));
+
+    if (!ls_verify_recaptcha_v3($request->get_param('recaptcha_token'), 'feedback_form')) {
+        return new WP_REST_Response(['error' => 'reCAPTCHA verification failed. Please refresh the page and try again.'], 403);
+    }
 
     if (empty($name) || empty($email) || empty($message)) {
         return new WP_REST_Response(['error' => 'All fields are required.'], 400);
