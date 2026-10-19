@@ -113,6 +113,7 @@ function ls_render_consult_why() {
                 </div>
                 <div class="modal-body">
                     <div class="ls-consult-modal__box">
+                        <h3 class="text-center">CONSULTATION REQUEST</h3>
                     <form class="ls-consult-modal__form" id="ls-consult-form" novalidate>
                         <div class="row row-gap-4">
                             <div class="col-md-6">
