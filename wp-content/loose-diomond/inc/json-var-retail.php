@@ -46,13 +46,10 @@ $common_page['desktop_footer_2'] = [
 ];
 
 $common_page['desktop_footer_3'] = [
-    ["name" => "Diamond Financing", "url" => get_site_url() ."/diamond-financing/"],
-    ["name" => "Engagement Ring Financing", "url" => get_site_url() ."/engagement-ring-financing/"],
     ["name" => "Crypto Payment", "url" => get_site_url() . "/crypto-payment/"],
     ["name" => "Shipping Policy", "url" => get_site_url() . "/shipping/"],
     ["name" => "Return/Refund Policy", "url" => get_site_url() . "/return-policy/"],
     ["name" => "Price Match Policy", "url" => get_site_url() . "/diamond-price-match/"],
-    ["name" => "Promo Code", "url" => get_site_url() . "/promo-code/"],
     ["name" => "Privacy Policy", "url" => get_site_url() . "/privacy-policy/"],
     ["name" => "Terms of Use", "url" => get_site_url() . "/terms-of-use/"]
 ];
