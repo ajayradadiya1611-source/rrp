@@ -71,7 +71,7 @@ $black_shapes = [
         'Conflict-Free Diamonds',
         'Stress-Free Purchase',
         'Free Insured Shipping*',
-        'Easy & Free 30 Day Returns*',
+        'Easy & Free 7 Day Returns*',
         'Manufacturer Warranty',
     ];
 
