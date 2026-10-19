@@ -332,7 +332,11 @@ $hero-text: #2d2926;
         line-height: 1.7;
         color: #000;
     }
-
+    &__img {
+         @media (max-width: 767px) {
+            margin-top:15px;
+         }
+    }
     &__btn {
         display: inline-block;
         padding: 18px 52px;
@@ -345,11 +349,14 @@ $hero-text: #2d2926;
         text-transform: uppercase;
         text-decoration: none;
         transition: background 0.2s;
-
+        text-align: center;
         &:hover,
         &:focus-visible {
             background: #1f2d6b;
             color: #fff;
+        }
+        @media (max-width: 767px) {
+            padding: 15px 25px;
         }
     }
 
@@ -358,18 +365,12 @@ $hero-text: #2d2926;
         background-position: right 30% bottom 10px;
         background-size: auto 140px;
 
-        &.section {
-            padding-bottom: 150px;
-        }
-
         &__content {
             max-width: none;
             padding: 36px 0 0;
         }
 
-        &__btn {
-            padding: 15px 28px;
-        }
+        
     }
 }
 

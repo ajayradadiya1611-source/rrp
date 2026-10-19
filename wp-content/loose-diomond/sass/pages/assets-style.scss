@@ -2302,6 +2302,9 @@ p {
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0px 4px 8px 0px rgba(176, 190, 197, 0.24);
+  @media only screen and (min-width: 768px) {
+    min-height: 375px;
+  }
   h3 {
     min-height: 56px;
     line-height: 28px;

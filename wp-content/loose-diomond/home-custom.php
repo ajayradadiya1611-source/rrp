@@ -225,7 +225,7 @@ $black_shapes = [
                 </div>
             </div>
             <div class="col-lg-7 col-md-6 col-12">
-                <img class="img-fluid w-100" src="<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/salt-pepper-diamonds.png' ); ?>" alt="Natural salt and pepper diamonds" loading="lazy">
+                <img class="img-fluid w-100 salt-pepper__img" src="<?php echo esc_url( get_template_directory_uri() . '/rrp-img/home/salt-pepper-diamonds.png' ); ?>" alt="Natural salt and pepper diamonds" loading="lazy">
             </div>
         </div>
     </div>
