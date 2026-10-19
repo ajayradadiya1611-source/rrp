@@ -257,86 +257,155 @@ $black_shapes = [
 </div>
 <!-- start diamond resources -->
 <div class="bg_light_gray">
-
+    <div class="section">
     <!-- natural diamond FAQs section -->
     <?php
     $faqs = [
         [
-            'question' => 'How much is mined diamonds worth?',
+            'question' => 'How much is a mined diamond worth?',
             'answer'   => [
-                'The typical cost of a mined diamond is roughly $2500–$3000 for a 1-carat brilliant round cut. We considered this form of the diamond since it is the most popular on the market. However, the true value of a mined diamond is determined by the 4Cs: Carat, Colour, Cut, and Clarity. The mined diamonds are valued higher due to long-standing customs.',
+                'A mined 1-carat round brilliant diamond typically costs anywhere from about $2,500 to well over $10,000, depending on its colour, clarity, cut and certification. The round brilliant is the most popular shape, so it is the usual benchmark.',
+                'The value of any diamond is set by the 4Cs: Carat, Colour, Cut and Clarity. Mined diamonds generally cost more than lab-grown diamonds of the same quality because of rarity, long-standing tradition and a longer supply chain.',
             ],
         ],
         [
-            'question' => 'Is Natural diamond better than lab?',
+            'question' => 'Is a natural diamond better than a lab-grown diamond?',
             'answer'   => [
-                'Natural diamonds are inferior to lab-grown diamonds. No scientific proof exists that natural diamonds are superior to lab-grown diamonds. This is simple. The only difference is the cut. A laboratory duplicates the conditions found deep within the earth to manufacture a pure diamond. A new generation values sustainability and environmental responsibility and prefers lab-grown diamonds.',
+                'Natural and lab-grown diamonds are chemically, physically and optically identical. Both are real diamonds made of carbon, and both are graded on the same 4Cs scale.',
+                'The real differences are origin and price. Natural diamonds form over billions of years deep in the earth and cost more. Lab-grown diamonds are created in a controlled environment in weeks and usually cost significantly less for the same size and quality. Many buyers choose lab-grown for value and sustainability, while others prefer natural for rarity and tradition.',
             ],
         ],
         [
-            'question' => 'How can you test a diamond if a diamond is real?',
+            'question' => 'How can you tell if a diamond is real?',
             'answer'   => [
-                'To test a diamond, use a diamond tester, fogger, or magnifying lens. Buying a diamond is an expensive and emotional decision. So it\'s only natural to check its legitimacy. And since almost everyone thinks about it, it can be verified without expertise. We need to be ready to spot a fake diamond because there are so many.',
-                'Place a diamond in front of you and blow on it. A real diamond won\'t fog up easily since the fog doesn\'t cling to the diamond\'s surface.',
-                'A magnifying glass can identify a diamond. Examine the diamond using the magnifying glass.',
-                'Use a diamond tester to spot a fake: You can either buy a diamond tester or have a reputable jeweller use one.',
+                'The most reliable ways are a diamond tester (thermal or electrical conductivity), examination by a qualified gemologist, and a grading certificate from a lab such as GIA or IGI.',
+                'A magnifying loupe can also help. Real diamonds usually have tiny natural inclusions and sharp, clean facet edges, while many fakes look flawless or have rounded edges.',
+                'Home tricks like the fog test are not fully reliable on their own, because some imitations can pass them. If you are spending real money, always insist on a certificate.',
             ],
         ],
         [
             'question' => 'Do fake diamonds float?',
             'answer'   => [
-                'Fake diamonds versus real diamonds Lab-made stones like YAG (yttrium aluminium garnet), CZ (synthetic cubic zirconia), and others are strikingly comparable to real diamonds. This makes you wonder how you can tell the real ones from the fakes without an expert\'s help. One way to detect if a diamond is real is if it floats. Fill a glass with water and drop your favourite possession into it to test its authenticity. A diamond that floats is a fake, as true diamonds never do. Diamonds are much denser than water, and denser things sink. So a fake diamond floats while a real diamond drowns.',
+                'No. Common imitations such as cubic zirconia, moissanite and glass are all denser than water, so they sink just like real diamonds. The float test cannot tell you whether a stone is genuine.',
+                'To check a stone properly, use a diamond tester, have a gemologist examine it, or buy one that comes with a grading report from a recognised lab.',
             ],
         ],
         [
             'question' => 'How do you tell if a diamond is real with a flashlight?',
             'answer'   => [
-                'If a spotlight shines on the diamond, it shows a spectrum of seven colours.',
-                'In some situations, a flashlight can save your life, but in this case, it can assist you in evaluating whether your diamond is real or not. How do you ask? It\'s simple; just hold the flashlight in front of the diamond and watch the light pass through it. If the white light disperses into a rainbow, the diamond is real and you need not be concerned. The reason is that a real diamond has a larger refractive index, which makes spectrum beams reflect.',
+                'A flashlight is not a dependable test. Diamonds do split light into flashes of white and colour, known as brilliance and fire. However, cubic zirconia and moissanite often show even more rainbow colour than a diamond does.',
+                'Excessive rainbow flashes can in fact be a sign of an imitation. For a trustworthy result, use a diamond tester or ask a jeweller or gemologist to verify the stone.',
             ],
         ],
         [
-            'question' => 'Are diamond conflicts-free?',
+            'question' => 'Are diamonds conflict-free?',
             'answer'   => [
-                'Man-made and natural diamonds are the two types—grown in nature and mined by people.',
-                'Since less physical effort and more high-tech machinery are involved, there is a very limited likelihood of conflict.',
-                'But natural diamonds are full of conflicts, from human exploitation to blood wars, child abuse, and even murder. While companies may claim to be free of conflicts, most are not. The term "bleeding diamonds" is frequently used to describe natural diamonds. A conflict-free natural diamond is not easy to come by.',
-                'We recommend lab-grown diamonds if you want non-conflict diamonds at a reasonable price. Most lab-grown diamonds look like mined diamonds.',
+                'Not always. Some mined diamonds have been linked to conflict, forced labour and human rights abuses, which is where the term "blood diamond" comes from. The Kimberley Process was introduced to reduce this, and many mined diamonds today are traceable and responsibly sourced, but it is not a perfect system.',
+                'Lab-grown diamonds are created in controlled facilities and have no connection to mining conflicts, which makes them a straightforward choice if conflict-free origin is important to you.',
             ],
         ],
         [
-            'question' => 'Are Black Diamonds Blood Diamonds?',
+            'question' => 'Are black diamonds blood diamonds?',
             'answer'   => [
-                'Blood Diamonds are linked to blood, violence, assault, murder, and unethical behavior. Black diamonds are plentiful. The addition of minerals or treatment of natural diamonds to make them "grey" can produce black. Blood diamonds are either naturally dark or have been mined and processed to be dark.',
-                'Lab-grown diamonds may readily achieve the "black color effect". Due to their origin, black diamonds are neither blood nor non-blood. Blood Diamonds are like real diamonds. So natural diamonds are probably blood diamonds or immoral diamonds.  The less manual labour required to manufacture black diamonds in a lab, the less probable they are to be blood diamonds.',
+                'No. The colour of a diamond has nothing to do with whether it is a "blood diamond". That term refers to diamonds mined in war zones and sold to fund armed conflict, and it can apply to a diamond of any colour.',
+                'Natural black diamonds get their colour from dense graphite or other mineral inclusions, and some are treated to deepen the colour. Black diamonds can also be grown in a lab, which removes any sourcing concerns.',
             ],
         ],
         [
-            'question' => 'What color is the rarest diamond?',
+            'question' => 'What is the rarest diamond colour?',
             'answer'   => [
-                'The rarest color diamond is currently worth a whopping 8 million USD for 5.11 carats. Yes, this diamond color is so rare that only 20-30 pieces of this color exist. Can you guess the color of this rarest diamond? It is crimson red. Yes, this diamond gets its color from a rare phenomenon while forming its structure allowing light to pass through it. Few other rare colors occurring in natural diamonds are blue, pink, and yellow.',
+                'Red is widely considered the rarest natural diamond colour. Only a very small number of true red diamonds are known, and the largest examples have sold for millions of dollars, with prices reported at several million dollars for stones of around 5 carats.',
+                'Other rare natural fancy colours include blue, pink, green and vivid orange. Yellow and brown are more common.',
             ],
         ],
         [
-            'question' => 'How Natural diamonds are formed?',
+            'question' => 'How are natural diamonds formed?',
             'answer'   => [
-                'Diamonds are formed when high temperatures and pressures are applied to deep-sea carbon deposits (about 90 to 125 miles below the surface). The formation time of stones varies from days to years. Trace elements reacting during diamond creation produce colored diamonds. Also, it\'s hard to know, but geologists can determine a diamond\'s age by looking at the minerals it contains.',
-                'But most natural diamonds are millions, if not billions, of years old. It\'s fascinating that diamond growth isn\'t always linear. A change in temperature or pressure can cause a rough diamond to fail. The gemstone may have to wait hundreds or even millions of years for the correct conditions to grow.',
+                'Natural diamonds form when carbon is subjected to extreme heat and pressure in the Earth\'s mantle, roughly 150 to 200 kilometres (90 to 125 miles) below the surface. They are then brought up by deep volcanic eruptions through structures called kimberlite pipes.',
+                'Most natural diamonds are between 1 and 3.5 billion years old. Trace elements present during formation can create coloured diamonds. For example, nitrogen produces yellow and boron produces blue.',
             ],
         ],
         [
             'question' => 'Are natural diamonds ethical?',
             'answer'   => [
-                'The term "ethical diamond" was made up to help people find diamonds that were mined in a way that didn\'t hurt workers or the environment.',
-                'Ethical diamonds are those that come from mines with safe working conditions, fair remuneration, and eco-friendly procedures.',
+                'It depends on the source. An ethical natural diamond comes from a mine with safe working conditions, fair pay and responsible environmental practices, and ideally has a traceable origin.',
+                'Because mining has an environmental footprint and sourcing standards vary, many buyers prefer lab-grown diamonds, which avoid mining altogether. If you choose natural, ask your jeweller for details about where the stone came from.',
             ],
         ],
     ];
-    ls_render_faq_cards( "Natural Diamond's FAQs", $faqs );
+
     ?>
 
- 
+    
 
+    <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="faq_list">
+                    <div class="faq_accordion accordion" id="faqAccordion">
+
+                        <?php foreach ( $faqs as $index => $faq ) : ?>
+                            <?php
+                            $is_youtube = ! empty( $faq['isyoutube'] ) && $faq['isyoutube'] === true;
+                            $has_video  = $is_youtube && ! empty( $faq['youtube_link'] );
+                            ?>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="heading<?php echo (int) $index; ?>">
+                                    <button class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse<?php echo (int) $index; ?>"
+                                            aria-expanded="false"
+                                            aria-controls="collapse<?php echo (int) $index; ?>">
+                                        <span><?php echo esc_html( $faq['question'] ); ?></span>
+
+                                        <?php if ( $is_youtube ) : ?>
+                                            <span class="faq-icon">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </span>
+                                        <?php endif; ?>
+                                    </button>
+                                </h3>
+
+                                <div id="collapse<?php echo (int) $index; ?>"
+                                     class="accordion-collapse collapse"
+                                     aria-labelledby="heading<?php echo (int) $index; ?>"
+                                     data-bs-parent="#faqAccordion">
+
+                                    <div class="accordion-body">
+
+                                        <?php if ( $has_video ) : ?>
+
+                                            <div class="ratio ratio-16x9">
+                                                <iframe
+                                                    src="<?php echo esc_url( str_replace( 'youtu.be/', 'www.youtube.com/embed/', $faq['youtube_link'] ) ); ?>"
+                                                    title="YouTube video"
+                                                    loading="lazy"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+
+                                        <?php else : ?>
+
+                                            <?php foreach ( (array) $faq['answer'] as $para ) : ?>
+                                                <p><?php echo wp_kses_post( $para ); ?></p>
+                                            <?php endforeach; ?>
+
+                                        <?php endif; ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 
 
