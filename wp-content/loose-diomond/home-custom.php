@@ -432,12 +432,12 @@ $black_shapes = [
     <!-- image grid -->
     <div class="row g-3 mx-0">
         <?php
-        $insta_dir = get_template_directory_uri() . '/aj_custom/home-page/insta/';
+        $insta_dir = get_template_directory_uri() . '/rrp-img/home/insta/';
         for ( $i = 1; $i <= 6; $i++ ) : ?>
             <div class="col-6 col-md-4 col-lg-2">
                 <div class="insta-item">
                     <img
-                        src="<?php echo esc_url( $insta_dir . $i . '.jpeg' ); ?>"
+                        src="<?php echo esc_url( $insta_dir . $i . '.webp' ); ?>"
                         class="img-fluid rounded"
                         alt="RRP Diamond Instagram post <?php echo $i; ?>"
                         width="400"
