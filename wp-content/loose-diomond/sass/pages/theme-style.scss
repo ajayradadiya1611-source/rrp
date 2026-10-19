@@ -299,7 +299,12 @@ strong {
     text-align: center;
     text-decoration: none;
 }
-
+a.product-content-image{
+    @media (max-width: 767px) {
+        display: block;
+        max-height: 161px;    
+    }
+}
 .product-content-image .slick-slide *:focus-visible {
     outline: none !important;
     box-shadow: none !important;
