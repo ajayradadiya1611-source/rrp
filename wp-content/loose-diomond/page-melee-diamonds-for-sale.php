@@ -214,6 +214,10 @@ $faqs = [
 </div>
 
 <?php single_product_buy_direct_us(); ?>
+
+<div class="section">
+    <?php echo single_product_what_customer_say(); ?>
+</div>
 <div class="bg_light_gray">
     <div class="section">
     <!-- natural diamond FAQs section -->
@@ -288,10 +292,6 @@ $faqs = [
         </div>
     </div>
 </div>
-</div>
-
-<div class="section">
-    <?php echo single_product_what_customer_say(); ?>
 </div>
 
 <?php get_footer(); ?>
