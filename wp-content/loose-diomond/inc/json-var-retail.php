@@ -42,9 +42,7 @@ $common_page['desktop_footer_2'] = [
     ["name" => "Why Choose Us", "url" => get_site_url() . "/why-choose-us/"],
     ["name" => "Compare Us", "url" => get_site_url() . "/comparison/"],
     ["name" => "Blog", "url" => get_site_url() . "/blog/"],
-    ["name" => "Reddit Reviews", "url" => get_site_url() . "/loose-grown-diamond-on-reddit/"],
-    ["name" => "Reviews", "url" => get_site_url() . "/reviews/"],
-    ["name" => "Wholesale Inquiries", "url" => "https://wholesale.loosegrowndiamond.com/"]
+    ["name" => "Wholesale Inquiries", "url" => "/wholesale-inquiries/"]
 ];
 
 $common_page['desktop_footer_3'] = [
