@@ -83,15 +83,15 @@ function ls_render_consult_why() {
     <div id="book_Consultation" class="ls-consult">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2">
-                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/bg_book_consultation_2.png'; ?>">
+                <div class="col-2 d-none d-md-block">
+                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/bg_book_consultation_2.png'; ?>" alt="">
                 </div>
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <h2>Book a Free 30 Minute Consultation Call with Gemologist</h2>
                     <a class="ls-consult__btn" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" data-bs-toggle="modal" data-bs-target="#lsConsultModal">Schedule Now</a>
                 </div>
-                <div class="col-2">
-                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/bg_book_consultation_1.png'; ?>">
+                <div class="col-2 d-none d-md-block">
+                    <img src="<?php echo get_template_directory_uri() . '/rrp-img/pdp/bg_book_consultation_1.png'; ?>" alt="">
                 </div>
             </div>
         </div>
