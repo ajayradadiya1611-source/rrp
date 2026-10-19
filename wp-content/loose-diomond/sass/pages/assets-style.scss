@@ -3203,11 +3203,7 @@ footer .address_sec li:first-child:hover, footer .address-link a:hover {
   align-items:center;
   justify-content: center;
   img {
-    max-height:200px !important;
-    @media (max-width:425px) {
-      max-height: 180px !important;
-      min-height: 180px !important;
-    }
+   
   }
   @media (max-width:425px) {
     height: 200px;

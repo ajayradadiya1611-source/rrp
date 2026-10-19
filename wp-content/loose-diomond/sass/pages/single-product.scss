@@ -264,7 +264,8 @@
     text-align: center;
 
     h2 {
-        max-width: 640px;
+       /* max-width: 640px;*/
+        color: #333;
         margin: 0 auto 28px;
         font-size: clamp(22px, 2.4vw, 30px);
         font-weight: 600;
@@ -276,7 +277,7 @@
         background: #2d3f8f;
         border: 1px solid #2d3f8f;
         color: #fff;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 700;
         letter-spacing: 0.5px;
         text-transform: uppercase;
@@ -340,6 +341,9 @@
 
 // Schedule Now (consultation) popup — same look as the Contact Us form
 .ls-consult-modal {
+  .btn-close:hover{
+    opacity: var(--bs-btn-close-opacity);
+  }
   .ls-consult-modal__form {
     max-width: 800px;
     margin: 0 auto;
