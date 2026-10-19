@@ -133,7 +133,7 @@ function ls_render_consult_why() {
                                 <small class="text-danger" data-err="message"></small>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary text-uppercase mt-4">Let's talk</button>
+                        <button type="submit" class="btn btn-primary text-uppercase mt-4">Submit</button>
                         <p class="mt-3 border border-danger text-danger p-2" id="ls-consult-error" style="display:none;">Something went wrong. Please try again.</p>
                         <p class="mt-3 border border-success text-success p-2" id="ls-consult-success" style="display:none;">Thank you! We will contact you shortly.</p>
                     </form>
@@ -174,6 +174,13 @@ function ls_render_consult_why() {
             }).then(function () {
                 ok.style.display = 'block';
                 form.reset();
+
+                setTimeout(function () {
+                    var modalEl = document.getElementById('lsConsultModal');
+                    var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+                    modal.hide();
+                    ok.style.display = 'none';
+                }, 2000);
             }).catch(function () {
                 bad.style.display = 'block';
             }).finally(function () { btn.disabled = false; });
