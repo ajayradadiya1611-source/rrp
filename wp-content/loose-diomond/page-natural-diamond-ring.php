@@ -135,29 +135,9 @@ $steps = [
         </div>
     </section>
 
-    <!-- How you get lowest price -->
-    <section class="ndr-low">
-        <div class="container text-center">
-            <h2 class="ndr-ttl">How you get lowest price?</h2>
-            <p class="ndr-sub">Our prices are lower than others, because we have our own diamond manufacture company called RRP Diamond and it’s all we give you directly. No Middleman.</p>
-            <div class="ndr-low__row">
-                <div class="ndr-low__box">
-                    <img src="<?php echo esc_url( $img . 'icon-2.svg' ); ?>" alt="" loading="lazy">
-                    <h4>RRP Diamond + Jeweler</h4>
-                    <small>(We as a Manufacturer)</small>
-                </div>
-                <div class="ndr-low__arrow">
-                    <small>Directly Selling To</small>
-                    <img src="<?php echo esc_url( $img . 'Arrow.svg' ); ?>" alt="" loading="lazy">
-                </div>
-                <div class="ndr-low__box">
-                    <img src="<?php echo esc_url( $img . 'icon-1-1.svg' ); ?>" alt="" loading="lazy">
-                    <h4>You (as Buyer)</h4>
-                    <small>(Customer like You)</small>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php
+    single_product_buy_direct_us();
+    ?>
 
     <!-- How to order -->
     <section class="ndr-order">
