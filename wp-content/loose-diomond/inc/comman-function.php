@@ -597,10 +597,7 @@ function oc_wp_footer() {
             } else if (password.value.length < 8) {
               showError(password, 'Password must be at least 8 characters.');
               isValid = false;
-            } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password.value)) {
-              showError(password, 'Password must include uppercase, lowercase, and a number.');
-              isValid = false;
-            }
+            } 
 
             if (isValid) {
               document.querySelector('.woocommerce-form-register').submit();
