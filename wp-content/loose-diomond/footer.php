@@ -28,11 +28,13 @@ if($is_checkout == true){
 
       <div class="is_checkout_footer d-flex  flex-column gap-5">
         <div class="d-flex justify-content-center align-items-center flex-wrap aj-footer-logo">
-                   <?php  ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
+                  
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/banktransfer.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/crypto.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/zelle.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
                    
-                  <?php  ?>
+                   
+                 
                 </div>
                 <div class="d-flex justify-content-center align-items-center flex-wrap aj-footer-links-cart">
 
@@ -555,8 +557,9 @@ if($is_checkout == true){
           <div class="col-sm-6 col-md-4 col-lg-3">
             <div class="d-flex align-items-center row-gap-0 flex-wrap gap-3 aj-footer-logo">
                
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
+               <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/banktransfer.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/crypto.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/zelle.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
             
             </div>
           </div>
@@ -622,8 +625,9 @@ if($is_checkout == true){
           ?>
 
            <div class="d-flex align-items-center row-gap-0 flex-wrap gap-3 px-0 aj-footer-logo">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
+             <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/banktransfer.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/crypto.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/payment/zelle.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
             </div>
         </div>
       </div>
