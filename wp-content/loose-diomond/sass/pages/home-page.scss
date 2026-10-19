@@ -234,9 +234,7 @@ $hero-text: #2d2926;
         &:focus-visible {
             color: #314185;
 
-            .shape-circles__circle {
-                border-color: #314185;
-            }
+            
         }
     }
 
@@ -249,7 +247,11 @@ $hero-text: #2d2926;
         border: 2px solid transparent;
         border-radius: 50%;
         transition: border-color 0.2s;
-
+        overflow: hidden;
+        &:hover,
+        &:focus-visible {
+            border-color: #314185;
+        }
         img {
             width: 82%;
             height: 82%;
@@ -270,7 +272,6 @@ $hero-text: #2d2926;
 
         .shape-circles__circle {
             background: #fff;
-            border-color: transparent !important;
 
             img {
                 width: 63%;
