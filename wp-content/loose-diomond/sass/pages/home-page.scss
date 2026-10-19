@@ -136,7 +136,7 @@ $hero-text: #2d2926;
         -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%);
         mask-image: linear-gradient(to right, transparent 0, #000 30%);
         @media (max-width: 767px) {
-            /*position: static;*/
+            position: static;
             order: 1;
             width: 100%;
             height: auto;
@@ -166,6 +166,7 @@ $hero-text: #2d2926;
 
             img {
                 height: auto;
+                max-height: 245px;
             }
         }
 
