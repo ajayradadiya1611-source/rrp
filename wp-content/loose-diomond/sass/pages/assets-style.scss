@@ -7191,7 +7191,7 @@ textarea.form-control {
     li.is-selected > label.lgd-ship__card,
     input.lgd-ship__radio:checked + label.lgd-ship__card {
       background: var(--ship-sel-bg) !important;
-      border: 2px solid var(--ship-sel-border) !important;
+      border: 1px solid var(--ship-sel-border) !important;
       padding: 15px 17px !important; /* keep size with thicker border */
     }
     li.is-selected .lgd-ship__dot,
