@@ -281,7 +281,7 @@ if ( ! empty( $short_description ) ) {
 								$ls_unit_option = (string) get_post_meta( $product->get_id(), 'ls_unit_option', true );
 								if ( in_array( $ls_unit_option, array( '0', '2', '3' ), true ) ) : ?>
 									<div class="common_select_dropdown mb_15">
-										<label for="Unit">UNIT</label>
+										<label for="Unit">Unit</label>
 										<select id="Unit" name="attribute_pa_unit" class="form-select ls-unit-select">
 											<?php if ( '0' === $ls_unit_option ) : ?>
 												<option value="carat">CARAT</option>
