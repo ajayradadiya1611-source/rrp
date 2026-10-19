@@ -14,13 +14,12 @@ $home_page = $text_change['home_page'];
 $common_page = $text_change['common_page'];
 
 $upload_dir = wp_upload_dir();
-$ring_sizer_pdf_url = $upload_dir['baseurl'] . '/2021/08/LGD-RING-SIZER.pdf';
- $is_checkout =false;
-  if ( ( is_checkout() || is_cart() ) && ! is_order_received_page() ) {
-    $is_checkout = true;
-  } 
+$is_checkout =false;
+if ( ( is_checkout() || is_cart() ) && ! is_order_received_page() ) {
+  $is_checkout = true;
+} 
 ?>
-<!-- start footer section -->
+
 <?php
 if($is_checkout == true){
 ?>
@@ -32,17 +31,7 @@ if($is_checkout == true){
                    <?php  ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/affirm.svg" alt="Affirm" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/klarna.svg" alt="Klarna" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/master-card.svg" alt="Master Card" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/apple-pay.svg" alt="Apple Pay" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/splitit.svg" alt="Splitit" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bitcoin.svg" alt="Bitcoin" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/amex.svg" alt="Amex" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/banktransfer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/cashapp.svg" alt="Cash App" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/katapult.svg" alt="Katapult" class="img-fluid" loading="lazy" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/amazon-pay.svg" alt="amazon-pay" class="img-fluid" loading="lazy" />
+                   
                   <?php  ?>
                 </div>
                 <div class="d-flex justify-content-center align-items-center flex-wrap aj-footer-links-cart">
@@ -511,9 +500,7 @@ if($is_checkout == true){
               </p>
             </div>
           </div>
-          <?php
-            
-                ?>
+         
           <div class="col-sm-6 col-md-4 col-lg-3">
             <p class="text_white_primary text-uppercase footer_title">
               Reviews
@@ -541,12 +528,6 @@ if($is_checkout == true){
             />
             </a>
           </div>
-          <?php 
-        
-          ?>
-          <?php
-            
-                ?>
           <div class="col-sm-6 col-md-4 col-lg-3">
             <p class="text_white_primary text-uppercase footer_title">
               Sign Up
@@ -570,25 +551,13 @@ if($is_checkout == true){
               </button>
             </div>
           </div>
-          <?php 
-        
-          ?>
+         
           <div class="col-sm-6 col-md-4 col-lg-3">
             <div class="d-flex align-items-center row-gap-0 flex-wrap gap-3 aj-footer-logo">
-               <?php  ?>
+               
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/affirm.svg" alt="Affirm" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/klarna.svg" alt="Klarna" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/master-card.svg" alt="Master Card" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/apple-pay.svg" alt="Apple Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/splitit.svg" alt="Splitit" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bitcoin.svg" alt="Bitcoin" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/amex.svg" alt="Amex" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/banktransfer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/cashapp.svg" alt="Cash App" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/katapult.svg" alt="Katapult" class="img-fluid" loading="lazy" />
-              <?php  ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
+            
             </div>
           </div>
         </div>
@@ -624,12 +593,7 @@ if($is_checkout == true){
                         />
             </a>
           </div>
-          <?php 
           
-          ?>
-            <?php
-            
-                ?>
           <div class="col-12 px-0">
             <p class="text_white_primary text-uppercase footer_title">
               Sign Up
@@ -658,22 +622,8 @@ if($is_checkout == true){
           ?>
 
            <div class="d-flex align-items-center row-gap-0 flex-wrap gap-3 px-0 aj-footer-logo">
-              <?php  ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/affirm.svg" alt="Affirm" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/klarna.svg" alt="Klarna" class="img-fluid" loading="lazy" />
-                <div class="w-100"></div>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/master-card.svg" alt="Master Card" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/apple-pay.svg" alt="Apple Pay" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/splitit.svg" alt="Splitit" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/bitcoin.svg" alt="Bitcoin" class="img-fluid" loading="lazy" />
-                <div class="w-100"></div>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/amex.svg" alt="Amex" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/banktransfer.svg" alt="Bank Transfer" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/cashapp.svg" alt="Cash App" class="img-fluid" loading="lazy" />
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/katapult.svg" alt="Katapult" class="img-fluid" loading="lazy" />
-              <?php  ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/visa-pay.svg" alt="Visa Pay" class="img-fluid" loading="lazy" />
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/google-pay.svg" alt="Google Pay" class="img-fluid" loading="lazy" />
             </div>
         </div>
       </div>
