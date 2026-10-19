@@ -32,8 +32,8 @@ $black_shapes = [
 <div class="banner_section home_banner_hero hero-split">
     <div class="hero-split__inner container-fluid">
         <div class="hero-split__content">
-            <h1 class="hero-split__title">Beautiful, Certified Lab<br/>Grown Diamonds</h1>
-            <p class="hero-split__text">Mining free. Direct to you. No middlemen</p>
+            <h1 class="hero-split__title">Naturally Beautiful,<br/>Ethically Sourced Diamonds</h1>
+            <p class="hero-split__text">Conflict free. Direct to you. No middlemen</p>
             <div class="hero-split__actions">
                 <a href="/shop/" class="hero-split__btn">Shop Natural Melee Diamonds</a>
             </div>
