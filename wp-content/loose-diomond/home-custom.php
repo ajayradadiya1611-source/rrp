@@ -352,8 +352,8 @@ $black_shapes = [
                 <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
                     alt="rrpdiamond Instagram profile"
                     class=""
-                    width="40"
-                    height="40"
+                    width="30"
+                    height="30"
                     loading="lazy">
                 <span class="fw-medium text-decoration-underline text-dark">@rrpdiamond</span>
             </a>
