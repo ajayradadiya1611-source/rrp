@@ -315,6 +315,7 @@ include('inc/retail.php');
 include('inc/ls-unit-option.php');
 include('inc/ls-variation-guides.php');
 include('inc/product-materials.php');
+include('inc/price-calculator.php');
 
 include('inc/custom-payment-gateway.php');
 include('inc/admin-contact-form.php');
