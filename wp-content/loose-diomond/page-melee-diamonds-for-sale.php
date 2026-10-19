@@ -77,7 +77,9 @@ $faqs = [
                     <h1 class="melee-sale__title">Melee Diamonds For Sale</h1>
                     <p>Melee diamonds are small loose diamonds that have the same intrinsic properties as that of normal diamonds, but are just less than 0.2 carats in weight. And we at RRP Diamonds offer an assortment of Melee diamonds for sale.</p>
                     <p>These small wonders are available in two types of cuts: full and half cut. You should know that Melee diamonds are usually preferred to be used in coordination with larger diamonds, to emphasize the designs and patterns.</p>
-                    <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/product/melee-diamonds/' ) ); ?>">Explore Melee Diamonds</a>
+                    <div class="melee-sale__btn_wrap">
+                        <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/product/melee-diamonds/' ) ); ?>">Explore Melee Diamonds</a>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <video class="melee-sale__video" autoplay loop muted playsinline>
@@ -152,7 +154,9 @@ $faqs = [
                 <div class="col-md-6">
                     <h2 class="melee-sale__heading melee-sale__heading--left">Book an In-store or Virtual Appointment</h2>
                     <p>Contact our expert gemologists at RRP Diamond to get better clarity of the diamond you seek. Set a virtual appointment, today!</p>
-                    <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Book an Appointment</a>
+                    <div class="melee-sale__btn_wrap">
+                        <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>">Book an Appointment</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +172,10 @@ $faqs = [
                     <p>A Melee diamond ideally finds its way to a ring design of pave, channel or halo, where the placements of these diamonds emphasize the main gem on the ring. Giving it an alluring look, that will make neck&rsquo;s turn.</p>
                     <p>At RRP Diamonds we offer melee diamonds of two categories, namely, single cut and full cut. The single cut has 17-18 facets only, while a full cut melee diamond has 57-58 facets. Where you would like to place these natural small loose diamonds is up to you.</p>
                     <p>These small loose diamonds are versatile gems, they can be used in watches, rings, earrings, cufflinks, pendants and many other diverse styles of jewelry and fashion.</p>
-                    <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">Know About Us</a>
+                    <div class="melee-sale__btn_wrap">
+                        <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">Know About Us</a>
+                    </div>
+                    
                 </div>
                 <div class="col-md-5">
                     <img class="melee-sale__photo" src="<?php echo esc_url( $sale_img . 'Melee-diamond-sorting.png' ); ?>" alt="Melee diamond sorting" loading="lazy">
@@ -189,7 +196,9 @@ $faqs = [
                     <p>As a melee diamond supplier, the merchant has to take care to segregate these diamonds efficiently. At RRP Diamonds we have been selling melee diamonds for decades now and have managed to gain a great proportion of satisfied customers.</p>
                     <p>Many suppliers sell melee diamond wholesale or retail. We however, sell to both businesses, as well as, customers. Being a melee diamond wholesale seller we segregate these tiny gems based on the cuts, color, and quality, hence making it easier for you to decide.</p>
                     <p>Reason jewelers/people prefer to buy melee diamonds wholesale from RRP might be because they require a larger quantity or because it is cheaper to buy in this manner.</p>
-                    <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/product/melee-diamonds/' ) ); ?>">Buy Melee Diamond</a>
+                    <div class="melee-sale__btn_wrap">
+                        <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/product/melee-diamonds/' ) ); ?>">Buy Melee Diamond</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -7,7 +7,12 @@ $melee-band: #f7f7f7;
 .melee-sale {
     font-family: "Montserrat", sans-serif;
     color: $melee-text;
-
+    .melee-sale__hero{
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+    }
+    
     p {
         margin: 0 0 16px;
         font-size: 14px;
@@ -30,9 +35,16 @@ $melee-band: #f7f7f7;
         &--left {
             margin-bottom: 20px;
             text-align: left;
+            @media (max-width: 767px) {
+                text-align: center;
+            }
         }
     }
-
+    &__btn_wrap {
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+    }
     &__btn {
         display: inline-flex;
         align-items: center;
@@ -68,6 +80,9 @@ $melee-band: #f7f7f7;
 
     &__band {
         background: $melee-band;
+        @media (max-width: 767px) {
+            text-align: center;
+        }
     }
 
     &__products {
@@ -75,7 +90,7 @@ $melee-band: #f7f7f7;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
 
-        @media (max-width: 991px) {
+        @media (max-width: 767px) {
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
