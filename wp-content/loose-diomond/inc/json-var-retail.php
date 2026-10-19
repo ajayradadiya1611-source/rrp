@@ -52,7 +52,6 @@ $common_page['desktop_footer_3'] = [
     ["name" => "Shipping Policy", "url" => get_site_url() . "/shipping/"],
     ["name" => "Return/Refund Policy", "url" => get_site_url() . "/return-policy/"],
     ["name" => "Price Match Policy", "url" => get_site_url() . "/diamond-price-match/"],
-    ["name" => "Jewelry Insurance", "url" => get_site_url() . "/jewelry-insurance/"],
     ["name" => "Promo Code", "url" => get_site_url() . "/promo-code/"],
     ["name" => "Privacy Policy", "url" => get_site_url() . "/privacy-policy/"],
     ["name" => "Terms of Use", "url" => get_site_url() . "/terms-of-use/"]
