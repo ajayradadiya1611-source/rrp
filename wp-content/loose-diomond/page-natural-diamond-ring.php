@@ -52,7 +52,7 @@ $steps = [
     <!-- Video -->
     <section class="ndr-video">
         <video autoplay loop muted playsinline>
-            <source src="<?php echo esc_url( $img . 'banner-video.mp4' ); ?>" type="video/mp4">
+            <source src="<?php echo esc_url( get_template_directory_uri(). '/rrp-img/why-choose/loose-grown-diamond-banner-video.mp4' ); ?>" type="video/mp4">
         </video>
     </section>
 
@@ -129,9 +129,18 @@ $steps = [
                     </div>
                 <?php endforeach; ?>
             </div>
-            <p class="text-center mt-4">
-                <a href="https://www.trustpilot.com/review/rrpdiamonds.com" target="_blank" rel="noopener"><img src="<?php echo esc_url( $img . 'TrustPilot-review-btn.svg' ); ?>" alt="More reviews on Trustpilot" height="44"></a>
-            </p>
+            <div class="text-center mt-4">
+                <div class="trustpilot_btn">
+                  <a href="https://www.trustpilot.com/review/rrpdiamonds.com" target="_blank">
+                    <img
+                    src="<?php echo get_template_directory_uri().'/rrp-img/comman/trustpilot-review-btn.svg'; ?>"
+                    alt="ratings"
+                    class="img-fluid trustpilot_btn-rate-image"
+                    loading="lazy"
+                  />
+                  </a>
+              </div>
+            </div>
         </div>
     </section>
 
