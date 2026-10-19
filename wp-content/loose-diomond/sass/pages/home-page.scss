@@ -135,6 +135,14 @@ $hero-text: #2d2926;
         width: 56%;
         -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%);
         mask-image: linear-gradient(to right, transparent 0, #000 30%);
+        @media (max-width: 767px) {
+            /*position: static;*/
+            order: 1;
+            width: 100%;
+            height: auto;
+            -webkit-mask-image: none;
+            mask-image: none;
+        }
 
         picture,
         img {
@@ -154,12 +162,7 @@ $hero-text: #2d2926;
         flex-direction: column;
 
         .hero-split__media {
-            position: static;
-            order: -1;
-            width: 100%;
-            height: auto;
-            -webkit-mask-image: none;
-            mask-image: none;
+            
 
             img {
                 height: auto;
