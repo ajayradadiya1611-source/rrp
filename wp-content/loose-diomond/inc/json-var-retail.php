@@ -58,7 +58,7 @@ $common_page['desktop_footer_4'] = [
     ["name" => "Contact Us", "url" => get_site_url() . "/contact-us/"],
     ["name" => "FAQ", "url" => get_site_url() . "/faq/"],
     ["name" => "Diamond Size Chart", "url" => get_site_url() . "/diamond-size-chart/"],
-    ["name" => "Ring Sizer", "url" => get_site_url() . "/wp-content/uploads/2021/08/LGD-RING-SIZER.pdf"],
+    ["name" => "Ring Sizer", "url" => get_site_url() . "/wp-content/uploads/2026/01/rrp_diamond_ring_sizer.pdf"],
     ["name" => "Feedback Form", "url" => get_site_url() . "/feedback-form/"]
 ];
 
