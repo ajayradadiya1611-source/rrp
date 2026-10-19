@@ -216,7 +216,7 @@ function single_product_experience_history(){
                         <h2 class="mb-0">43+ Years Of Experience In <br class="d-none d-md-block"> Diamond Industry
                         </h2>
                         <br>
-                        <p class="fw-400 mb-0 h6">We are India based Manufacturer and has served more than <?php echo '68,432+';?>
+                        <p class="fw-400 mb-0 h6">We are India based Manufacturer and has served more than <?php echo '1310+';?>
                             Customers
                             Internationally.</p>
                     </div>
