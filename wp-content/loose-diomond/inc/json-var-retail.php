@@ -30,14 +30,11 @@ $common_page['top_bar_checkout_mobile'] = [
 ];
 
 $common_page['desktop_footer_1']= [
-    ["name" => "Lab Diamonds", "url" => "/shop/"],
-    ["name" => "Engagement Rings", "url" => "/build-a-ring/"],
-    ["name" => "Custom Engagement Ring", "url" => "/custom-engagement-rings/"],
-    ["name" => "Wedding Bands", "url" => "/lab-diamond-wedding-bands"],
-    ["name" => "Earrings", "url" => "/lab-diamond-earrings"],
-    ["name" => "Tennis Bracelets", "url" => "/lab-diamond-bracelets"],
-    ["name" => "Tennis Necklaces", "url" => "/lab-diamond-necklaces"],
-    ["name" => "Pendants", "url" => "/lab-diamond-pendants"],
+    ["name" => "Round Calibrated Melee Diamonds", "url" => "/product/calibrated-diamonds/"],
+    ["name" => "Mix Lot Diamonds", "url" => "/product/melee-diamonds/"],
+    ["name" => "Melee Diamonds Wholesale", "url" => "/melee-diamonds-for-sale/"],
+    ["name" => "Fancy Shape Diamonds", "url" => "/fancy-shape-white-diamonds/"],
+    ["name" => "Natural Diamond Engagement Rings", "url" => "/natural-diamond-ring/"]
 ];
 
 $common_page['desktop_footer_2'] = [
