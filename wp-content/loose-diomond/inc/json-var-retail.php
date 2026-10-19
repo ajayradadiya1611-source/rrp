@@ -59,7 +59,9 @@ $common_page['desktop_footer_4'] = [
     ["name" => "FAQ", "url" => get_site_url() . "/faq/"],
     ["name" => "Diamond Size Chart", "url" => get_site_url() . "/diamond-size-chart/"],
     ["name" => "Ring Sizer", "url" => get_site_url() . "/wp-content/uploads/2026/01/rrp_diamond_ring_sizer.pdf"],
-    ["name" => "Feedback Form", "url" => get_site_url() . "/feedback-form/"]
+    ["name" => "Feedback Form", "url" => get_site_url() . "/feedback-form/"],
+    ["name" => "Diamond Price Calculator", "url" => get_site_url() . "/diamond-price-calculator/"],
+    
 ];
 
 $text_change['common_page']=$common_page;

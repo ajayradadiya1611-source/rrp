@@ -484,6 +484,9 @@ if($is_checkout == true){
                               +<?php echo SUPPORT_MOBILE?>
               </a>
               </p>
+              <p class="address-link address-link-label">
+                USA OFFICE
+              </p>
               <p class="address-link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -499,6 +502,26 @@ if($is_checkout == true){
                 </svg>
                 55W 47th St., Suite #790 <br />
                 New York, NY-10036, USA
+              </p>
+              <p class="address-link address-link-label">
+                INDIA FACTORY
+              </p>
+              <p class="address-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <path
+                    d="M5.00004 0C3.00307 0 1.37842 1.62465 1.37842 3.6216C1.37842 6.09988 4.61941 9.73815 4.7574 9.89182C4.88701 10.0362 5.1133 10.0359 5.24268 9.89182C5.38066 9.73815 8.62166 6.09988 8.62166 3.6216C8.62162 1.62465 6.99699 0 5.00004 0ZM5.00004 5.44373C3.99531 5.44373 3.17793 4.62633 3.17793 3.6216C3.17793 2.61688 3.99533 1.79949 5.00004 1.79949C6.00475 1.79949 6.82213 2.61689 6.82213 3.62162C6.82213 4.62635 6.00475 5.44373 5.00004 5.44373Z"
+                    fill="#767676"
+                  />
+                </svg>
+                2nd Floor, Red Turning Point,<br />
+Near, Matawadi Police Chowki, L.H.Road,<br />
+Varachha, Surat, Gujarat - 395006
               </p>
             </div>
           </div>
