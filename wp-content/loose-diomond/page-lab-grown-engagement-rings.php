@@ -22,7 +22,7 @@ get_header();
                       Looking for the best engagement ring? Decided on what you want but are not able to find it? Browse through our engagement ring catalog and select lab grown diamond engagement rings that best suit your taste.
                     </p>
 
-                    <a href="/build-a-ring/" 
+                    <a href="/diamond-price-calculator/" 
                        class="btn btn-dark ls-blackbtn fw-700 mb-3 mb-md-0 px-4">
                        START WITH A SETTING
                     </a>
