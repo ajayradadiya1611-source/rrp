@@ -341,8 +341,12 @@
 
 // Schedule Now (consultation) popup — same look as the Contact Us form
 .ls-consult-modal {
-  .btn-close:hover{
-    opacity: var(--bs-btn-close-opacity);
+  .btn-close{
+    opacity: 1;
+  }
+  .modal-header{
+    position: absolute;
+    right: 0;
   }
   .ls-consult-modal__form {
     max-width: 800px;

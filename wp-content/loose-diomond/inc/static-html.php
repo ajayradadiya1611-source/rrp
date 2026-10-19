@@ -205,7 +205,7 @@ function single_product_what_customer_say(){
 function single_product_experience_history(){
     ?>
    <!-- experience history section -->
-    <div class="etheme_list_view">
+    <div class="etheme_list_view d-none d-md-block">
         <div class="container-fluid">
             <div class="row align-items-center asfg">
                 <div class="col-md-6 order-md-2">
