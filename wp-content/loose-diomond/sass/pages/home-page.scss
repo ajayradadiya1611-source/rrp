@@ -357,11 +357,6 @@ $hero-text: #2d2926;
         text-decoration: none;
         transition: background 0.2s;
         text-align: center;
-        &:hover,
-        &:focus-visible {
-            background: #1f2d6b;
-            color: #fff;
-        }
         @media (max-width: 767px) {
             padding: 15px 25px;
         }
