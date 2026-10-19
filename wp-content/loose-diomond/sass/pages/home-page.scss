@@ -316,6 +316,9 @@ $hero-text: #2d2926;
     &__content {
         max-width: 520px;
         padding: 40px 0;
+        @media (max-width: 767px) {
+            text-align: center;
+        }
     }
 
     &__title {
