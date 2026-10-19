@@ -86,7 +86,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			<?php
 			echo '<p class="oc_register_line">
     By creating an account, you agree to our 
-    <a href="' . get_site_url().'/term-of-use/' . '" target="_blank">Terms</a> 
+    <a href="' . get_site_url().'/terms-of-use/' . '" target="_blank">Terms</a> 
     and 
     <a href="' . get_site_url() .'/privacy-policy/'. '" target="_blank">Privacy Policy</a>.
     </p>';
