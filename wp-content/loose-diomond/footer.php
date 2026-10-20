@@ -451,13 +451,13 @@ Varachha, Surat, Gujarat - 395006
                 Connnect with us
               </p>
               <ul class="soical_links pt-2">
-                  <li>
-                    <a href="https://x.com/grown_diamond" target="_blank">
+                 <li>
+                    <a href="https://x.com/rrpdiamonds" target="_blank">
                       <i class="fa-brands fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.facebook.com/LooseGrownDiamond" target="_blank">
+                    <a href="https://www.facebook.com/rrpdiamond" target="_blank">
                       <i class="fa-brands fa-facebook-f"></i>
                     </a>
                   </li>
@@ -467,17 +467,12 @@ Varachha, Surat, Gujarat - 395006
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.youtube.com/channel/UCwlJvdgFUqw2wUyW5rAGxmw" target="_blank">
+                    <a href="https://www.youtube.com/rrpdiamond" target="_blank">
                       <i class="fa-brands fa-youtube"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.tiktok.com/@loosegrowndiamond?lang=en" target="_blank">
-                      <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://in.pinterest.com/LooseGrownDiamond" target="_blank">
+                    <a href="https://in.pinterest.com/rrpdiamond/" target="_blank">
                       <i class="fa-brands fa-pinterest"></i>
                     </a>
                   </li>
