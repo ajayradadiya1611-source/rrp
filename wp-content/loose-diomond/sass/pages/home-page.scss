@@ -248,6 +248,7 @@ $hero-text: #2d2926;
         border-radius: 50%;
         transition: border-color 0.2s;
         overflow: hidden;
+        background: #fff;
         &:hover,
         &:focus-visible {
             border-color: #314185;

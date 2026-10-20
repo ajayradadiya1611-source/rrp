@@ -417,7 +417,7 @@ $black_shapes = [
 
 <div class="bg_light_gray">
     <!-- start instagram section -->
-    <div class="section mb-0 ">
+    <div class="section mb-0 pb-2 ">
         <div class="container-fluid">
             <h2 class="text-center py_25 pt-0 mb-0 home_we_have_instagram_title">Follow us on Instagram</h2>
             <div class="instagram-header d-flex justify-content-center align-items-center gap-2 mb-4">
