@@ -130,7 +130,7 @@ function single_product_what_customer_say(){
                     [
                         'title' => 'The experience was great I just started…',
                         'description' => "The experience was great I just started making my own jewelry. I needed some diamonds for a really intricate ring and RRP diamond was able to deliver with no issues with in time delivery and quick communication. I would definitely use them again ",
-                        'image' => get_template_directory_uri() . '/rrp-img/review/dawn.png',
+                        'image' => get_template_directory_uri() . '/rrp-img/review/manny-man',
                         'name' => 'Manny Man',
                         'location' => 'United States',
                     ],
