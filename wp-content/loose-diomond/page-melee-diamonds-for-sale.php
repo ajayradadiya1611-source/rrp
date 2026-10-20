@@ -134,24 +134,25 @@ $faqs = [
     </div>
 
     <!-- message from our CEO -->
-    <div class="section pt-0">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h2 class="melee-sale__heading melee-sale__heading--left">A Message from our CEO</h2>
-                    <p>RRP Diamonds is an Indian wholesaler that deals with clients around the world.</p>
-                    <p>RRP Diamonds have been in the business since 1964. Mr. Ramesh Bhai Dobariya, who has a fantastic eye for diamonds, had the vision to develop a business that would manufacture the finest natural diamonds in the world and rank among the most well-known marketing organizations globally. RRP Diamond offers IGI &amp; GIA-certified natural diamonds.</p>
-                    <p>RRP Diamond offers melee diamonds ranging in from 0.09mm to 4.00mm. Our craftsmen manufacture around 80,000 diamonds per month with passion and integrity.</p>
-                    <p>When placing an order on our site, you can choose your preferred carat weight and diamond mm size from the drop-down menu.</p>
-                    <p>RRP Diamond gives you the best deals in price, quality, and assortment over other brands. We are one of the only brands which offers the lowest price in the market for melee diamonds.</p>
-                </div>
-                <div class="col-md-4">
-                    <img class="melee-sale__photo" src="<?php echo esc_url( $sale_img . 'rrp_diamond_founder.jpg' ); ?>" alt="Ramesh Bhai Dobariya, CEO of RRP Diamond" loading="lazy">
+    <div class="bg_light_gray">
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h2 class="melee-sale__heading melee-sale__heading--left">A Message from our CEO</h2>
+                        <p>RRP Diamonds is an Indian wholesaler that deals with clients around the world.</p>
+                        <p>RRP Diamonds have been in the business since 1964. Mr. Ramesh Bhai Dobariya, who has a fantastic eye for diamonds, had the vision to develop a business that would manufacture the finest natural diamonds in the world and rank among the most well-known marketing organizations globally. RRP Diamond offers IGI &amp; GIA-certified natural diamonds.</p>
+                        <p>RRP Diamond offers melee diamonds ranging in from 0.09mm to 4.00mm. Our craftsmen manufacture around 80,000 diamonds per month with passion and integrity.</p>
+                        <p>When placing an order on our site, you can choose your preferred carat weight and diamond mm size from the drop-down menu.</p>
+                        <p>RRP Diamond gives you the best deals in price, quality, and assortment over other brands. We are one of the only brands which offers the lowest price in the market for melee diamonds.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="melee-sale__photo" src="<?php echo esc_url( $sale_img . 'rrp_diamond_founder.jpg' ); ?>" alt="Ramesh Bhai Dobariya, CEO of RRP Diamond" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- book an appointment -->
     <div class="section melee-sale__band">
         <div class="container-fluid">
@@ -169,24 +170,25 @@ $faqs = [
             </div>
         </div>
     </div>
-
-    <!-- why choose a melee diamond -->
-    <div class="section">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-md-7">
-                    <h2 class="melee-sale__heading melee-sale__heading--left">Why would you choose a Melee Diamond from RRP Diamonds?</h2>
-                    <p>Melee diamonds are an ideal and appealing choice for jewelry pieces, as they make viewers aware of the maximum potential a jewelry can reach in terms of design.</p>
-                    <p>A Melee diamond ideally finds its way to a ring design of pave, channel or halo, where the placements of these diamonds emphasize the main gem on the ring. Giving it an alluring look, that will make neck&rsquo;s turn.</p>
-                    <p>At RRP Diamonds we offer melee diamonds of two categories, namely, single cut and full cut. The single cut has 17-18 facets only, while a full cut melee diamond has 57-58 facets. Where you would like to place these natural small loose diamonds is up to you.</p>
-                    <p>These small loose diamonds are versatile gems, they can be used in watches, rings, earrings, cufflinks, pendants and many other diverse styles of jewelry and fashion.</p>
-                    <div class="melee-sale__btn_wrap">
-                        <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">Know About Us</a>
+    <div class="bg_light_gray">
+        <!-- why choose a melee diamond -->
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h2 class="melee-sale__heading melee-sale__heading--left">Why would you choose a Melee Diamond from RRP Diamonds?</h2>
+                        <p>Melee diamonds are an ideal and appealing choice for jewelry pieces, as they make viewers aware of the maximum potential a jewelry can reach in terms of design.</p>
+                        <p>A Melee diamond ideally finds its way to a ring design of pave, channel or halo, where the placements of these diamonds emphasize the main gem on the ring. Giving it an alluring look, that will make neck&rsquo;s turn.</p>
+                        <p>At RRP Diamonds we offer melee diamonds of two categories, namely, single cut and full cut. The single cut has 17-18 facets only, while a full cut melee diamond has 57-58 facets. Where you would like to place these natural small loose diamonds is up to you.</p>
+                        <p>These small loose diamonds are versatile gems, they can be used in watches, rings, earrings, cufflinks, pendants and many other diverse styles of jewelry and fashion.</p>
+                        <div class="melee-sale__btn_wrap">
+                            <a class="melee-sale__btn" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">Know About Us</a>
+                        </div>
+                        
                     </div>
-                    
-                </div>
-                <div class="col-md-5">
-                    <img class="melee-sale__photo" src="<?php echo esc_url( $sale_img . 'Melee-diamond-sorting.png' ); ?>" alt="Melee diamond sorting" loading="lazy">
+                    <div class="col-md-5">
+                        <img class="melee-sale__photo" src="<?php echo esc_url( $sale_img . 'Melee-diamond-sorting.png' ); ?>" alt="Melee diamond sorting" loading="lazy">
+                    </div>
                 </div>
             </div>
         </div>
