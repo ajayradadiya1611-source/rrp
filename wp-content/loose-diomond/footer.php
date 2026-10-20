@@ -93,7 +93,7 @@ if($is_checkout == true){
 }else{
 ?>
 <?php
-$footer_class = ( is_order_received_page() || is_page( 'melee-diamonds-for-sale' ) )
+$footer_class = ( is_order_received_page() || is_page( 'melee-diamonds-for-sale' ) || is_page( 'natural-diamond-ring' )  )
     ? 'mt-0 mb-md-0'
     : 'mt-5 mb-md-0';
 ?>

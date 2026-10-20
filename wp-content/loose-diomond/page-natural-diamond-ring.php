@@ -94,12 +94,12 @@ $steps = [
     </section>
 
     <!-- Jewellery made by us -->
-    <section class="ndr-made">
+    <section class="ndr-made section">
         <div class="container text-center">
             <h2 class="ndr-ttl">Jewellery made by us</h2>
             <p class="ndr-sub">Here are some of the jewelry pieces made by us for our international customers</p>
         </div>
-        <div class="container-fluid px-0">
+        <div class=" px-0">
             <div class="row g-1 mx-0">
                 <?php foreach ( [ 'Review3.jpg', 'Review2.jpg', 'Review1.jpg', 'Review5.jpg' ] as $file ) : ?>
                     <div class="col-6 col-md-3"><img class="img-fluid w-100" src="<?php echo esc_url( $img . $file ); ?>" alt="Jewellery made by RRP Diamond" loading="lazy"></div>
@@ -108,48 +108,15 @@ $steps = [
         </div>
     </section>
 
-    <!-- Reviews -->
-    <section class="ndr-reviews">
-        <div class="container">
-            <h2 class="ndr-ttl text-center">See what our customers are saying</h2>
-            <div class="row row-gap-4">
-                <?php foreach ( $reviews as $r ) : ?>
-                    <div class="col-md-4">
-                        <div class="ndr-review">
-                            <h3 class="ndr-review__ttl"><?php echo esc_html( $r[0] ); ?></h3>
-                            <p class="ndr-review__txt"><?php echo esc_html( $r[1] ); ?></p>
-                            <div class="ndr-review__who">
-                                <img src="<?php echo esc_url( $img . $r[4] ); ?>" alt="<?php echo esc_attr( $r[2] ); ?>" width="40" height="40" loading="lazy">
-                                <div>
-                                    <strong><?php echo esc_html( $r[2] ); ?></strong>
-                                    <span><?php echo esc_html( $r[3] ); ?></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <div class="text-center mt-4">
-                <div class="trustpilot_btn">
-                  <a href="https://www.trustpilot.com/review/rrpdiamonds.com" target="_blank">
-                    <img
-                    src="<?php echo get_template_directory_uri().'/rrp-img/comman/trustpilot-review-btn.svg'; ?>"
-                    alt="ratings"
-                    class="img-fluid trustpilot_btn-rate-image"
-                    loading="lazy"
-                  />
-                  </a>
-              </div>
-            </div>
-        </div>
-    </section>
-
+   <div class="section">
+    <?php echo single_product_what_customer_say(); ?>
+</div>
     <?php
     single_product_buy_direct_us();
     ?>
 
     <!-- How to order -->
-    <section class="ndr-order">
+    <section class="ndr-order section">
         <div class="container text-center">
             <h2 class="ndr-ttl">How to order</h2>
             <div class="row row-gap-4">
@@ -165,66 +132,6 @@ $steps = [
     </section>
 </main>
 
-<style>
-.ndr { padding: 0; }
-.ndr-ttl { font-size: 18px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; text-align: center; }
-.ndr-sub { font-size: 12px; color: #333; margin-bottom: 25px; text-align: center; }
-
-.ndr-hero { background-color: #14142b; background-position: center; background-repeat: no-repeat; background-size: cover; padding: 140px 0 160px; color: #fff; }
-.ndr-hero__title { color: #fff; font-size: 40px; line-height: 70px; letter-spacing: 1px; font-weight: 500; text-align: left; margin: 0; }
-.ndr-hero__tag { background: #fff; color: #000; border-radius: 5px; padding: 5px 10px; }
-.ndr-hero__sub { color: #fff; font-size: 30px; line-height: 37px; letter-spacing: 1px; font-weight: 500; margin: 0; }
-
-.ndr-featured { padding: 80px 0; }
-.ndr-featured .ndr-ttl { margin-bottom: 30px; }
-
-.ndr-video { padding-bottom: 100px; }
-.ndr-video video { width: 100%; height: 100%; display: block; }
-
-.ndr-req { padding: 80px 0; background: #f9f9f9; }
-.ndr-form { width: 70%; margin: 30px auto 0; }
-.ndr-form .form-control { border-radius: 4px; padding: 12px; font-size: 13px; }
-.ndr-form .iti { width: 100%; }
-.ndr-form__btn { background: #000; color: #fff; border: 1px solid #000; border-radius: 4px; padding: 14px 50px; font-size: 15px; line-height: 15px; text-transform: uppercase; float: right; margin-top: 15px; }
-.ndr-form__btn:hover { background: #fff; color: #000; }
-.ndr-form__btn:disabled { opacity: .6; }
-.ndr-form__msg { clear: both; padding-top: 15px; }
-
-.ndr-made { padding: 80px 0 0; }
-
-.ndr-reviews { padding: 80px 0; background: #f9f9f9; }
-.ndr-review { background: #fff; border-radius: 8px; padding: 20px; height: 100%; box-shadow: 0 2px 6px rgba(0,0,0,.06); }
-.ndr-review__ttl { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
-.ndr-review__txt { font-size: 11px; line-height: 1.7; color: #555; }
-.ndr-review__who { display: flex; align-items: center; gap: 10px; margin-top: 15px; }
-.ndr-review__who img { border-radius: 50%; object-fit: cover; }
-.ndr-review__who strong { display: block; font-size: 12px; }
-.ndr-review__who span { font-size: 10px; color: #888; }
-
-.ndr-low { padding: 80px 0; }
-.ndr-low__row { display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.ndr-low__box { background: #f2f2f2; border: 1px solid #e3e3e3; border-radius: 4px; padding: 30px 40px; min-width: 260px; }
-.ndr-low__box img { height: 28px; margin-bottom: 15px; }
-.ndr-low__box h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-.ndr-low__arrow small { display: block; font-size: 11px; margin-bottom: 6px; }
-
-.ndr-order { padding: 80px 0; }
-.ndr-order .ndr-ttl { margin-bottom: 40px; }
-.ndr-order img { height: 28px; margin-bottom: 18px; }
-.ndr-order h5 { font-size: 16px; font-weight: 600; color: #353a40; margin-bottom: 8px; }
-.ndr-order p { font-size: 11px; color: #555; margin: 0; }
-
-@media (max-width: 768px) {
-    .ndr-hero { background-position: right; }
-    .ndr-hero__title { font-size: 30px; line-height: 55px; }
-    .ndr-hero__sub { font-size: 25px; line-height: 30px; }
-    .ndr-form { width: 100%; }
-    .ndr-form__btn { width: 100%; }
-}
-@media (max-width: 480px) {
-    .ndr-hero { padding: 40px 0 300px; }
-}
-</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
