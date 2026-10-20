@@ -218,6 +218,7 @@ $faqs = [
 
 </div>
  <!-- why RRP diamond -->
+ <div class="bg_light_gray">
     <div class="section melee-sale__band">
         <div class="container-fluid">
             <h2 class="melee-sale__heading">Why RRP Diamond?</h2>
@@ -232,6 +233,7 @@ $faqs = [
             </div>
         </div>
     </div>
+</div>
  <div class="section">
         <div class="container-fluid">
             <h2 class="h1 fw-600 text-center">Buy Directly From Us. No Middleman</h2>
