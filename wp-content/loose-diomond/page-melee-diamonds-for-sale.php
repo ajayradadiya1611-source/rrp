@@ -116,7 +116,15 @@ $faqs = [
                                 <img src="<?php echo esc_url( $src ); ?>" alt="<?php echo esc_attr( $product->get_name() ); ?>" width="300" height="300" loading="lazy">
                             <?php endif; ?>
                             <h3><?php echo esc_html( $product->get_name() ); ?></h3>
-                            <span class="melee-sale__price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
+                            <span class="melee-sale__price">
+    <?php
+    if ( $product->is_type( 'variable' ) ) {
+        echo wp_kses_post( wc_price( $product->get_variation_price( 'min', true ) ) );
+    } else {
+        echo wp_kses_post( $product->get_price_html() );
+    }
+    ?>
+</span>
                         </a>
                         <a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="melee-sale__btn melee-sale__btn--block" rel="nofollow">Add to Cart</a>
                     </div>
