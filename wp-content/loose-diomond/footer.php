@@ -821,30 +821,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 </div><!-- #page -->
-<?php
-            
-                ?>
-                <script async type="text/javascript" src="https://zvrnp.loosegrowndiamond.com/loosegrowndiamond/load" onError="var fallbackScript = document.createElement('script'); fallbackScript.src='https://cdn.attn.tv/loosegrowndiamond/dtag.js'; document.head.appendChild(fallbackScript);"></script>
-                <?php
-              
-              ?>
-<?php
 
-?>
-<!-- Hotjar Tracking Code for https://www.loosegrowndiamond.com/ -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3417948,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-<?php
-
-?>
 
 
 <?php wp_footer(); ?>
