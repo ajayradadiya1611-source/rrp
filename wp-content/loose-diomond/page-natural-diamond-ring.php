@@ -107,11 +107,12 @@ $steps = [
             </div>
         </div>
     </section>
-
+<div class="bg_light_gray">
    <div class="section">
-    <?php echo single_product_what_customer_say(); ?>
+        <?php echo single_product_what_customer_say(); ?>
+    </div>
 </div>
-    <div class="light_gray_background">
+    <div class="section">
         <div class="container-fluid">
             <h2 class="h1 fw-600 text-center">HOW YOU GET LOWEST PRICE?</h2>
             <p class="font_size_15 text-center mb_70 text-dark">Our prices are lower than others, because we have our own diamond manufacture company called RRP Diamond and it’s all we give you directly. No Middleman.
@@ -152,20 +153,22 @@ $steps = [
     </div>
 
     <!-- How to order -->
-    <section class="ndr-order section">
-        <div class="container text-center">
-            <h2 class="ndr-ttl">How to order</h2>
-            <div class="row row-gap-4">
-                <?php foreach ( $steps as $s ) : ?>
-                    <div class="col-md-4">
-                        <img src="<?php echo esc_url( $img . $s[0] ); ?>" alt="" loading="lazy">
-                        <h5><?php echo esc_html( $s[1] ); ?></h5>
-                        <p><?php echo esc_html( $s[2] ); ?></p>
-                    </div>
-                <?php endforeach; ?>
+    <div class="bg_light_gray">
+        <section class="ndr-order section">
+            <div class="container text-center">
+                <h2 class="ndr-ttl">How to order</h2>
+                <div class="row row-gap-4">
+                    <?php foreach ( $steps as $s ) : ?>
+                        <div class="col-md-4">
+                            <img src="<?php echo esc_url( $img . $s[0] ); ?>" alt="" loading="lazy">
+                            <h5><?php echo esc_html( $s[1] ); ?></h5>
+                            <p><?php echo esc_html( $s[2] ); ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </main>
 
 
