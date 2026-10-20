@@ -128,10 +128,10 @@ function single_product_what_customer_say(){
                         'location' => 'United Kingdom',
                     ],
                     [
-                        'title' => 'Gorgeous diamonds',
-                        'description' => "Gorgeous diamonds and the delivery was super fast will definitely buy more in the future.",
+                        'title' => 'The experience was great I just started…',
+                        'description' => "The experience was great I just started making my own jewelry. I needed some diamonds for a really intricate ring and RRP diamond was able to deliver with no issues with in time delivery and quick communication. I would definitely use them again ",
                         'image' => get_template_directory_uri() . '/rrp-img/review/dawn.png',
-                        'name' => 'Marie Faulcon',
+                        'name' => 'Manny Man',
                         'location' => 'United States',
                     ],
                     [
@@ -242,8 +242,7 @@ function single_product_experience_history(){
 
 function single_product_buy_direct_us(){
     ?>
-     <!--  -->
-    <div class="light_gray_background">
+   <div class="section">
         <div class="container-fluid">
             <h2 class="h1 fw-600 text-center">Buy Directly From Us. No Middleman</h2>
             <p class="font_size_15 text-center mb_70 text-dark">Our prices are lower than the regular sellers because we

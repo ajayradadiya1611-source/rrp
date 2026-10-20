@@ -136,6 +136,7 @@ $black_shapes = [
 </div>
 
 <!-- start melee shapes section -->
+<div class="bg_light_gray">
 <div class="section shape-circles shape-circles--melee">
     <div class="container-fluid">
         <h2 class="shape-circles__title">10+ Melee Diamonds Available in all Classic &amp; Custom Shapes</h2>
@@ -151,6 +152,7 @@ $black_shapes = [
             <?php endforeach; ?>
         </div>
     </div>
+</div>
 </div>
 
 <!-- start info cards section -->
@@ -196,6 +198,7 @@ $black_shapes = [
 </div>
 
 <!-- start black diamonds by shape section -->
+<div class="bg_light_gray">
 <div class="section shape-circles shape-circles--black">
     <div class="container-fluid">
         <h2 class="shape-circles__title">Shop Natural Black Diamonds by Shape</h2>
@@ -211,6 +214,7 @@ $black_shapes = [
             <?php endforeach; ?>
         </div>
     </div>
+</div>
 </div>
 
 <!-- start salt and pepper section -->
@@ -230,7 +234,9 @@ $black_shapes = [
         </div>
     </div>
 </div>
+<div class="bg_light_gray">
 <?php single_product_buy_direct_us(); ?>
+</div>
 <!-- start customers say section -->
 <!-- start featured section -->
 <div class="section">
@@ -252,11 +258,13 @@ $black_shapes = [
         </div>
     </div>
 </div>
+<div class="bg_light_gray">
 <div class="section">
     <?php echo single_product_what_customer_say(); ?>
 </div>
+</div>
 <!-- start diamond resources -->
-<div class="bg_light_gray">
+
     <div class="section">
     <!-- natural diamond FAQs section -->
     <?php
@@ -405,49 +413,49 @@ $black_shapes = [
         </div>
     </div>
 </div>
-</div>
 
 
-
-<!-- start instagram section -->
-<div class="section mb-0 pb-0">
-    <div class="container-fluid">
-        <h2 class="text-center py_25 pt-0 mb-0 home_we_have_instagram_title">Follow us on Instagram</h2>
-        <div class="instagram-header d-flex justify-content-center align-items-center gap-2 mb-4">
-            <a href="https://www.instagram.com/rrpdiamond/"
-                target="_blank"
-                rel="noopener nofollow"
-                class="d-flex align-items-center gap-2 text-decoration-none">
-                <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
-                    alt="rrpdiamond Instagram profile"
-                    class=""
-                    width="30"
-                    height="30"
-                    loading="lazy">
-                <span class="fw-medium text-decoration-underline text-dark">@rrpdiamond</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- image grid -->
-    <div class="row g-3 mx-0">
-        <?php
-        $insta_dir = get_template_directory_uri() . '/rrp-img/home/insta/';
-        for ( $i = 1; $i <= 6; $i++ ) : ?>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="insta-item">
-                    <img
-                        src="<?php echo esc_url( $insta_dir . $i . '.webp' ); ?>"
-                        class="img-fluid rounded"
-                        alt="RRP Diamond Instagram post <?php echo $i; ?>"
-                        width="400"
-                        height="400"
-                        loading="lazy"
-                        decoding="async"
-                        fetchpriority="low">
-                </div>
+<div class="bg_light_gray">
+    <!-- start instagram section -->
+    <div class="section mb-0 ">
+        <div class="container-fluid">
+            <h2 class="text-center py_25 pt-0 mb-0 home_we_have_instagram_title">Follow us on Instagram</h2>
+            <div class="instagram-header d-flex justify-content-center align-items-center gap-2 mb-4">
+                <a href="https://www.instagram.com/rrpdiamond/"
+                    target="_blank"
+                    rel="noopener nofollow"
+                    class="d-flex align-items-center gap-2 text-decoration-none">
+                    <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg"
+                        alt="rrpdiamond Instagram profile"
+                        class=""
+                        width="30"
+                        height="30"
+                        loading="lazy">
+                    <span class="fw-medium text-decoration-underline text-dark">@rrpdiamond</span>
+                </a>
             </div>
-        <?php endfor; ?>
+        </div>
+
+        <!-- image grid -->
+        <div class="row g-3 mx-0">
+            <?php
+            $insta_dir = get_template_directory_uri() . '/rrp-img/home/insta/';
+            for ( $i = 1; $i <= 6; $i++ ) : ?>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="insta-item">
+                        <img
+                            src="<?php echo esc_url( $insta_dir . $i . '.webp' ); ?>"
+                            class="img-fluid rounded"
+                            alt="RRP Diamond Instagram post <?php echo $i; ?>"
+                            width="400"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
+                            fetchpriority="low">
+                    </div>
+                </div>
+            <?php endfor; ?>
+        </div>
     </div>
 </div>
 

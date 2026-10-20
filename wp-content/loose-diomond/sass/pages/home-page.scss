@@ -199,7 +199,6 @@ $hero-text: #2d2926;
 
 // Home: shapes (melee = grey bg + white circles, black = white bg + hover ring)
 .shape-circles {
-    background: #fff;
     text-align: center;
     font-family: "Montserrat", sans-serif;
 
@@ -311,7 +310,6 @@ $hero-text: #2d2926;
     display: flex;
     align-items: center;
     min-height: 410px;
-    background: #ececec;
     font-family: "Montserrat", sans-serif;
 
     .container-fluid {
@@ -469,7 +467,7 @@ $hero-text: #2d2926;
 
 // Home: info cards (slanted photo, title, text, outline button)
 .info-cards-section {
-    background: #f0f0f0;
+   /* background: #f0f0f0;*/
 
     .info-cards {
         display: grid;
