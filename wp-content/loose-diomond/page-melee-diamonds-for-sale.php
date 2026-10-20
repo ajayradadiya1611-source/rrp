@@ -91,7 +91,7 @@ $faqs = [
     </div>
 
     <!-- products (looked up by slug) -->
-    <div class="section">
+    <div class="section pt-0">
         <div class="container-fluid">
             <h2 class="melee-sale__heading">Check Our Stunning Collection of Melee Diamonds</h2>
             <div class="melee-sale__products">
@@ -134,7 +134,7 @@ $faqs = [
     </div>
 
     <!-- message from our CEO -->
-    <div class="section">
+    <div class="section pt-0">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-8">
@@ -212,7 +212,10 @@ $faqs = [
         </div>
     </div>
 
-    <!-- why RRP diamond -->
+   
+
+</div>
+ <!-- why RRP diamond -->
     <div class="section melee-sale__band">
         <div class="container-fluid">
             <h2 class="melee-sale__heading">Why RRP Diamond?</h2>
@@ -227,15 +230,54 @@ $faqs = [
             </div>
         </div>
     </div>
+ <div class="section">
+        <div class="container-fluid">
+            <h2 class="h1 fw-600 text-center">Buy Directly From Us. No Middleman</h2>
+            <p class="font_size_15 text-center mb_70 text-dark">Our prices are lower than the regular sellers because we
+                directly
+                give you
+                diamonds
+                from our factory. No
+                Middleman.
+            </p>
+            <div class="etheme_step_row">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="etheme_box_m text-center">
+                            <div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg" alt="loosegrowndiamond_logo">
+                                <div class="text_black_secondary fw-600 my-2 h5">RRP Diamond </div>
+                                <span class="font_size_15">(We as a Manufacturer) </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="etheme_box_m etheme_white_box text-center">
+                            <div>
+                                <p class="text_black_secondary fw-500 mb-0">Directly Selling To</p>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/arrow_1.svg" alt="arrow_1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="etheme_box_m text-center">
+                            <div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/user.svg" alt="user">
+                                
+                                <div class="text_black_secondary fw-600 my-2 h5">You (as Buyer)  </div>
+                                <span class="font_size_15">(Jewerly Owners, Diamond Traders) </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
-
-<?php single_product_buy_direct_us(); ?>
-
-<div class="section">
+<div class="section light_gray_background">
     <?php echo single_product_what_customer_say(); ?>
 </div>
-<div class="bg_light_gray">
+<div class="">
     <div class="section">
     <!-- natural diamond FAQs section -->
     

@@ -96,7 +96,7 @@ $steps = [
     <!-- Jewellery made by us -->
     <section class="ndr-made section">
         <div class="container text-center">
-            <h2 class="ndr-ttl">Jewellery made by us</h2>
+            <h2 class="ndr-ttl">Jewelry made by us</h2>
             <p class="ndr-sub">Here are some of the jewelry pieces made by us for our international customers</p>
         </div>
         <div class=" px-0">

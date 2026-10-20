@@ -151,7 +151,7 @@ function single_product_what_customer_say(){
                                 <?php echo esc_html($review['title']); ?>
                             </h3>
 
-                            <p>
+                            <p class="review_box_description">
                                 <?php echo esc_html($review['description']); ?>
                             </p>
 
