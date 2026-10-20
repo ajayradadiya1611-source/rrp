@@ -206,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body.set('phone', v('phone'));
         body.set('message', v('message'));
         body.set('reference_url', v('reference_url'));
+        body.set('form_type', 'ring-quote');
 
         btn.disabled = true;
         fetch(<?php echo wp_json_encode( rest_url( 'ls/v1/ask-us' ) ); ?>, {
