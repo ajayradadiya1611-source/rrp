@@ -214,7 +214,7 @@ function ls_contact_admin_page()
     echo '<input type="hidden" name="page" value="ls-contact-submissions" />';
     echo '<label style="margin-right:8px;">Form Type:</label>';
     echo '<select name="form_type" style="margin-right:12px;">';
-    $types = [ 'all' => 'All', 'contact' => 'Contact Us', 'ask-us' => 'Ask Us', 'custom-setting-request' => 'Custom Setting', 'feedback' => 'Feedback', 'wholesale' => 'Wholesale', 'video-request' => 'Video Request', 'thankyou_question' => 'Thank You Question' ];
+    $types = [ 'all' => 'All' ] + ls_form_type_labels();
     foreach ($types as $key => $label) {
         $sel = ($form_type === $key) ? ' selected' : '';
         echo '<option value="' . esc_attr($key) . '"' . $sel . '>' . esc_html($label) . '</option>';
@@ -307,7 +307,7 @@ function ls_contact_admin_page()
             echo '<td>' . $msg . '</td>';
             echo '<td>' . $ref_html . '</td>';
             echo '<td>' . esc_html($r->created_at) . '</td>';
-            echo '<td>' . esc_html($r->form_type) . '</td>';
+            echo '<td>' . esc_html( ls_form_type_label( $r->form_type ) ) . '</td>';
             // Actions (single delete, still via GET link)
             $del_args = [ 'ls_delete' => $r->id, '_wpnonce' => wp_create_nonce( 'ls_delete_submission_' . $r->id ) ];
             if ( $form_type ) $del_args['form_type'] = $form_type;
@@ -369,4 +369,26 @@ function ls_contact_admin_page()
     }
 
     echo '</div>';
+}
+
+
+/**
+ * Display names for the stored form_type slugs (filter dropdown + list column).
+ */
+function ls_form_type_labels() {
+    return [
+        'contact'                => 'Contact Us',
+        'consultation'           => 'Consultation Request',
+        'ask-us'                 => 'Diamond Search Request',
+        'ring-quote'             => 'Ring Quote Request',
+        'custom-setting-request' => 'Custom Setting Request',
+        'feedback'               => 'Feedback',
+        'wholesale'              => 'Wholesale Inquiry',
+        'video-request'          => 'Video Request',
+    ];
+}
+
+function ls_form_type_label( $slug ) {
+    $labels = ls_form_type_labels();
+    return isset( $labels[ $slug ] ) ? $labels[ $slug ] : ucwords( str_replace( [ '-', '_' ], ' ', (string) $slug ) );
 }

@@ -54,6 +54,12 @@ function ls_rest_contact_us(WP_REST_Request $request)
     $message = sanitize_textarea_field($request->get_param('message'));
     $number = sanitize_text_field($request->get_param('number'));
 
+    // Contact Us page = 'contact', the Schedule Now popup = 'consultation'
+    $form_type = sanitize_key($request->get_param('form_type'));
+    if (!in_array($form_type, ['contact', 'consultation'], true)) {
+        $form_type = 'contact';
+    }
+
     if (empty($name) || empty($email) || empty($message)) {
         return new WP_REST_Response(['error' => 'Name, Email and Message are required.'], 400);
     }
@@ -177,7 +183,7 @@ function ls_rest_contact_us(WP_REST_Request $request)
     if ( wp_mail( $to, $subject, $body2, $headers, $mail_attachments ) ) {
         // store submission (serialize attachments)
         ls_store_submission( [
-            'form_type'   => 'contact',
+            'form_type'   => $form_type,
             'name'        => $name,
             'email'       => $email,
             'phone'       => $number,
@@ -216,6 +222,12 @@ function ls_rest_ask_us(WP_REST_Request $request)
     $message = sanitize_textarea_field($request->get_param('message'));
     $phone = sanitize_text_field($request->get_param('phone'));
     $refurl = sanitize_text_field($request->get_param('reference_url'));
+
+    // Which form sent this (stored as the submission's form type)
+    $form_type = sanitize_key($request->get_param('form_type'));
+    if (!in_array($form_type, ['ask-us', 'ring-quote'], true)) {
+        $form_type = 'ask-us';
+    }
 
     if (empty($name) || empty($email) || empty($phone)) {
         return new WP_REST_Response(['error' => '* All Fields are required'], 400);
@@ -295,7 +307,7 @@ function ls_rest_ask_us(WP_REST_Request $request)
 
     if ( wp_mail( $to, $subject, $body2, $headers ) ) {
         ls_store_submission([
-            'form_type' => 'ask-us',
+            'form_type' => $form_type,
             'name'      => $name,
             'email'     => $email,
             'phone'     => $phone,

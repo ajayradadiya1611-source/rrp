@@ -109,6 +109,7 @@ function ls_render_consult_why() {
                     <div class="ls-consult-modal__box">
                         <h3 class="text-center">CONSULTATION REQUEST</h3>
                     <form class="ls-consult-modal__form" id="ls-consult-form" novalidate>
+                        <input type="hidden" name="form_type" value="consultation">
                         <div class="row row-gap-4">
                             <div class="col-md-6">
                                 <input type="text" name="name" class="form-control" placeholder="Your name*" value="<?php echo esc_attr( $c_name ); ?>">
