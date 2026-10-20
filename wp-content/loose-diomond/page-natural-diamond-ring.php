@@ -57,7 +57,7 @@ $steps = [
     </section>
 
     <!-- Quote form -->
-    <section class="ndr-req">
+    <section class="ndr-req section">
         <div class="container text-center">
             <h2 class="ndr-ttl">Ask For A Free Quote For Your Ring</h2>
             <p class="ndr-sub">Fill in the form below and we will give you a quote, It’s Free</p>
@@ -111,9 +111,45 @@ $steps = [
    <div class="section">
     <?php echo single_product_what_customer_say(); ?>
 </div>
-    <?php
-    single_product_buy_direct_us();
-    ?>
+    <div class="light_gray_background">
+        <div class="container-fluid">
+            <h2 class="h1 fw-600 text-center">HOW YOU GET LOWEST PRICE?</h2>
+            <p class="font_size_15 text-center mb_70 text-dark">Our prices are lower than others, because we have our own diamond manufacture company called RRP Diamond and it’s all we give you directly. No Middleman.
+
+            </p>
+            <div class="etheme_step_row">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="etheme_box_m text-center">
+                            <div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/rrp-img/comman/logo.svg" alt="loosegrowndiamond_logo">
+                                <div class="text_black_secondary fw-600 my-2 h5">RRP Diamond + Jeweler</div>
+                                <span class="font_size_15">(We as a Manufacturer) </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="etheme_box_m etheme_white_box text-center">
+                            <div>
+                                <p class="text_black_secondary fw-500 mb-0">Directly Selling To</p>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/arrow_1.svg" alt="arrow_1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="etheme_box_m text-center">
+                            <div>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/logo/user.svg" alt="user">
+                                
+                                <div class="text_black_secondary fw-600 my-2 h5">You (as Buyer)  </div>
+                                <span class="font_size_15">(Customer like You) </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- How to order -->
     <section class="ndr-order section">
