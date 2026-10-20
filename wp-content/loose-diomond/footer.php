@@ -92,7 +92,12 @@ if($is_checkout == true){
 <?php
 }else{
 ?>
-<footer class="<?php echo is_order_received_page() ? 'mt-0 mb-md-0' : 'mt-5 mb-md-0'; ?>">
+<?php
+$footer_class = ( is_order_received_page() || is_page( 'melee-diamonds-for-sale' ) )
+    ? 'mt-0 mb-md-0'
+    : 'mt-5 mb-md-0';
+?>
+<footer class="<?php echo esc_attr( $footer_class ); ?>">
   
   <div class="accordion footer-accordion d-sm-none" id="footerAccordion">
           <div class="accordion-item">
