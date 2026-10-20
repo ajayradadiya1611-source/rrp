@@ -330,7 +330,11 @@ $footer_class = ( is_front_page() || is_order_received_page() || is_page( 'melee
                   
                 </ul>
 
-                <p class="address-link">
+               
+                <p class="address-link address-link-label">
+                INDIA FACTORY
+              </p>
+              <p class="address-link">
                   <a href="tel:+<?php echo SUPPORT_MOBILE?>">   
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -354,9 +358,6 @@ $footer_class = ( is_front_page() || is_order_received_page() || is_page( 'melee
                                   +<?php echo SUPPORT_MOBILE?>
                 </a>
                 </p>
-                <p class="address-link address-link-label">
-                INDIA FACTORY
-              </p>
               <p class="address-link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -374,6 +375,7 @@ $footer_class = ( is_front_page() || is_order_received_page() || is_page( 'melee
 Near, Matawadi Police Chowki, L.H.Road,<br />
 Varachha, Surat, Gujarat - 395006
               </p>
+
                 <p class="address-link address-link-label">
                 USA OFFICE
               </p>
@@ -479,6 +481,10 @@ Varachha, Surat, Gujarat - 395006
                   
                 </ul>
 
+              
+              <p class="address-link address-link-label">
+                INDIA FACTORY
+              </p>
               <p class="address-link">
                 <a href="tel:+<?php echo SUPPORT_MOBILE?>">  
                               <svg
@@ -503,9 +509,6 @@ Varachha, Surat, Gujarat - 395006
                               +<?php echo SUPPORT_MOBILE?>
               </a>
               </p>
-              <p class="address-link address-link-label">
-                INDIA FACTORY
-              </p>
               <p class="address-link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -523,6 +526,7 @@ Varachha, Surat, Gujarat - 395006
 Near, Matawadi Police Chowki, L.H.Road,<br />
 Varachha, Surat, Gujarat - 395006
               </p>
+              
               <p class="address-link address-link-label">
                 USA OFFICE
               </p>
