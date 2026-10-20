@@ -194,7 +194,7 @@ $footer_class = ( is_front_page() || is_order_received_page() || is_page( 'melee
               >
                  <?php
               
-                echo 'FINANCING & POLICIES';
+                echo 'POLICIES';
               
               ?>
                 <div>
@@ -423,7 +423,7 @@ Varachha, Surat, Gujarat - 395006
             <p class="text_white_primary text-uppercase footer_title">
               <?php
               
-                echo 'FINANCING & POLICIES';
+                echo 'POLICIES';
               
               ?>
             </p>
