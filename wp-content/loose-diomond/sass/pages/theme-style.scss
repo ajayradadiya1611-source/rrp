@@ -3021,6 +3021,17 @@ a:hover{
     text-decoration: none;
 }
 
+.aj-blue-btn-color{
+    background: #2d3f8f !important;
+    color: #fff !important;
+    border: 1px solid #2d3f8f !important;
+    &:hover {
+        background: #fff !important;
+        color: #2d3f8f !important;
+        border: 1px solid #2d3f8f !important;
+    }
+}
+
 .aj-black-btn-color{
     background: #000 !important;
     color: #fff !important;

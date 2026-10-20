@@ -536,9 +536,9 @@ $hero-text: #2d2926;
             display: inline-flex;
             align-items: center;
             padding: 14px 22px;
-            border: 1px solid #2d3f8f;
+            /*border: 1px solid #2d3f8f;
             background: transparent;
-            color: #2d3f8f;
+            color: #2d3f8f;*/
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 0.3px;
@@ -547,10 +547,7 @@ $hero-text: #2d2926;
             text-decoration: none;
             transition: background 0.2s, color 0.2s;
 
-            &:hover {
-                background: #2d3f8f;
-                color: #fff;
-            }
+            
         }
 
         // Tall card: photo on top with a slanted bottom edge

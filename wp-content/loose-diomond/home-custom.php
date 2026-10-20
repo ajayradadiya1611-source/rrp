@@ -168,7 +168,7 @@ $black_shapes = [
                 <div class="info-card__body">
                     <h3 class="info-card__title">What are Melee Diamonds?</h3>
                     <p class="info-card__text">The word "melee" is used in the diamond business to refer to smaller brilliant-cut diamonds and any other small loose diamonds that are used to decorate the settings of bigger jewels. Melee is defined by the GIA as little diamonds weighing less than 1/5 carat that is either single cut or full cut (ct). Melee diamonds can be as little as 0.001 carats (1/1000 carat) in size.</p>
-                    <a class="info-card__btn" href="<?php echo esc_url( home_url( '/melee-diamond' ) ); ?>">Shop Melee Diamonds</a>
+                    <a class="info-card__btn aj-blue-btn-color" href="<?php echo esc_url( home_url( '/melee-diamond' ) ); ?>">Shop Melee Diamonds</a>
                 </div>
             </article>
 
@@ -176,7 +176,7 @@ $black_shapes = [
                 <div class="info-card__body">
                     <h3 class="info-card__title">Do natural diamonds have value?</h3>
                     <p class="info-card__text">Natural diamonds are more precious. But many people in this culture may have outmoded logic. Its worth is determined by its emotional and monetary value. Natural diamonds have a much higher monetary value than lab diamonds (30%–40%) due to the difficult manufacturing process.</p>
-                    <a class="info-card__btn" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
+                    <a class="info-card__btn aj-blue-btn-color" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
                 </div>
                 <div class="info-card__media">
                     <img src="<?php echo esc_url( $info_img . 'blog2.svg' ); ?>" width="300" height="381" alt="Do natural diamonds have value" loading="lazy">
@@ -190,7 +190,7 @@ $black_shapes = [
                 <div class="info-card__body">
                     <h3 class="info-card__title">Do Natural Diamonds Last Forever?</h3>
                     <p class="info-card__text">Diamonds don't last indefinitely. Diamonds deteriorate to graphite under normal conditions because graphite has a lower energy configuration. Both diamonds (the material used in wedding rings) and graphite (the material used in pencils) are crystalline forms of pure carbon.</p>
-                    <a class="info-card__btn" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
+                    <a class="info-card__btn aj-blue-btn-color" href="<?php echo esc_url( $text_change['inventory_url'] ); ?>">Shop Diamonds</a>
                 </div>
             </article>
         </div>
