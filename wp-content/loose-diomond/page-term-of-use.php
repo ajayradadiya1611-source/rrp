@@ -449,7 +449,7 @@ get_header();
                         contact us at <?php echo SUPPORT_EMAIL;?>. Carriers are not liable for delayed or
                         undelivered messages.</p>
                     <p>This SMS program is governed by our Terms of Use and Privacy Policy, available at
-                        <a href="/term-of-use/"><?php echo get_site_url();?>/term-of-use/</a>
+                        <a href="/terms-of-use/"><?php echo get_site_url();?>/terms-of-use/</a>
                         and
                         <a href="/privacy-policy/"><?php echo get_site_url();?>/privacy-policy/</a>.
                         For details on how your information is used and shared, please review our Privacy Policy.</p>

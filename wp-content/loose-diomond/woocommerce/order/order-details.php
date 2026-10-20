@@ -116,13 +116,13 @@ if ( $show_downloads ) {
 
                         // SKU
                        
-
+                        $sku = $product ? $product->get_sku() : '';
                         // Video URL (custom meta, adjust key as needed)
                         $video_url = wc_get_order_item_meta( $item_id, 'video_url', true );
                         $setting_variation = wc_get_order_item_meta( $item_id, 'setting_variation', true );
                         $diamond = wc_get_order_item_meta( $item_id, 'diamond', true );
 
-                        $sku =$item->get_meta('_sku_snapshot');
+                      
                         // Thumbnail
                         $thumbnail = $product && $product->get_image_id()
                             ? wp_get_attachment_image_url( $product->get_image_id(), 'thumbnail' )

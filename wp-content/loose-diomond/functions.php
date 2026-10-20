@@ -875,22 +875,7 @@ function ls_prepare_cart_item_data($cart_item_data, $product_id) {
     return $cart_item_data;
 }
 
-add_action( 'woocommerce_checkout_create_order_line_item', 'ls_save_all_custom_data_to_order_item', 10, 4 );
 
-
-function ls_save_all_custom_data_to_order_item( $item, $cart_item_key, $values, $order ) {
-   /* echo "<pre>";
-    print_r($values); 
-    exit;*/
-    global $wpdb;
-     $product_id = $item->get_product_id();
-    add_action('woocommerce_checkout_create_order_line_item', function($item, $cart_item_key, $values, $order) {
-        $product = $item->get_product();
-        if ($product) {
-            $item->add_meta_data('_sku_snapshot', $product->get_sku(), true);
-        }
-    }, 10, 4);
-}
 
 function ls_change_product_price_display( $price, $product  ) {
     if ( has_term( 'melee-diamond', 'product_tag', $product->id ) ) {
