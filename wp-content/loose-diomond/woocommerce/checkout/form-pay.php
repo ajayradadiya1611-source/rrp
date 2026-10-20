@@ -99,7 +99,8 @@ $totals = $order->get_order_item_totals();
 									echo '<span class="oc-current-price">' . $order->get_formatted_line_subtotal( $item ) . '</span>';
 
 									if ( $regular_price && $regular_price != $current_price ) {
-										$regular_subtotal = wc_price( floatval( $regular_price ) * $item->get_quantity() );
+										 $regular_subtotal = wp_strip_all_tags( wc_price( floatval( $regular_price ) * $item->get_quantity() ) );
+										
 										echo '<span class="oc-regular-price">was &nbsp;' . $regular_subtotal . '</span>';
 									}
 									?>
