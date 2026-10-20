@@ -182,7 +182,7 @@ get_header();
                   </div>
                   <div class="col-md-8">
                     <p>
-                      We have over 41+ years of diamond jewelry experience. We
+                      We have over 43+ years of diamond jewelry experience. We
                       are diamond manufacturers. We believe we can make a
                       difference by giving more carats at less prices
                     </p>
@@ -396,7 +396,7 @@ get_header();
                 <p>
                   Start with the ring design that suits your partner the best.
                 </p>
-                <a href="/build-a-ring/" class="btn mb_35">START WITH A SETTING</a>
+                <a href="/natural-diamond-ring/" class="btn mb_35">START WITH A SETTING</a>
               </div>
             </div>
           </div>

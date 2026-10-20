@@ -8,9 +8,17 @@
 
 get_header();
 ?>
-<main id="main" class="dpc">
-    <div class="container">
-        <h1 class="dpc__title">Diamond Price Calculator</h1>
+<div class="banner_section">
+        <div class="py_60">
+            <div class="container-fluid">
+                <div class="text-center">
+                    <h1 class="h2 text_black_secondary fw-600 mb-0">Diamond Price Calculator</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container dpc">
         <p class="dpc__intro">This calculator works as a guideline of value for most diamonds. It is not an indication of our purchase or sale price. We are very competitive in our valuations, but many factors go into pricing specific diamonds. This original Diamond Price Calculator™ has been relied upon by millions across the world since 2018.</p>
 
         <form class="dpc__form" id="dprice_calculator_request" method="POST" novalidate>
@@ -113,11 +121,10 @@ get_header();
             </div>
         </form>
     </div>
-</main>
+
 
 <style>
-.dpc { padding: 30px 0 60px; }
-.dpc__title { text-align: center; font-size: 32px; font-weight: 400; letter-spacing: 1px; margin-bottom: 20px; }
+
 .dpc__intro { text-align: center; max-width: 1150px; margin: 0 auto 60px; color: #767676; line-height: 1.8; letter-spacing: 1px; }
 .dpc__form { max-width: 800px; margin: 0 auto; }
 .dpc__form label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; }
@@ -136,7 +143,6 @@ get_header();
 .dpc__btn { background: #000; color: #fff; border: 1px solid #000; padding: 20px 50px; font-size: 15px; text-transform: uppercase; border-radius: 4px; }
 .dpc__btn:hover { background: #fff; color: #000; }
 .dpc__btn:disabled { opacity: .6; }
-@media (max-width: 575px) { .dpc__title { font-size: 26px; } .dpc__btn { width: 100%; } }
 </style>
 
 <script>
