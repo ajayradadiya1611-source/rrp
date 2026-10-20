@@ -149,7 +149,7 @@ function lgd_cart_page_get_data() {
         'returnDays'     => defined( 'RETURN_DAYS' ) ? RETURN_DAYS : '7',
         'supportMobile'  => defined( 'SUPPORT_MOBILE' ) ? SUPPORT_MOBILE : '',
         'themeUri'       => get_template_directory_uri(),
-        'unboxingVideo'  => 'https://media.loosegrowndiamond.com/wait-till-you-see-inside-this-box.mp4',
+        'unboxingVideo'  => get_template_directory_uri().'/rrp-img/why-choose/loose-grown-diamond-banner-video.mp4',
         'noticesHtml'    => $notices,
         'pageTitle'      => lgd_cart_page_title(),
         'cartCount'      => (int) $cart->get_cart_contents_count(),
