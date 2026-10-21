@@ -274,7 +274,124 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgFgVfpZ_oRfQAc6mXWNFbB1dPUPeqTmI&libraries=places"></script>
+<script type="text/javascript">
+/*function initAutocomplete() {
+    const billingInput  = document.getElementById("billing_address_1");
+    const shippingInput = document.getElementById("shipping_address_1");
 
+    // Helper: forcibly hide the Google dropdown
+    function dismissDropdown(input) {
+        input.blur();
+
+        // Hide the pac-container immediately
+        const pac = document.querySelector('.pac-container');
+        if (pac) pac.style.display = 'none';
+
+        // Re-show it only when user focuses the field again
+        input.addEventListener('focus', function () {
+            if (pac) pac.style.display = '';
+        }, { once: true });
+    }
+
+    if (billingInput) {
+        // Prevent browser's own autocomplete from fighting Google's
+        billingInput.setAttribute('autocomplete', 'new-password');
+
+        const billingAutocomplete = new google.maps.places.Autocomplete(billingInput);
+        billingAutocomplete.addListener("place_changed", function () {
+            fillAddress(billingAutocomplete, 'billing');
+            dismissDropdown(billingInput);
+        });
+    }
+
+    if (shippingInput) {
+        shippingInput.setAttribute('autocomplete', 'new-password');
+
+        const shippingAutocomplete = new google.maps.places.Autocomplete(shippingInput);
+        shippingAutocomplete.addListener("place_changed", function () {
+            fillAddress(shippingAutocomplete, 'shipping');
+            dismissDropdown(shippingInput);
+        });
+    }
+}
+function fillAddress(autocomplete, type) {
+    const place = autocomplete.getPlace();
+    if (!place || !place.address_components) return;
+
+    let streetNumber = '', route = '', city = '', state = '', postcode = '', country = '';
+
+    place.address_components.forEach(function (component) {
+        const types = component.types;
+        if (types.includes('street_number'))             streetNumber = component.long_name;
+        if (types.includes('route'))                     route        = component.long_name;
+        if (types.includes('locality'))                  city         = component.long_name;
+        if (types.includes('administrative_area_level_1')) state      = component.short_name;
+        if (types.includes('postal_code'))               postcode     = component.long_name;
+        if (types.includes('country'))                   country      = component.short_name;
+    });
+
+    // Helper: set a plain text/email/postcode input and fire events
+    function setInput(id, value) {
+        console.log("id",id);
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.value = value;
+        if(id=='shipping_address_1' || id=='billing_address_1'){
+            return ;
+        }
+        el.dispatchEvent(new Event('input',  { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    // Helper: set a <select> (plain or Select2) and fire WooCommerce events
+    function setSelect(id, value) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.value = value;
+        // Vanilla change (non-Select2 selects)
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+        // Select2 / WooCommerce change
+        if (typeof jQuery !== 'undefined') {
+            jQuery(el).val(value).trigger('change');
+        }
+    }
+
+    // 1. Fill plain fields immediately
+    setInput(type + '_address_1', (streetNumber + ' ' + route).trim());
+    setInput(type + '_city',      city);
+    setInput(type + '_postcode',  postcode);
+
+    // 2. Set country first — WooCommerce will AJAX-load the matching state options
+    setSelect(type + '_country', country);
+
+    // 3. Set state AFTER WooCommerce has finished updating the state dropdown
+    //    'country_to_state_changed' fires when the state <select> is rebuilt
+    jQuery(document.body).one('country_to_state_changed', function () {
+        setSelect(type + '_state', state);
+
+    });
+
+    // Fallback: if the event never fires (state is a free-text input, or no AJAX needed)
+    setTimeout(function () {
+        setSelect(type + '_state', state);
+    }, 600);
+}
+
+// Run when page is ready
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof google !== "undefined") {
+        initAutocomplete();
+    }
+});
+
+// WooCommerce AJAX refresh fix
+jQuery(document.body).on('updated_checkout', function () {
+    if (typeof google !== "undefined") {
+        initAutocomplete();
+    }
+});*/
+</script>
 <style>
     #contact_details_heading_field .woocommerce-input-wrapper, #contact_details_heading_field .optional {
         display: none !important;
