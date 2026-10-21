@@ -276,7 +276,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?> 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgFgVfpZ_oRfQAc6mXWNFbB1dPUPeqTmI&libraries=places"></script>
 <script type="text/javascript">
-/*function initAutocomplete() {
+function initAutocomplete() {
     const billingInput  = document.getElementById("billing_address_1");
     const shippingInput = document.getElementById("shipping_address_1");
 
@@ -390,7 +390,7 @@ jQuery(document.body).on('updated_checkout', function () {
     if (typeof google !== "undefined") {
         initAutocomplete();
     }
-});*/
+});
 </script>
 <style>
     #contact_details_heading_field .woocommerce-input-wrapper, #contact_details_heading_field .optional {
