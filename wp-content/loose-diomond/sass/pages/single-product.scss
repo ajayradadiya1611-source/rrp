@@ -347,6 +347,7 @@
   .modal-header{
     position: absolute;
     right: 0;
+    z-index: 9;
   }
   .ls-consult-modal__form {
     max-width: 800px;
